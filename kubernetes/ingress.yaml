@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: personal-website-ingress
+  namespace: bernardoforcillo-com
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
+    traefik.ingress.kubernetes.io/router.tls.certresolver: 'cluster-issuer'
+spec:
+  tls:
+    - hosts:
+        - bernardoforcillo.com
+      secretName: personal-website-tls
+  rules:
+    - host: bernardoforcillo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: personal-website-svc
+                port:
+                  number: 30001

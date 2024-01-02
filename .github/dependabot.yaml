@@ -1,0 +1,34 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: monthly
+      day: monday
+      time: '08:00'
+      timezone: 'Europe/Rome'
+    commit-message:
+      prefix: '[DEPENDABOT]'
+    labels:
+      - 'dependencies'
+      - 'dependabot'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'bernardoforcillo'
+    versioning-strategy: increase-if-necessary
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+      day: monday
+      time: '08:00'
+      timezone: 'Europe/Rome'
+    commit-message:
+      prefix: '[DEPENDABOT]'
+    labels:
+      - 'dependencies'
+      - 'dependabot'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'bernardoforcillo'
+    versioning-strategy: increase-if-necessary

@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "podman: build container",
+      "type": "shell",
+      "command": "podman",
+      "args": ["build", "-t", "bernardoforcillo/thebadpromptfrontend", "."],
+      "problemMatcher": {
+        "owner": "podman",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*)$",
+          "file": 1
+        },
+        "source": "podman",
+        "applyTo": "allDocuments",
+        "severity": "error"
+      }
+    },
+    {
+      "label": "podman: run container",
+      "type": "shell",
+      "command": "podman",
+      "args": [
+        "run",
+        "--rm",
+        "-it",
+        "-v",
+        "${workspaceFolder}/.tmp/:/var/badimages/:z",
+        "-p",
+        "8080:8080",
+        "--network=host",
+        "--env-file",
+        ".env",
+        "bernardoforcillo/thebadpromptfrontend"
+      ],
+      "problemMatcher": {
+        "owner": "podman",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*)$",
+          "file": 1
+        },
+        "source": "podman",
+        "applyTo": "allDocuments",
+        "severity": "error"
+      }
+    },
+    {
+      "label": "podman: build and run container",
+      "type": "shell",
+      "dependsOn": ["podman: build container", "podman: run container"],
+      "dependsOrder": "sequence",
+      "problemMatcher": {
+        "owner": "podman",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*)$",
+          "file": 1
+        },
+        "source": "podman",
+        "applyTo": "allDocuments",
+        "severity": "error"
+      }
+    }
+  ]
+}
