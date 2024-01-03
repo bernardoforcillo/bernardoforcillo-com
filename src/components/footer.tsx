@@ -1,26 +1,69 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
-
-    <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-        <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.
-        </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-                <a href="#" className="hover:underline me-4 md:me-6">About</a>
-            </li>
-            <li>
-                <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
-            </li>
-            <li>
-                <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-            </li>
-            <li>
-                <a href="#" className="hover:underline">Contact</a>
-            </li>
-        </ul>
+    <>
+      <footer className='bg-fiord-700 p-4 text-fiord-50'>
+        <section className='mx-auto flex max-w-screen-xl flex-col justify-between p-4 md:flex-row md:align-middle'>
+          <div className='md:w-1/3'>
+            <div className='pb-4'></div>
+            <div className='flex flex-col text-xs opacity-70'>
+              <span className='pb-2'>
+                &copy; {new Date().getFullYear()} Bernardo Forcillo
+              </span>
+              <div className='flex flex-row space-x-2 pb-2'>
+                <Link href='#'>Privacy Policy</Link>
+                <Link href='#'>Cookie Policy</Link>
+              </div>
+            </div>
+          </div>
+          <div className='flex flex-col md:w-2/3 md:flex-row'>
+            <div className='md:w-1/4'></div>
+            <div className='md:w-1/4'></div>
+            <div className='md:w-1/4'></div>
+            <div className='md:w-1/4'>
+              <span className='mb-3 font-bold sm:mb-3'>
+                Seguimi anche su...
+              </span>
+              <ol>
+                <li>
+                  <a
+                    classNam-e='hover:underline hover:opacity-60'
+                    href='https://www.linkedin.com/in/bernardoforcillo/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className='hover:underline hover:opacity-60'
+                    href='https://www.youtube.com/@bernardoforcillo'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    Youtube
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className='hover:underline hover:opacity-60'
+                    href='https://github.com/bernardoforcillo'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    Github
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+        <div className='mx-auto max-w-screen-xl p-4 text-center text-base text-white'>
+          Fatto a mano con ❤️ in Italia
         </div>
-    </footer>
-    
-  )
+      </footer>
+    </>
+  );
 }
