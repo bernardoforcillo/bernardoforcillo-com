@@ -10,5 +10,5 @@ spec:
     tier: personal-website
   ports:
     - port: 30001
-      targetPort: 80
+      targetPort: 3000
       protocol: TCP

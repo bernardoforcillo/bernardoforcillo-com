@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: bernardoforcillo-com
-          image: bernardoforcillo/bernardoforcillo-com
+          image: bernardoforcillo/bernardoforcillo-com:main
           resources:
             limits:
               memory: '128Mi'
@@ -28,4 +28,4 @@ spec:
           tty: true
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 3000

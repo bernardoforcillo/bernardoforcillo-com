@@ -28,7 +28,7 @@ export default function Footer() {
               <ol>
                 <li>
                   <a
-                    classNam-e='hover:underline hover:opacity-60'
+                    className='hover:underline hover:opacity-60'
                     href='https://www.linkedin.com/in/bernardoforcillo/'
                     target='_blank'
                     rel='noreferrer'

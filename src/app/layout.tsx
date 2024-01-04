@@ -176,9 +176,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TCMCZB6B');`}
         </Script>
-        <script id='schema' type='application/ld+json'>
-          {JSON.stringify(schema)}
-        </script>
+        <script
+          id='schema'
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       </head>
       <body>
         <noscript>
