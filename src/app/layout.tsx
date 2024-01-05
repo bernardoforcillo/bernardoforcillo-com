@@ -15,11 +15,10 @@ export const metadata: Metadata = {
   title: {
     template: ' %s - Bernardo Forcillo',
     default: 'Bernardo Forcillo',
-    absolute:
-      'Bernardo Forcillo - Progetto, sviluppo, ottimizzo e tutto fare del digitale',
+    absolute: 'Bernardo Forcillo - Progetto, sviluppo, ottimizzo',
   },
   description:
-    'Ciao, sono Bernardo! Aiuto imprenditori e professionisti a sviluppare prodotti e soluzioni digitali.',
+    'Ciao, sono Bernardo! Aiuto imprenditori e professionisti a sviluppare prodotti e soluzioni digitali. Studio, progetto e sviluppo soluzioni basate sul cloud per...',
   metadataBase: new URL('https://bernardoforcillo.com'),
   alternates: {
     canonical: '/',
@@ -131,9 +130,9 @@ const schema = {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Bernardo Forcillo - Progetto, sviluppo, ottimizzo e tutto fare del digitale',
+      name: 'Bernardo Forcillo - Progetto, sviluppo, ottimizzo',
       description:
-        'Ciao, sono Bernardo! Aiuto imprenditori e professionisti a sviluppare prodotti e soluzioni digitali.',
+        'Ciao, sono Bernardo! Aiuto imprenditori e professionisti a sviluppare prodotti e soluzioni digitali. Studio, progetto e sviluppo soluzioni basate sul cloud per ottimizzare i processi aziendali',
       url: 'https://bernardoforcillo.com/',
       inLanguage: 'it-IT',
       isPartOf: {

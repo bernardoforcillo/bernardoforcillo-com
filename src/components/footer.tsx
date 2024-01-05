@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <>
-      <footer className='bg-fiord-700 p-4 text-fiord-50'>
+      <footer className='bg-fiord-950 p-4 text-fiord-50'>
         <section className='mx-auto flex max-w-screen-xl flex-col justify-between p-4 md:flex-row md:align-middle'>
           <div className='md:w-1/3'>
             <div className='pb-4'></div>
@@ -12,8 +12,12 @@ export default function Footer() {
                 &copy; {new Date().getFullYear()} Bernardo Forcillo
               </span>
               <div className='flex flex-row space-x-2 pb-2'>
-                <Link href='#'>Privacy Policy</Link>
-                <Link href='#'>Cookie Policy</Link>
+                <Link className='hover:underline' href='#'>
+                  Privacy Policy
+                </Link>
+                <Link className='hover:underline' href='#'>
+                  Cookie Policy
+                </Link>
               </div>
             </div>
           </div>
@@ -22,16 +26,14 @@ export default function Footer() {
             <div className='md:w-1/4'></div>
             <div className='md:w-1/4'></div>
             <div className='md:w-1/4'>
-              <span className='mb-3 font-bold sm:mb-3'>
-                Seguimi anche su...
-              </span>
+              <span className='mb-3 font-bold sm:mb-3'>Social</span>
               <ol>
                 <li>
                   <a
                     className='hover:underline hover:opacity-60'
                     href='https://www.linkedin.com/in/bernardoforcillo/'
                     target='_blank'
-                    rel='noreferrer'
+                    rel='referrer'
                   >
                     LinkedIn
                   </a>
@@ -41,7 +43,7 @@ export default function Footer() {
                     className='hover:underline hover:opacity-60'
                     href='https://www.youtube.com/@bernardoforcillo'
                     target='_blank'
-                    rel='noreferrer'
+                    rel='referrer'
                   >
                     Youtube
                   </a>
@@ -51,7 +53,7 @@ export default function Footer() {
                     className='hover:underline hover:opacity-60'
                     href='https://github.com/bernardoforcillo'
                     target='_blank'
-                    rel='noreferrer'
+                    rel='referrer'
                   >
                     Github
                   </a>
