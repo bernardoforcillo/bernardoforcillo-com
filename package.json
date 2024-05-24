@@ -1,6 +1,6 @@
 {
   "name": "bernardoforcillo-com",
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "pnpm@9.1.2",
   "homepage": "https://bernardoforcillo.com",
   "private": true,
   "licenses": [
