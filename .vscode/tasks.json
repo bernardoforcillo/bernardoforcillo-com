@@ -5,7 +5,7 @@
       "label": "podman: build container",
       "type": "shell",
       "command": "podman",
-      "args": ["build", "-t", "bernardoforcillo/thebadpromptfrontend", "."],
+      "args": ["build", "-t", "bernardoforcillo/bernardoforcillo-com", "."],
       "problemMatcher": {
         "owner": "podman",
         "fileLocation": ["relative", "${workspaceFolder}"],
@@ -26,14 +26,10 @@
         "run",
         "--rm",
         "-it",
-        "-v",
-        "${workspaceFolder}/.tmp/:/var/badimages/:z",
         "-p",
-        "8080:8080",
+        "3080:3080",
         "--network=host",
-        "--env-file",
-        ".env",
-        "bernardoforcillo/thebadpromptfrontend"
+        "bernardoforcillo/bernardoforcillo-com"
       ],
       "problemMatcher": {
         "owner": "podman",
