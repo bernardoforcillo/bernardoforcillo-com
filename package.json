@@ -1,6 +1,5 @@
 {
   "name": "bernardoforcillo-com",
-  "packageManager": "pnpm@9.1.2",
   "homepage": "https://bernardoforcillo.com",
   "private": true,
   "licenses": [
@@ -49,5 +48,6 @@
   "browserslist": [
     "> 0.1% and last 2 versions and not dead",
     "maintained node versions"
-  ]
+  ],
+  "packageManager": "pnpm@9.4.0"
 }

@@ -25,6 +25,9 @@ spec:
             requests:
               memory: '64Mi'
               cpu: '10m'
+          env:
+            - name: GTM_ID
+              value: GTM-TCMCZB6B
           tty: true
           imagePullPolicy: Always
           ports:
