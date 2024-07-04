@@ -15,7 +15,6 @@ updates:
     open-pull-requests-limit: 10
     reviewers:
       - 'bernardoforcillo'
-    versioning-strategy: increase
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
@@ -31,4 +30,3 @@ updates:
     open-pull-requests-limit: 10
     reviewers:
       - 'bernardoforcillo'
-    versioning-strategy: increase
