@@ -2,10 +2,33 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "kubernetes: expose traefik dashboard",
+      "type": "shell",
+      "command": "kubectl",
+      "args": [
+        "port-forward",
+        "-n",
+        "kube-system",
+        "$(kubectl",
+        "-n",
+        "kube-system",
+        "get",
+        "pods",
+        "--selector",
+        "\"app.kubernetes.io/name=traefik\"",
+        "--output=name)",
+        "9000:9000"
+      ],
+      "icon": {
+        "id": "dashboard",
+        "color": "terminal.ansiBlue"
+      }
+    },
+    {
       "label": "podman: build container",
       "type": "shell",
       "command": "podman",
-      "args": ["build", "-t", "bernardoforcillo/thebadpromptfrontend", "."],
+      "args": ["build", "-t", "bernardoforcillo/bernardoforcillo-com", "."],
       "problemMatcher": {
         "owner": "podman",
         "fileLocation": ["relative", "${workspaceFolder}"],
@@ -26,14 +49,10 @@
         "run",
         "--rm",
         "-it",
-        "-v",
-        "${workspaceFolder}/.tmp/:/var/badimages/:z",
         "-p",
-        "8080:8080",
+        "3080:3080",
         "--network=host",
-        "--env-file",
-        ".env",
-        "bernardoforcillo/thebadpromptfrontend"
+        "bernardoforcillo/bernardoforcillo-com"
       ],
       "problemMatcher": {
         "owner": "podman",
