@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["@next/next", "prettier", "tailwindcss"],
+  "rules": {
+    "no-unused-vars": "warn"
+  },
+  "env": {
+    "node": true,
+    "commonjs": true
+  }
+}
