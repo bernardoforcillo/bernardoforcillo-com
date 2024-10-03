@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+export default {
   content: ['./src/**/*.{tsx, ts}'],
   theme: {
     extend: {
@@ -18,7 +19,11 @@ module.exports = {
           950: '#1f2532',
         },
       },
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
+      },
     },
   },
   plugins: [],
-};
+} satisfies Config;
