@@ -1,4 +1,5 @@
-import Container from '~/atoms/container';
+import { cn } from '~/components/utils';
+import { GridPattern } from '~/components/atoms/grid-background';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -101,11 +102,11 @@ const schema = {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Bernardo Forcillo - Progetto, sviluppo, ottimizzo',
+      name: 'Bernardo Forcillo - Software builder, Digital Artisan and Indie Entrepreneur',
       description:
-        'Ciao, sono Bernardo! Aiuto imprenditori e professionisti a sviluppare prodotti e soluzioni digitali. Studio, progetto e sviluppo soluzioni basate sul cloud per ottimizzare i processi aziendali',
+        'Building technologies for innovators, professionals and enthusiasts.',
       url: 'https://bernardoforcillo.com/',
-      inLanguage: 'it-IT',
+      inLanguage: 'en',
       isPartOf: {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
@@ -140,14 +141,35 @@ export default function Page() {
         type='application/ld+json'
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <Container className='flex h-screen w-screen flex-col items-end max-md:relative'>
-        <div className='shrink p-5 align-bottom max-md:absolute max-md:bottom-0 md:m-auto'>
-          <h1 className='text-4xl font-bold md:text-8xl md:leading-tight'>
-            Analizzo, sviluppo e lancio{' '}
-            <span className='text-sky-500'>prodotti digitali</span>.
+      <section className='relative flex h-screen w-full flex-col items-center justify-center overflow-hidden'>
+        <div className='max-w-5xl space-y-2 text-balance p-4'>
+          <h1 className='pointer-events-none whitespace-pre-wrap text-4xl font-semibold leading-tight text-black sm:text-5xl md:text-7xl'>
+            Analyse, develop and launch&nbsp;
+            <span className='text-sky-600'>digital products</span>.
           </h1>
+          <p className='prose'>
+            Hi, I&apos;m&nbsp;
+            <span id='name' itemID='https://bernardoforcillo.com/#person'>
+              Bernardo Forcillo
+            </span>
+            , a polymath software builder and computer science student at
+            the&nbsp;
+            <span>University of Basilicata</span>. Based in south of Italy,
+            among the hills near Matera with a passion for technology and
+            innovation.
+          </p>
         </div>
-      </Container>
+        <GridPattern
+          width={30}
+          height={30}
+          x={-1}
+          y={-1}
+          strokeDasharray={'4 2'}
+          className={cn(
+            '[mask-image:linear-gradient(to_bottom,white,transparent,transparent)] ',
+          )}
+        />
+      </section>
     </>
   );
 }

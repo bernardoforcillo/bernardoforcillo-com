@@ -1,24 +1,27 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
   name: personal-website-ingress
   namespace: bernardoforcillo-com
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
-    traefik.ingress.kubernetes.io/router.tls.certresolver: 'cluster-issuer'
 spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: (Host(`bernardoforcillo.com`) || Host(`www.bernardoforcillo.com`))
+      kind: Rule
+      services:
+        - name: personal-website-svc
+          port: 30001
+      middlewares:
+        - name: security
+          namespace: bernardoforcillo-com
+        - name: redirect-http-to-https
+          namespace: bernardoforcillo-com
+        - name: redirect-to-non-www
+          namespace: bernardoforcillo-com
   tls:
-    - hosts:
-        - bernardoforcillo.com
-      secretName: personal-website-tls
-  rules:
-    - host: bernardoforcillo.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: personal-website-svc
-                port:
-                  number: 30001
+    secretName: personal-website-tls
+    options:
+      name: tlsoptions
+      namespace: bernardoforcillo-com
