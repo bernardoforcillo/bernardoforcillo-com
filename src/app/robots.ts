@@ -7,14 +7,6 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
-      {
-        userAgent: 'ia_archiver',
-        disallow: '/',
-      },
-      {
-        userAgent: 'archive.org_bot',
-        disallow: '/',
-      },
     ],
     host: 'https://bernardoforcillo.com',
     sitemap: 'https://bernardoforcillo.com/sitemap.xml',
