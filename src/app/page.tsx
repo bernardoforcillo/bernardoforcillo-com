@@ -1,4 +1,6 @@
 import { cn } from '~/components/utils';
+import GithubIcon from '~/assets/icons/github-mark';
+import LinkedinMark from '~/assets/icons/linkedin-mark';
 import { GridPattern } from '~/components/atoms/grid-background';
 
 const schema = {
@@ -158,6 +160,22 @@ export default function Page() {
             among the hills near Matera with a passion for technology and
             innovation.
           </p>
+          <ul className='inline-flex gap-2 py-2'>
+            <li key={'github-link'}>
+              <a target='_blank' href='http://github.com/bernardoforcillo'>
+                <GithubIcon className='m-auto size-8' />
+              </a>
+            </li>
+            <li key={'linkedin-link'}>
+              <a
+                target='_blank'
+                className='inline-flex items-center'
+                href='http://linkedin.com/in/bernardoforcillo'
+              >
+                <LinkedinMark className='m-auto size-9' />
+              </a>
+            </li>
+          </ul>
         </div>
         <GridPattern
           width={30}
