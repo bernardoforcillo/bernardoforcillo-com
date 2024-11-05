@@ -26,21 +26,21 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "next": "^15.0.1",
+    "next": "^15.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.7.9",
+    "@types/node": "^22.8.6",
     "@types/react": "^18.3.12",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
-    "@typescript-eslint/parser": "^8.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.12.2",
+    "@typescript-eslint/parser": "^8.12.2",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "eslint": "^9.13.0",
-    "eslint-config-next": "^15.0.1",
+    "eslint-config-next": "^15.0.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-tailwindcss": "^3.17.5",
@@ -54,5 +54,5 @@
     "> 0.1% and last 2 versions and not dead",
     "maintained node versions"
   ],
-  "packageManager": "pnpm@9.12.2"
+  "packageManager": "pnpm@9.12.3"
 }
