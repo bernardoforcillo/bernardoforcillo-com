@@ -1,7 +1,7 @@
-import { cn } from '~/components/utils';
 import GithubIcon from '~/assets/icons/github-mark';
 import LinkedinMark from '~/assets/icons/linkedin-mark';
 import { GridPattern } from '~/components/atoms/grid-background';
+import { cn } from '~/components/utils';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -138,11 +138,9 @@ const schema = {
 export default function Page() {
   return (
     <>
-      <script
-        id='schema'
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      <script id='schema' type='application/ld+json'>
+        {JSON.stringify(schema)}
+      </script>
       <section className='relative flex h-screen w-full flex-col items-center justify-center overflow-hidden'>
         <div className='max-w-5xl space-y-2 text-balance p-4'>
           <h1 className='pointer-events-none whitespace-pre-wrap text-4xl font-semibold leading-tight text-black sm:text-5xl md:text-7xl'>
@@ -162,7 +160,11 @@ export default function Page() {
           </p>
           <ul className='inline-flex gap-2 py-2'>
             <li key={'github-link'}>
-              <a target='_blank' href='http://github.com/bernardoforcillo'>
+              <a
+                target='_blank'
+                href='http://github.com/bernardoforcillo'
+                rel='noreferrer'
+              >
                 <GithubIcon className='m-auto size-8' />
               </a>
             </li>
@@ -171,6 +173,7 @@ export default function Page() {
                 target='_blank'
                 className='inline-flex items-center'
                 href='http://linkedin.com/in/bernardoforcillo'
+                rel='noreferrer'
               >
                 <LinkedinMark className='m-auto size-9' />
               </a>

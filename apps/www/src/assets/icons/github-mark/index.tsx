@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import type { SVGProps } from 'react';
 import { cn } from '~/components/utils';
 
 type Props = {} & SVGProps<SVGSVGElement>;
@@ -14,6 +14,7 @@ const GithubIcon = ({ className, ...props }: Props) => {
       xmlns='http://www.w3.org/2000/svg'
       className={cn('fill-black', 'w-6 h-6 flex-no-shrink', className)}
     >
+      <title style={{ display: 'none' }}>GitHub</title>
       <path
         fill='#24292f'
         fillRule='evenodd'
