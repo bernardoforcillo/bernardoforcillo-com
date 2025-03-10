@@ -28,7 +28,13 @@
       "label": "podman: build container",
       "type": "shell",
       "command": "podman",
-      "args": ["build", "-t", "bernardoforcillo/bernardoforcillo-com", "."],
+      "args": [
+        "build",
+        "-t",
+        "bernardoforcillo/bernardoforcillo-com",
+        "-f=apps/www/Dockerfile",
+        "."
+      ],
       "problemMatcher": {
         "owner": "podman",
         "fileLocation": ["relative", "${workspaceFolder}"],
