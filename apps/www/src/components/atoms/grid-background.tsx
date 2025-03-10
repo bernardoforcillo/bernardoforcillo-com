@@ -34,6 +34,7 @@ export function GridPattern({
       )}
       {...props}
     >
+      <title style={{ display: 'none' }}>Grid pattern</title>
       <defs>
         <pattern
           id={id}
@@ -52,7 +53,10 @@ export function GridPattern({
       </defs>
       <rect width='100%' height='100%' strokeWidth={0} fill={`url(#${id})`} />
       {squares && (
-        <svg x={x} y={y} className='overflow-visible'>
+        <svg x={x} y={y} className='overflow-visible' aria-labelledby='title'>
+          <title id='title' style={{ display: 'none' }}>
+            Row
+          </title>
           {squares.map(([x, y]) => (
             <rect
               strokeWidth='0'
