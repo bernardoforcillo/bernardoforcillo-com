@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import { Inter } from '~/assets/fonts/inter';
+import { Footer } from '~/components/organisms/footer';
 
 import '~/styles/global.css';
 
@@ -39,10 +40,15 @@ export const metadata: Metadata = {
   publisher: 'Bernardo Forcillo',
 };
 
-export default function RootLayout({ children }: Props) {
+const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang='en' className={`${Inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

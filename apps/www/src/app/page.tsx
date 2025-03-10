@@ -1,7 +1,7 @@
+import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import GithubIcon from '~/assets/icons/github-mark';
 import LinkedinMark from '~/assets/icons/linkedin-mark';
-import { GridPattern } from '~/components/atoms/grid-background';
-import { cn } from '~/components/utils';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -141,55 +141,115 @@ export default function Page() {
       <script id='schema' type='application/ld+json'>
         {JSON.stringify(schema)}
       </script>
-      <section className='relative flex h-screen w-full flex-col items-center justify-center overflow-hidden'>
-        <div className='max-w-5xl space-y-2 text-balance p-4'>
-          <h1 className='pointer-events-none whitespace-pre-wrap text-4xl font-semibold leading-tight text-black sm:text-5xl md:text-7xl'>
-            Analyse, develop and launch&nbsp;
-            <span className='text-sky-600'>digital products</span>.
-          </h1>
-          <p className='prose'>
-            Hi, I&apos;m&nbsp;
-            <span id='name' itemID='https://bernardoforcillo.com/#person'>
-              Bernardo Forcillo
-            </span>
-            , a polymath software builder and computer science student at
-            the&nbsp;
-            <span>University of Basilicata</span>. Based in south of Italy,
-            among the hills near Matera with a passion for technology and
-            innovation.
-          </p>
-          <ul className='inline-flex gap-2 py-2'>
-            <li key={'github-link'}>
-              <a
-                target='_blank'
-                href='http://github.com/bernardoforcillo'
-                rel='noreferrer'
-              >
-                <GithubIcon className='m-auto size-8' />
-              </a>
-            </li>
-            <li key={'linkedin-link'}>
-              <a
-                target='_blank'
-                className='inline-flex items-center'
-                href='http://linkedin.com/in/bernardoforcillo'
-                rel='noreferrer'
-              >
-                <LinkedinMark className='m-auto size-9' />
-              </a>
-            </li>
-          </ul>
+      <section
+        className='h-screen overflow-hidden p-3 relative'
+        aria-labelledby='hero-heading'
+      >
+        <div className='relative h-full w-full rounded-xl'>
+          <div className='mx-auto h-full max-w-5xl px-8 2xl:px-0'>
+            <div className='flex h-full items-center px-2 md:px-0'>
+              <div className='flex flex-col gap-20'>
+                <div className='text-4xl md:text-5xl xl:text-[3.6rem]'>
+                  <div className='max-w-5xl space-y-4 text-balance'>
+                    <h1
+                      id='hero-heading'
+                      className='whitespace-pre-wrap font-semibold leading-tight'
+                    >
+                      Analyse, develop and launch&nbsp;
+                      <span className='text-azure-radiance-600'>
+                        digital products
+                      </span>
+                    </h1>
+                  </div>
+                </div>
+
+                <div className='flex items-center gap-4 text-2xl'>
+                  <ArrowRight aria-hidden='true' />
+                  <span className='hidden md:block'>Want to reach out?</span>
+                  <a
+                    href='mailto:me@bernardoforcillo.com'
+                    className='focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                  >
+                    Get in touch!
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='absolute bottom-8 left-0 right-0 flex justify-center'>
+            <Link
+              href='#about'
+              className='px-3 py-2 text-sm font-medium text-center text-white bg-azure-radiance-600 rounded-lg hover:bg-azure-radiance-700 focus:ring-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-azure-radiance-300 transition-all duration-300'
+              aria-label='Learn more about Bernardo Forcillo'
+            >
+              More about me
+              <ArrowRight
+                className='ml-2 inline-block transform rotate-90 animate-bounce'
+                size={16}
+                aria-hidden='true'
+              />
+            </Link>
+          </div>
         </div>
-        <GridPattern
-          width={30}
-          height={30}
-          x={-1}
-          y={-1}
-          strokeDasharray={'4 2'}
-          className={cn(
-            '[mask-image:linear-gradient(to_bottom,white,transparent,transparent)] ',
-          )}
-        />
+      </section>
+      <section id='about' className='pt-40' aria-labelledby='about-heading'>
+        <div className='mx-auto max-w-5xl px-8 2xl:px-0'>
+          <div className='flex items-start gap-44' />
+          <div className='flex flex-col gap-8 text-xl font-normal text-foreground sm:text-[1.34rem]'>
+            <h2 id='about-heading' className='sr-only'>
+              About Bernardo Forcillo
+            </h2>
+            <p>
+              Hi, I&apos;m&nbsp;
+              <span
+                itemProp='name'
+                itemScope
+                itemType='https://schema.org/Person'
+              >
+                Bernardo Forcillo
+              </span>
+              , a polymath software builder and computer science student at
+              the&nbsp;
+              <span>University of Basilicata</span>. Based in south of Italy,
+              among the hills near Matera with a passion for technology and
+              innovation.
+            </p>
+            <p>
+              I help businesses, startups, and entrepreneurs build efficient,
+              maintainable, and scalable software. Whether it's designing robust
+              backend systems, creating seamless cross-platform experiences, or
+              integrating AI-driven automation, I bring a problem-solving
+              mindset and a passion for innovation to every project.
+            </p>
+            <nav aria-label='Social media links'>
+              <ul className='flex gap-2 py-2'>
+                <li>
+                  <a
+                    href='http://github.com/bernardoforcillo'
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label="Visit Bernardo Forcillo's GitHub profile"
+                    className='inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                  >
+                    <GithubIcon className='size-8' aria-hidden='true' />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='http://linkedin.com/in/bernardoforcillo'
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label="Visit Bernardo Forcillo's LinkedIn profile"
+                    className='inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                  >
+                    <LinkedinMark className='size-9' aria-hidden='true' />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </section>
     </>
   );
