@@ -11,6 +11,5 @@ export const Inter = localFont({
       style: 'italic',
     },
   ],
-
   variable: '--font-inter',
 });
