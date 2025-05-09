@@ -1,6 +1,6 @@
 import localFont from 'next/font/local';
 
-export const Inter = localFont({
+export const InterFont = localFont({
   src: [
     {
       path: './variable-regular.woff2',

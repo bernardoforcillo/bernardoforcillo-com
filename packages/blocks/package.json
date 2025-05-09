@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@monorepo/blocks",
+  "version": "0.0.0",
+  "scripts": {
+    "dev::tsup": "tsup --watch .",
+    "dev::tailwindcss": "tailwindcss -i ./src/style.css -o ./dist/output.css --watch",
+    "build::tsup": "tsup",
+    "build::tailwindcss": "tailwindcss -i ./src/style.css -o ./dist/output.css",
+    "dev": "concurrently --kill-others \"pnpm run dev::tsup\" \"pnpm run dev::tailwindcss\"",
+    "build": "pnpm run build::tsup && pnpm run build::tailwindcss"
+  },
+  "exports": {
+    "./style.css": "./dist/output.css",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "peerDependencies": {
+    "next": "^15.0.3"
+  },
+  "devDependencies": {
+    "@monorepo/tailwindcss": "workspace:*",
+    "@monorepo/tsconfig": "workspace:*",
+    "@swc/core": "^1.11.24",
+    "@swc/types": "^0.1.21",
+    "@tailwindcss/cli": "^4.1.6",
+    "@tailwindcss/postcss": "^4.1.6",
+    "esbuild": "^0.25.4",
+    "esbuild-plugin-preserve-directives": "^0.0.11",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.6",
+    "tsc-alias": "^1.8.16",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "glob": "^11.0.2",
+    "tailwind-merge": "^3.2.0"
+  }
+}

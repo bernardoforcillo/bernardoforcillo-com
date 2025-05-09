@@ -3,8 +3,9 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - deployment.yaml
-  - service.yaml
-  - certificate.yaml
-  - middlewares.yaml
-  - ingress.yaml
+  - commons.yaml
+  # Apis website files
+  - main/www/deployment.yaml
+  - main/www/service.yaml
+  - main/www/certificate.yaml
+  - main/www/ingress.yaml
