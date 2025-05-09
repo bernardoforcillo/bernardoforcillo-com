@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { FC, ReactNode } from 'react';
 import { InterFont } from '~/assets/fonts';
-import { Footer } from '~/components/organisms/footer';
 
 import '~/styles/global.css';
 
@@ -43,10 +42,7 @@ export const metadata: Metadata = {
 const RootLayout: FC<Props> = ({ children }) => {
   return (
     <html lang='en' className={`${InterFont.variable}`}>
-      <body>
-        {children}
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 };
