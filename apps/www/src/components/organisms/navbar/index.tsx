@@ -16,8 +16,8 @@ const mainNavLinks: NavLink[] = [
 export default function Navbar() {
   return (
     <>
-      <header className='sticky flex top-0 z-50'>
-        <div className='mx-auto m-8 rounded-lg w-fit px-3 bg-neutral-300/60 backdrop-blur-xl'>
+      <header className='fixed flex top-0 z-50 w-full'>
+        <div className='flex mx-auto mt-8 rounded-lg w-fit px-3 bg-neutral-300/60 backdrop-blur-xl'>
           <ol className='flex gap-4'>
             {mainNavLinks.map((el, indx) => (
               <>

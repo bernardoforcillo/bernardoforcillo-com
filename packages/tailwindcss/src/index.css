@@ -1,12 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-azure-radiance-50: oklch(0.97 0.02 228.96 / 1);
   --color-azure-radiance-100: oklch(0.94 0.03 236.97 / 1);
-  --color-azure-radiance-200: oklch(0.90 0.06 234.21 / 1);
-  --color-azure-radiance-300: oklch(0.84 0.10 231.50 / 1);
+  --color-azure-radiance-200: oklch(0.9 0.06 234.21 / 1);
+  --color-azure-radiance-300: oklch(0.84 0.1 231.5 / 1);
   --color-azure-radiance-400: oklch(0.77 0.14 237.67 / 1);
   --color-azure-radiance-500: oklch(0.69 0.17 248.71 / 1);
   --color-azure-radiance-600: oklch(0.61 0.21 256.93 / 1);
