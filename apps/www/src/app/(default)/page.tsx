@@ -161,29 +161,35 @@ export default function Page() {
               I'm Bernardo
             </h1>
 
+            <p className='text-2xl md:text-3xl text-gray-700'>
+              but I am usually called bern
+            </p>
+
             <p className='text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto'>
               I work with modern web technologies, and explore the world of
               software development, digital craftsmanship, and entrepreneurship.
             </p>
           </div>
 
-          <div className='flex flex-wrap items-center justify-center gap-4'>
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-6'>
             <Link
               href='/about'
-              className='inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors'
+              className='group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-xl hover:from-gray-800 hover:to-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1'
             >
-              Learn How
-              <ArrowRight size={16} />
+              <span className='font-medium'>Discover My Journey</span>
+              <ArrowRight
+                size={18}
+                className='group-hover:translate-x-1 transition-transform duration-300'
+              />
             </Link>
             <Link
-              href='/about'
-              className='inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors'
+              href='/projects'
+              className='group inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1'
             >
-              More about me
+              <span className='font-medium'>View My Work</span>
               <ArrowRight
-                className='ml-2 inline-block transform rotate-90 animate-bounce'
-                size={16}
-                aria-hidden='true'
+                size={18}
+                className='group-hover:translate-x-1 transition-transform duration-300'
               />
             </Link>
           </div>
@@ -215,38 +221,6 @@ export default function Page() {
                 </li>
               </ul>
             </nav>
-          </div>
-        </div>
-      </section>
-      <section id='about' className='pt-40' aria-labelledby='about-heading'>
-        <div className='mx-auto max-w-5xl px-8 2xl:px-0'>
-          <div className='flex items-start gap-44' />
-          <div className='flex flex-col gap-8 text-xl font-normal text-foreground sm:text-[1.34rem]'>
-            <h2 id='about-heading' className='sr-only'>
-              About Bernardo Forcillo
-            </h2>
-            <p>
-              Hi, I&apos;m&nbsp;
-              <span
-                itemProp='name'
-                itemScope
-                itemType='https://schema.org/Person'
-              >
-                Bernardo Forcillo
-              </span>
-              , a polymath software builder and computer science student at
-              the&nbsp;
-              <span>University of Basilicata</span>. Based in south of Italy,
-              among the hills near Matera with a passion for technology and
-              innovation.
-            </p>
-            <p>
-              I help businesses, startups, and entrepreneurs build efficient,
-              maintainable, and scalable software. Whether it's designing robust
-              backend systems, creating seamless cross-platform experiences, or
-              integrating AI-driven automation, I bring a problem-solving
-              mindset and a passion for innovation to every project.
-            </p>
           </div>
         </div>
       </section>
