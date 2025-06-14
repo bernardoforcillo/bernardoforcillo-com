@@ -104,7 +104,7 @@ const schema = {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Bernardo Forcillo - Software builder, Digital Artisan and Indie Entrepreneur',
+      name: 'Bernardo Forcillo - A Polymath Software Builder',
       description:
         'Building technologies for innovators, professionals and enthusiasts.',
       url: 'https://bernardoforcillo.com/',
@@ -141,47 +141,43 @@ export default function Page() {
       <script id='schema' type='application/ld+json'>
         {JSON.stringify(schema)}
       </script>
-      <section
-        className='h-screen overflow-hidden p-3 relative'
-        aria-labelledby='hero-heading'
-      >
-        <div className='relative h-full w-full rounded-xl'>
-          <div className='mx-auto h-full max-w-5xl px-8 2xl:px-0'>
-            <div className='flex h-full items-center px-2 md:px-0'>
-              <div className='flex flex-col gap-20'>
-                <div className='text-4xl md:text-5xl xl:text-[3.6rem]'>
-                  <div className='max-w-5xl space-y-4 text-balance'>
-                    <h1
-                      id='hero-heading'
-                      className='whitespace-pre-wrap font-semibold leading-tight'
-                    >
-                      Analyse, develop and launch&nbsp;
-                      <span className='text-azure-radiance-600'>
-                        digital products
-                      </span>
-                    </h1>
-                  </div>
-                </div>
+      <script id='schema' type='application/ld+json'>
+        {JSON.stringify(schema)}
+      </script>
 
-                <div className='flex items-center gap-4 text-2xl'>
-                  <ArrowRight aria-hidden='true' />
-                  <span className='hidden md:block'>Want to reach out?</span>
-                  <a
-                    href='mailto:me@bernardoforcillo.com'
-                    className='focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
-                  >
-                    Get in touch!
-                  </a>
-                </div>
-              </div>
+      {/* Hero Section */}
+      <section className='min-h-screen flex items-center justify-center px-4 py-20'>
+        <div className='max-w-4xl mx-auto text-center space-y-12'>
+          <div className='space-y-8'>
+            <div className='inline-flex items-center gap-2 text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full'>
+              <span className='w-2 h-2 bg-green-500 rounded-full animate-pulse' />
+              Currently building at{' '}
+              <span className='font-medium'>
+                <a href='https://ganiga.ai'>Ganiga Innovation</a>
+              </span>
             </div>
+
+            <h1 className='text-5xl md:text-7xl font-bold text-gray-900'>
+              I'm Bernardo
+            </h1>
+
+            <p className='text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto'>
+              I work with modern web technologies, and explore the world of
+              software development, digital craftsmanship, and entrepreneurship.
+            </p>
           </div>
 
-          <div className='absolute bottom-8 left-0 right-0 flex justify-center'>
+          <div className='flex flex-wrap items-center justify-center gap-4'>
             <Link
-              href='#about'
-              className='px-3 py-2 text-sm font-medium text-center text-white bg-azure-radiance-600 rounded-lg hover:bg-azure-radiance-700 focus:ring-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-azure-radiance-300 transition-all duration-300'
-              aria-label='Learn more about Bernardo Forcillo'
+              href='/about'
+              className='inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors'
+            >
+              Learn How
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              href='/about'
+              className='inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors'
             >
               More about me
               <ArrowRight
@@ -190,6 +186,35 @@ export default function Page() {
                 aria-hidden='true'
               />
             </Link>
+          </div>
+
+          <div className='flex items-center justify-center gap-4 pt-8'>
+            <nav aria-label='Social media links'>
+              <ul className='flex gap-2 py-2'>
+                <li>
+                  <a
+                    href='http://github.com/bernardoforcillo'
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label="Visit Bernardo Forcillo's GitHub profile"
+                    className='inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                  >
+                    <GithubIcon className='size-8' aria-hidden='true' />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='http://linkedin.com/in/bernardoforcillo'
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label="Visit Bernardo Forcillo's LinkedIn profile"
+                    className='inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                  >
+                    <LinkedinMark className='size-9' aria-hidden='true' />
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </section>
@@ -222,32 +247,6 @@ export default function Page() {
               integrating AI-driven automation, I bring a problem-solving
               mindset and a passion for innovation to every project.
             </p>
-            <nav aria-label='Social media links'>
-              <ul className='flex gap-2 py-2'>
-                <li>
-                  <a
-                    href='http://github.com/bernardoforcillo'
-                    target='_blank'
-                    rel='noreferrer'
-                    aria-label="Visit Bernardo Forcillo's GitHub profile"
-                    className='inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
-                  >
-                    <GithubIcon className='size-8' aria-hidden='true' />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='http://linkedin.com/in/bernardoforcillo'
-                    target='_blank'
-                    rel='noreferrer'
-                    aria-label="Visit Bernardo Forcillo's LinkedIn profile"
-                    className='inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
-                  >
-                    <LinkedinMark className='size-9' aria-hidden='true' />
-                  </a>
-                </li>
-              </ul>
-            </nav>
           </div>
         </div>
       </section>
