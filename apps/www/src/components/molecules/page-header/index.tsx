@@ -13,17 +13,13 @@ const PageHeader: FC<Props> = (props) => {
       <div className='isolate before:transition-opacity size-11 rounded-xl flex items-center justify-center relative bg-white/5 backdrop-blur-sm border'>
         {props.pageIcon}
       </div>
-      <h1 className='font-bold leading-1 text-6xl mt-5 sm:mt-4 h2 sm:h1'>
+      <h1 className='font-bold leading-tight text-4xl md:text-6xl mt-3 sm:mt-2'>
         {props.pageTitle}
       </h1>
-      <p data-fade='3' className='b1 sm:mt-1 mt-3'>
+      <p className='text-lg text-gray-600 sm:mt-0 mt-2 max-w-2xl'>
         {props.description}
       </p>
-      {props.children && (
-        <div data-fade='3' className='mt-7 w-full'>
-          {props.children}
-        </div>
-      )}
+      {props.children && <div className='mt-4 w-full'>{props.children}</div>}
     </div>
   );
 };
