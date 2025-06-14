@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { FC, ReactNode } from 'react';
-import { Inter } from '~/assets/fonts/inter';
-import { Footer } from '~/components/organisms/footer';
+import { InterFont } from '~/assets/fonts';
 
 import '~/styles/global.css';
 
@@ -18,8 +17,7 @@ export const metadata: Metadata = {
   title: {
     template: ' %s - Bernardo Forcillo',
     default: 'Bernardo Forcillo',
-    absolute:
-      'Bernardo Forcillo - Software builder, Digital Artisan and Indie Entrepreneur',
+    absolute: 'Bernardo Forcillo - A Polymath Software Builder',
   },
   description:
     'Building technologies for innovators, professionals and enthusiasts.',
@@ -42,11 +40,8 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<Props> = ({ children }) => {
   return (
-    <html lang='en' className={`${Inter.variable}`}>
-      <body>
-        {children}
-        <Footer />
-      </body>
+    <html lang='en' className={`${InterFont.variable}`}>
+      <body>{children}</body>
     </html>
   );
 };

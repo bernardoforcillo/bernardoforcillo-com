@@ -1,29 +1,29 @@
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: redirect-to-non-www
-  namespace: bernardoforcillo-com
+  namespace: easyreport
 spec:
   redirectRegex:
     regex: "^https://www\\.(.*)"
-    replacement: 'https://$1'
+    replacement: "https://$1"
     permanent: true
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: redirect-http-to-https
-  namespace: bernardoforcillo-com
+  namespace: easyreport
 spec:
   redirectScheme:
     scheme: https
     permanent: true
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: TLSOption
 metadata:
   name: tlsoptions
-  namespace: bernardoforcillo-com
+  namespace: easyreport
 spec:
   minVersion: VersionTLS12
   cipherSuites:
@@ -43,11 +43,11 @@ spec:
     - CurveP384
   sniStrict: false
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
   name: security
-  namespace: bernardoforcillo-com
+  namespace: easyreport
 spec:
   headers:
     frameDeny: true
@@ -57,3 +57,14 @@ spec:
     stsIncludeSubdomains: true
     stsPreload: true
     stsSeconds: 31536000
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-to-new
+  namespace: easyreport
+spec:
+  redirectRegex:
+    regex: "^https?://(www\\.)?app\\.report\\.easywhey\\.pro/(.*)"
+    replacement: "https://report.easywhey.pro/$2"
+    permanent: true

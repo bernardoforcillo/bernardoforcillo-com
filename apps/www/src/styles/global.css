@@ -1,2 +1,13 @@
 @import "tailwindcss";
-@config "@monorepo/tailwindcss";
+
+@import "@monorepo/tailwindcss/style.css";
+
+@theme {
+  --font-sans: var(--font-inter);
+}
+
+@layer components {
+  .page-layout {
+    @apply w-11/12 max-w-6xl mx-auto;
+  }
+}

@@ -4,16 +4,11 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "type": "module",
   "exports": {
-    ".": "./tailwind.config.ts"
+    "./style.css": "./src/index.css"
   },
   "devDependencies": {
-    "@monorepo/tsconfig": "workspace:*",
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
-    "tailwindcss": "^4.0.12"
+    "tailwindcss": "^4.1.10"
   }
 }
