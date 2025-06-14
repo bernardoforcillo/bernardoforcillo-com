@@ -1,72 +1,54 @@
 'use client';
 
+import type { HTMLAttributes, ReactNode } from 'react';
 import {
-  type HTMLAttributes,
-  type ReactNode,
-  createContext,
-  useContext,
-  useState,
-} from 'react';
-
-export type AccorditionContextType = {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-};
-
-export const useAccordition = (): [boolean, (open: boolean) => void] => {
-  const context = useContext(AccorditionContext);
-  if (!context) {
-    throw new Error('useAccordition must be used within a Accordition');
-  }
-  return [context.open, context.setOpen];
-};
-
-const AccorditionContext = createContext<AccorditionContextType>(
-  {} as AccorditionContextType,
-);
+  Button,
+  type ButtonProps,
+  Disclosure,
+  DisclosurePanel,
+  type DisclosureProps,
+} from 'react-aria-components';
 
 type AccorditionProps = {
   children: ReactNode;
-} & HTMLAttributes<HTMLDivElement>;
+  defaultExpanded?: boolean;
+} & Omit<DisclosureProps, 'children'> &
+  HTMLAttributes<HTMLDivElement>;
 
-export const Accordition = ({ children, ...props }: AccorditionProps) => {
-  const [open, setOpen] = useState(false);
+export const Accordition = ({
+  children,
+  defaultExpanded = false,
+  className,
+  ...props
+}: AccorditionProps) => {
   return (
-    <AccorditionContext.Provider value={{ open, setOpen }}>
-      <div {...props}>{children}</div>
-    </AccorditionContext.Provider>
+    <Disclosure defaultExpanded={defaultExpanded} {...props}>
+      <div className={className}>{children}</div>
+    </Disclosure>
   );
 };
-
 type AccorditionTriggerProps = {
   children: ReactNode;
-} & HTMLAttributes<HTMLButtonElement>;
+} & Omit<ButtonProps, 'children'>;
 
 export const AccorditionTrigger = ({
   children,
   ...props
 }: AccorditionTriggerProps) => {
-  const { open, setOpen } = useContext(AccorditionContext);
   return (
-    <button onClick={() => setOpen(!open)} {...props}>
+    <Button slot='trigger' {...props}>
       {children}
-    </button>
+    </Button>
   );
 };
 
 type AccorditionPanelProps = {
   children: ReactNode;
-} & HTMLAttributes<HTMLDivElement>;
+} & Omit<HTMLAttributes<HTMLDivElement>, 'role'>;
 
 export const AccorditionPanel = ({
   children,
-  className,
   ...props
 }: AccorditionPanelProps) => {
-  const { open } = useContext(AccorditionContext);
-  return open ? (
-    <div className={className} {...props}>
-      {children}
-    </div>
-  ) : null;
+  return <DisclosurePanel {...props}>{children}</DisclosurePanel>;
 };
