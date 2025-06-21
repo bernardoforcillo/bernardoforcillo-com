@@ -14,6 +14,8 @@ spec:
         - name: personal-website-svc
           port: 30001
       middlewares:
+        - name: rate-limit
+          namespace: bernardoforcillo-com
         - name: security
           namespace: bernardoforcillo-com
         - name: redirect-http-to-https
