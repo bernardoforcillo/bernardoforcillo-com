@@ -14,6 +14,7 @@ const schema = {
       givenName: 'Bernardo',
       familyName: 'Forcillo',
       url: 'https://bernardoforcillo.com/',
+      jobTitle: 'Software Engineer',
       birthDate: '2000-04-13T10:30:00.000+02:00',
       birthPlace: {
         '@context': 'https://schema.org',
@@ -48,6 +49,12 @@ const schema = {
         '@id': 'https://syskrack.org/#organization',
         name: 'A.P.S. Syskrack Giuseppe Porsia',
         url: 'https://syskrack.org',
+      },
+      worksFor: {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Ganiga Innovation',
+        url: 'https://ganiga.ai',
       },
       sameAs: [
         'https://g.co/kgs/vQk8YD',
@@ -104,9 +111,9 @@ const schema = {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Bernardo Forcillo - A Polymath Software Builder',
+      name: 'Bernardo Forcillo - Software Engineer & Polymath Builder',
       description:
-        'Building technologies for innovators, professionals and enthusiasts.',
+        'Software Engineer building technologies for innovators, professionals and enthusiasts.',
       url: 'https://bernardoforcillo.com/',
       inLanguage: 'en',
       isPartOf: {
@@ -141,20 +148,29 @@ export default function Page() {
       <script id='schema' type='application/ld+json'>
         {JSON.stringify(schema)}
       </script>
-      <script id='schema' type='application/ld+json'>
-        {JSON.stringify(schema)}
-      </script>
-
       {/* Hero Section */}
       <section className='min-h-screen flex items-center justify-center px-4 py-20'>
         <div className='max-w-4xl mx-auto text-center space-y-12'>
           <div className='space-y-8'>
-            <div className='inline-flex items-center gap-2 text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full'>
-              <span className='w-2 h-2 bg-green-500 rounded-full animate-pulse' />
-              Currently building at{' '}
-              <span className='font-medium'>
-                <a href='https://ganiga.ai'>Ganiga Innovation</a>
-              </span>
+            <div className='inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200/50 px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5'>
+              <div className='flex items-center gap-2'>
+                <div className='relative'>
+                  <div className='w-2 h-2 bg-green-500 rounded-full animate-pulse' />
+                  <div className='absolute -top-0.5 -left-0.5 w-3 h-3 bg-green-400/40 rounded-full animate-ping' />
+                </div>
+                <span className='text-sm text-gray-600'>
+                  Currently building at
+                </span>
+              </div>
+              <a
+                href='https://ganiga.ai'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group flex items-center gap-1 text-sm font-semibold text-gray-900 hover:text-green-600 transition-all duration-300'
+              >
+                <span className='relative'>Ganiga Innovation</span>
+                <ArrowRight className='opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 size-3' />
+              </a>
             </div>
 
             <h1 className='text-5xl md:text-7xl font-bold text-gray-900'>

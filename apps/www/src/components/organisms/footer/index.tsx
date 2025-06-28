@@ -2,19 +2,13 @@ import type { FC } from 'react';
 
 export const Footer: FC = () => {
   return (
-    <div className='mt-64 flex w-full py-10'>
-      <div className='mx-auto h-full w-full max-w-5xl px-8 2xl:px-0'>
-        <div className='flex flex-col gap-20'>
-          <div className='flex flex-col justify-between gap-y-8 text-center md:flex-row md:text-left'>
-            <span className='text-grey text-sm md:text-base'>
-              &copy; {new Date().getFullYear()} Bernardo Forcillo
-            </span>
-            <span className='text-grey text-sm md:text-base'>
-              Proudly built in Europe by humans
-            </span>
-          </div>
+    <footer className='border-t border-gray-200 py-8'>
+      <div className='mx-auto max-w-5xl px-8 2xl:px-0'>
+        <div className='flex flex-col items-center justify-between gap-4 text-sm text-gray-600 md:flex-row'>
+          <span>&copy; {new Date().getFullYear()} Bernardo Forcillo</span>
+          <span>Built with care in Europe</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };

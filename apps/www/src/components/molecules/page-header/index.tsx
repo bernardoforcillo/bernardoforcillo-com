@@ -1,26 +1,55 @@
 import type { FC, HTMLProps, ReactNode } from 'react';
 
+/**
+ * PageHeader - Minimalist title redesign: clean, bold, no underline/accent, neutral color.
+ */
 type Props = {
-  pageIcon: ReactNode;
-  pageTitle: ReactNode;
-  description: ReactNode;
+  icon?: ReactNode;
+  title?: ReactNode;
+  description?: ReactNode;
+  actions?: ReactNode;
   children?: ReactNode;
+  className?: string;
 } & HTMLProps<HTMLDivElement>;
 
-const PageHeader: FC<Props> = (props) => {
+const PageHeader: FC<Props> = ({
+  icon,
+  title,
+  description,
+  actions,
+  children,
+  className = '',
+  ...rest
+}) => {
   return (
-    <div className='page-layout text-center pb-12 pt-28 md:pb-20 md:pt-36 flex flex-col space-y-4 items-center justify-center'>
-      <div className='isolate before:transition-opacity size-11 rounded-xl flex items-center justify-center relative bg-white/5 backdrop-blur-sm border'>
-        {props.pageIcon}
+    <section
+      className={`w-full flex flex-col items-center justify-center px-4 pt-16 pb-10 md:pt-28 md:pb-16 ${className}`.trim()}
+      {...rest}
+    >
+      <div className='w-full max-w-5xl mx-auto rounded-2xl px-8 py-10 bg-white/80 backdrop-blur-xl border border-neutral-200/50 shadow-lg shadow-black/5 flex flex-col items-center'>
+        {icon && (
+          <div className='mb-4 flex items-center justify-center text-neutral-700 text-4xl'>
+            {icon}
+          </div>
+        )}
+        {title && (
+          <h1 className='text-3xl md:text-5xl font-extrabold text-center text-neutral-900 mb-4 tracking-tight'>
+            {title}
+          </h1>
+        )}
+        {description && (
+          <p className='text-base md:text-lg text-center text-neutral-700/80 mb-4 max-w-2xl'>
+            {description}
+          </p>
+        )}
+        {actions && (
+          <div className='flex flex-wrap gap-2 justify-center mb-4'>
+            {actions}
+          </div>
+        )}
+        {children && <div className='w-full mt-2'>{children}</div>}
       </div>
-      <h1 className='font-bold leading-tight text-4xl md:text-6xl mt-3 sm:mt-2'>
-        {props.pageTitle}
-      </h1>
-      <p className='text-lg text-gray-600 sm:mt-0 mt-2 max-w-2xl'>
-        {props.description}
-      </p>
-      {props.children && <div className='mt-4 w-full'>{props.children}</div>}
-    </div>
+    </section>
   );
 };
 
