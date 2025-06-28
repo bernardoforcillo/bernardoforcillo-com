@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: {
     template: ' %s - Bernardo Forcillo',
     default: 'Bernardo Forcillo',
-    absolute: 'Bernardo Forcillo - A Polymath Software Builder',
+    absolute: 'Bernardo Forcillo - A Polymath Product Builder',
   },
   description:
     'Building technologies for innovators, professionals and enthusiasts.',

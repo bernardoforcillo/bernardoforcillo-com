@@ -23,9 +23,9 @@ const Page: FC = () => {
   return (
     <div className='relative'>
       <PageHeader
-        pageIcon={<UserCircle2 className='size-7' />}
-        pageTitle={<>About</>}
-        description={<>About Bernardo</>}
+        icon={<UserCircle2 className='size-7' />}
+        title='About'
+        description='About Bernardo'
       />
     </div>
   );

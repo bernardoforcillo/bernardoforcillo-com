@@ -26,11 +26,9 @@ const Page: FC = () => {
   return (
     <div className='relative'>
       <PageHeader
-        pageIcon={<BookOpen className='size-7' />}
-        pageTitle={<>Blog</>}
-        description={
-          <>Thoughts, ideas, and insights about technology and development</>
-        }
+        icon={<BookOpen className='size-7' />}
+        title='Blog'
+        description='Thoughts, ideas, and insights about technology and development.'
       />
     </div>
   );

@@ -23,9 +23,9 @@ const Page: FC = () => {
   return (
     <div className='relative'>
       <PageHeader
-        pageIcon={<StickyNote className='size-7' />}
-        pageTitle={<>Notes</>}
-        description={<>Quick thoughts, snippets, and personal observations</>}
+        icon={<StickyNote className='size-7' />}
+        title='Notes'
+        description='Quick thoughts, snippets, and personal observations'
       />
     </div>
   );
