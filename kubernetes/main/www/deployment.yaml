@@ -15,9 +15,22 @@ spec:
         app: bernardoforcillo-com
         tier: personal-website
     spec:
+      securityContext:
+        runAsUser: 1001
+        runAsGroup: 1001
+        runAsNonRoot: true
+        fsGroup: 1001
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: bernardoforcillo-com
           image: bernardoforcillo/bernardoforcillo-com:main
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
           resources:
             limits:
               memory: '128Mi'
@@ -32,3 +45,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}
