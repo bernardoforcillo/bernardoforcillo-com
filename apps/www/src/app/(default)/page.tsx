@@ -148,98 +148,101 @@ export default function Page() {
       <script id='schema' type='application/ld+json'>
         {JSON.stringify(schema)}
       </script>
-      {/* Hero Section */}
-      <section className='min-h-screen flex items-center justify-center px-4 py-20'>
-        <div className='max-w-4xl mx-auto text-center space-y-12'>
-          <div className='space-y-8'>
-            <div className='inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200/50 px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5'>
-              <div className='flex items-center gap-2'>
-                <div className='relative'>
-                  <div className='w-2 h-2 bg-green-500 rounded-full animate-pulse' />
-                  <div className='absolute -top-0.5 -left-0.5 w-3 h-3 bg-green-400/40 rounded-full animate-ping' />
-                </div>
-                <span className='text-sm text-gray-600'>
-                  Currently building at
-                </span>
-              </div>
-              <a
-                href='https://ganiga.ai'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='group flex items-center gap-1 text-sm font-semibold text-gray-900 hover:text-green-600 transition-all duration-300'
-              >
-                <span className='relative'>Ganiga Innovation</span>
-                <ArrowRight className='opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 size-3' />
-              </a>
-            </div>
 
-            <h1 className='text-5xl md:text-7xl font-bold text-gray-900'>
-              I'm Bernardo
-            </h1>
+      <main className='min-h-screen px-6 pb-12 pt-32 md:px-12 md:pb-12 md:pt-40 lg:px-24 lg:pt-48 max-w-7xl mx-auto space-y-16'>
+        {/* Header Section */}
+        <header className='space-y-6'>
+          <h1 className='text-6xl md:text-8xl font-bold tracking-tighter text-black'>
+            Bernardo Forcillo.
+          </h1>
 
-            <p className='text-2xl md:text-3xl text-gray-700'>
-              but I am usually called bern
-            </p>
+          <div className='font-mono text-lg md:text-xl text-gray-600 border-l-2 border-gray-200 pl-4 py-1'>
+            &gt; Software Engineer & Polymath.
+            <br />
+            &gt; Building scalable systems at{' '}
+            <a
+              href='https://ganiga.ai'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline hover:text-black transition-colors'
+            >
+              Ganiga Innovation
+            </a>
+            .
+          </div>
+        </header>
 
-            <p className='text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto'>
-              I work with modern web technologies, and explore the world of
-              software development, digital craftsmanship, and entrepreneurship.
+        {/* Grid Layout */}
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+          {/* Main Bio Card */}
+          <div className='md:col-span-2 p-8 border border-gray-200 bg-white hover:border-black transition-colors duration-300'>
+            <h2 className='font-mono text-sm text-gray-500 mb-4'>README.md</h2>
+            <p className='text-xl md:text-2xl leading-relaxed font-medium'>
+              I am a software engineer obsessed with craftsmanship. I build
+              tools for functionality, precision, and speed. Currently focused
+              on distributed systems and AI infrastructure.
             </p>
           </div>
 
-          <div className='flex flex-col sm:flex-row items-center justify-center gap-6'>
-            <Link
-              href='/about'
-              className='group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-xl hover:from-gray-800 hover:to-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1'
-            >
-              <span className='font-medium'>Discover My Journey</span>
-              <ArrowRight
-                size={18}
-                className='group-hover:translate-x-1 transition-transform duration-300'
-              />
-            </Link>
-            <Link
-              href='/projects'
-              className='group inline-flex items-center gap-3 px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1'
-            >
-              <span className='font-medium'>View My Work</span>
-              <ArrowRight
-                size={18}
-                className='group-hover:translate-x-1 transition-transform duration-300'
-              />
-            </Link>
-          </div>
-
-          <div className='flex items-center justify-center gap-4 pt-8'>
-            <nav aria-label='Social media links'>
-              <ul className='flex gap-2 py-2'>
+          {/* Connect Card */}
+          <div className='p-8 border border-gray-200 bg-white hover:border-black transition-colors duration-300 flex flex-col justify-between'>
+            <div>
+              <h2 className='font-mono text-sm text-gray-500 mb-4'>CONNECT</h2>
+              <ul className='space-y-2'>
                 <li>
                   <a
-                    href='http://github.com/bernardoforcillo'
-                    target='_blank'
-                    rel='noreferrer'
-                    aria-label="Visit Bernardo Forcillo's GitHub profile"
-                    className='inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                    href='https://github.com/bernardoforcillo'
+                    className='flex items-center gap-2 hover:underline decoration-1 underline-offset-4'
                   >
-                    <GithubIcon className='size-8' aria-hidden='true' />
+                    <GithubIcon className='w-5 h-5' />
+                    <span>GitHub</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href='http://linkedin.com/in/bernardoforcillo'
-                    target='_blank'
-                    rel='noreferrer'
-                    aria-label="Visit Bernardo Forcillo's LinkedIn profile"
-                    className='inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-600'
+                    href='https://linkedin.com/in/bernardoforcillo'
+                    className='flex items-center gap-2 hover:underline decoration-1 underline-offset-4'
                   >
-                    <LinkedinMark className='size-9' aria-hidden='true' />
+                    <LinkedinMark className='w-5 h-5' />
+                    <span>LinkedIn</span>
                   </a>
                 </li>
               </ul>
-            </nav>
+            </div>
+            <div className='mt-8 font-mono text-xs text-gray-400'>
+              EST. 2000
+            </div>
           </div>
+
+          {/* Projects Link */}
+          <Link
+            href='/projects'
+            className='group p-8 border border-gray-200 bg-white hover:bg-black hover:text-white transition-all duration-300 flex flex-col justify-between aspect-square md:aspect-auto'
+          >
+            <h2 className='font-mono text-sm text-gray-500 group-hover:text-gray-400 mb-4'>
+              WORK
+            </h2>
+            <div className='flex items-center justify-between'>
+              <span className='text-2xl font-bold'>Projects</span>
+              <ArrowRight className='w-6 h-6 transform group-hover:-rotate-45 transition-transform duration-300' />
+            </div>
+          </Link>
+
+          {/* About Link */}
+          <Link
+            href='/about'
+            className='group md:col-span-2 p-8 border border-gray-200 bg-white hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-between'
+          >
+            <div className='space-y-1'>
+              <h2 className='font-mono text-sm text-gray-500 group-hover:text-gray-400'>
+                PROFILE
+              </h2>
+              <span className='text-2xl font-bold'>About Me & Journey</span>
+            </div>
+            <ArrowRight className='w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300' />
+          </Link>
         </div>
-      </section>
+      </main>
     </>
   );
 }
