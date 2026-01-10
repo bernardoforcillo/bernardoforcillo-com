@@ -7,19 +7,24 @@
 
 @layer base {
   body {
-    /* Stark white background, black text. Can easily invert for dark mode later */
-    @apply bg-white text-black antialiased;
-    /* Dot pattern background handled in layout or here */
+    @apply bg-white text-black antialiased selection:bg-black selection:text-white;
+  }
+
+  /* Custom Scrollbar for a technical feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 hover:bg-black transition-colors rounded-none;
   }
 }
 
-@layer components {
-  .page-layout {
-    @apply w-11/12 max-w-6xl mx-auto;
-  }
-
-  /* Utility for the technical border look */
-  .tech-border {
-    @apply border border-gray-200;
-  }
+@utility tech-border {
+  @apply border border-gray-200;
 }

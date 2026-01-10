@@ -2,6 +2,8 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import GithubIcon from '~/assets/icons/github-mark';
 import LinkedinMark from '~/assets/icons/linkedin-mark';
+import { BentoGridSection } from '~/components/organisms/home/bento-grid-section';
+import { HeroSection } from '~/components/organisms/home/hero-section';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -149,99 +151,9 @@ export default function Page() {
         {JSON.stringify(schema)}
       </script>
 
-      <main className='min-h-screen px-6 pb-12 pt-32 md:px-12 md:pb-12 md:pt-40 lg:px-24 lg:pt-48 max-w-7xl mx-auto space-y-16'>
-        {/* Header Section */}
-        <header className='space-y-6'>
-          <h1 className='text-6xl md:text-8xl font-bold tracking-tighter text-black'>
-            Bernardo Forcillo.
-          </h1>
-
-          <div className='font-mono text-lg md:text-xl text-gray-600 border-l-2 border-gray-200 pl-4 py-1'>
-            &gt; Software Engineer & Polymath.
-            <br />
-            &gt; Building scalable systems at{' '}
-            <a
-              href='https://ganiga.ai'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='underline hover:text-black transition-colors'
-            >
-              Ganiga Innovation
-            </a>
-            .
-          </div>
-        </header>
-
-        {/* Grid Layout */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-          {/* Main Bio Card */}
-          <div className='md:col-span-2 p-8 border border-gray-200 bg-white hover:border-black transition-colors duration-300'>
-            <h2 className='font-mono text-sm text-gray-500 mb-4'>README.md</h2>
-            <p className='text-xl md:text-2xl leading-relaxed font-medium'>
-              I am a software engineer obsessed with craftsmanship. I build
-              tools for functionality, precision, and speed. Currently focused
-              on distributed systems and AI infrastructure.
-            </p>
-          </div>
-
-          {/* Connect Card */}
-          <div className='p-8 border border-gray-200 bg-white hover:border-black transition-colors duration-300 flex flex-col justify-between'>
-            <div>
-              <h2 className='font-mono text-sm text-gray-500 mb-4'>CONNECT</h2>
-              <ul className='space-y-2'>
-                <li>
-                  <a
-                    href='https://github.com/bernardoforcillo'
-                    className='flex items-center gap-2 hover:underline decoration-1 underline-offset-4'
-                  >
-                    <GithubIcon className='w-5 h-5' />
-                    <span>GitHub</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://linkedin.com/in/bernardoforcillo'
-                    className='flex items-center gap-2 hover:underline decoration-1 underline-offset-4'
-                  >
-                    <LinkedinMark className='w-5 h-5' />
-                    <span>LinkedIn</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className='mt-8 font-mono text-xs text-gray-400'>
-              EST. 2000
-            </div>
-          </div>
-
-          {/* Projects Link */}
-          <Link
-            href='/projects'
-            className='group p-8 border border-gray-200 bg-white hover:bg-black hover:text-white transition-all duration-300 flex flex-col justify-between aspect-square md:aspect-auto'
-          >
-            <h2 className='font-mono text-sm text-gray-500 group-hover:text-gray-400 mb-4'>
-              WORK
-            </h2>
-            <div className='flex items-center justify-between'>
-              <span className='text-2xl font-bold'>Projects</span>
-              <ArrowRight className='w-6 h-6 transform group-hover:-rotate-45 transition-transform duration-300' />
-            </div>
-          </Link>
-
-          {/* About Link */}
-          <Link
-            href='/about'
-            className='group md:col-span-2 p-8 border border-gray-200 bg-white hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-between'
-          >
-            <div className='space-y-1'>
-              <h2 className='font-mono text-sm text-gray-500 group-hover:text-gray-400'>
-                PROFILE
-              </h2>
-              <span className='text-2xl font-bold'>About Me & Journey</span>
-            </div>
-            <ArrowRight className='w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300' />
-          </Link>
-        </div>
+      <main className='min-h-screen max-w-[1400px] mx-auto px-4 md:px-8 py-24 md:py-32 flex flex-col gap-12'>
+        <HeroSection />
+        <BentoGridSection />
       </main>
     </>
   );
