@@ -86,7 +86,6 @@ export default function Navbar() {
                     return (
                       <MenuItem
                         key={`mobile-link-${indx * 10}`}
-                        href={el.href}
                         className='outline-none'
                       >
                         <Link
