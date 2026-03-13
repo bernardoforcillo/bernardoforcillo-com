@@ -4,6 +4,9 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - commons.yaml
+  # Network policies
+  - policies/traefik-cnp.yaml
+  - policies/webapp-cnp.yaml
   # Apis website files
   - main/www/deployment.yaml
   - main/www/service.yaml
