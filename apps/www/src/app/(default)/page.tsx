@@ -1,9 +1,6 @@
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import GithubIcon from '~/assets/icons/github-mark';
-import LinkedinMark from '~/assets/icons/linkedin-mark';
 import { BentoGridSection } from '~/components/organisms/home/bento-grid-section';
 import { HeroSection } from '~/components/organisms/home/hero-section';
+import { StatsBar } from '~/components/organisms/home/stats-bar';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -34,13 +31,13 @@ const schema = {
         {
           '@context': 'https://schema.org',
           '@type': 'Place',
-          name: 'Bernalda',
+          name: 'Pisa',
           address: {
             '@context': 'https://schema.org',
             '@type': 'PostalAddress',
-            addressLocality: 'Bernalda',
-            postalCode: '75012',
-            addressRegion: 'MT',
+            addressLocality: 'Pisa',
+            postalCode: '56121',
+            addressRegion: 'PI',
             addressCountry: 'IT',
           },
         },
@@ -153,6 +150,7 @@ export default function Page() {
 
       <main className='min-h-screen max-w-[1400px] mx-auto px-4 md:px-8 py-24 md:py-32 flex flex-col gap-12'>
         <HeroSection />
+        <StatsBar />
         <BentoGridSection />
       </main>
     </>

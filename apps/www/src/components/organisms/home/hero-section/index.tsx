@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 
@@ -50,7 +51,9 @@ export const HeroSection = () => {
         className='flex flex-col gap-4 max-w-md'
       >
         <p className='font-mono text-sm md:text-base text-gray-500 leading-relaxed'>
-          {'// Software Engineer & Polymath'}
+          <span className='text-gray-300'>
+            {'// Software Engineer & Polymath'}
+          </span>
           <br />
           Specializing in distributed systems, high-performance scalable digital
           products, and AI infrastructure. Currently building at{' '}
@@ -68,20 +71,29 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className='pt-4'
+          className='pt-6 space-y-6'
         >
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className='pt-6'
-          >
+          <blockquote className='border-l-2 border-black pl-4'>
             <span className='font-serif italic text-2xl md:text-3xl text-black/80 block leading-tight'>
               Be Relentless. <br className='hidden md:inline' />
               Act Different. <br className='hidden md:inline' />
               Ship Fast.
             </span>
-          </motion.div>
+          </blockquote>
+          <div className='flex flex-wrap gap-3 pt-2'>
+            <Link
+              href='/projects'
+              className='inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-gray-800 transition-colors'
+            >
+              View Projects <ArrowRight size={14} />
+            </Link>
+            <Link
+              href='/blog'
+              className='inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-black text-xs font-mono uppercase tracking-wider hover:border-black transition-colors'
+            >
+              Read Blog <ArrowRight size={14} />
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
     </motion.header>

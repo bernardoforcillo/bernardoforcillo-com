@@ -9,6 +9,6 @@
     "./style.css": "./src/index.css"
   },
   "devDependencies": {
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.2"
   }
 }

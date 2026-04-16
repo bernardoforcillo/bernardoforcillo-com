@@ -10,13 +10,15 @@ export const BentoGridSection = () => {
   return (
     <motion.div
       initial='hidden'
-      animate='show'
+      whileInView='show'
+      viewport={{ once: true, margin: '-80px' }}
       variants={{
         hidden: { opacity: 0 },
         show: {
           opacity: 1,
           transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.08,
+            delayChildren: 0.1,
           },
         },
       }}
@@ -25,17 +27,14 @@ export const BentoGridSection = () => {
       {/* Main Bio/Philosophy Card */}
       <motion.div
         variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-8 p-8 md:p-12 border border-gray-200 bg-white hover:border-black transition-colors duration-300 relative group overflow-hidden'
+        className='md:col-span-8 p-8 md:p-12 border border-gray-200 bg-white transition-colors duration-300 overflow-hidden min-h-[380px]'
       >
-        <div className='absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-          <ArrowRight className='w-6 h-6 -rotate-45' />
-        </div>
         <div className='h-full flex flex-col justify-between gap-8'>
           <span className='font-mono text-xs text-gray-400'>
             01 — INTRODUCTION
           </span>
-          <div>
-            <h3 className='text-3xl md:text-5xl font-medium leading-tight mb-6'>
+          <div className='space-y-6'>
+            <h3 className='text-3xl md:text-5xl font-medium leading-tight'>
               Crafting digital tools with{' '}
               <span className='italic font-serif'>precision</span> and{' '}
               <span className='italic font-serif'>soul</span>.
@@ -45,6 +44,23 @@ export const BentoGridSection = () => {
               work bridges the gap between complex engineering challenges and
               intuitive, seamless user experiences.
             </p>
+            <div className='flex flex-wrap gap-2 pt-2'>
+              {[
+                'TypeScript',
+                'Golang',
+                'Next.js',
+                'Flutter',
+                'Kubernetes',
+                'PostgreSQL',
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className='px-2.5 py-1 font-mono text-xs border border-gray-200 text-gray-400 hover:border-black hover:text-black transition-colors cursor-default'
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </motion.div>
@@ -56,40 +72,49 @@ export const BentoGridSection = () => {
       >
         <div className='flex justify-between items-start'>
           <span className='font-mono text-xs text-gray-400'>02 — NETWORK</span>
-          <ArrowRight className='w-5 h-5 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1' />
         </div>
 
-        <ul className='space-y-4 pt-12 text-xl md:text-2xl font-medium'>
-          <li>
-            <a
-              href='https://github.com/bernardoforcillo'
-              className='flex items-center gap-3 hover:text-gray-600 transition-colors'
-            >
-              <GithubIcon className='w-6 h-6' />
-              <span>GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href='https://linkedin.com/in/bernardoforcillo'
-              className='flex items-center gap-3 hover:text-blue-600 transition-colors'
-            >
-              <LinkedinMark className='w-6 h-6' />
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href='mailto:hello@bernardoforcillo.com'
-              className='flex items-center gap-3 hover:text-gray-600 transition-colors'
-            >
-              <span className='w-6 h-6 flex items-center justify-center font-mono text-sm border rounded-full border-black'>
-                @
-              </span>
-              <span>Email</span>
-            </a>
-          </li>
-        </ul>
+        <div className='space-y-6'>
+          <p className='font-mono text-xs text-gray-400 leading-relaxed'>
+            Based in Pisa, Italy (EU). Available CET/CEST. Open to
+            collaboration, consulting, and interesting problems.
+          </p>
+          <ul className='space-y-4 text-xl md:text-2xl font-medium'>
+            <li>
+              <a
+                href='https://github.com/bernardoforcillo'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-3 hover:text-gray-600 transition-colors'
+              >
+                <GithubIcon className='w-6 h-6' />
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://linkedin.com/in/bernardoforcillo'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-3 hover:text-blue-600 transition-colors'
+              >
+                <LinkedinMark className='w-6 h-6' />
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href='mailto:hello@bernardoforcillo.com'
+                className='flex items-center gap-3 hover:text-gray-600 transition-colors'
+              >
+                <span className='w-6 h-6 flex items-center justify-center font-mono text-sm border rounded-full border-black'>
+                  @
+                </span>
+                <span>Email</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </motion.div>
 
       {/* Projects Link Card */}
@@ -137,8 +162,58 @@ export const BentoGridSection = () => {
           <div className='flex flex-col md:flex-row md:items-end justify-between gap-4'>
             <h2 className='text-4xl font-bold'>About Me</h2>
             <p className='font-mono text-xs text-gray-500 max-w-xs text-right'>
-              From Bernalda, Italy. <br />
-              Passionate about Open Source, Hardware, and Design.
+              Pisa, Italy — EU. <br />
+              Open Source · Hardware · Design.
+            </p>
+          </div>
+        </Link>
+      </motion.div>
+      {/* Blog Card */}
+      <motion.div
+        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+        className='md:col-span-7'
+      >
+        <Link
+          href='/blog'
+          className='h-full w-full p-8 border border-gray-200 bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[240px]'
+        >
+          <div className='flex justify-between items-start'>
+            <span className='font-mono text-xs text-gray-400'>
+              05 — WRITING
+            </span>
+            <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
+              <ArrowRight className='w-4 h-4' />
+            </div>
+          </div>
+          <div>
+            <h2 className='text-4xl font-bold mb-2'>Blog</h2>
+            <p className='text-gray-500 text-sm max-w-xs'>
+              Thoughts, essays, and deep-dives on technology, systems design,
+              and building products.
+            </p>
+          </div>
+        </Link>
+      </motion.div>
+
+      {/* Notes Card */}
+      <motion.div
+        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+        className='md:col-span-5'
+      >
+        <Link
+          href='/notes'
+          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[240px]'
+        >
+          <div className='flex justify-between items-start'>
+            <span className='font-mono text-xs text-gray-400'>06 — NOTES</span>
+            <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
+              <ArrowRight className='w-4 h-4' />
+            </div>
+          </div>
+          <div>
+            <h2 className='text-4xl font-bold mb-2'>Notes</h2>
+            <p className='font-mono text-xs text-gray-500 max-w-xs'>
+              Quick, atomic ideas and references captured in the open.
             </p>
           </div>
         </Link>

@@ -11,7 +11,6 @@ import {
   MenuItem,
   MenuTrigger,
   Popover,
-  Text,
 } from 'react-aria-components';
 
 type NavLink = {
@@ -23,7 +22,7 @@ type NavLink = {
 const mainNavLinks: NavLink[] = [
   { label: 'Home', href: '/', icon: <Home size={18} /> },
   { label: 'Blog', href: '/blog', icon: <BookOpen size={18} /> },
-  { label: 'Project', href: '/projects', icon: <Folder size={18} /> },
+  { label: 'Projects', href: '/projects', icon: <Folder size={18} /> },
   { label: 'Notes', href: '/notes', icon: <StickyNote size={18} /> },
   { label: 'About', href: '/about', icon: <User size={18} /> },
 ];
@@ -44,7 +43,10 @@ export default function Navbar() {
           <nav className='hidden sm:block'>
             <ol className='flex gap-1'>
               {mainNavLinks.map((el, indx) => {
-                const isActive = pathname === el.href;
+                const isActive =
+                  el.href === '/'
+                    ? pathname === '/'
+                    : pathname.startsWith(el.href);
                 return (
                   <li key={`link-${indx * 10}`}>
                     <Link
@@ -52,7 +54,7 @@ export default function Navbar() {
                       className={`py-2 px-4 rounded-full text-xs font-mono font-medium transition-all duration-200 ease-out flex items-center gap-2 uppercase tracking-wide
                         ${
                           isActive
-                            ? 'bg-black text-white'
+                            ? 'bg-black text-white shadow-sm'
                             : 'text-gray-500 hover:text-black hover:bg-gray-100'
                         }`}
                     >
@@ -82,7 +84,10 @@ export default function Navbar() {
               <Popover className='w-48 mt-4 rounded-xl bg-white/95 backdrop-blur-xl border border-gray-200 shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top'>
                 <Menu className='flex flex-col p-1 outline-none'>
                   {mainNavLinks.map((el, indx) => {
-                    const isActive = pathname === el.href;
+                    const isActive =
+                      el.href === '/'
+                        ? pathname === '/'
+                        : pathname.startsWith(el.href);
                     return (
                       <MenuItem
                         key={`mobile-link-${indx * 10}`}

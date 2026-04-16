@@ -31,10 +31,10 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/format": "^19.8.1",
     "@commitlint/types": "^19.8.1",
-    "@types/node": "^22.19.15",
+    "@types/node": "^22.19.17",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "turbo": "^2.8.17",
+    "turbo": "^2.9.6",
     "typescript": "^5.9.3"
   },
   "engines": {
