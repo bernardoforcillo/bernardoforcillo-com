@@ -1,7 +1,6 @@
 package staticserver
 
 import (
-	"mime"
 	"path"
 	"strings"
 )
@@ -35,14 +34,14 @@ var contentTypes = map[string]string{
 }
 
 // contentTypeFor returns the Content-Type for a file inside the prerendered
-// build, falling back to the platform table and finally to a type that keeps
-// X-Content-Type-Options: nosniff meaningful.
+// build. Anything the table does not name is served as application/octet-stream,
+// which keeps X-Content-Type-Options: nosniff meaningful. There is deliberately
+// no mime.TypeByExtension fallback: it is the operating-system lookup the table
+// exists to avoid. Serving a new asset type means adding a row here, which is a
+// reviewable change rather than a value that shifts under the binary.
 func contentTypeFor(name string) string {
 	ext := strings.ToLower(path.Ext(name))
 	if contentType, ok := contentTypes[ext]; ok {
-		return contentType
-	}
-	if contentType := mime.TypeByExtension(ext); contentType != "" {
 		return contentType
 	}
 	return "application/octet-stream"

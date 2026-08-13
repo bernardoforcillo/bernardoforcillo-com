@@ -20,6 +20,8 @@ func TestContentTypeFor(t *testing.T) {
 		{"text", "robots.txt", "text/plain; charset=utf-8"},
 		{"uppercase extension", "LOGO.PNG", "image/png"},
 		{"unknown extension", "weird.qqq", "application/octet-stream"},
+		{"type the os would resolve differently", "archive.zip", "application/octet-stream"},
+		{"type the os would resolve at all", "paper.pdf", "application/octet-stream"},
 		{"no extension", "LICENSE", "application/octet-stream"},
 	}
 
