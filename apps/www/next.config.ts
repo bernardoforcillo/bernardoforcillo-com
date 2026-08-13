@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { dependencies } from 'package.json';
+import { dependencies } from './package.json';
 
 const withNextIntl = createNextIntlPlugin('./src/scripts/i18n/index.ts');
 
