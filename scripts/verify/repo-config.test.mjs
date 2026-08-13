@@ -51,3 +51,32 @@ test('shell scripts are pinned to LF endings', () => {
     assert.ok(!readText(script).includes('\r'), `${script} has CRLF endings`);
   }
 });
+
+test('turbo build outputs are complete and free of Next.js artifacts', () => {
+  const turbo = readJson('turbo.json');
+  const outputs = turbo.tasks.build.outputs;
+  assert.ok(outputs.includes('dist/**'));
+  assert.ok(outputs.includes('.content-collections/**'));
+  // The next two are post-conditions from plan 1 Task 15: they guard against a
+  // regression, they are not this task's edit.
+  assert.equal(turbo.tasks.build.env, undefined);
+  for (const output of outputs) {
+    assert.ok(
+      !output.includes('.next'),
+      `stale Next.js output glob: ${output}`,
+    );
+  }
+});
+
+test('turbo exposes a non-cached test:e2e task', () => {
+  const turbo = readJson('turbo.json');
+  assert.equal(turbo.tasks['test:e2e']?.cache, false);
+});
+
+test('the Go library package is wired into turbo build, test and clean', () => {
+  const pkg = readJson('packages/static-server/package.json');
+  assert.equal(pkg.name, '@monorepo/static-server');
+  assert.equal(pkg.scripts.build, 'go build ./...');
+  assert.equal(pkg.scripts.test, 'go test ./...');
+  assert.equal(pkg.scripts.clean, 'go clean ./...');
+});
