@@ -18,10 +18,10 @@ spec:
         tier: personal-website
     spec:
       securityContext:
-        runAsUser: 1001
-        runAsGroup: 1001
+        runAsUser: 65532
+        runAsGroup: 65532
         runAsNonRoot: true
-        fsGroup: 1001
+        fsGroup: 65532
         seccompProfile:
           type: RuntimeDefault
       terminationGracePeriodSeconds: 30
@@ -44,10 +44,10 @@ spec:
                 - ALL
           resources:
             limits:
-              memory: '128Mi'
+              memory: '32Mi'
               cpu: '50m'
             requests:
-              memory: '64Mi'
+              memory: '16Mi'
               cpu: '10m'
           env:
             - name: GTM_ID
@@ -57,13 +57,13 @@ spec:
             - containerPort: 3000
           startupProbe:
             httpGet:
-              path: /
+              path: /healthz
               port: 3000
             failureThreshold: 12
             periodSeconds: 5
           readinessProbe:
             httpGet:
-              path: /
+              path: /healthz
               port: 3000
             initialDelaySeconds: 5
             periodSeconds: 10
@@ -71,7 +71,7 @@ spec:
             failureThreshold: 3
           livenessProbe:
             httpGet:
-              path: /
+              path: /healthz
               port: 3000
             initialDelaySeconds: 15
             periodSeconds: 20

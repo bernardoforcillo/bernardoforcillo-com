@@ -183,3 +183,19 @@ test('the Dockerfile carries no Next.js leftovers', () => {
     'NODE_ENV=production before pnpm install silently drops devDependencies',
   );
 });
+
+test('only the deployment manifest changed under kubernetes/', () => {
+  const deployment = readText('kubernetes/main/www/deployment.yaml');
+  assert.equal((deployment.match(/path: \/healthz/g) ?? []).length, 3);
+  assert.match(deployment, /runAsUser: 65532/);
+  assert.match(deployment, /runAsGroup: 65532/);
+  assert.match(deployment, /fsGroup: 65532/);
+  assert.match(deployment, /seccompProfile:\r?\n\s+type: RuntimeDefault/);
+  assert.match(deployment, /memory: '32Mi'/);
+  assert.match(deployment, /memory: '16Mi'/);
+  assert.ok(!deployment.includes('1001'));
+  assert.match(deployment, /containerPort: 3000/);
+
+  const service = readText('kubernetes/main/www/service.yaml');
+  assert.match(service, /targetPort: 3000/);
+});
