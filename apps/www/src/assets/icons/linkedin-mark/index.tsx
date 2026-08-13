@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-import { cn } from '~/blocks/utils';
+import { cn } from '~/lib/cn';
 
 type Props = {} & SVGProps<SVGSVGElement>;
 

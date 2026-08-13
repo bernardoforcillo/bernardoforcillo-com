@@ -27,6 +27,19 @@ export type CreateAppConfigOptions = {
   sitemapHost: string;
   /** Explicit prerender entries for param routes crawlLinks cannot reach. */
   pages?: PrerenderPage[];
+  /**
+   * Overrides individual prerender keys. The defaults — `crawlLinks: true` and
+   * `failOnError: true` — are the production contract; override them only while
+   * an app's route set is incomplete, and remove the override once it is not.
+   */
+  prerender?: {
+    enabled?: boolean;
+    crawlLinks?: boolean;
+    autoSubfolderIndex?: boolean;
+    autoStaticPathsDiscovery?: boolean;
+    failOnError?: boolean;
+    concurrency?: number;
+  };
   /** Extra plugins, inserted before the framework plugins. */
   plugins?: Array<Plugin | Plugin[]>;
 };

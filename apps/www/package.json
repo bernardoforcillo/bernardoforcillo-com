@@ -1,14 +1,20 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@bernardoforcillo-com/www",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "vitest run",
-    "baseline": "node scripts/capture-baseline.mjs"
+    "baseline": "node scripts/capture-baseline.mjs",
+    "parity": "node scripts/parity-diff.mjs"
   },
   "dependencies": {
+    "@monorepo/seo": "workspace:*",
+    "@monorepo/ui": "workspace:*",
+    "@tanstack/react-router": "^1.170.27",
+    "@tanstack/react-start": "^1.168.44",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
@@ -26,13 +32,16 @@
   "devDependencies": {
     "@monorepo/tailwindcss": "workspace:*",
     "@monorepo/tsconfig": "workspace:*",
+    "@monorepo/vite-config": "workspace:*",
     "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "postcss": "^8.5.10",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
+    "vite": "^8.2.1",
     "vitest": "^3.2.4"
   },
   "browserslist": [

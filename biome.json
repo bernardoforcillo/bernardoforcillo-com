@@ -98,9 +98,15 @@
         "useValidTypeof": "error"
       }
     },
-    "ignore": [".next/**", "**/.eslintrc.js", "**/*.config.*js"]
+    "ignore": [
+      ".next/**",
+      "**/.eslintrc.js",
+      "**/*.config.*js",
+      "**/routeTree.gen.ts"
+    ]
   },
   "javascript": {
+    "globals": ["__BUILD_YEAR__"],
     "formatter": {
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",

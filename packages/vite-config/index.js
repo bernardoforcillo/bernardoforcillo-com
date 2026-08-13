@@ -37,6 +37,7 @@ export const createAppConfig = ({
   sitemapHost,
   pages = [],
   plugins = [],
+  prerender = {},
 }) => ({
   root,
   server: { port: 3000 },
@@ -74,6 +75,10 @@ export const createAppConfig = ({
       srcDirectory: 'src',
       pages,
       sitemap: { enabled: true, host: sitemapHost },
+      // These defaults are the production contract: crawl every link and abort
+      // the build as soon as one of them 404s. The `prerender` option overrides
+      // individual keys and exists only for an app whose route set is still
+      // being built out — an override left in place ships broken links.
       prerender: {
         enabled: true,
         crawlLinks: true,
@@ -81,6 +86,7 @@ export const createAppConfig = ({
         autoStaticPathsDiscovery: true,
         failOnError: true,
         concurrency: 14,
+        ...prerender,
       },
       // `spa` is deliberately absent. Enabling it replaces dist/client/index.html
       // with _shell.html and the home page loses its prerendered markup.
