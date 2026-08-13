@@ -8,170 +8,170 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root';
-import { Route as BareRouteImport } from './routes/_bare';
-import { Route as BareWpAdminRouteImport } from './routes/_bare.wp-admin';
-import { Route as DefaultRouteImport } from './routes/_default';
-import { Route as DefaultAboutRouteImport } from './routes/_default.about';
-import { Route as DefaultAttributionsRouteImport } from './routes/_default.attributions';
-import { Route as DefaultBlogCategorySlugPostSlugRouteImport } from './routes/_default.blog.$categorySlug.$postSlug';
-import { Route as DefaultBlogCategorySlugIndexRouteImport } from './routes/_default.blog.$categorySlug.index';
-import { Route as DefaultBlogCategoriesRouteImport } from './routes/_default.blog.categories';
-import { Route as DefaultBlogIndexRouteImport } from './routes/_default.blog.index';
-import { Route as DefaultIndexRouteImport } from './routes/_default.index';
-import { Route as DefaultNotesNoteSlugRouteImport } from './routes/_default.notes.$noteSlug';
-import { Route as DefaultNotesIndexRouteImport } from './routes/_default.notes.index';
-import { Route as DefaultPoliciesCookiesPolicyRouteImport } from './routes/_default.policies.cookies-policy';
-import { Route as DefaultPoliciesIndexRouteImport } from './routes/_default.policies.index';
-import { Route as DefaultPoliciesPrivacyPolicyRouteImport } from './routes/_default.policies.privacy-policy';
-import { Route as DefaultProjectsProjectSlugRouteImport } from './routes/_default.projects.$projectSlug';
-import { Route as DefaultProjectsIndexRouteImport } from './routes/_default.projects.index';
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as BareRouteImport } from './routes/_bare'
+import { Route as DefaultRouteImport } from './routes/_default'
+import { Route as BareWpAdminRouteImport } from './routes/_bare.wp-admin'
+import { Route as DefaultIndexRouteImport } from './routes/_default.index'
+import { Route as DefaultAboutRouteImport } from './routes/_default.about'
+import { Route as DefaultAttributionsRouteImport } from './routes/_default.attributions'
+import { Route as DefaultBlogIndexRouteImport } from './routes/_default.blog.index'
+import { Route as DefaultBlogCategoriesRouteImport } from './routes/_default.blog.categories'
+import { Route as DefaultNotesIndexRouteImport } from './routes/_default.notes.index'
+import { Route as DefaultNotesNoteSlugRouteImport } from './routes/_default.notes.$noteSlug'
+import { Route as DefaultPoliciesIndexRouteImport } from './routes/_default.policies.index'
+import { Route as DefaultPoliciesCookiesPolicyRouteImport } from './routes/_default.policies.cookies-policy'
+import { Route as DefaultPoliciesPrivacyPolicyRouteImport } from './routes/_default.policies.privacy-policy'
+import { Route as DefaultProjectsIndexRouteImport } from './routes/_default.projects.index'
+import { Route as DefaultProjectsProjectSlugRouteImport } from './routes/_default.projects.$projectSlug'
+import { Route as DefaultBlogCategorySlugIndexRouteImport } from './routes/_default.blog.$categorySlug.index'
+import { Route as DefaultBlogCategorySlugPostSlugRouteImport } from './routes/_default.blog.$categorySlug.$postSlug'
 
 const BareRoute = BareRouteImport.update({
   id: '/_bare',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const DefaultRoute = DefaultRouteImport.update({
   id: '/_default',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const BareWpAdminRoute = BareWpAdminRouteImport.update({
   id: '/wp-admin',
   path: '/wp-admin',
   getParentRoute: () => BareRoute,
-} as any);
+} as any)
 const DefaultIndexRoute = DefaultIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultAboutRoute = DefaultAboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultAttributionsRoute = DefaultAttributionsRouteImport.update({
   id: '/attributions',
   path: '/attributions',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultBlogIndexRoute = DefaultBlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultBlogCategoriesRoute = DefaultBlogCategoriesRouteImport.update({
   id: '/blog/categories',
   path: '/blog/categories',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultNotesIndexRoute = DefaultNotesIndexRouteImport.update({
   id: '/notes/',
   path: '/notes/',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultNotesNoteSlugRoute = DefaultNotesNoteSlugRouteImport.update({
   id: '/notes/$noteSlug',
   path: '/notes/$noteSlug',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultPoliciesIndexRoute = DefaultPoliciesIndexRouteImport.update({
   id: '/policies/',
   path: '/policies/',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultPoliciesCookiesPolicyRoute =
   DefaultPoliciesCookiesPolicyRouteImport.update({
     id: '/policies/cookies-policy',
     path: '/policies/cookies-policy',
     getParentRoute: () => DefaultRoute,
-  } as any);
+  } as any)
 const DefaultPoliciesPrivacyPolicyRoute =
   DefaultPoliciesPrivacyPolicyRouteImport.update({
     id: '/policies/privacy-policy',
     path: '/policies/privacy-policy',
     getParentRoute: () => DefaultRoute,
-  } as any);
+  } as any)
 const DefaultProjectsIndexRoute = DefaultProjectsIndexRouteImport.update({
   id: '/projects/',
   path: '/projects/',
   getParentRoute: () => DefaultRoute,
-} as any);
+} as any)
 const DefaultProjectsProjectSlugRoute =
   DefaultProjectsProjectSlugRouteImport.update({
     id: '/projects/$projectSlug',
     path: '/projects/$projectSlug',
     getParentRoute: () => DefaultRoute,
-  } as any);
+  } as any)
 const DefaultBlogCategorySlugIndexRoute =
   DefaultBlogCategorySlugIndexRouteImport.update({
     id: '/blog/$categorySlug/',
     path: '/blog/$categorySlug/',
     getParentRoute: () => DefaultRoute,
-  } as any);
+  } as any)
 const DefaultBlogCategorySlugPostSlugRoute =
   DefaultBlogCategorySlugPostSlugRouteImport.update({
     id: '/blog/$categorySlug/$postSlug',
     path: '/blog/$categorySlug/$postSlug',
     getParentRoute: () => DefaultRoute,
-  } as any);
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof DefaultIndexRoute;
-  '/wp-admin': typeof BareWpAdminRoute;
-  '/about': typeof DefaultAboutRoute;
-  '/attributions': typeof DefaultAttributionsRoute;
-  '/blog/categories': typeof DefaultBlogCategoriesRoute;
-  '/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute;
-  '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
-  '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
-  '/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute;
-  '/blog/': typeof DefaultBlogIndexRoute;
-  '/notes/': typeof DefaultNotesIndexRoute;
-  '/policies/': typeof DefaultPoliciesIndexRoute;
-  '/projects/': typeof DefaultProjectsIndexRoute;
-  '/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute;
-  '/blog/$categorySlug/': typeof DefaultBlogCategorySlugIndexRoute;
+  '/': typeof DefaultIndexRoute
+  '/wp-admin': typeof BareWpAdminRoute
+  '/about': typeof DefaultAboutRoute
+  '/attributions': typeof DefaultAttributionsRoute
+  '/blog/categories': typeof DefaultBlogCategoriesRoute
+  '/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute
+  '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute
+  '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute
+  '/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute
+  '/blog/': typeof DefaultBlogIndexRoute
+  '/notes/': typeof DefaultNotesIndexRoute
+  '/policies/': typeof DefaultPoliciesIndexRoute
+  '/projects/': typeof DefaultProjectsIndexRoute
+  '/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute
+  '/blog/$categorySlug/': typeof DefaultBlogCategorySlugIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof DefaultIndexRoute;
-  '/wp-admin': typeof BareWpAdminRoute;
-  '/about': typeof DefaultAboutRoute;
-  '/attributions': typeof DefaultAttributionsRoute;
-  '/blog/categories': typeof DefaultBlogCategoriesRoute;
-  '/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute;
-  '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
-  '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
-  '/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute;
-  '/blog': typeof DefaultBlogIndexRoute;
-  '/notes': typeof DefaultNotesIndexRoute;
-  '/policies': typeof DefaultPoliciesIndexRoute;
-  '/projects': typeof DefaultProjectsIndexRoute;
-  '/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute;
-  '/blog/$categorySlug': typeof DefaultBlogCategorySlugIndexRoute;
+  '/': typeof DefaultIndexRoute
+  '/wp-admin': typeof BareWpAdminRoute
+  '/about': typeof DefaultAboutRoute
+  '/attributions': typeof DefaultAttributionsRoute
+  '/blog/categories': typeof DefaultBlogCategoriesRoute
+  '/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute
+  '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute
+  '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute
+  '/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute
+  '/blog': typeof DefaultBlogIndexRoute
+  '/notes': typeof DefaultNotesIndexRoute
+  '/policies': typeof DefaultPoliciesIndexRoute
+  '/projects': typeof DefaultProjectsIndexRoute
+  '/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute
+  '/blog/$categorySlug': typeof DefaultBlogCategorySlugIndexRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  '/_bare': typeof BareRouteWithChildren;
-  '/_default': typeof DefaultRouteWithChildren;
-  '/_bare/wp-admin': typeof BareWpAdminRoute;
-  '/_default/about': typeof DefaultAboutRoute;
-  '/_default/attributions': typeof DefaultAttributionsRoute;
-  '/_default/': typeof DefaultIndexRoute;
-  '/_default/blog/categories': typeof DefaultBlogCategoriesRoute;
-  '/_default/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute;
-  '/_default/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
-  '/_default/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
-  '/_default/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute;
-  '/_default/blog/': typeof DefaultBlogIndexRoute;
-  '/_default/notes/': typeof DefaultNotesIndexRoute;
-  '/_default/policies/': typeof DefaultPoliciesIndexRoute;
-  '/_default/projects/': typeof DefaultProjectsIndexRoute;
-  '/_default/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute;
-  '/_default/blog/$categorySlug/': typeof DefaultBlogCategorySlugIndexRoute;
+  __root__: typeof rootRouteImport
+  '/_bare': typeof BareRouteWithChildren
+  '/_default': typeof DefaultRouteWithChildren
+  '/_bare/wp-admin': typeof BareWpAdminRoute
+  '/_default/about': typeof DefaultAboutRoute
+  '/_default/attributions': typeof DefaultAttributionsRoute
+  '/_default/': typeof DefaultIndexRoute
+  '/_default/blog/categories': typeof DefaultBlogCategoriesRoute
+  '/_default/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute
+  '/_default/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute
+  '/_default/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute
+  '/_default/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute
+  '/_default/blog/': typeof DefaultBlogIndexRoute
+  '/_default/notes/': typeof DefaultNotesIndexRoute
+  '/_default/policies/': typeof DefaultPoliciesIndexRoute
+  '/_default/projects/': typeof DefaultProjectsIndexRoute
+  '/_default/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute
+  '/_default/blog/$categorySlug/': typeof DefaultBlogCategorySlugIndexRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
+  fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/wp-admin'
@@ -187,8 +187,8 @@ export interface FileRouteTypes {
     | '/policies/'
     | '/projects/'
     | '/blog/$categorySlug/$postSlug'
-    | '/blog/$categorySlug/';
-  fileRoutesByTo: FileRoutesByTo;
+    | '/blog/$categorySlug/'
+  fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/wp-admin'
@@ -204,7 +204,7 @@ export interface FileRouteTypes {
     | '/policies'
     | '/projects'
     | '/blog/$categorySlug/$postSlug'
-    | '/blog/$categorySlug';
+    | '/blog/$categorySlug'
   id:
     | '__root__'
     | '/_bare'
@@ -223,163 +223,163 @@ export interface FileRouteTypes {
     | '/_default/policies/'
     | '/_default/projects/'
     | '/_default/blog/$categorySlug/$postSlug'
-    | '/_default/blog/$categorySlug/';
-  fileRoutesById: FileRoutesById;
+    | '/_default/blog/$categorySlug/'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  BareRoute: typeof BareRouteWithChildren;
-  DefaultRoute: typeof DefaultRouteWithChildren;
+  BareRoute: typeof BareRouteWithChildren
+  DefaultRoute: typeof DefaultRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/_bare': {
-      id: '/_bare';
-      path: '';
-      fullPath: '/';
-      preLoaderRoute: typeof BareRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/_bare'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof BareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_default': {
-      id: '/_default';
-      path: '';
-      fullPath: '/';
-      preLoaderRoute: typeof DefaultRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+      id: '/_default'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof DefaultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_bare/wp-admin': {
-      id: '/_bare/wp-admin';
-      path: '/wp-admin';
-      fullPath: '/wp-admin';
-      preLoaderRoute: typeof BareWpAdminRouteImport;
-      parentRoute: typeof BareRoute;
-    };
+      id: '/_bare/wp-admin'
+      path: '/wp-admin'
+      fullPath: '/wp-admin'
+      preLoaderRoute: typeof BareWpAdminRouteImport
+      parentRoute: typeof BareRoute
+    }
     '/_default/': {
-      id: '/_default/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof DefaultIndexRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof DefaultIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/about': {
-      id: '/_default/about';
-      path: '/about';
-      fullPath: '/about';
-      preLoaderRoute: typeof DefaultAboutRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof DefaultAboutRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/attributions': {
-      id: '/_default/attributions';
-      path: '/attributions';
-      fullPath: '/attributions';
-      preLoaderRoute: typeof DefaultAttributionsRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/attributions'
+      path: '/attributions'
+      fullPath: '/attributions'
+      preLoaderRoute: typeof DefaultAttributionsRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/blog/': {
-      id: '/_default/blog/';
-      path: '/blog';
-      fullPath: '/blog/';
-      preLoaderRoute: typeof DefaultBlogIndexRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof DefaultBlogIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/blog/categories': {
-      id: '/_default/blog/categories';
-      path: '/blog/categories';
-      fullPath: '/blog/categories';
-      preLoaderRoute: typeof DefaultBlogCategoriesRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/blog/categories'
+      path: '/blog/categories'
+      fullPath: '/blog/categories'
+      preLoaderRoute: typeof DefaultBlogCategoriesRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/notes/': {
-      id: '/_default/notes/';
-      path: '/notes';
-      fullPath: '/notes/';
-      preLoaderRoute: typeof DefaultNotesIndexRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/notes/'
+      path: '/notes'
+      fullPath: '/notes/'
+      preLoaderRoute: typeof DefaultNotesIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/notes/$noteSlug': {
-      id: '/_default/notes/$noteSlug';
-      path: '/notes/$noteSlug';
-      fullPath: '/notes/$noteSlug';
-      preLoaderRoute: typeof DefaultNotesNoteSlugRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/notes/$noteSlug'
+      path: '/notes/$noteSlug'
+      fullPath: '/notes/$noteSlug'
+      preLoaderRoute: typeof DefaultNotesNoteSlugRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/policies/': {
-      id: '/_default/policies/';
-      path: '/policies';
-      fullPath: '/policies/';
-      preLoaderRoute: typeof DefaultPoliciesIndexRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/policies/'
+      path: '/policies'
+      fullPath: '/policies/'
+      preLoaderRoute: typeof DefaultPoliciesIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/policies/cookies-policy': {
-      id: '/_default/policies/cookies-policy';
-      path: '/policies/cookies-policy';
-      fullPath: '/policies/cookies-policy';
-      preLoaderRoute: typeof DefaultPoliciesCookiesPolicyRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/policies/cookies-policy'
+      path: '/policies/cookies-policy'
+      fullPath: '/policies/cookies-policy'
+      preLoaderRoute: typeof DefaultPoliciesCookiesPolicyRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/policies/privacy-policy': {
-      id: '/_default/policies/privacy-policy';
-      path: '/policies/privacy-policy';
-      fullPath: '/policies/privacy-policy';
-      preLoaderRoute: typeof DefaultPoliciesPrivacyPolicyRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/policies/privacy-policy'
+      path: '/policies/privacy-policy'
+      fullPath: '/policies/privacy-policy'
+      preLoaderRoute: typeof DefaultPoliciesPrivacyPolicyRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/projects/': {
-      id: '/_default/projects/';
-      path: '/projects';
-      fullPath: '/projects/';
-      preLoaderRoute: typeof DefaultProjectsIndexRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof DefaultProjectsIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/projects/$projectSlug': {
-      id: '/_default/projects/$projectSlug';
-      path: '/projects/$projectSlug';
-      fullPath: '/projects/$projectSlug';
-      preLoaderRoute: typeof DefaultProjectsProjectSlugRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/projects/$projectSlug'
+      path: '/projects/$projectSlug'
+      fullPath: '/projects/$projectSlug'
+      preLoaderRoute: typeof DefaultProjectsProjectSlugRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/blog/$categorySlug/': {
-      id: '/_default/blog/$categorySlug/';
-      path: '/blog/$categorySlug';
-      fullPath: '/blog/$categorySlug/';
-      preLoaderRoute: typeof DefaultBlogCategorySlugIndexRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/blog/$categorySlug/'
+      path: '/blog/$categorySlug'
+      fullPath: '/blog/$categorySlug/'
+      preLoaderRoute: typeof DefaultBlogCategorySlugIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
     '/_default/blog/$categorySlug/$postSlug': {
-      id: '/_default/blog/$categorySlug/$postSlug';
-      path: '/blog/$categorySlug/$postSlug';
-      fullPath: '/blog/$categorySlug/$postSlug';
-      preLoaderRoute: typeof DefaultBlogCategorySlugPostSlugRouteImport;
-      parentRoute: typeof DefaultRoute;
-    };
+      id: '/_default/blog/$categorySlug/$postSlug'
+      path: '/blog/$categorySlug/$postSlug'
+      fullPath: '/blog/$categorySlug/$postSlug'
+      preLoaderRoute: typeof DefaultBlogCategorySlugPostSlugRouteImport
+      parentRoute: typeof DefaultRoute
+    }
   }
 }
 
 interface BareRouteChildren {
-  BareWpAdminRoute: typeof BareWpAdminRoute;
+  BareWpAdminRoute: typeof BareWpAdminRoute
 }
 
 const BareRouteChildren: BareRouteChildren = {
   BareWpAdminRoute: BareWpAdminRoute,
-};
+}
 
-const BareRouteWithChildren = BareRoute._addFileChildren(BareRouteChildren);
+const BareRouteWithChildren = BareRoute._addFileChildren(BareRouteChildren)
 
 interface DefaultRouteChildren {
-  DefaultAboutRoute: typeof DefaultAboutRoute;
-  DefaultAttributionsRoute: typeof DefaultAttributionsRoute;
-  DefaultIndexRoute: typeof DefaultIndexRoute;
-  DefaultBlogCategoriesRoute: typeof DefaultBlogCategoriesRoute;
-  DefaultNotesNoteSlugRoute: typeof DefaultNotesNoteSlugRoute;
-  DefaultPoliciesCookiesPolicyRoute: typeof DefaultPoliciesCookiesPolicyRoute;
-  DefaultPoliciesPrivacyPolicyRoute: typeof DefaultPoliciesPrivacyPolicyRoute;
-  DefaultProjectsProjectSlugRoute: typeof DefaultProjectsProjectSlugRoute;
-  DefaultBlogIndexRoute: typeof DefaultBlogIndexRoute;
-  DefaultNotesIndexRoute: typeof DefaultNotesIndexRoute;
-  DefaultPoliciesIndexRoute: typeof DefaultPoliciesIndexRoute;
-  DefaultProjectsIndexRoute: typeof DefaultProjectsIndexRoute;
-  DefaultBlogCategorySlugPostSlugRoute: typeof DefaultBlogCategorySlugPostSlugRoute;
-  DefaultBlogCategorySlugIndexRoute: typeof DefaultBlogCategorySlugIndexRoute;
+  DefaultAboutRoute: typeof DefaultAboutRoute
+  DefaultAttributionsRoute: typeof DefaultAttributionsRoute
+  DefaultIndexRoute: typeof DefaultIndexRoute
+  DefaultBlogCategoriesRoute: typeof DefaultBlogCategoriesRoute
+  DefaultNotesNoteSlugRoute: typeof DefaultNotesNoteSlugRoute
+  DefaultPoliciesCookiesPolicyRoute: typeof DefaultPoliciesCookiesPolicyRoute
+  DefaultPoliciesPrivacyPolicyRoute: typeof DefaultPoliciesPrivacyPolicyRoute
+  DefaultProjectsProjectSlugRoute: typeof DefaultProjectsProjectSlugRoute
+  DefaultBlogIndexRoute: typeof DefaultBlogIndexRoute
+  DefaultNotesIndexRoute: typeof DefaultNotesIndexRoute
+  DefaultPoliciesIndexRoute: typeof DefaultPoliciesIndexRoute
+  DefaultProjectsIndexRoute: typeof DefaultProjectsIndexRoute
+  DefaultBlogCategorySlugPostSlugRoute: typeof DefaultBlogCategorySlugPostSlugRoute
+  DefaultBlogCategorySlugIndexRoute: typeof DefaultBlogCategorySlugIndexRoute
 }
 
 const DefaultRouteChildren: DefaultRouteChildren = {
@@ -397,24 +397,24 @@ const DefaultRouteChildren: DefaultRouteChildren = {
   DefaultProjectsIndexRoute: DefaultProjectsIndexRoute,
   DefaultBlogCategorySlugPostSlugRoute: DefaultBlogCategorySlugPostSlugRoute,
   DefaultBlogCategorySlugIndexRoute: DefaultBlogCategorySlugIndexRoute,
-};
+}
 
 const DefaultRouteWithChildren =
-  DefaultRoute._addFileChildren(DefaultRouteChildren);
+  DefaultRoute._addFileChildren(DefaultRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   BareRoute: BareRouteWithChildren,
   DefaultRoute: DefaultRouteWithChildren,
-};
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
-import type { createStart } from '@tanstack/react-start';
-import type { getRouter } from './router.tsx';
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
   interface Register {
-    ssr: true;
-    router: Awaited<ReturnType<typeof getRouter>>;
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
   }
 }
