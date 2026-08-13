@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run",
+    "baseline": "node scripts/capture-baseline.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -30,7 +32,8 @@
     "@types/react-dom": "^19.2.3",
     "postcss": "^8.5.10",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   },
   "browserslist": [
     "> 0.1% and last 2 versions and not dead",
