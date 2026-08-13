@@ -199,3 +199,22 @@ test('only the deployment manifest changed under kubernetes/', () => {
   const service = readText('kubernetes/main/www/service.yaml');
   assert.match(service, /targetPort: 3000/);
 });
+
+test('the docker workflow validates pull requests and caches layers', () => {
+  const workflow = readText('.github/workflows/docker-push.yaml');
+  assert.match(workflow, /^ {2}pull_request:$/m);
+  assert.match(workflow, /^concurrency:$/m);
+  assert.match(workflow, /cancel-in-progress: true/);
+  assert.match(workflow, /^permissions:$/m);
+  assert.match(workflow, /cache-from: type=gha/);
+  assert.match(workflow, /cache-to: type=gha,mode=max/);
+  assert.ok(
+    !workflow.includes('setup-qemu-action'),
+    'QEMU is dead weight for a single linux/amd64 platform',
+  );
+  // CI keeps the official docker actions; only local commands go through the
+  // container-engine shim.
+  assert.match(workflow, /docker\/build-push-action@v6/);
+  assert.match(workflow, /file: \.\/apps\/www\/Dockerfile/);
+  assert.match(workflow, /platforms: linux\/amd64/);
+});
