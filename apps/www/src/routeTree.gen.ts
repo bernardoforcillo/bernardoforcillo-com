@@ -12,7 +12,12 @@ import { Route as rootRouteImport } from './routes/__root';
 import { Route as BareRouteImport } from './routes/_bare';
 import { Route as BareWpAdminRouteImport } from './routes/_bare.wp-admin';
 import { Route as DefaultRouteImport } from './routes/_default';
+import { Route as DefaultAboutRouteImport } from './routes/_default.about';
+import { Route as DefaultAttributionsRouteImport } from './routes/_default.attributions';
 import { Route as DefaultIndexRouteImport } from './routes/_default.index';
+import { Route as DefaultPoliciesCookiesPolicyRouteImport } from './routes/_default.policies.cookies-policy';
+import { Route as DefaultPoliciesIndexRouteImport } from './routes/_default.policies.index';
+import { Route as DefaultPoliciesPrivacyPolicyRouteImport } from './routes/_default.policies.privacy-policy';
 
 const BareRoute = BareRouteImport.update({
   id: '/_bare',
@@ -32,28 +37,94 @@ const DefaultIndexRoute = DefaultIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DefaultRoute,
 } as any);
+const DefaultAboutRoute = DefaultAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => DefaultRoute,
+} as any);
+const DefaultAttributionsRoute = DefaultAttributionsRouteImport.update({
+  id: '/attributions',
+  path: '/attributions',
+  getParentRoute: () => DefaultRoute,
+} as any);
+const DefaultPoliciesIndexRoute = DefaultPoliciesIndexRouteImport.update({
+  id: '/policies/',
+  path: '/policies/',
+  getParentRoute: () => DefaultRoute,
+} as any);
+const DefaultPoliciesCookiesPolicyRoute =
+  DefaultPoliciesCookiesPolicyRouteImport.update({
+    id: '/policies/cookies-policy',
+    path: '/policies/cookies-policy',
+    getParentRoute: () => DefaultRoute,
+  } as any);
+const DefaultPoliciesPrivacyPolicyRoute =
+  DefaultPoliciesPrivacyPolicyRouteImport.update({
+    id: '/policies/privacy-policy',
+    path: '/policies/privacy-policy',
+    getParentRoute: () => DefaultRoute,
+  } as any);
 
 export interface FileRoutesByFullPath {
   '/': typeof DefaultIndexRoute;
   '/wp-admin': typeof BareWpAdminRoute;
+  '/about': typeof DefaultAboutRoute;
+  '/attributions': typeof DefaultAttributionsRoute;
+  '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
+  '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
+  '/policies/': typeof DefaultPoliciesIndexRoute;
 }
 export interface FileRoutesByTo {
   '/': typeof DefaultIndexRoute;
   '/wp-admin': typeof BareWpAdminRoute;
+  '/about': typeof DefaultAboutRoute;
+  '/attributions': typeof DefaultAttributionsRoute;
+  '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
+  '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
+  '/policies': typeof DefaultPoliciesIndexRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
   '/_bare': typeof BareRouteWithChildren;
   '/_default': typeof DefaultRouteWithChildren;
   '/_bare/wp-admin': typeof BareWpAdminRoute;
+  '/_default/about': typeof DefaultAboutRoute;
+  '/_default/attributions': typeof DefaultAttributionsRoute;
   '/_default/': typeof DefaultIndexRoute;
+  '/_default/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
+  '/_default/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
+  '/_default/policies/': typeof DefaultPoliciesIndexRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/wp-admin';
+  fullPaths:
+    | '/'
+    | '/wp-admin'
+    | '/about'
+    | '/attributions'
+    | '/policies/cookies-policy'
+    | '/policies/privacy-policy'
+    | '/policies/';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/wp-admin';
-  id: '__root__' | '/_bare' | '/_default' | '/_bare/wp-admin' | '/_default/';
+  to:
+    | '/'
+    | '/wp-admin'
+    | '/about'
+    | '/attributions'
+    | '/policies/cookies-policy'
+    | '/policies/privacy-policy'
+    | '/policies';
+  id:
+    | '__root__'
+    | '/_bare'
+    | '/_default'
+    | '/_bare/wp-admin'
+    | '/_default/about'
+    | '/_default/attributions'
+    | '/_default/'
+    | '/_default/policies/cookies-policy'
+    | '/_default/policies/privacy-policy'
+    | '/_default/policies/';
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
@@ -91,6 +162,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DefaultIndexRouteImport;
       parentRoute: typeof DefaultRoute;
     };
+    '/_default/about': {
+      id: '/_default/about';
+      path: '/about';
+      fullPath: '/about';
+      preLoaderRoute: typeof DefaultAboutRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/attributions': {
+      id: '/_default/attributions';
+      path: '/attributions';
+      fullPath: '/attributions';
+      preLoaderRoute: typeof DefaultAttributionsRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/policies/': {
+      id: '/_default/policies/';
+      path: '/policies';
+      fullPath: '/policies/';
+      preLoaderRoute: typeof DefaultPoliciesIndexRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/policies/cookies-policy': {
+      id: '/_default/policies/cookies-policy';
+      path: '/policies/cookies-policy';
+      fullPath: '/policies/cookies-policy';
+      preLoaderRoute: typeof DefaultPoliciesCookiesPolicyRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/policies/privacy-policy': {
+      id: '/_default/policies/privacy-policy';
+      path: '/policies/privacy-policy';
+      fullPath: '/policies/privacy-policy';
+      preLoaderRoute: typeof DefaultPoliciesPrivacyPolicyRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
   }
 }
 
@@ -105,11 +211,21 @@ const BareRouteChildren: BareRouteChildren = {
 const BareRouteWithChildren = BareRoute._addFileChildren(BareRouteChildren);
 
 interface DefaultRouteChildren {
+  DefaultAboutRoute: typeof DefaultAboutRoute;
+  DefaultAttributionsRoute: typeof DefaultAttributionsRoute;
   DefaultIndexRoute: typeof DefaultIndexRoute;
+  DefaultPoliciesCookiesPolicyRoute: typeof DefaultPoliciesCookiesPolicyRoute;
+  DefaultPoliciesPrivacyPolicyRoute: typeof DefaultPoliciesPrivacyPolicyRoute;
+  DefaultPoliciesIndexRoute: typeof DefaultPoliciesIndexRoute;
 }
 
 const DefaultRouteChildren: DefaultRouteChildren = {
+  DefaultAboutRoute: DefaultAboutRoute,
+  DefaultAttributionsRoute: DefaultAttributionsRoute,
   DefaultIndexRoute: DefaultIndexRoute,
+  DefaultPoliciesCookiesPolicyRoute: DefaultPoliciesCookiesPolicyRoute,
+  DefaultPoliciesPrivacyPolicyRoute: DefaultPoliciesPrivacyPolicyRoute,
+  DefaultPoliciesIndexRoute: DefaultPoliciesIndexRoute,
 };
 
 const DefaultRouteWithChildren =
