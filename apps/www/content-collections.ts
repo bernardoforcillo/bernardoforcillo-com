@@ -4,9 +4,15 @@ import rehypeShiki from '@shikijs/rehype';
 import { z } from 'zod';
 import { splitBlogPath } from './src/content/lib';
 
-const markdownOptions = {
+// `@content-collections/markdown` does not export its `Options` type, so it is
+// recovered from `compileMarkdown`'s signature. The annotation is load-bearing:
+// without it the nested plugin array widens to `(Plugin | { theme: string })[][]`
+// and is rejected by `Options.rehypePlugins: Pluggable[]`, which needs a tuple.
+type MarkdownOptions = NonNullable<Parameters<typeof compileMarkdown>[2]>;
+
+const markdownOptions: MarkdownOptions = {
   rehypePlugins: [[rehypeShiki, { theme: 'github-light' }]],
-} as const;
+};
 
 const isoDate = z
   .string()
