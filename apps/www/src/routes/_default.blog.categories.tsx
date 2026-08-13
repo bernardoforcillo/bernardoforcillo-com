@@ -1,14 +1,17 @@
-import { SITE_DESCRIPTION, pageHead } from '@monorepo/seo';
+import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '@monorepo/seo';
 import { PageHeader } from '@monorepo/ui';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { FolderTree } from 'lucide-react';
 import { blogCategories } from '~/content';
 
 export const Route = createFileRoute('/_default/blog/categories')({
-  // No `title`: this page exported no metadata under Next and inherited the
-  // root default, `Bernardo Forcillo`.
+  // This page declared no metadata title under Next, so it inherited the
+  // root layout, whose title.absolute shadows title.default for every
+  // descendant without a title of its own. tests/seo-baseline.json records
+  // the string Next actually emitted here.
   head: () =>
     pageHead({
+      absoluteTitle: TITLE_ABSOLUTE,
       description: SITE_DESCRIPTION,
       path: '/blog/categories',
     }),
