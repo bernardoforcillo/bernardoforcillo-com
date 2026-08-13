@@ -19,9 +19,13 @@ import { Route as DefaultBlogCategorySlugIndexRouteImport } from './routes/_defa
 import { Route as DefaultBlogCategoriesRouteImport } from './routes/_default.blog.categories';
 import { Route as DefaultBlogIndexRouteImport } from './routes/_default.blog.index';
 import { Route as DefaultIndexRouteImport } from './routes/_default.index';
+import { Route as DefaultNotesNoteSlugRouteImport } from './routes/_default.notes.$noteSlug';
+import { Route as DefaultNotesIndexRouteImport } from './routes/_default.notes.index';
 import { Route as DefaultPoliciesCookiesPolicyRouteImport } from './routes/_default.policies.cookies-policy';
 import { Route as DefaultPoliciesIndexRouteImport } from './routes/_default.policies.index';
 import { Route as DefaultPoliciesPrivacyPolicyRouteImport } from './routes/_default.policies.privacy-policy';
+import { Route as DefaultProjectsProjectSlugRouteImport } from './routes/_default.projects.$projectSlug';
+import { Route as DefaultProjectsIndexRouteImport } from './routes/_default.projects.index';
 
 const BareRoute = BareRouteImport.update({
   id: '/_bare',
@@ -61,6 +65,16 @@ const DefaultBlogCategoriesRoute = DefaultBlogCategoriesRouteImport.update({
   path: '/blog/categories',
   getParentRoute: () => DefaultRoute,
 } as any);
+const DefaultNotesIndexRoute = DefaultNotesIndexRouteImport.update({
+  id: '/notes/',
+  path: '/notes/',
+  getParentRoute: () => DefaultRoute,
+} as any);
+const DefaultNotesNoteSlugRoute = DefaultNotesNoteSlugRouteImport.update({
+  id: '/notes/$noteSlug',
+  path: '/notes/$noteSlug',
+  getParentRoute: () => DefaultRoute,
+} as any);
 const DefaultPoliciesIndexRoute = DefaultPoliciesIndexRouteImport.update({
   id: '/policies/',
   path: '/policies/',
@@ -76,6 +90,17 @@ const DefaultPoliciesPrivacyPolicyRoute =
   DefaultPoliciesPrivacyPolicyRouteImport.update({
     id: '/policies/privacy-policy',
     path: '/policies/privacy-policy',
+    getParentRoute: () => DefaultRoute,
+  } as any);
+const DefaultProjectsIndexRoute = DefaultProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => DefaultRoute,
+} as any);
+const DefaultProjectsProjectSlugRoute =
+  DefaultProjectsProjectSlugRouteImport.update({
+    id: '/projects/$projectSlug',
+    path: '/projects/$projectSlug',
     getParentRoute: () => DefaultRoute,
   } as any);
 const DefaultBlogCategorySlugIndexRoute =
@@ -97,10 +122,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof DefaultAboutRoute;
   '/attributions': typeof DefaultAttributionsRoute;
   '/blog/categories': typeof DefaultBlogCategoriesRoute;
+  '/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute;
   '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
   '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
+  '/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute;
   '/blog/': typeof DefaultBlogIndexRoute;
+  '/notes/': typeof DefaultNotesIndexRoute;
   '/policies/': typeof DefaultPoliciesIndexRoute;
+  '/projects/': typeof DefaultProjectsIndexRoute;
   '/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute;
   '/blog/$categorySlug/': typeof DefaultBlogCategorySlugIndexRoute;
 }
@@ -110,10 +139,14 @@ export interface FileRoutesByTo {
   '/about': typeof DefaultAboutRoute;
   '/attributions': typeof DefaultAttributionsRoute;
   '/blog/categories': typeof DefaultBlogCategoriesRoute;
+  '/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute;
   '/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
   '/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
+  '/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute;
   '/blog': typeof DefaultBlogIndexRoute;
+  '/notes': typeof DefaultNotesIndexRoute;
   '/policies': typeof DefaultPoliciesIndexRoute;
+  '/projects': typeof DefaultProjectsIndexRoute;
   '/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute;
   '/blog/$categorySlug': typeof DefaultBlogCategorySlugIndexRoute;
 }
@@ -126,10 +159,14 @@ export interface FileRoutesById {
   '/_default/attributions': typeof DefaultAttributionsRoute;
   '/_default/': typeof DefaultIndexRoute;
   '/_default/blog/categories': typeof DefaultBlogCategoriesRoute;
+  '/_default/notes/$noteSlug': typeof DefaultNotesNoteSlugRoute;
   '/_default/policies/cookies-policy': typeof DefaultPoliciesCookiesPolicyRoute;
   '/_default/policies/privacy-policy': typeof DefaultPoliciesPrivacyPolicyRoute;
+  '/_default/projects/$projectSlug': typeof DefaultProjectsProjectSlugRoute;
   '/_default/blog/': typeof DefaultBlogIndexRoute;
+  '/_default/notes/': typeof DefaultNotesIndexRoute;
   '/_default/policies/': typeof DefaultPoliciesIndexRoute;
+  '/_default/projects/': typeof DefaultProjectsIndexRoute;
   '/_default/blog/$categorySlug/$postSlug': typeof DefaultBlogCategorySlugPostSlugRoute;
   '/_default/blog/$categorySlug/': typeof DefaultBlogCategorySlugIndexRoute;
 }
@@ -141,10 +178,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/attributions'
     | '/blog/categories'
+    | '/notes/$noteSlug'
     | '/policies/cookies-policy'
     | '/policies/privacy-policy'
+    | '/projects/$projectSlug'
     | '/blog/'
+    | '/notes/'
     | '/policies/'
+    | '/projects/'
     | '/blog/$categorySlug/$postSlug'
     | '/blog/$categorySlug/';
   fileRoutesByTo: FileRoutesByTo;
@@ -154,10 +195,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/attributions'
     | '/blog/categories'
+    | '/notes/$noteSlug'
     | '/policies/cookies-policy'
     | '/policies/privacy-policy'
+    | '/projects/$projectSlug'
     | '/blog'
+    | '/notes'
     | '/policies'
+    | '/projects'
     | '/blog/$categorySlug/$postSlug'
     | '/blog/$categorySlug';
   id:
@@ -169,10 +214,14 @@ export interface FileRouteTypes {
     | '/_default/attributions'
     | '/_default/'
     | '/_default/blog/categories'
+    | '/_default/notes/$noteSlug'
     | '/_default/policies/cookies-policy'
     | '/_default/policies/privacy-policy'
+    | '/_default/projects/$projectSlug'
     | '/_default/blog/'
+    | '/_default/notes/'
     | '/_default/policies/'
+    | '/_default/projects/'
     | '/_default/blog/$categorySlug/$postSlug'
     | '/_default/blog/$categorySlug/';
   fileRoutesById: FileRoutesById;
@@ -240,6 +289,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DefaultBlogCategoriesRouteImport;
       parentRoute: typeof DefaultRoute;
     };
+    '/_default/notes/': {
+      id: '/_default/notes/';
+      path: '/notes';
+      fullPath: '/notes/';
+      preLoaderRoute: typeof DefaultNotesIndexRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/notes/$noteSlug': {
+      id: '/_default/notes/$noteSlug';
+      path: '/notes/$noteSlug';
+      fullPath: '/notes/$noteSlug';
+      preLoaderRoute: typeof DefaultNotesNoteSlugRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
     '/_default/policies/': {
       id: '/_default/policies/';
       path: '/policies';
@@ -259,6 +322,20 @@ declare module '@tanstack/react-router' {
       path: '/policies/privacy-policy';
       fullPath: '/policies/privacy-policy';
       preLoaderRoute: typeof DefaultPoliciesPrivacyPolicyRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/projects/': {
+      id: '/_default/projects/';
+      path: '/projects';
+      fullPath: '/projects/';
+      preLoaderRoute: typeof DefaultProjectsIndexRouteImport;
+      parentRoute: typeof DefaultRoute;
+    };
+    '/_default/projects/$projectSlug': {
+      id: '/_default/projects/$projectSlug';
+      path: '/projects/$projectSlug';
+      fullPath: '/projects/$projectSlug';
+      preLoaderRoute: typeof DefaultProjectsProjectSlugRouteImport;
       parentRoute: typeof DefaultRoute;
     };
     '/_default/blog/$categorySlug/': {
@@ -293,10 +370,14 @@ interface DefaultRouteChildren {
   DefaultAttributionsRoute: typeof DefaultAttributionsRoute;
   DefaultIndexRoute: typeof DefaultIndexRoute;
   DefaultBlogCategoriesRoute: typeof DefaultBlogCategoriesRoute;
+  DefaultNotesNoteSlugRoute: typeof DefaultNotesNoteSlugRoute;
   DefaultPoliciesCookiesPolicyRoute: typeof DefaultPoliciesCookiesPolicyRoute;
   DefaultPoliciesPrivacyPolicyRoute: typeof DefaultPoliciesPrivacyPolicyRoute;
+  DefaultProjectsProjectSlugRoute: typeof DefaultProjectsProjectSlugRoute;
   DefaultBlogIndexRoute: typeof DefaultBlogIndexRoute;
+  DefaultNotesIndexRoute: typeof DefaultNotesIndexRoute;
   DefaultPoliciesIndexRoute: typeof DefaultPoliciesIndexRoute;
+  DefaultProjectsIndexRoute: typeof DefaultProjectsIndexRoute;
   DefaultBlogCategorySlugPostSlugRoute: typeof DefaultBlogCategorySlugPostSlugRoute;
   DefaultBlogCategorySlugIndexRoute: typeof DefaultBlogCategorySlugIndexRoute;
 }
@@ -306,10 +387,14 @@ const DefaultRouteChildren: DefaultRouteChildren = {
   DefaultAttributionsRoute: DefaultAttributionsRoute,
   DefaultIndexRoute: DefaultIndexRoute,
   DefaultBlogCategoriesRoute: DefaultBlogCategoriesRoute,
+  DefaultNotesNoteSlugRoute: DefaultNotesNoteSlugRoute,
   DefaultPoliciesCookiesPolicyRoute: DefaultPoliciesCookiesPolicyRoute,
   DefaultPoliciesPrivacyPolicyRoute: DefaultPoliciesPrivacyPolicyRoute,
+  DefaultProjectsProjectSlugRoute: DefaultProjectsProjectSlugRoute,
   DefaultBlogIndexRoute: DefaultBlogIndexRoute,
+  DefaultNotesIndexRoute: DefaultNotesIndexRoute,
   DefaultPoliciesIndexRoute: DefaultPoliciesIndexRoute,
+  DefaultProjectsIndexRoute: DefaultProjectsIndexRoute,
   DefaultBlogCategorySlugPostSlugRoute: DefaultBlogCategorySlugPostSlugRoute,
   DefaultBlogCategorySlugIndexRoute: DefaultBlogCategorySlugIndexRoute,
 };
