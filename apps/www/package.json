@@ -30,19 +30,25 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.15.2",
+    "@content-collections/markdown": "^0.1.4",
+    "@content-collections/vite": "^0.3.0",
     "@monorepo/tailwindcss": "workspace:*",
     "@monorepo/tsconfig": "workspace:*",
     "@monorepo/vite-config": "workspace:*",
+    "@shikijs/rehype": "^4.4.3",
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "postcss": "^8.5.10",
+    "shiki": "^4.4.3",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^8.2.1",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "zod": "^4.4.3"
   },
   "browserslist": [
     "> 0.1% and last 2 versions and not dead",

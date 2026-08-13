@@ -1,3 +1,4 @@
+import contentCollections from '@content-collections/vite';
 import { createAppConfig } from '@monorepo/vite-config';
 import { blogCategoryPages } from './scripts/blog-category-pages.mjs';
 
@@ -7,6 +8,7 @@ export default createAppConfig({
   root,
   sitemapHost: 'https://bernardoforcillo.com',
   pages: blogCategoryPages(root),
+  plugins: [contentCollections()],
   // TEMPORARY — removed in Task 11, once every route the home page links to
   // exists. Right now `pages` declares /blog/engineering (route lands in Task
   // 10) and the home page links to /projects, /blog, /notes and /about (Tasks
