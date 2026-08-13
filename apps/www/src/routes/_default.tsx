@@ -1,4 +1,5 @@
 import { Outlet, createFileRoute } from '@tanstack/react-router';
+import { SiteShell } from '~/features/navigation/organisms/site-shell';
 
 export const Route = createFileRoute('/_default')({
   component: DefaultLayout,
@@ -6,10 +7,8 @@ export const Route = createFileRoute('/_default')({
 
 function DefaultLayout() {
   return (
-    <div className='flex flex-col min-h-screen'>
-      <main className='flex-1'>
-        <Outlet />
-      </main>
-    </div>
+    <SiteShell>
+      <Outlet />
+    </SiteShell>
   );
 }
