@@ -126,3 +126,60 @@ test('.dockerignore excludes generated trees at every depth', () => {
     'markdown is build input (apps/www/content); it must never be excluded',
   );
 });
+
+test('the Dockerfile has the five expected stages and base images', () => {
+  const dockerfile = readText('apps/www/Dockerfile');
+  const stages = [...dockerfile.matchAll(/^FROM \S+ AS (\S+)$/gm)].map(
+    (match) => match[1],
+  );
+  assert.deepEqual(stages, ['base', 'deps', 'builder', 'gobuilder', 'runner']);
+  assert.match(dockerfile, /^FROM node:24-alpine AS base$/m);
+  assert.match(dockerfile, /^FROM golang:1\.25-alpine AS gobuilder$/m);
+  assert.match(
+    dockerfile,
+    /^FROM gcr\.io\/distroless\/static-debian12:nonroot AS runner$/m,
+  );
+  assert.match(dockerfile, /^USER 65532:65532$/m);
+  assert.match(dockerfile, /^EXPOSE 3000$/m);
+  assert.ok(
+    !/^#\s*syntax=/m.test(dockerfile),
+    'a BuildKit frontend directive makes the image unbuildable under Podman',
+  );
+});
+
+test('the Dockerfile copies the Go workspace explicitly', () => {
+  const dockerfile = readText('apps/www/Dockerfile');
+  assert.match(dockerfile, /COPY go\.work\* \.\//);
+  assert.match(
+    dockerfile,
+    /COPY packages\/static-server \.\/packages\/static-server/,
+  );
+  assert.match(dockerfile, /COPY apps\/www\/server \.\/apps\/www\/server/);
+  assert.match(
+    dockerfile,
+    /COPY --from=builder \/app\/apps\/www\/dist\/client \.\/apps\/www\/server\/dist/,
+  );
+});
+
+test('the Dockerfile asserts the build output instead of repairing it', () => {
+  const dockerfile = readText('apps/www/Dockerfile');
+  assert.match(
+    dockerfile,
+    /RUN test ! -e apps\/www\/dist\/client\/pages\.json/,
+  );
+  assert.ok(
+    !dockerfile.includes('rm -f apps/www/dist/client/pages.json'),
+    'deleting pages.json here would mask a regression in clean-dist.mjs',
+  );
+});
+
+test('the Dockerfile carries no Next.js leftovers', () => {
+  const dockerfile = readText('apps/www/Dockerfile');
+  assert.ok(!dockerfile.includes('NEXT_TELEMETRY_DISABLED'));
+  assert.ok(!dockerfile.includes('libc6-compat'));
+  assert.ok(!dockerfile.includes('.next'));
+  assert.ok(
+    !/ENV NODE_ENV[= ]production[\s\S]*RUN pnpm install/.test(dockerfile),
+    'NODE_ENV=production before pnpm install silently drops devDependencies',
+  );
+});
