@@ -80,3 +80,18 @@ test('the Go library package is wired into turbo build, test and clean', () => {
   assert.equal(pkg.scripts.test, 'go test ./...');
   assert.equal(pkg.scripts.clean, 'go clean ./...');
 });
+
+test('biome leaves the generated route tree alone', () => {
+  const biome = readJson('biome.json');
+  // linter.ignore is plan 1 Task 15's edit, asserted here as a post-condition.
+  assert.ok(biome.linter.ignore.includes('**/routeTree.gen.ts'));
+  assert.ok(biome.formatter.ignore.includes('**/routeTree.gen.ts'));
+  // files.ignore is the only list that also silences organizeImports, which is
+  // a third analyzer alongside the formatter and the linter and has no ignore
+  // list of its own. Dropping this entry reverts commit eb2d196 and reopens the
+  // 218-line churn loop, so it is asserted, not forbidden.
+  assert.ok(
+    biome.files.ignore.includes('**/routeTree.gen.ts'),
+    'files.ignore is the only list organizeImports honours',
+  );
+});
