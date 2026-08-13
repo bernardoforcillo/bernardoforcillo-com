@@ -138,3 +138,9 @@ kubernetes/
 
 # Local Files
 local/
+
+# Build output and generated code
+dist
+.output
+.content-collections
+.tanstack

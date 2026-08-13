@@ -13,6 +13,8 @@
       "**/build/**",
       "**/.turbo/**",
       "**/.next/**",
+      "**/.content-collections/**",
+      "**/src/i18n/paraglide/**",
       "**/pnpm-lock.yaml",
       "**/package-lock.json",
       "**/yarn.lock",

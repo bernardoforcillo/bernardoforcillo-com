@@ -1,3 +1,5 @@
+// Historical: this produced tests/seo-baseline.json while Next.js still
+// existed. It cannot run any more; parity-diff.mjs consumes its output.
 import { spawn } from 'node:child_process';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';

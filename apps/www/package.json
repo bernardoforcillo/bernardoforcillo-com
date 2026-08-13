@@ -7,7 +7,6 @@
     "build": "vite build && node scripts/clean-dist.mjs",
     "preview": "vite preview",
     "test": "vitest run",
-    "baseline": "node scripts/capture-baseline.mjs",
     "parity": "node scripts/parity-diff.mjs"
   },
   "dependencies": {
@@ -15,18 +14,12 @@
     "@monorepo/ui": "workspace:*",
     "@tanstack/react-router": "^1.170.27",
     "@tanstack/react-start": "^1.168.44",
-    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.38.0",
-    "gray-matter": "^4.0.3",
     "lucide-react": "^0.507.0",
     "motion": "^12.38.0",
-    "next": "^16.2.4",
-    "next-intl": "^4.9.1",
     "react": "^19.2.5",
     "react-aria-components": "^1.17.0",
     "react-dom": "^19.2.5",
-    "react-markdown": "^10.1.0",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
@@ -38,15 +31,13 @@
     "@monorepo/tsconfig": "workspace:*",
     "@monorepo/vite-config": "workspace:*",
     "@shikijs/rehype": "^4.4.3",
-    "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "postcss": "^8.5.10",
     "shiki": "^4.4.3",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.2",
     "vite": "^8.2.1",
     "vitest": "^3.2.4",
     "zod": "^4.4.3"

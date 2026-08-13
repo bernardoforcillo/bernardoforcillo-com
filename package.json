@@ -20,6 +20,7 @@
     "dev:web": "pnpm turbo dev --filter=@bernardoforcillo-com/www...",
     "build:web": "pnpm turbo build --filter=@bernardoforcillo-com/www...",
     "container": "node scripts/container-engine.mjs",
+    "test": "pnpm turbo test",
     "lint": "biome lint --fix .",
     "format": "biome format --fix .",
     "pnpm:update:all": "pnpm up --recursive",
@@ -36,10 +37,10 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
     "turbo": "^2.9.6",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": ["biome check --write"]
