@@ -65,6 +65,7 @@ func New(files fs.FS, opts Options) *amaro.App {
 	app.Use(securityHeaders())
 
 	static := serveAsset(index)
+	config := configHandler(renderConfigScript(opts.ConfigEnv))
 	access := logging()
 
 	// v0.4.0 has no App.Any, so GET and HEAD are registered by hand. A static
@@ -72,6 +73,8 @@ func New(files fs.FS, opts Options) *amaro.App {
 	// "/" with an empty parameter.
 	mustAdd(app.GET("/healthz", healthz))
 	mustAdd(app.HEAD("/healthz", healthz))
+	mustAdd(app.GET("/config.js", config, access))
+	mustAdd(app.HEAD("/config.js", config, access))
 	mustAdd(app.GET("/*filepath", static, access))
 	mustAdd(app.HEAD("/*filepath", static, access))
 
