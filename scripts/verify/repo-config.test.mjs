@@ -95,3 +95,34 @@ test('biome leaves the generated route tree alone', () => {
     'files.ignore is the only list organizeImports honours',
   );
 });
+
+test('.dockerignore excludes generated trees at every depth', () => {
+  const dockerignore = readText('.dockerignore');
+  const lines = dockerignore.split(/\r?\n/);
+  const required = [
+    '**/node_modules',
+    '**/dist',
+    '**/.output',
+    '**/.content-collections',
+    '**/.turbo',
+    '**/*.test',
+    '**/*.exe',
+    'playwright-report',
+    'test-results',
+  ];
+  for (const pattern of required) {
+    assert.ok(lines.includes(pattern), `.dockerignore is missing ${pattern}`);
+  }
+  // The bare forms plan 1 Task 15 appended are strictly subsumed by the
+  // recursive ones and must not survive as dead duplicates.
+  for (const dead of ['.output', '.content-collections', '.tanstack']) {
+    assert.ok(
+      !lines.includes(dead),
+      `.dockerignore still carries the dead bare pattern ${dead}`,
+    );
+  }
+  assert.ok(
+    !/^\*\.mdx?$/m.test(dockerignore),
+    'markdown is build input (apps/www/content); it must never be excluded',
+  );
+});

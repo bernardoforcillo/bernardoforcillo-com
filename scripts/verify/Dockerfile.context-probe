@@ -1,0 +1,32 @@
+# Proves what does and does not reach the build context.
+# Built only by hand / by CI verification, never by the application image.
+# No `# syntax=` directive anywhere in this repository: Podman does not fetch
+# BuildKit frontends, so a frontend pin makes the build unrunnable locally.
+FROM busybox:1.37 AS probe
+WORKDIR /ctx
+COPY . .
+RUN set -eu; \
+    for leaked in \
+      apps/www/dist \
+      apps/www/.content-collections \
+      apps/www/node_modules \
+      node_modules \
+      .output \
+      playwright-report \
+      test-results; do \
+      if [ -e "$leaked" ]; then echo "LEAKED: $leaked"; exit 1; fi; \
+    done; \
+    if [ -e apps/www/server/dist/SENTINEL ]; then \
+      echo 'LEAKED: apps/www/server/dist content'; exit 1; \
+    fi; \
+    for required in \
+      go.work \
+      turbo.json \
+      pnpm-lock.yaml \
+      apps/www/Dockerfile \
+      apps/www/content \
+      apps/www/server \
+      packages/static-server; do \
+      if [ ! -e "$required" ]; then echo "MISSING: $required"; exit 1; fi; \
+    done; \
+    echo 'context ok'

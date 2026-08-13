@@ -139,8 +139,32 @@ kubernetes/
 # Local Files
 local/
 
-# Build output and generated code
-dist
-.output
-.content-collections
-.tanstack
+# ---------------------------------------------------------------------------
+# Build output. Every one of these is produced INSIDE the image; a host copy
+# leaking into the context is stale at best and a wrong-architecture binary at
+# worst. Bare patterns match against the context root only, so the `dist` /
+# `node_modules` entries above do NOT cover nested workspaces.
+# ---------------------------------------------------------------------------
+**/node_modules
+**/dist
+**/.output
+**/.content-collections
+**/.turbo
+**/.vite
+**/.tanstack
+**/.next
+
+# Go build artifacts
+**/*.exe
+**/*.test
+**/*.out
+apps/www/server/server
+packages/static-server/coverage.out
+
+# Test reports
+playwright-report
+test-results
+blob-report
+
+# NOTE: never add `*.md` or `*.mdx` here. apps/www/content/**/*.md is the
+# content source and is required by the builder stage.
