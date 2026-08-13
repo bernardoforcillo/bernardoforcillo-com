@@ -8,6 +8,8 @@ import {
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
 import interRegular from '~/assets/fonts/inter/variable-regular.woff2?url';
+import { NotFound } from '~/features/navigation/molecules/not-found';
+import { SiteShell } from '~/features/navigation/organisms/site-shell';
 import { GTM_BOOTSTRAP } from '~/lib/gtm';
 import appCss from '~/styles/global.css?url';
 
@@ -46,8 +48,19 @@ export const Route = createRootRoute({
     // inline bootstrap immediately below reads.
     scripts: [{ src: '/config.js' }, { children: GTM_BOOTSTRAP }],
   }),
+  // A notFound() thrown from a `_default` child bubbles all the way to the
+  // root, which sits outside that layout — so the screen brings its own shell.
+  notFoundComponent: NotFoundScreen,
   shellComponent: RootDocument,
 });
+
+function NotFoundScreen() {
+  return (
+    <SiteShell>
+      <NotFound />
+    </SiteShell>
+  );
+}
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (

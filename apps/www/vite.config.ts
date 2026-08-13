@@ -7,6 +7,11 @@ const root = import.meta.dirname;
 export default createAppConfig({
   root,
   sitemapHost: 'https://bernardoforcillo.com',
-  pages: blogCategoryPages(root),
+  pages: [
+    // Param routes crawlLinks cannot reach on its own.
+    ...blogCategoryPages(root),
+    // Prerendered by autoStaticPathsDiscovery, but it must never be indexed.
+    { path: '/404', sitemap: { exclude: true } },
+  ],
   plugins: [contentCollections()],
 });

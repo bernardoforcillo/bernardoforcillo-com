@@ -13,6 +13,7 @@ import { Route as BareRouteImport } from './routes/_bare'
 import { Route as DefaultRouteImport } from './routes/_default'
 import { Route as BareWpAdminRouteImport } from './routes/_bare.wp-admin'
 import { Route as DefaultIndexRouteImport } from './routes/_default.index'
+import { Route as Default404RouteImport } from './routes/_default.404'
 import { Route as DefaultAboutRouteImport } from './routes/_default.about'
 import { Route as DefaultAttributionsRouteImport } from './routes/_default.attributions'
 import { Route as DefaultBlogIndexRouteImport } from './routes/_default.blog.index'
@@ -43,6 +44,11 @@ const BareWpAdminRoute = BareWpAdminRouteImport.update({
 const DefaultIndexRoute = DefaultIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => DefaultRoute,
+} as any)
+const Default404Route = Default404RouteImport.update({
+  id: '/404',
+  path: '/404',
   getParentRoute: () => DefaultRoute,
 } as any)
 const DefaultAboutRoute = DefaultAboutRouteImport.update({
@@ -119,6 +125,7 @@ const DefaultBlogCategorySlugPostSlugRoute =
 export interface FileRoutesByFullPath {
   '/': typeof DefaultIndexRoute
   '/wp-admin': typeof BareWpAdminRoute
+  '/404': typeof Default404Route
   '/about': typeof DefaultAboutRoute
   '/attributions': typeof DefaultAttributionsRoute
   '/blog/categories': typeof DefaultBlogCategoriesRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof DefaultIndexRoute
   '/wp-admin': typeof BareWpAdminRoute
+  '/404': typeof Default404Route
   '/about': typeof DefaultAboutRoute
   '/attributions': typeof DefaultAttributionsRoute
   '/blog/categories': typeof DefaultBlogCategoriesRoute
@@ -155,6 +163,7 @@ export interface FileRoutesById {
   '/_bare': typeof BareRouteWithChildren
   '/_default': typeof DefaultRouteWithChildren
   '/_bare/wp-admin': typeof BareWpAdminRoute
+  '/_default/404': typeof Default404Route
   '/_default/about': typeof DefaultAboutRoute
   '/_default/attributions': typeof DefaultAttributionsRoute
   '/_default/': typeof DefaultIndexRoute
@@ -175,6 +184,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/wp-admin'
+    | '/404'
     | '/about'
     | '/attributions'
     | '/blog/categories'
@@ -192,6 +202,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/wp-admin'
+    | '/404'
     | '/about'
     | '/attributions'
     | '/blog/categories'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/_bare'
     | '/_default'
     | '/_bare/wp-admin'
+    | '/_default/404'
     | '/_default/about'
     | '/_default/attributions'
     | '/_default/'
@@ -259,6 +271,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof DefaultIndexRouteImport
+      parentRoute: typeof DefaultRoute
+    }
+    '/_default/404': {
+      id: '/_default/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof Default404RouteImport
       parentRoute: typeof DefaultRoute
     }
     '/_default/about': {
@@ -366,6 +385,7 @@ const BareRouteChildren: BareRouteChildren = {
 const BareRouteWithChildren = BareRoute._addFileChildren(BareRouteChildren)
 
 interface DefaultRouteChildren {
+  Default404Route: typeof Default404Route
   DefaultAboutRoute: typeof DefaultAboutRoute
   DefaultAttributionsRoute: typeof DefaultAttributionsRoute
   DefaultIndexRoute: typeof DefaultIndexRoute
@@ -383,6 +403,7 @@ interface DefaultRouteChildren {
 }
 
 const DefaultRouteChildren: DefaultRouteChildren = {
+  Default404Route: Default404Route,
   DefaultAboutRoute: DefaultAboutRoute,
   DefaultAttributionsRoute: DefaultAttributionsRoute,
   DefaultIndexRoute: DefaultIndexRoute,
