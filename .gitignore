@@ -138,3 +138,6 @@ local.*.yaml
 # Local Files
 local/
 
+.superpowers
+*/superpowers
+docs/superpowers/
