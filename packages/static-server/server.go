@@ -61,14 +61,19 @@ func New(files fs.FS, opts Options) *amaro.App {
 		amaro.WithRouter(routers.NewTrieRouter()),
 		amaro.WithErrorHandler(errorHandler(index[opts.NotFoundPath])),
 	)
+	// Recovery is already installed by amaro.New.
+	app.Use(securityHeaders())
 
 	static := serveAsset(index)
+	access := logging()
 
 	// v0.4.0 has no App.Any, so GET and HEAD are registered by hand. A static
 	// route wins over the wildcard in the trie, and "/*filepath" also matches
 	// "/" with an empty parameter.
-	mustAdd(app.GET("/*filepath", static))
-	mustAdd(app.HEAD("/*filepath", static))
+	mustAdd(app.GET("/healthz", healthz))
+	mustAdd(app.HEAD("/healthz", healthz))
+	mustAdd(app.GET("/*filepath", static, access))
+	mustAdd(app.HEAD("/*filepath", static, access))
 
 	return app
 }
@@ -112,4 +117,14 @@ func errorHandler(notFound *asset) amaro.ErrorHandler {
 
 		http.Error(c.Writer, http.StatusText(status), status)
 	}
+}
+
+// healthz answers the three Kubernetes probes. It is registered without the
+// access-log middleware, so a probe every few seconds costs nothing and hides
+// nothing in the logs.
+func healthz(c *amaro.Context) error {
+	header := c.Writer.Header()
+	header.Set("Content-Type", "text/plain; charset=utf-8")
+	header.Set("Cache-Control", noStoreCacheControl)
+	return c.String(http.StatusOK, "ok")
 }
