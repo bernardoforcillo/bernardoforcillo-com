@@ -13,6 +13,7 @@ export default createAppConfig({
     ...blogCategoryPages(root),
     // Prerendered by autoStaticPathsDiscovery, but it must never be indexed.
     { path: '/404', sitemap: { exclude: true } },
+    { path: '/wp-admin', sitemap: { exclude: true } },
   ],
   plugins: [
     contentCollections(),

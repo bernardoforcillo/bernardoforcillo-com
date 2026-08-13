@@ -7,6 +7,8 @@ export const Route = createFileRoute('/_bare/wp-admin')({
       title: 'No Wordpress Here',
       description: 'Do you really think this is a wordpress site? 🥲.',
       path: '/wp-admin',
+      // A honeypot for bots probing for WordPress: reachable, never advertised.
+      noIndex: true,
     }),
   component: WpAdminPage,
 });
