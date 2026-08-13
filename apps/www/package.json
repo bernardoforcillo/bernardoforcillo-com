@@ -7,7 +7,8 @@
     "build": "vite build && node scripts/clean-dist.mjs",
     "preview": "vite preview",
     "test": "vitest run",
-    "parity": "node scripts/parity-diff.mjs"
+    "parity": "node scripts/parity-diff.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@monorepo/seo": "workspace:*",
@@ -30,6 +31,7 @@
     "@monorepo/tailwindcss": "workspace:*",
     "@monorepo/tsconfig": "workspace:*",
     "@monorepo/vite-config": "workspace:*",
+    "@playwright/test": "^1.50.0",
     "@shikijs/rehype": "^4.4.3",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.19.17",

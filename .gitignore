@@ -159,3 +159,8 @@ go.work.sum
 
 # Paraglide compiler output
 apps/www/src/i18n/paraglide
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
