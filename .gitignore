@@ -91,6 +91,11 @@ out
 .nuxt
 dist
 
+# The Go binary embeds this directory; the placeholder must be committed even
+# though every other dist/ in the repository is build output.
+!apps/www/server/dist/
+!apps/www/server/dist/.gitkeep
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
