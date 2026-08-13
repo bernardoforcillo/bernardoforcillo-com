@@ -156,3 +156,6 @@ go.work.sum
 # TanStack Start
 .tanstack
 .output
+
+# Paraglide compiler output
+apps/www/src/i18n/paraglide

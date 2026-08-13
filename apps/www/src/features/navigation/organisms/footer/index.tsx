@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import type { FC } from 'react';
 import GithubIcon from '~/assets/icons/github-mark';
 import LinkedinMark from '~/assets/icons/linkedin-mark';
+import { m } from '~/i18n';
 import { BUILD_YEAR } from '~/lib/build-info';
 
 const navLinks = [
@@ -125,9 +126,7 @@ export const Footer: FC = () => {
         {/* Bottom bar */}
         <div className='pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs font-mono text-gray-400 uppercase tracking-wide'>
           <span>Built with TanStack Start, Tailwind, &amp; Love.</span>
-          <span>
-            &copy; {BUILD_YEAR} Bernardo Forcillo — All Rights Reserved.
-          </span>
+          <span>{m.footer_rights({ year: BUILD_YEAR })}</span>
         </div>
       </div>
     </motion.footer>
