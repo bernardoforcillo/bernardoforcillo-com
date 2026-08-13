@@ -141,3 +141,6 @@ local/
 .superpowers
 */superpowers
 docs/superpowers/
+
+# Go workspace checksum file: every hash it holds is already in a module go.sum
+go.work.sum
