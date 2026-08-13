@@ -40,4 +40,4 @@ description: Short summary
 date: 2026-04-16
 ```
 
-After adding or editing files, the Next.js app will render the new content automatically.
+After adding or editing files, run the build: the content is compiled to HTML and prerendered, so a new post ships with the next deploy.
