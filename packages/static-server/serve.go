@@ -3,6 +3,7 @@ package staticserver
 import (
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/buildwithgo/amaro"
 )
@@ -20,12 +21,23 @@ func serveAsset(index map[string]*asset) amaro.Handler {
 	}
 }
 
-// writeAsset writes one prepared asset. amaro's Context has no Blob helper, so
-// the body goes straight to the ResponseWriter.
+// writeAsset answers a conditional request from the startup hash, or writes the
+// body. amaro's Context has no Blob helper, so the body goes straight to the
+// ResponseWriter.
 func writeAsset(c *amaro.Context, a *asset) error {
 	header := c.Writer.Header()
-	header.Set("Content-Type", a.contentType)
+	header.Set("ETag", a.etag)
 	header.Set("Cache-Control", a.cacheControl)
+
+	if etagMatches(c.Request.Header.Get("If-None-Match"), a.etag) {
+		// Content-Type and Content-Length are deliberately never set on this
+		// path: a 304 carries validators and caching directives, not a
+		// representation.
+		c.Writer.WriteHeader(http.StatusNotModified)
+		return nil
+	}
+
+	header.Set("Content-Type", a.contentType)
 	header.Set("Content-Length", strconv.Itoa(len(a.body)))
 
 	c.Writer.WriteHeader(http.StatusOK)
@@ -35,4 +47,26 @@ func writeAsset(c *amaro.Context, a *asset) error {
 
 	_, err := c.Writer.Write(a.body)
 	return err
+}
+
+// etagMatches reports whether an If-None-Match header selects the given entity
+// tag. RFC 9110 requires the weak comparison function here, so the W/ prefix is
+// ignored on both sides.
+func etagMatches(ifNoneMatch, etag string) bool {
+	if ifNoneMatch == "" || etag == "" {
+		return false
+	}
+
+	want := strings.TrimPrefix(etag, "W/")
+	for _, candidate := range strings.Split(ifNoneMatch, ",") {
+		candidate = strings.TrimSpace(candidate)
+		if candidate == "*" {
+			return true
+		}
+		if strings.TrimPrefix(candidate, "W/") == want {
+			return true
+		}
+	}
+
+	return false
 }
