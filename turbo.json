@@ -1,5 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalPassThroughEnv": [
+    "GOCACHE",
+    "GOMODCACHE",
+    "GOPATH",
+    "HOME",
+    "LOCALAPPDATA",
+    "XDG_CACHE_HOME"
+  ],
   "tasks": {
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
