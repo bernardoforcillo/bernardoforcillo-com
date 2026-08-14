@@ -1,0 +1,17 @@
+export const BASELINE_ROUTES = [
+  '/',
+  '/about',
+  '/attributions',
+  '/policies',
+  '/policies/privacy-policy',
+  '/policies/cookies-policy',
+  '/blog',
+  '/blog/categories',
+  '/blog/engineering',
+  '/blog/engineering/hello-world',
+  '/notes',
+  '/notes/first-note',
+  '/projects',
+  '/projects/amaro',
+  '/wp-admin',
+];

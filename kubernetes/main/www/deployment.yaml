@@ -5,6 +5,8 @@ metadata:
   namespace: bernardoforcillo-com
 spec:
   replicas: 2
+  revisionHistoryLimit: 3
+  progressDeadlineSeconds: 300
   selector:
     matchLabels:
       app: bernardoforcillo-com
@@ -16,12 +18,21 @@ spec:
         tier: personal-website
     spec:
       securityContext:
-        runAsUser: 1001
-        runAsGroup: 1001
+        runAsUser: 65532
+        runAsGroup: 65532
         runAsNonRoot: true
-        fsGroup: 1001
+        fsGroup: 65532
         seccompProfile:
           type: RuntimeDefault
+      terminationGracePeriodSeconds: 30
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: bernardoforcillo-com
+              tier: personal-website
       containers:
         - name: bernardoforcillo-com
           image: bernardoforcillo/bernardoforcillo-com:main
@@ -33,18 +44,39 @@ spec:
                 - ALL
           resources:
             limits:
-              memory: '128Mi'
+              memory: '32Mi'
               cpu: '50m'
             requests:
-              memory: '64Mi'
+              memory: '16Mi'
               cpu: '10m'
           env:
             - name: GTM_ID
               value: GTM-TCMCZB6B
-          tty: true
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            failureThreshold: 12
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
           volumeMounts:
             - name: tmp
               mountPath: /tmp

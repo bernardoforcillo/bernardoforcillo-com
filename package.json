@@ -19,11 +19,16 @@
   "scripts": {
     "dev:web": "pnpm turbo dev --filter=@bernardoforcillo-com/www...",
     "build:web": "pnpm turbo build --filter=@bernardoforcillo-com/www...",
+    "container": "node scripts/container-engine.mjs",
+    "test": "pnpm turbo test && pnpm test:go",
     "lint": "biome lint --fix .",
     "format": "biome format --fix .",
     "pnpm:update:all": "pnpm up --recursive",
     "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "test:go": "go test ./packages/static-server/... ./apps/www/server/...",
+    "test:e2e": "pnpm turbo test:e2e --filter=@bernardoforcillo-com/www",
+    "test:config": "node --test \"scripts/verify/**/*.test.mjs\""
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
@@ -31,14 +36,14 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/format": "^19.8.1",
     "@commitlint/types": "^19.8.1",
-    "@types/node": "^22.19.5",
+    "@types/node": "^22.19.17",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "turbo": "^2.7.3",
-    "typescript": "^5.9.3"
+    "turbo": "^2.9.6",
+    "typescript": "^7.0.2"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": ["biome check --write"]

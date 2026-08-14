@@ -91,6 +91,11 @@ out
 .nuxt
 dist
 
+# The Go binary embeds this directory; the placeholder must be committed even
+# though every other dist/ in the repository is build output.
+!apps/www/server/dist/
+!apps/www/server/dist/.gitkeep
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
@@ -138,3 +143,24 @@ local.*.yaml
 # Local Files
 local/
 
+.superpowers
+*/superpowers
+docs/superpowers/
+
+# Go workspace checksum file: every hash it holds is already in a module go.sum
+go.work.sum
+
+# Content Collections generated output
+.content-collections
+
+# TanStack Start
+.tanstack
+.output
+
+# Paraglide compiler output
+apps/www/src/i18n/paraglide
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/

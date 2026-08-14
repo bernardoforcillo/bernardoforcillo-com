@@ -28,16 +28,14 @@ spec:
   minVersion: VersionTLS12
   maxVersion: VersionTLS13
   cipherSuites:
-    - TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256
-    - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
-    - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-    - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
-    - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
-    - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
-    - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
     - TLS_AES_256_GCM_SHA384
     - TLS_AES_128_GCM_SHA256
     - TLS_CHACHA20_POLY1305_SHA256
+    - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+    - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+    - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+    - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
     - TLS_FALLBACK_SCSV
   curvePreferences:
     - X25519        # Modern, secure curve
@@ -62,6 +60,10 @@ spec:
     stsIncludeSubdomains: true
     stsPreload: true
     stsSeconds: 31536000
+    referrerPolicy: "strict-origin-when-cross-origin"
+    permissionsPolicy: "camera=(), microphone=(), geolocation=(), payment=()"
+    customResponseHeaders:
+      X-Permitted-Cross-Domain-Policies: "none"
     customRequestHeaders:
       X-Forwarded-Proto: "https"
 ---

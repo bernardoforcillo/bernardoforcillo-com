@@ -1,0 +1,430 @@
+{
+  "/": {
+    "title": "Bernardo Forcillo - A Polymath Product Builder",
+    "titleCount": 1,
+    "description": "Building technologies for innovators, professionals and enthusiasts.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["BERNARDO FORCILLO."],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": "https://bernardoforcillo.com/#person",
+            "name": "Bernardo Forcillo",
+            "givenName": "Bernardo",
+            "familyName": "Forcillo",
+            "url": "https://bernardoforcillo.com/",
+            "jobTitle": "Software Engineer",
+            "birthDate": "2000-04-13T10:30:00.000+02:00",
+            "birthPlace": {
+              "@context": "https://schema.org",
+              "@type": "Place",
+              "address": {
+                "@context": "https://schema.org",
+                "@type": "PostalAddress",
+                "addressLocality": "Taranto",
+                "postalCode": "74121",
+                "addressRegion": "TA",
+                "addressCountry": "IT"
+              }
+            },
+            "homeLocation": [
+              {
+                "@context": "https://schema.org",
+                "@type": "Place",
+                "name": "Pisa",
+                "address": {
+                  "@context": "https://schema.org",
+                  "@type": "PostalAddress",
+                  "addressLocality": "Pisa",
+                  "postalCode": "56121",
+                  "addressRegion": "PI",
+                  "addressCountry": "IT"
+                }
+              }
+            ],
+            "memberOf": {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://syskrack.org/#organization",
+              "name": "A.P.S. Syskrack Giuseppe Porsia",
+              "url": "https://syskrack.org"
+            },
+            "worksFor": {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Ganiga Innovation",
+              "url": "https://ganiga.ai"
+            },
+            "sameAs": [
+              "https://g.co/kgs/vQk8YD",
+              "https://www.facebook.com/bforcillo",
+              "https://github.com/bernardoforcillo",
+              "https://bernardoforcillo.com/#person",
+              "https://orcid.org/0000-0003-3536-0244",
+              "https://www.wikidata.org/wiki/Q111416328",
+              "https://www.facebook.com/bernardo.forcillo",
+              "https://www.instagram.com/bernardoforcillo",
+              "https://www.linkedin.com/in/bernardoforcillo/",
+              "https://www.youtube.com/channel/UClKcECSWHukazKYnN5tTjSQ"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://bernardoforcillo.com/#website",
+            "url": "https://bernardoforcillo.com/",
+            "name": "Website of Bernardo Forcillo",
+            "author": {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://bernardoforcillo.com/#person",
+              "name": "Bernardo Forcillo",
+              "givenName": "Bernardo",
+              "familyName": "Forcillo"
+            },
+            "accountablePerson": {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://bernardoforcillo.com/#person",
+              "name": "Bernardo Forcillo",
+              "givenName": "Bernardo",
+              "familyName": "Forcillo"
+            },
+            "copyrightHolder": {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://bernardoforcillo.com/#person",
+              "name": "Bernardo Forcillo",
+              "givenName": "Bernardo",
+              "familyName": "Forcillo"
+            },
+            "maintainer": {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://bernardoforcillo.com/#person",
+              "name": "Bernardo Forcillo",
+              "givenName": "Bernardo",
+              "familyName": "Forcillo"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Bernardo Forcillo - Software Engineer & Polymath Builder",
+            "description": "Software Engineer building technologies for innovators, professionals and enthusiasts.",
+            "url": "https://bernardoforcillo.com/",
+            "inLanguage": "en",
+            "isPartOf": {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://bernardoforcillo.com/#website",
+              "url": "https://bernardoforcillo.com/"
+            },
+            "mainEntityOfPage": "https://bernardoforcillo.com/",
+            "subjectOf": {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://bernardoforcillo.com/#website",
+              "url": "https://bernardoforcillo.com/",
+              "name": "Bernardo Forcillo - Sito Web"
+            },
+            "publisher": {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": "https://bernardoforcillo.com/#person",
+              "name": "Bernardo Forcillo",
+              "givenName": "Bernardo",
+              "familyName": "Forcillo"
+            }
+          }
+        ]
+      }
+    ],
+    "text": "Home Blog Projects Notes About Open Menu Currently building Hoooly at Ganiga BERNARDO FORCILLO. // Software Engineer & Polymath Specializing in distributed systems, high-performance scalable digital products, and AI infrastructure. Currently building at Ganiga Innovation . Be Relentless. Act Different. Ship Fast. View Projects Read Blog 5+ Years Building 10+ Products Shipped ∞ Open Source Pisa, EU Based In 01 — INTRODUCTION Crafting digital tools with precision and soul . I believe software should be as beautiful as it is functional. My work bridges the gap between complex engineering challenges and intuitive, seamless user experiences. TypeScript Golang Next.js Flutter Kubernetes PostgreSQL 02 — NETWORK Based in Pisa, Italy (EU). Available CET/CEST. Open to collaboration, consulting, and interesting problems. GitHub GitHub LinkedIn LinkedIn @ Email 03 — SELECTED WORK Projects Explore case studies, experiments, and production applications. 04 — BIO & EXPERIENCE About Me Pisa, Italy — EU. Open Source · Hardware · Design. 05 — WRITING Blog Thoughts, essays, and deep-dives on technology, systems design, and building products. 06 — NOTES Notes Quick, atomic ideas and references captured in the open. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 1573
+  },
+  "/about": {
+    "title": " About - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "About Bernardo",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {
+      "og:title": "About - Bernardo Forcillo",
+      "og:description": "About Bernardo",
+      "og:url": "https://bernardoforcillo.com/about",
+      "og:site_name": "Bernardo Forcillo",
+      "og:type": "website"
+    },
+    "article": {},
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "About - Bernardo Forcillo",
+      "twitter:description": "About Bernardo"
+    },
+    "h1": ["About ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu About . About Bernardo BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 422
+  },
+  "/attributions": {
+    "title": "Bernardo Forcillo - A Polymath Product Builder",
+    "titleCount": 1,
+    "description": "Building technologies for innovators, professionals and enthusiasts.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": [],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Hello BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 405
+  },
+  "/policies": {
+    "title": " Policies - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "Privacy policy, terms of use, and other legal information",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {
+      "og:title": "Policies - Bernardo Forcillo",
+      "og:description": "Privacy policy, terms of use, and other legal information",
+      "og:url": "https://bernardoforcillo.com/policies",
+      "og:site_name": "Bernardo Forcillo",
+      "og:type": "website"
+    },
+    "article": {},
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Policies - Bernardo Forcillo",
+      "twitter:description": "Privacy policy, terms of use, and other legal information"
+    },
+    "h1": ["Policies ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Policies . Privacy policy, terms of use, and other legal information BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 468
+  },
+  "/policies/privacy-policy": {
+    "title": "Bernardo Forcillo - A Polymath Product Builder",
+    "titleCount": 1,
+    "description": "Building technologies for innovators, professionals and enthusiasts.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": [],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Hello BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 405
+  },
+  "/policies/cookies-policy": {
+    "title": "Bernardo Forcillo - A Polymath Product Builder",
+    "titleCount": 1,
+    "description": "Building technologies for innovators, professionals and enthusiasts.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": [],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Hello BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 405
+  },
+  "/blog": {
+    "title": " Thoughts, ideas, and insights about technology and development - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "Thoughts, ideas, and insights about technology and development.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {
+      "og:title": "Blog - Bernardo Forcillo",
+      "og:description": "Thoughts, ideas, and insights about technology and development.",
+      "og:url": "https://bernardoforcillo.com/blog",
+      "og:site_name": "Bernardo Forcillo",
+      "og:type": "website"
+    },
+    "article": {},
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Blog - Bernardo Forcillo",
+      "twitter:description": "Thoughts, ideas, and insights about technology and development."
+    },
+    "h1": ["Blog ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Blog . Thoughts, ideas, and insights about technology and development. engineering • Aug 13, 2026 Hello World Why this site is a static bundle of HTML served by a Go binary. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 573
+  },
+  "/blog/categories": {
+    "title": "Bernardo Forcillo - A Polymath Product Builder",
+    "titleCount": 1,
+    "description": "Building technologies for innovators, professionals and enthusiasts.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["Categories ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Categories . Browse posts by topic. engineering 1 posts BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 455
+  },
+  "/blog/engineering": {
+    "title": " engineering blog posts - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "Articles in the engineering category.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["engineering ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu engineering . Posts inside engineering. Aug 13, 2026 Hello World Why this site is a static bundle of HTML served by a Go binary. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 528
+  },
+  "/blog/engineering/hello-world": {
+    "title": " Hello World - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "Why this site is a static bundle of HTML served by a Go binary.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["Hello World ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Hello World . Why this site is a static bundle of HTML served by a Go binary. engineering • Aug 13, 2026 This site has no request-time server requirement. There are no route handlers, no middleware, and exactly one data source: markdown files on disk. Everything you are reading was rendered once, at build time, and is now being handed to you by a Go binary that embeds the whole site. Why prerender only Prerendering writes a real index.html for every route. That matters for the single most important URL on the site — the home page — because a client-only shell would ship an empty document to every crawler that asks for it. export const greet = (name: string): string => { return `Hello, ${name}!`; }; What it costs A static bundle cannot personalise a response, and it cannot read a database. Neither of those is a thing this site does. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 1243
+  },
+  "/notes": {
+    "title": " Notes - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "Quick thoughts, snippets, and personal observations",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {
+      "og:title": "Notes - Bernardo Forcillo",
+      "og:description": "Quick thoughts, snippets, and personal observations",
+      "og:url": "https://bernardoforcillo.com/notes",
+      "og:site_name": "Bernardo Forcillo",
+      "og:type": "website"
+    },
+    "article": {},
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Notes - Bernardo Forcillo",
+      "twitter:description": "Quick thoughts, snippets, and personal observations"
+    },
+    "h1": ["Notes ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Notes . Quick thoughts, snippets, and personal observations Aug 13, 2026 First Note A short note, kept in the open, about keeping notes in the open. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 548
+  },
+  "/notes/first-note": {
+    "title": " First Note - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "A short note, kept in the open, about keeping notes in the open.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["First Note ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu First Note . A short note, kept in the open, about keeping notes in the open. Aug 13, 2026 Notes are atomic. A note is one idea, written once, and left alone unless the idea itself changes. That constraint is the entire point: it keeps the cost of publishing low enough that the notes actually get written. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 706
+  },
+  "/projects": {
+    "title": " Projects - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "A showcase of my work, experiments, and contributions.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {
+      "og:title": "Projects - Bernardo Forcillo",
+      "og:description": "A showcase of my work, experiments, and contributions.",
+      "og:url": "https://bernardoforcillo.com/projects",
+      "og:site_name": "Bernardo Forcillo",
+      "og:type": "website"
+    },
+    "article": {},
+    "twitter": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Projects - Bernardo Forcillo",
+      "twitter:description": "A showcase of my work, experiments, and contributions."
+    },
+    "h1": ["Projects ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Projects . A showcase of my work, experiments, and contributions. Aug 13, 2026 Amaro A small, dependency-light HTTP framework for Go. Go HTTP Open Source BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 553
+  },
+  "/projects/amaro": {
+    "title": " Amaro - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "A small, dependency-light HTTP framework for Go.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["Amaro ."],
+    "jsonLd": [],
+    "text": "Home Blog Projects Notes About Open Menu Amaro . A small, dependency-light HTTP framework for Go. Aug 13, 2026 Go HTTP Open Source Repository Live Demo Amaro is a minimal HTTP framework built on the Go standard library router. It supplies middleware composition, a static file handler over any fs.FS , typed HTTP errors and a response-modification hook. It is the foundation of the static server that serves this website. BERNARDO FORCILLO. Software Engineer building technologies for innovators, professionals and enthusiasts. Pisa, Italy — EU · CET/CEST Navigation Home Blog Projects Notes About Legal Privacy Policy Cookies Policy Attributions Connect GitHub GitHub LinkedIn LinkedIn @ Email Built with Next.js, Tailwind, & Love. © 2026 Bernardo Forcillo — All Rights Reserved.",
+    "textLength": 780
+  },
+  "/wp-admin": {
+    "title": " No Wordpress Here - Bernardo Forcillo",
+    "titleCount": 1,
+    "description": "Do you really think this is a wordpress site? 🥲.",
+    "keywords": "React,Golang,Next.js,Flutter,Bernardo,Forcillo,Freelancer,TypeScript,Software Development",
+    "robots": null,
+    "canonical": null,
+    "canonicalCount": 0,
+    "og": {},
+    "article": {},
+    "twitter": {},
+    "h1": ["Do you really think this is a wordpress site? 🥲"],
+    "jsonLd": [],
+    "text": "Do you really think this is a wordpress site? 🥲",
+    "textLength": 48
+  }
+}

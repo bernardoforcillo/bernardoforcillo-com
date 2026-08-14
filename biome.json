@@ -13,13 +13,17 @@
       "**/build/**",
       "**/.turbo/**",
       "**/.next/**",
+      "**/.content-collections/**",
+      "**/src/i18n/paraglide/**",
       "**/pnpm-lock.yaml",
       "**/package-lock.json",
-      "**/yarn.lock"
+      "**/yarn.lock",
+      "**/routeTree.gen.ts"
     ]
   },
   "formatter": {
     "enabled": true,
+    "ignore": ["**/routeTree.gen.ts"],
     "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
@@ -98,9 +102,15 @@
         "useValidTypeof": "error"
       }
     },
-    "ignore": [".next/**", "**/.eslintrc.js", "**/*.config.*js"]
+    "ignore": [
+      ".next/**",
+      "**/.eslintrc.js",
+      "**/*.config.*js",
+      "**/routeTree.gen.ts"
+    ]
   },
   "javascript": {
+    "globals": ["__BUILD_YEAR__"],
     "formatter": {
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",
