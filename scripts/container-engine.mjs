@@ -45,7 +45,14 @@ export const resolveEngine = ({
   return found;
 };
 
-const main = (argv) => {
+// `pnpm container -- build .` forwards the separator to the script as a literal
+// argument, which the engine then rejects as an unrecognised command. Callers
+// need the separator whenever an argument starts with a dash, or pnpm claims it
+// for itself, so it is stripped here instead of being banned from the docs.
+export const stripSeparator = (argv) =>
+  argv[0] === '--' ? argv.slice(1) : argv;
+
+const main = (rawArgv) => {
   let engine;
 
   try {
@@ -54,6 +61,8 @@ const main = (argv) => {
     process.stderr.write(`container-engine: ${error.message}\n`);
     return 1;
   }
+
+  const argv = stripSeparator(rawArgv);
 
   if (argv.length === 0) {
     process.stdout.write(`${engine}\n`);

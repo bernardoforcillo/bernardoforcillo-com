@@ -22,7 +22,10 @@ test('root package.json still requires Node 24', () => {
 test('root package.json keeps the engine shim and the turbo test script', () => {
   const pkg = readJson('package.json');
   assert.equal(pkg.scripts.container, 'node scripts/container-engine.mjs');
-  assert.equal(pkg.scripts.test, 'pnpm turbo test');
+  // `apps/www/server` has no package.json, so turbo never sees it: without the
+  // test:go leg the root script would silently skip the binary that serves the
+  // whole site.
+  assert.equal(pkg.scripts.test, 'pnpm turbo test && pnpm test:go');
   assert.ok(existsSync(join(repoRoot, 'scripts/container-engine.mjs')));
 });
 

@@ -1,0 +1,42 @@
+name: 'verify'
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: 'packages/static-server/go.mod'
+          cache-dependency-path: 'packages/static-server/go.sum'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint and format
+        run: pnpm biome check .
+      - name: Repository configuration
+        run: pnpm test:config
+      - name: Unit tests
+        run: pnpm test
+      - name: Build the site
+        run: pnpm build:web
+      - name: Kubernetes manifests
+        run: sh scripts/verify/k8s-check.sh
