@@ -18,7 +18,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.507.0",
     "motion": "^12.38.0",
-    "react": "^19.2.5",
+    "react": "^19.2.8",
     "react-aria-components": "^1.17.0",
     "react-dom": "^19.2.5",
     "tailwind-merge": "^3.5.0"
@@ -35,7 +35,7 @@
     "@shikijs/rehype": "^4.4.3",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.19.17",
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.3",
     "shiki": "^4.4.3",
     "tailwindcss": "^4.2.2",
