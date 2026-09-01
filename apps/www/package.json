@@ -20,7 +20,7 @@
     "motion": "^12.38.0",
     "react": "^19.2.5",
     "react-aria-components": "^1.17.0",
-    "react-dom": "^19.2.5",
+    "react-dom": "^19.2.8",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/react-dom": "^19.2.5",
     "shiki": "^4.4.3",
     "tailwindcss": "^4.2.2",
     "typescript": "^7.0.2",
