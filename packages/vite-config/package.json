@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "@tanstack/react-start": "^1.168.44",
+    "@tanstack/react-start": "^1.168.49",
     "@vitejs/plugin-react": "^6.0.1"
   },
   "peerDependencies": {
