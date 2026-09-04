@@ -8,8 +8,10 @@ const LinkedinMark = ({ className, ...props }: Props) => {
     <svg
       {...props}
       viewBox='0 0 48 48'
+      width='24'
+      height='24'
       xmlns='http://www.w3.org/2000/svg'
-      className={cn('w-6 h-6 flex-no-shrink', className)}
+      className={cn('w-6 h-6 shrink-0', className)}
     >
       <title style={{ display: 'none' }}>LinkedIn</title>
       <path

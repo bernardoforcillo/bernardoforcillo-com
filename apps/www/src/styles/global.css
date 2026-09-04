@@ -49,5 +49,5 @@
 }
 
 @utility content-row {
-  @apply group block py-7 md:py-8 border-b border-line transition-opacity duration-300 hover:opacity-60;
+  @apply block py-7 md:py-8 border-b border-line transition-opacity duration-300 hover:opacity-60;
 }
