@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
 
 const stats = [
-  { label: 'Years Building', value: '5+' },
-  { label: 'Products Shipped', value: '10+' },
-  { label: 'Open Source', value: '∞' },
-  { label: 'Based In', value: 'Pisa, EU' },
+  { label: 'Years building', value: '5+' },
+  { label: 'Products shipped', value: '10+' },
+  { label: 'Open source', value: '∞' },
+  { label: 'Based in', value: 'Pisa' },
 ];
 
 const containerVariants = {
@@ -27,18 +27,18 @@ export const StatsBar = () => {
       whileInView='show'
       viewport={{ once: true, margin: '-40px' }}
       variants={containerVariants}
-      className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3'
+      className='grid grid-cols-2 lg:grid-cols-4 gap-px bg-line border-y border-line'
     >
       {stats.map((stat) => (
         <motion.div
           key={stat.label}
           variants={itemVariants}
-          className='px-6 py-5 flex flex-col gap-1 rounded-xl bg-gray-50/80 hover:bg-white transition-colors'
+          className='bg-canvas px-6 py-6 lg:py-8 max-lg:odd:pl-0 lg:first:pl-0 flex flex-col gap-1.5'
         >
-          <span className='text-2xl md:text-3xl font-bold tracking-tighter'>
+          <span className='text-2xl md:text-3xl font-medium tracking-tight'>
             {stat.value}
           </span>
-          <span className='font-mono text-xs text-gray-400 uppercase tracking-wider'>
+          <span className='text-[11px] uppercase tracking-[0.16em] text-faint'>
             {stat.label}
           </span>
         </motion.div>

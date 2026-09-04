@@ -22,7 +22,7 @@ export const Route = createFileRoute('/_default/')({
 
 function HomePage() {
   return (
-    <div className='min-h-screen max-w-[1400px] mx-auto px-4 md:px-8 py-24 md:py-32 flex flex-col gap-12'>
+    <div className='min-h-screen max-w-6xl mx-auto px-6 md:px-8 py-24 md:py-32 flex flex-col gap-16'>
       <HeroSection />
       <StatsBar />
       <BentoGridSection />

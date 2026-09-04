@@ -8,91 +8,66 @@ export const HeroSection = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className='flex flex-col gap-6 md:flex-row md:items-end md:justify-between border-b border-gray-200 pb-12'
+      className='flex flex-col gap-10 md:flex-row md:items-end md:justify-between border-b border-line pb-16'
     >
-      <div className='space-y-4'>
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className='relative overflow-hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-xs font-mono text-gray-600'
+      <div className='space-y-6'>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className='text-[11px] uppercase tracking-[0.2em] text-faint'
         >
-          <motion.div
-            initial={{ x: '-100%' }}
-            animate={{ x: '100%' }}
-            transition={{
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: 'loop',
-              duration: 2,
-              repeatDelay: 3,
-              ease: 'linear',
-            }}
-            className='absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none'
-          />
-          <span className='relative flex h-2 w-2'>
-            <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75' />
-            <span className='relative inline-flex rounded-full h-2 w-2 bg-orange-500' />
-          </span>
           Currently building Hoooly at Ganiga
-        </motion.div>
-        <h1 className='text-7xl md:text-9xl font-bold tracking-tighter text-black leading-[0.8]'>
-          BERNARDO
+        </motion.p>
+        <h1 className='text-[clamp(3.25rem,11vw,7.5rem)] font-medium tracking-[-0.05em] text-ink leading-[0.88]'>
+          Bernardo
           <br />
-          FORCILLO.
+          Forcillo.
         </h1>
       </div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        className='flex flex-col gap-4 max-w-md'
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className='flex flex-col gap-6 max-w-sm pb-1'
       >
-        <p className='font-mono text-sm md:text-base text-gray-500 leading-relaxed'>
-          <span className='text-gray-300'>
-            {'// Software Engineer & Polymath'}
-          </span>
-          <br />
-          Specializing in distributed systems, high-performance scalable digital
-          products, and AI infrastructure. Currently building at{' '}
+        <p className='text-[15px] md:text-base text-muted leading-relaxed'>
+          Software engineer & polymath. Distributed systems, high-performance
+          products, and AI infrastructure — currently at{' '}
           <a
             href='https://ganiga.ai'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-black hover:underline underline-offset-4 decoration-1'
+            className='text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors'
           >
             Ganiga Innovation
           </a>
           .
         </p>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className='pt-6 space-y-6'
-        >
-          <blockquote className='border-l-2 border-black pl-4'>
-            <span className='font-serif italic text-2xl md:text-3xl text-black/80 block leading-tight'>
-              Be Relentless. <br className='hidden md:inline' />
-              Act Different. <br className='hidden md:inline' />
-              Ship Fast.
-            </span>
-          </blockquote>
-          <div className='flex flex-wrap gap-3 pt-2'>
-            <Link
-              to='/projects'
-              className='inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-gray-800 transition-colors'
-            >
-              View Projects <ArrowRight size={14} />
-            </Link>
-            <Link
-              to='/blog'
-              className='inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-black text-xs font-mono uppercase tracking-wider hover:border-black transition-colors'
-            >
-              Read Blog <ArrowRight size={14} />
-            </Link>
-          </div>
-        </motion.div>
+        <blockquote>
+          <span className='font-serif italic text-2xl md:text-[1.7rem] text-ink/80 block leading-[1.2]'>
+            Be Relentless.
+            <br />
+            Act Different.
+            <br />
+            Ship Fast.
+          </span>
+        </blockquote>
+        <div className='flex flex-wrap items-center gap-6 pt-2'>
+          <Link
+            to='/projects'
+            className='inline-flex items-center gap-2 text-[13px] font-medium text-canvas bg-ink px-4 py-2 hover:opacity-80 transition-opacity'
+          >
+            Projects <ArrowRight size={14} />
+          </Link>
+          <Link
+            to='/blog'
+            className='inline-flex items-center gap-1.5 text-[13px] font-medium text-ink hover:opacity-60 transition-opacity'
+          >
+            Blog <ArrowRight size={14} />
+          </Link>
+        </div>
       </motion.div>
     </motion.header>
   );

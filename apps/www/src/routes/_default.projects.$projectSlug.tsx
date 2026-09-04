@@ -6,7 +6,7 @@ import { findProject } from '~/content';
 import { formatDate } from '~/lib/format-date';
 
 const EXTERNAL_LINK_CLASS =
-  'text-sm font-mono uppercase tracking-wide border border-gray-200 px-3 py-2 hover:border-black transition-colors';
+  'text-[13px] font-medium text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -53,16 +53,16 @@ function ProjectPage() {
       />
 
       <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-sm text-gray-400 uppercase tracking-wider font-mono'>
+        <p className='text-[11px] text-faint uppercase tracking-[0.16em]'>
           {formatDate(project.date)}
         </p>
 
         {project.stack.length > 0 ? (
-          <div className='mt-4 flex flex-wrap gap-2'>
+          <div className='mt-4 flex flex-wrap gap-x-3 gap-y-1'>
             {project.stack.map((item) => (
               <span
                 key={`${project.projectSlug}-${item}`}
-                className='text-xs font-mono uppercase tracking-wide px-2 py-1 border border-gray-200 text-gray-500'
+                className='text-[11px] uppercase tracking-[0.14em] text-faint'
               >
                 {item}
               </span>
@@ -71,7 +71,7 @@ function ProjectPage() {
         ) : null}
 
         {project.repoUrl || project.demoUrl ? (
-          <div className='mt-6 flex flex-wrap gap-3'>
+          <div className='mt-6 flex flex-wrap gap-5'>
             {project.repoUrl ? (
               <a
                 href={project.repoUrl}

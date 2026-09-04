@@ -30,22 +30,16 @@ export const PageHeader: FC<Props> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='w-full flex flex-col items-start gap-8 border-b border-gray-200 pb-12'
+        className='w-full flex flex-col items-start gap-6 border-b border-line pb-10'
       >
-        {icon && (
-          <div className='flex items-center gap-2 font-mono text-xs text-gray-400'>
-            <span className='p-2 border border-gray-200 text-gray-400'>
-              {icon}
-            </span>
-          </div>
-        )}
+        {icon && <div className='text-faint [&_svg]:size-4'>{icon}</div>}
         <div className='space-y-4'>
           {title && (
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className='text-5xl md:text-8xl font-bold tracking-tighter text-black leading-none'
+              className='text-5xl md:text-7xl font-medium tracking-tight text-ink leading-[0.95]'
             >
               {title}.
             </motion.h1>
@@ -55,15 +49,15 @@ export const PageHeader: FC<Props> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className='text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed'
+              className='text-base md:text-lg text-muted max-w-xl leading-relaxed'
             >
               {description}
             </motion.p>
           )}
         </div>
 
-        {actions && <div className='flex flex-wrap gap-4 pt-4'>{actions}</div>}
-        {children && <div className='w-full mt-12'>{children}</div>}
+        {actions && <div className='flex flex-wrap gap-4 pt-2'>{actions}</div>}
+        {children && <div className='w-full mt-8'>{children}</div>}
       </motion.div>
     </section>
   );

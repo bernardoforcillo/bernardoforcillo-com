@@ -3,6 +3,7 @@ import { PageHeader } from '@monorepo/ui';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { notes } from '~/content';
+import { ContentRow } from '~/features/content/molecules/content-row';
 import { formatDate } from '~/lib/format-date';
 
 const DESCRIPTION = 'Quick thoughts, snippets, and personal observations';
@@ -26,24 +27,20 @@ function NotesIndexPage() {
         description={DESCRIPTION}
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-20'>
-        <div className='grid grid-cols-1 gap-4'>
+      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
+        <div className='border-t border-line'>
           {notes.map((note) => (
             <Link
               key={note.noteSlug}
               to='/notes/$noteSlug'
               params={{ noteSlug: note.noteSlug }}
-              className='border border-gray-200 bg-white p-6 hover:border-black transition-colors'
+              className='content-row'
             >
-              <div className='text-xs text-gray-400 uppercase tracking-wider font-mono'>
-                {formatDate(note.date)}
-              </div>
-              <h2 className='text-2xl mt-2 font-semibold tracking-tight text-black'>
-                {note.title}
-              </h2>
-              {note.description ? (
-                <p className='mt-3 text-gray-600'>{note.description}</p>
-              ) : null}
+              <ContentRow
+                title={note.title}
+                description={note.description}
+                meta={formatDate(note.date)}
+              />
             </Link>
           ))}
         </div>

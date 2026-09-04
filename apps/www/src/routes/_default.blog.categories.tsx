@@ -27,19 +27,19 @@ function BlogCategoriesPage() {
         description='Browse posts by topic.'
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-20'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
+        <div className='border-t border-line'>
           {blogCategories.map((category) => (
             <Link
               key={category.categorySlug}
               to='/blog/$categorySlug'
               params={{ categorySlug: category.categorySlug }}
-              className='border border-gray-200 bg-white p-6 hover:border-black transition-colors flex justify-between items-center'
+              className='content-row flex justify-between items-baseline gap-6'
             >
-              <span className='text-xl font-semibold tracking-tight'>
+              <span className='text-xl md:text-2xl font-medium tracking-tight'>
                 {category.categorySlug}
               </span>
-              <span className='text-xs font-mono text-gray-400 uppercase tracking-wider'>
+              <span className='text-[11px] uppercase tracking-[0.16em] text-faint shrink-0'>
                 {category.count} posts
               </span>
             </Link>
