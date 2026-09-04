@@ -11,7 +11,7 @@ type Props = {
 } & HTMLProps<HTMLDivElement>;
 
 export const PageHeader: FC<Props> = ({
-  icon,
+  icon: _icon,
   title,
   description,
   actions,
@@ -30,9 +30,8 @@ export const PageHeader: FC<Props> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='w-full flex flex-col items-start gap-6 border-b border-line pb-10'
+        className='w-full flex flex-col items-start gap-5 border-b border-line pb-10'
       >
-        {icon && <div className='text-faint [&_svg]:size-4'>{icon}</div>}
         <div className='space-y-4'>
           {title && (
             <motion.h1

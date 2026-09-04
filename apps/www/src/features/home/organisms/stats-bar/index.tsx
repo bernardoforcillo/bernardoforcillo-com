@@ -4,7 +4,7 @@ const stats = [
   { label: 'Years building', value: '5+' },
   { label: 'Products shipped', value: '10+' },
   { label: 'Open source', value: '∞' },
-  { label: 'Based in', value: 'Pisa' },
+  { label: 'Based in', value: 'Pisa, EU' },
 ];
 
 const containerVariants = {
