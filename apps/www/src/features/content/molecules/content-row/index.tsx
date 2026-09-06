@@ -10,15 +10,15 @@ type Props = {
 export const ContentRow: FC<Props> = ({ title, description, meta, tags }) => (
   <>
     <div className='flex flex-col-reverse gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8'>
-      <h2 className='text-xl md:text-2xl font-medium tracking-tight text-ink'>
+      <h2 className='text-xl md:text-2xl font-semibold uppercase tracking-[-0.025em] text-current'>
         {title}
       </h2>
-      <span className='shrink-0 text-[11px] uppercase tracking-[0.16em] text-faint'>
-        {meta}
+      <span className='shrink-0 font-mono text-[10px] uppercase tracking-[0.16em] text-current opacity-50'>
+        [{meta}]
       </span>
     </div>
     {description ? (
-      <p className='mt-2 max-w-xl text-[15px] leading-relaxed text-muted'>
+      <p className='mt-2 max-w-xl text-sm leading-relaxed text-current opacity-65'>
         {description}
       </p>
     ) : null}
@@ -27,9 +27,9 @@ export const ContentRow: FC<Props> = ({ title, description, meta, tags }) => (
         {tags.map((tag) => (
           <span
             key={tag}
-            className='text-[11px] uppercase tracking-[0.14em] text-faint'
+            className='font-mono text-[10px] uppercase tracking-[0.14em] text-current opacity-50'
           >
-            {tag}
+            #{tag}
           </span>
         ))}
       </div>

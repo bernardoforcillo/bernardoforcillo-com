@@ -25,27 +25,22 @@ export const BentoGridSection = () => {
           },
         },
       }}
-      className='grid grid-cols-1 md:grid-cols-12 gap-px bg-line border border-line'
+      className='grid grid-cols-1 gap-px border-x border-b border-line bg-line md:grid-cols-12'
     >
       <motion.div
         variants={fadeUp}
-        className='md:col-span-8 p-8 md:p-12 bg-canvas min-h-[320px] flex flex-col justify-between gap-10'
+        className='flex min-h-[380px] flex-col justify-between gap-10 bg-canvas p-6 md:col-span-8 md:p-10'
       >
-        <span className='text-[11px] uppercase tracking-[0.16em] text-faint'>
-          Introduction
-        </span>
+        <span className='industrial-label text-faint'>[01] Practice</span>
         <div className='space-y-5'>
-          <h3 className='text-3xl md:text-4xl font-medium leading-[1.15] tracking-tight'>
-            Crafting digital tools with{' '}
-            <span className='italic font-serif font-normal'>precision</span> and{' '}
-            <span className='italic font-serif font-normal'>soul</span>.
+          <h3 className='max-w-2xl text-3xl font-semibold uppercase leading-[1.02] tracking-[-0.04em] md:text-5xl'>
+            Engineering ideas into systems that survive reality.
           </h3>
-          <p className='text-muted max-w-lg text-base leading-relaxed'>
-            I believe software should be as beautiful as it is functional. My
-            work bridges the gap between complex engineering challenges and
-            intuitive, seamless user experiences.
+          <p className='max-w-xl text-sm leading-relaxed text-muted'>
+            Research, product thinking, and deep engineering in one practice.
+            From low-level infrastructure to the interface people touch.
           </p>
-          <div className='flex flex-wrap gap-x-4 gap-y-1 pt-1'>
+          <div className='flex flex-wrap gap-x-4 gap-y-2 border-t border-line pt-5'>
             {[
               'TypeScript',
               'Golang',
@@ -56,9 +51,9 @@ export const BentoGridSection = () => {
             ].map((tag) => (
               <span
                 key={tag}
-                className='text-[11px] uppercase tracking-[0.14em] text-faint'
+                className='font-mono text-[10px] uppercase tracking-[0.14em] text-faint'
               >
-                {tag}
+                / {tag}
               </span>
             ))}
           </div>
@@ -67,17 +62,15 @@ export const BentoGridSection = () => {
 
       <motion.div
         variants={fadeUp}
-        className='md:col-span-4 p-8 bg-canvas flex flex-col justify-between gap-10'
+        className='flex min-h-[380px] flex-col justify-between gap-10 bg-canvas p-6 md:col-span-4 md:p-8'
       >
-        <span className='text-[11px] uppercase tracking-[0.16em] text-faint'>
-          Network
-        </span>
+        <span className='industrial-label text-faint'>[02] Signal</span>
         <div className='space-y-6'>
-          <p className='text-sm text-muted leading-relaxed'>
-            Based in Pisa, Italy. Open to collaboration, consulting, and
-            interesting problems.
+          <p className='text-sm leading-relaxed text-muted'>
+            Available for ambitious deep-tech systems, experimental products,
+            and difficult technical problems.
           </p>
-          <ul className='space-y-3 text-lg font-medium tracking-tight'>
+          <ul className='space-y-3 border-t border-line pt-5 font-mono text-xs uppercase tracking-[0.12em]'>
             <li>
               <a
                 href='https://github.com/bernardoforcillo'
@@ -113,32 +106,36 @@ export const BentoGridSection = () => {
       </motion.div>
 
       <IndexLink
+        index='03'
         to='/projects'
-        label='Selected work'
+        label='Build'
         title='Projects'
-        description='Case studies, experiments, and production applications.'
+        description='Production systems, experiments, and open-source machinery.'
         span='md:col-span-4'
         featured
       />
       <IndexLink
+        index='04'
         to='/about'
-        label='Bio'
+        label='Operator'
         title='About'
-        description='Pisa, Italy. Open source, hardware, design.'
+        description='Engineering, hardware, design, and the path between them.'
         span='md:col-span-4'
       />
       <IndexLink
+        index='05'
         to='/blog'
-        label='Writing'
+        label='Transmit'
         title='Blog'
-        description='Essays on technology, systems, and building products.'
+        description='Long-form thinking on systems, technology, and products.'
         span='md:col-span-4'
       />
       <IndexLink
+        index='06'
         to='/notes'
-        label='Field notes'
+        label='Capture'
         title='Notes'
-        description='Atomic ideas and references, captured in the open.'
+        description='Atomic ideas, references, and observations from the workbench.'
         span='md:col-span-12'
       />
     </motion.div>
@@ -146,6 +143,7 @@ export const BentoGridSection = () => {
 };
 
 type IndexLinkProps = {
+  index: string;
   to: '/projects' | '/about' | '/blog' | '/notes';
   label: string;
   title: string;
@@ -155,6 +153,7 @@ type IndexLinkProps = {
 };
 
 const IndexLink = ({
+  index,
   to,
   label,
   title,
@@ -165,28 +164,28 @@ const IndexLink = ({
   <motion.div variants={fadeUp} className={span}>
     <Link
       to={to}
-      className={`h-full w-full p-8 min-h-[220px] flex flex-col justify-between gap-8 group transition-opacity duration-300 hover:opacity-70 ${
+      className={`group flex min-h-[240px] h-full w-full flex-col justify-between gap-8 p-6 transition-colors duration-200 ${
         featured ? 'bg-ink text-canvas' : 'bg-canvas text-ink'
-      }`}
+      } hover:bg-signal hover:text-ink`}
     >
       <div className='flex justify-between items-start'>
         <span
-          className={`text-[11px] uppercase tracking-[0.16em] ${
+          className={`font-mono text-[10px] uppercase tracking-[0.18em] ${
             featured ? 'opacity-60' : 'text-faint'
           }`}
         >
-          {label}
+          [{index}] {label}
         </span>
         <ArrowUpRight
           className={`w-4 h-4 ${featured ? 'opacity-60' : 'text-faint'}`}
         />
       </div>
       <div>
-        <h2 className='text-2xl md:text-3xl font-medium tracking-tight mb-2'>
+        <h2 className='mb-2 text-3xl font-semibold uppercase tracking-[-0.04em]'>
           {title}
         </h2>
         <p
-          className={`text-sm max-w-xs leading-relaxed ${
+          className={`max-w-xs text-sm leading-relaxed ${
             featured ? 'opacity-60' : 'text-muted'
           }`}
         >

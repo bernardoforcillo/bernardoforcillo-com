@@ -21,13 +21,21 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
-    "Times New Roman", serif;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-canvas text-ink antialiased selection:bg-ink selection:text-canvas;
+    @apply bg-canvas text-ink antialiased selection:bg-signal selection:text-ink;
+    background-image: linear-gradient(
+      to right,
+      transparent calc(50% - 0.5px),
+      color-mix(in oklab, var(--color-line) 42%, transparent) 50%,
+      transparent calc(50% + 0.5px)
+    );
   }
 
   ::-webkit-scrollbar {
@@ -40,7 +48,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-line hover:bg-muted transition-colors rounded-full;
+    @apply bg-line hover:bg-muted transition-colors;
   }
 }
 
@@ -49,5 +57,9 @@
 }
 
 @utility content-row {
-  @apply block py-7 md:py-8 border-b border-line transition-opacity duration-300 hover:opacity-60;
+  @apply block py-7 md:py-8 border-b border-line transition-colors duration-200 hover:bg-ink hover:text-canvas;
+}
+
+@utility industrial-label {
+  @apply font-mono text-[10px] uppercase tracking-[0.18em];
 }

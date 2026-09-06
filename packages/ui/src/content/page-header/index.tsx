@@ -30,15 +30,18 @@ export const PageHeader: FC<Props> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='w-full flex flex-col items-start gap-5 border-b border-line pb-10'
+        className='flex w-full flex-col items-start gap-5 border-x border-b border-line px-5 py-8 md:px-8 md:py-10'
       >
+        <span className='font-mono text-[10px] uppercase tracking-[0.18em] text-faint'>
+          Public index / Selected archive
+        </span>
         <div className='space-y-4'>
           {title && (
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className='text-5xl md:text-7xl font-medium tracking-tight text-ink leading-[0.95]'
+              className='text-5xl font-bold uppercase leading-[0.86] tracking-[-0.055em] text-ink md:text-8xl'
             >
               {title}.
             </motion.h1>
@@ -48,7 +51,7 @@ export const PageHeader: FC<Props> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className='text-base md:text-lg text-muted max-w-xl leading-relaxed'
+              className='max-w-xl font-mono text-xs uppercase leading-relaxed tracking-[0.08em] text-muted md:text-sm'
             >
               {description}
             </motion.p>
