@@ -14,7 +14,7 @@ export const NotFound: FC = () => (
     <section className='w-full max-w-7xl mx-auto px-6 pb-20'>
       <Link
         to='/'
-        className='inline-flex items-center gap-2 text-[13px] font-medium text-canvas bg-ink px-4 py-2 hover:opacity-80 transition-opacity'
+        className='inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[12px] tracking-wide text-canvas transition-colors hover:bg-signal hover:text-ink'
       >
         Back home <ArrowRight size={14} />
       </Link>

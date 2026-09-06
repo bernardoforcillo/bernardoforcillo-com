@@ -68,7 +68,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <HeadContent />
       </head>
-      <body className='relative min-h-full overflow-x-hidden bg-canvas text-ink selection:bg-signal selection:text-ink'>
+      <body className='relative min-h-full overflow-x-hidden bg-canvas text-ink selection:bg-signal/20 selection:text-ink'>
         {children}
         <Scripts />
       </body>

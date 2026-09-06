@@ -15,11 +15,11 @@
   --color-azure-radiance-900: oklch(0.42 0.14 257.87 / 1);
   --color-azure-radiance-950: oklch(0.31 0.09 258.73 / 1);
 
-  --color-canvas: oklch(0.975 0.004 145);
-  --color-ink: oklch(0.17 0.008 145);
-  --color-muted: oklch(0.45 0.01 145);
-  --color-faint: oklch(0.62 0.012 145);
-  --color-line: oklch(0.84 0.008 145);
+  --color-canvas: oklch(0.978 0.006 95);
+  --color-ink: oklch(0.22 0.012 250);
+  --color-muted: oklch(0.48 0.012 250);
+  --color-faint: oklch(0.66 0.01 250);
+  --color-line: oklch(0.9 0.008 95);
   --color-signal: var(--color-azure-radiance-500);
 }
 

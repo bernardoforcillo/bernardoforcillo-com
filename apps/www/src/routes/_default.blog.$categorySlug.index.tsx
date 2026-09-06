@@ -42,7 +42,7 @@ function BlogCategoryPage() {
       />
 
       <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div className='border-t border-line'>
+        <div>
           {posts.map((post) => (
             <Link
               key={`${post.categorySlug}-${post.postSlug}`}

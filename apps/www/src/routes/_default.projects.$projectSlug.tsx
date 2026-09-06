@@ -6,7 +6,7 @@ import { findProject } from '~/content';
 import { formatDate } from '~/lib/format-date';
 
 const EXTERNAL_LINK_CLASS =
-  'text-[13px] font-medium text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors';
+  'text-[13px] text-ink underline decoration-line underline-offset-4 hover:decoration-signal transition-colors';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {

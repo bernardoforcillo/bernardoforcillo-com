@@ -28,7 +28,7 @@ function BlogCategoriesPage() {
       />
 
       <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div className='border-t border-line'>
+        <div>
           {blogCategories.map((category) => (
             <Link
               key={category.categorySlug}
@@ -39,7 +39,7 @@ function BlogCategoriesPage() {
               <span className='text-xl md:text-2xl font-medium tracking-tight'>
                 {category.categorySlug}
               </span>
-              <span className='text-[11px] uppercase tracking-[0.16em] text-faint shrink-0'>
+              <span className='industrial-label shrink-0 text-faint'>
                 {category.count} posts
               </span>
             </Link>

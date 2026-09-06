@@ -1,17 +1,17 @@
 import { motion } from 'motion/react';
 
 const stats = [
-  { index: '01', label: 'Years building', value: '05+' },
-  { index: '02', label: 'Products shipped', value: '10+' },
-  { index: '03', label: 'Open source', value: '∞' },
-  { index: '04', label: 'Base', value: 'PISA/EU' },
+  { label: 'Years building', value: '5+' },
+  { label: 'Products shipped', value: '10+' },
+  { label: 'Open source', value: '∞' },
+  { label: 'Base', value: 'Pisa' },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
   },
 };
 
@@ -27,21 +27,18 @@ export const StatsBar = () => {
       whileInView='show'
       viewport={{ once: true, margin: '-40px' }}
       variants={containerVariants}
-      className='grid grid-cols-2 gap-px border-x border-b border-line bg-line lg:grid-cols-4'
+      className='grid grid-cols-2 gap-y-8 border-y border-line/80 py-8 lg:grid-cols-4 lg:py-10'
     >
       {stats.map((stat) => (
         <motion.div
           key={stat.label}
           variants={itemVariants}
-          className='flex min-h-32 flex-col justify-between gap-5 bg-canvas p-4 md:p-5'
+          className='flex flex-col gap-1.5 lg:px-2 lg:first:pl-0'
         >
-          <span className='industrial-label text-faint'>[{stat.index}]</span>
-          <span className='font-mono text-2xl font-medium tracking-[-0.05em] md:text-3xl'>
+          <span className='text-2xl font-medium tracking-tight md:text-3xl'>
             {stat.value}
           </span>
-          <span className='font-mono text-[9px] uppercase tracking-[0.16em] text-faint'>
-            {stat.label}
-          </span>
+          <span className='industrial-label text-faint'>{stat.label}</span>
         </motion.div>
       ))}
     </motion.div>

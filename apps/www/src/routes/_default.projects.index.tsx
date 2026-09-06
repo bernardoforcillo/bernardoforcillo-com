@@ -28,7 +28,7 @@ function ProjectsIndexPage() {
       />
 
       <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div className='border-t border-line'>
+        <div>
           {projects.map((project) => (
             <Link
               key={project.projectSlug}

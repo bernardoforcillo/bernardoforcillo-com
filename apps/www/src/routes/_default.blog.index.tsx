@@ -32,7 +32,7 @@ function BlogIndexPage() {
       />
 
       <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div className='border-t border-line'>
+        <div>
           {blogPosts.map((post) => (
             <Link
               key={`${post.categorySlug}-${post.postSlug}`}
