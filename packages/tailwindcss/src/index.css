@@ -20,7 +20,7 @@
   --color-muted: oklch(0.45 0.01 145);
   --color-faint: oklch(0.62 0.012 145);
   --color-line: oklch(0.84 0.008 145);
-  --color-signal: oklch(0.86 0.24 132);
+  --color-signal: var(--color-azure-radiance-500);
 }
 
 @layer base {
