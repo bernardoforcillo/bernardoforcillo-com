@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@monorepo/tailwindcss/style.css";
+@source "../../../../packages/ui/src";
 
 @font-face {
   font-family: "Inter";
@@ -20,17 +21,24 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+    "Times New Roman", serif;
 }
 
 @layer base {
-  body {
-    @apply bg-white text-black antialiased selection:bg-black selection:text-white;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
-  /* Custom Scrollbar for a technical feel */
+  body {
+    @apply bg-canvas text-ink antialiased selection:bg-signal/20 selection:text-ink;
+  }
+
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
   }
 
   ::-webkit-scrollbar-track {
@@ -38,10 +46,14 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 hover:bg-black transition-colors rounded-none;
+    @apply bg-line hover:bg-muted transition-colors;
   }
 }
 
 @utility tech-border {
-  @apply border border-gray-200;
+  @apply border border-line;
+}
+
+@utility content-row {
+  @apply relative block py-8 md:py-9 border-b border-line/80 transition-colors duration-300 hover:border-ink/25;
 }

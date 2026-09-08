@@ -1,8 +1,10 @@
 import { Link } from '@tanstack/react-router';
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import GithubIcon from '~/assets/icons/github-mark';
-import LinkedinMark from '~/assets/icons/linkedin-mark';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0 },
+};
 
 export const BentoGridSection = () => {
   return (
@@ -16,207 +18,68 @@ export const BentoGridSection = () => {
           opacity: 1,
           transition: {
             staggerChildren: 0.08,
-            delayChildren: 0.1,
+            delayChildren: 0.08,
           },
         },
       }}
-      className='grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(200px,auto)]'
+      className='flex flex-col gap-16 md:gap-20'
     >
-      {/* Main Bio/Philosophy Card */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-8 p-8 md:p-12 border border-gray-200 bg-white transition-colors duration-300 overflow-hidden min-h-[380px]'
-      >
-        <div className='h-full flex flex-col justify-between gap-8'>
-          <span className='font-mono text-xs text-gray-400'>
-            01 — INTRODUCTION
-          </span>
-          <div className='space-y-6'>
-            <h3 className='text-3xl md:text-5xl font-medium leading-tight'>
-              Crafting digital tools with{' '}
-              <span className='italic font-serif'>precision</span> and{' '}
-              <span className='italic font-serif'>soul</span>.
-            </h3>
-            <p className='text-gray-500 max-w-xl text-lg'>
-              I believe software should be as beautiful as it is functional. My
-              work bridges the gap between complex engineering challenges and
-              intuitive, seamless user experiences.
-            </p>
-            <div className='flex flex-wrap gap-2 pt-2'>
-              {[
-                'TypeScript',
-                'Golang',
-                'Next.js',
-                'Flutter',
-                'Kubernetes',
-                'PostgreSQL',
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className='px-2.5 py-1 font-mono text-xs border border-gray-200 text-gray-400 hover:border-black hover:text-black transition-colors cursor-default'
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+      <motion.div variants={fadeUp} className='max-w-xl'>
+        <p className='font-serif text-2xl italic leading-[1.3] text-ink/80 md:text-[1.65rem]'>
+          Engineering ideas into systems that survive reality.
+        </p>
+        <p className='mt-5 text-[15px] leading-7 text-muted'>
+          Research, product thinking, and deep engineering in one practice —
+          from infrastructure to the interface people touch. Open to ambitious
+          deep-tech systems and difficult technical problems.
+        </p>
       </motion.div>
 
-      {/* Connect/Socials Card */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-4 p-8 border border-gray-200 bg-white hover:border-black transition-colors duration-300 flex flex-col justify-between group'
-      >
-        <div className='flex justify-between items-start'>
-          <span className='font-mono text-xs text-gray-400'>02 — NETWORK</span>
-        </div>
-
-        <div className='space-y-6'>
-          <p className='font-mono text-xs text-gray-400 leading-relaxed'>
-            Based in Pisa, Italy (EU). Available CET/CEST. Open to
-            collaboration, consulting, and interesting problems.
-          </p>
-          <ul className='space-y-4 text-xl md:text-2xl font-medium'>
-            <li>
-              <a
-                href='https://github.com/bernardoforcillo'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 hover:text-gray-600 transition-colors'
-              >
-                <GithubIcon className='w-6 h-6' />
-                <span>GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://linkedin.com/in/bernardoforcillo'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 hover:text-blue-600 transition-colors'
-              >
-                <LinkedinMark className='w-6 h-6' />
-                <span>LinkedIn</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href='mailto:hello@bernardoforcillo.com'
-                className='flex items-center gap-3 hover:text-gray-600 transition-colors'
-              >
-                <span className='w-6 h-6 flex items-center justify-center font-mono text-sm border rounded-full border-black'>
-                  @
-                </span>
-                <span>Email</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </motion.div>
-
-      {/* Projects Link Card */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-5'
-      >
-        <Link
+      <nav className='grid gap-x-16 gap-y-10 md:grid-cols-2 md:gap-y-0'>
+        <Room
           to='/projects'
-          className='h-full w-full p-8 border border-gray-200 bg-black text-white hover:bg-white hover:text-black hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[300px]'
-        >
-          <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs opacity-60'>
-              03 — SELECTED WORK
-            </span>
-            <ArrowRight className='w-6 h-6 transform group-hover:rotate-0 -rotate-45 transition-transform duration-300' />
-          </div>
-          <div>
-            <h2 className='text-4xl font-bold mb-2'>Projects</h2>
-            <p className='text-sm opacity-60 max-w-[250px]'>
-              Explore case studies, experiments, and production applications.
-            </p>
-          </div>
-        </Link>
-      </motion.div>
-
-      {/* About/Profile Link Card */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-7'
-      >
-        <Link
+          title='Projects'
+          description='Production systems, experiments, and open-source work.'
+        />
+        <Room
           to='/about'
-          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[300px]'
-        >
-          <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs text-gray-400'>
-              04 — BIO & EXPERIENCE
-            </span>
-            <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
-              <ArrowRight className='w-4 h-4' />
-            </div>
-          </div>
-
-          <div className='flex flex-col md:flex-row md:items-end justify-between gap-4'>
-            <h2 className='text-4xl font-bold'>About Me</h2>
-            <p className='font-mono text-xs text-gray-500 max-w-xs text-right'>
-              Pisa, Italy — EU. <br />
-              Open Source · Hardware · Design.
-            </p>
-          </div>
-        </Link>
-      </motion.div>
-
-      {/* Blog Card */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-7'
-      >
-        <Link
+          title='About'
+          description='Engineering, hardware, design, and the space between.'
+          className='md:pt-10'
+        />
+        <Room
           to='/blog'
-          className='h-full w-full p-8 border border-gray-200 bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[240px]'
-        >
-          <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs text-gray-400'>
-              05 — WRITING
-            </span>
-            <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
-              <ArrowRight className='w-4 h-4' />
-            </div>
-          </div>
-          <div>
-            <h2 className='text-4xl font-bold mb-2'>Blog</h2>
-            <p className='text-gray-500 text-sm max-w-xs'>
-              Thoughts, essays, and deep-dives on technology, systems design,
-              and building products.
-            </p>
-          </div>
-        </Link>
-      </motion.div>
-
-      {/* Notes Card */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-5'
-      >
-        <Link
+          title='Blog'
+          description='Long-form thinking on systems, technology, and products.'
+          className='md:pt-4'
+        />
+        <Room
           to='/notes'
-          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[240px]'
-        >
-          <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs text-gray-400'>06 — NOTES</span>
-            <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
-              <ArrowRight className='w-4 h-4' />
-            </div>
-          </div>
-          <div>
-            <h2 className='text-4xl font-bold mb-2'>Notes</h2>
-            <p className='font-mono text-xs text-gray-500 max-w-xs'>
-              Quick, atomic ideas and references captured in the open.
-            </p>
-          </div>
-        </Link>
-      </motion.div>
+          title='Notes'
+          description='Atomic ideas and observations from the workbench.'
+          className='md:pt-14'
+        />
+      </nav>
     </motion.div>
   );
 };
+
+type RoomProps = {
+  to: '/projects' | '/about' | '/blog' | '/notes';
+  title: string;
+  description: string;
+  className?: string;
+};
+
+const Room = ({ to, title, description, className = '' }: RoomProps) => (
+  <motion.div variants={fadeUp} className={className}>
+    <Link to={to} className='group block max-w-sm py-2'>
+      <h2 className='text-2xl font-medium tracking-tight md:text-3xl'>
+        {title}
+      </h2>
+      <p className='mt-2 text-[15px] leading-7 text-muted group-hover:text-ink'>
+        {description}
+      </p>
+    </Link>
+  </motion.div>
+);
