@@ -43,7 +43,7 @@ export const Footer: FC = () => {
 
           <div className='flex flex-wrap gap-x-14 gap-y-8'>
             <div className='flex flex-col gap-3'>
-              <span className='industrial-label text-faint'>Index</span>
+              <span className='text-sm text-muted'>Index</span>
               <ul className='space-y-2'>
                 {navLinks.map((link) => (
                   <li key={link.to}>
@@ -56,7 +56,7 @@ export const Footer: FC = () => {
             </div>
 
             <div className='flex flex-col gap-3'>
-              <span className='industrial-label text-faint'>Legal</span>
+              <span className='text-sm text-muted'>Legal</span>
               <ul className='space-y-2'>
                 {legalLinks.map((link) => (
                   <li key={link.to}>
@@ -69,7 +69,7 @@ export const Footer: FC = () => {
             </div>
 
             <div className='flex flex-col gap-3'>
-              <span className='industrial-label text-faint'>Signal</span>
+              <span className='text-sm text-muted'>Elsewhere</span>
               <ul className='space-y-2'>
                 <li>
                   <a
@@ -104,8 +104,8 @@ export const Footer: FC = () => {
           </div>
         </div>
 
-        <div className='mt-12 flex flex-col items-start justify-between gap-2 border-t border-line/80 pt-6 font-mono text-[10px] uppercase tracking-[0.14em] text-faint md:flex-row md:items-center'>
-          <span>Deep-tech · Pisa, EU</span>
+        <div className='mt-12 flex flex-col items-start justify-between gap-2 border-t border-line/80 pt-6 text-sm text-muted md:flex-row md:items-center'>
+          <span>Pisa, EU</span>
           <span>{m.footer_rights({ year: BUILD_YEAR })}</span>
         </div>
       </div>

@@ -54,7 +54,7 @@ function BlogPostPage() {
       />
 
       <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-[11px] text-faint uppercase tracking-[0.16em]'>
+        <p className='text-sm text-muted'>
           {post.categorySlug} · {formatDate(post.date)}
         </p>
 

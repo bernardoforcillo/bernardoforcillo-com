@@ -37,10 +37,10 @@ const mainNavLinks: NavLink[] = [
 ];
 
 const DESKTOP_LINK_CLASS =
-  'relative px-3 py-2 text-[13px] tracking-wide transition-colors duration-200';
+  'relative px-3 py-2 text-[15px] transition-colors duration-200';
 
 const MOBILE_LINK_CLASS =
-  'flex items-center gap-3 px-4 py-3 text-[13px] tracking-wide transition-colors';
+  'flex items-center gap-3 px-4 py-3 text-[15px] transition-colors';
 
 export const Navbar = () => {
   return (
@@ -53,10 +53,10 @@ export const Navbar = () => {
       <div className='pointer-events-auto mx-auto flex max-w-6xl items-center justify-between border-b border-line/70 bg-canvas/80 px-1 pb-3 backdrop-blur-md'>
         <Link
           to='/'
-          className='flex items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.18em]'
+          className='flex items-center gap-2.5 text-[15px] tracking-tight'
         >
           <span className='size-1.5 rounded-full bg-signal' />
-          BF
+          Bernardo
         </Link>
         <nav className='hidden sm:block'>
           <ol className='flex items-center'>

@@ -6,7 +6,7 @@ import { findProject } from '~/content';
 import { formatDate } from '~/lib/format-date';
 
 const EXTERNAL_LINK_CLASS =
-  'text-[13px] text-ink underline decoration-line underline-offset-4 hover:decoration-signal transition-colors';
+  'text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -53,16 +53,14 @@ function ProjectPage() {
       />
 
       <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-[11px] text-faint uppercase tracking-[0.16em]'>
-          {formatDate(project.date)}
-        </p>
+        <p className='text-sm text-muted'>{formatDate(project.date)}</p>
 
         {project.stack.length > 0 ? (
           <div className='mt-4 flex flex-wrap gap-x-3 gap-y-1'>
             {project.stack.map((item) => (
               <span
                 key={`${project.projectSlug}-${item}`}
-                className='text-[11px] uppercase tracking-[0.14em] text-faint'
+                className='text-sm text-muted'
               >
                 {item}
               </span>

@@ -13,7 +13,7 @@ export const ContentRow: FC<Props> = ({ title, description, meta, tags }) => (
       <h2 className='text-xl font-medium tracking-tight text-ink md:text-2xl'>
         {title}
       </h2>
-      <span className='industrial-label shrink-0 text-faint'>{meta}</span>
+      <span className='shrink-0 text-sm text-muted'>{meta}</span>
     </div>
     {description ? (
       <p className='mt-2 max-w-xl text-[15px] leading-7 text-muted'>
@@ -23,10 +23,7 @@ export const ContentRow: FC<Props> = ({ title, description, meta, tags }) => (
     {tags && tags.length > 0 ? (
       <div className='mt-3 flex flex-wrap gap-x-3 gap-y-1'>
         {tags.map((tag) => (
-          <span
-            key={tag}
-            className='font-mono text-[10px] uppercase tracking-[0.14em] text-faint'
-          >
+          <span key={tag} className='text-sm text-muted'>
             {tag}
           </span>
         ))}

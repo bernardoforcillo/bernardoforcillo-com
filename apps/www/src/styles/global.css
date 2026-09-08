@@ -26,8 +26,10 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
@@ -53,9 +55,5 @@
 }
 
 @utility content-row {
-  @apply relative block py-8 md:py-9 border-b border-line/80 transition-opacity duration-300 hover:opacity-70;
-}
-
-@utility industrial-label {
-  @apply font-mono text-[10px] uppercase tracking-[0.2em];
+  @apply relative block py-8 md:py-9 border-b border-line/80 transition-colors duration-300 hover:border-ink/25;
 }
