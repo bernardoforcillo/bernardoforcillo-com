@@ -203,9 +203,20 @@ test('only the deployment manifest changed under kubernetes/', () => {
   assert.match(service, /targetPort: 3000/);
 });
 
-test('the docker workflow validates pull requests and caches layers', () => {
+test('the docker workflow is manual-only now that Cloudflare serves production', () => {
   const workflow = readText('.github/workflows/docker-push.yaml');
-  assert.match(workflow, /^ {2}pull_request:$/m);
+  // The image is still buildable and still described by this workflow; it just
+  // must not run on its own: production is deployed by Cloudflare Workers
+  // Builds, not by anything in .github/workflows.
+  assert.match(workflow, /^ {2}workflow_dispatch:$/m);
+  assert.ok(
+    !/^ {2}pull_request:$/m.test(workflow),
+    'an automatic trigger would publish an image nothing deploys',
+  );
+  assert.ok(
+    !/^ {2}push:$/m.test(workflow),
+    'an automatic trigger would publish an image nothing deploys',
+  );
   assert.match(workflow, /^concurrency:$/m);
   assert.match(workflow, /cancel-in-progress: true/);
   assert.match(workflow, /^permissions:$/m);

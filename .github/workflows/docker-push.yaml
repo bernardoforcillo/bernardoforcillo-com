@@ -1,13 +1,13 @@
 name: 'build containers and push to dockerhub'
+# Disabled as an automatic trigger: bernardoforcillo.com is served by Cloudflare
+# Workers now, deployed by Workers Builds rather than by any workflow in here.
+# Nothing has been removed - the Dockerfile, the Go server and the Kubernetes
+# manifests are all still in the repository and still checked by verify.yaml -
+# but the image is no longer what production runs, so building and pushing it on
+# every commit would publish an artefact nobody deploys. Start it from the
+# Actions tab when an image is actually wanted.
 on:
-  push:
-    branches:
-      - 'main'
-    tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - 'main'
+  workflow_dispatch:
 concurrency:
   group: docker-${{ github.ref }}
   cancel-in-progress: true
