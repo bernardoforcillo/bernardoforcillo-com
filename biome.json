@@ -18,12 +18,18 @@
       "**/pnpm-lock.yaml",
       "**/package-lock.json",
       "**/yarn.lock",
-      "**/routeTree.gen.ts"
+      "**/routeTree.gen.ts",
+      "**/worker-configuration.d.ts",
+      "**/.wrangler/**",
+      "**/test-results/**",
+      "**/playwright-report/**",
+      "**/blob-report/**",
+      "**/.tanstack/**"
     ]
   },
   "formatter": {
     "enabled": true,
-    "ignore": ["**/routeTree.gen.ts"],
+    "ignore": ["**/routeTree.gen.ts", "**/worker-configuration.d.ts"],
     "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
@@ -106,11 +112,12 @@
       ".next/**",
       "**/.eslintrc.js",
       "**/*.config.*js",
-      "**/routeTree.gen.ts"
+      "**/routeTree.gen.ts",
+      "**/worker-configuration.d.ts"
     ]
   },
   "javascript": {
-    "globals": ["__BUILD_YEAR__"],
+    "globals": ["__BUILD_YEAR__", "Env", "ExportedHandler"],
     "formatter": {
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",

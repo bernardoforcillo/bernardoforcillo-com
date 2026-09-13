@@ -221,3 +221,34 @@ test('the docker workflow validates pull requests and caches layers', () => {
   assert.match(workflow, /file: \.\/apps\/www\/Dockerfile/);
   assert.match(workflow, /platforms: linux\/amd64/);
 });
+
+test('the Worker and _headers stamp the identical security header set', () => {
+  // worker/index.ts and public/_headers each carry half of the same policy:
+  // _headers cannot reach Worker-generated responses (/config.js, /healthz, the
+  // 404) and the Worker does not see asset responses. Both files say the other
+  // is kept in step by this test, so drift has to fail here.
+  const worker = readText('apps/www/worker/index.ts');
+  const headers = readText('apps/www/public/_headers');
+
+  const block = worker.match(
+    /const SECURITY_HEADERS[\s\S]*?=\s*\[([\s\S]*?)\n\];/,
+  );
+  assert.ok(block, 'SECURITY_HEADERS is no longer recognisable');
+  const fromWorker = [
+    ...block[1].matchAll(/\[\s*'([^']+)',\s*'([^']+)',?\s*\]/g),
+  ]
+    .map(([, name, value]) => `${name}: ${value}`)
+    .sort();
+
+  // The catch-all rule; /assets/* only adds Cache-Control.
+  const catchAll = headers.match(/^\/\*\n((?:\s{2}\S.*\n)+)/m);
+  assert.ok(catchAll, 'the /* rule is missing from _headers');
+  const fromHeaders = catchAll[1]
+    .split('\n')
+    .filter((line) => line.trim())
+    .map((line) => line.trim())
+    .sort();
+
+  assert.deepEqual(fromWorker, fromHeaders);
+  assert.ok(fromWorker.length >= 7, 'expected the full Traefik header set');
+});

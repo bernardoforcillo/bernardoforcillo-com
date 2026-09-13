@@ -1,0 +1,25 @@
+# Response headers for static assets, applied by Workers Static Assets.
+#
+# This file is the asset half of a pair: it cannot reach responses built by
+# worker/index.ts, which stamps the same security headers in code. The two
+# lists are asserted identical by scripts/verify/repo-config.test.mjs.
+#
+# Lives in public/ so vite copies it to dist/client, which is the configured
+# assets directory. Wrangler parses it at deploy time and does not serve it.
+
+# The headers the Traefik `security` middleware used to apply at the ingress.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  X-Permitted-Cross-Domain-Policies: none
+
+# Content-hashed build output: the URL changes whenever the bytes change, so
+# the response never expires. Everything else keeps the Static Assets default
+# of `public, max-age=0, must-revalidate`, revalidated cheaply by its ETag -
+# the same two cache classes the Go server assigned from AssetPrefix.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

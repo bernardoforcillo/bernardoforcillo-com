@@ -1,0 +1,54 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "bernardoforcillo-com",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-09-13",
+
+  // dist/client is what `vite build && node scripts/clean-dist.mjs` leaves
+  // behind: 19 prerendered pages, the hashed /assets tree, robots.txt and the
+  // normalized sitemap. Nothing is generated at request time.
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+
+    // Every page is emitted as <route>/index.html and every canonical URL in
+    // sitemap.xml is slashless (/blog, /projects/amaro, the root / aside).
+    // The default "auto-trailing-slash" serves folder indexes *with* a slash,
+    // so it would answer /blog with a 307 to /blog/ - a redirect in front of
+    // all 14 indexed URLs. "drop-trailing-slash" is the mode that matches what
+    // the build and the sitemap already agree on.
+    "html_handling": "drop-trailing-slash",
+
+    // "404-page" looks for a root 404.html; this build emits 404/index.html
+    // instead. Rather than duplicating the file, unmatched requests fall
+    // through to the Worker, which serves that page with a real 404 status.
+    // A miss must never be answered with the home page and a 200 - that would
+    // poison indexing, which is why there is no single-page-application mode
+    // here either.
+    "not_found_handling": "none"
+  },
+
+  // The GTM container id is public by definition: it ships to the browser in
+  // every page load. It was a pod environment variable, so it stays
+  // configuration rather than being baked into the bundle.
+  "vars": {
+    "GTM_ID": "GTM-TCMCZB6B"
+  },
+
+  // The apex only, which is the whole of the public surface:
+  // www.bernardoforcillo.com has no DNS record, so the redirect-to-non-www
+  // middleware the Kubernetes ingress carried never had any traffic to act on.
+  // If a www record is ever added, send it to a zone Redirect Rule rather than
+  // a second Worker route - a www request would match a static asset and be
+  // served before this script ever ran. See readme.md.
+  "routes": [
+    {
+      "pattern": "bernardoforcillo.com/*",
+      "zone_name": "bernardoforcillo.com"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}
