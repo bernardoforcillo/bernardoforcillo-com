@@ -19,54 +19,61 @@ type NavLink = {
 };
 
 const mainNavLinks: NavLink[] = [
-  { label: 'Home', to: '/', icon: <Home size={18} />, exact: true },
-  { label: 'Blog', to: '/blog', icon: <BookOpen size={18} />, exact: false },
+  { label: 'Home', to: '/', icon: <Home size={16} />, exact: true },
+  { label: 'Blog', to: '/blog', icon: <BookOpen size={16} />, exact: false },
   {
     label: 'Projects',
     to: '/projects',
-    icon: <Folder size={18} />,
+    icon: <Folder size={16} />,
     exact: false,
   },
   {
     label: 'Notes',
     to: '/notes',
-    icon: <StickyNote size={18} />,
+    icon: <StickyNote size={16} />,
     exact: false,
   },
-  { label: 'About', to: '/about', icon: <User size={18} />, exact: false },
+  { label: 'About', to: '/about', icon: <User size={16} />, exact: false },
 ];
 
 const DESKTOP_LINK_CLASS =
-  'py-2 px-4 rounded-full text-xs font-mono font-medium transition-all duration-200 ease-out flex items-center gap-2 uppercase tracking-wide';
+  'relative px-3 py-2 text-[15px] transition-colors duration-200';
 
 const MOBILE_LINK_CLASS =
-  'flex items-center gap-3 px-3 py-3 text-xs font-mono rounded-lg transition-colors';
+  'flex items-center gap-3 px-4 py-3 text-[15px] transition-colors';
 
 export const Navbar = () => {
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className='fixed flex top-0 z-50 w-full px-6 pt-6 pointer-events-none'
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className='pointer-events-none fixed top-0 z-50 w-full px-4 pt-5 md:px-8'
     >
-      <div className='pointer-events-auto ml-auto sm:mx-auto rounded-full px-2 py-2 bg-white/80 backdrop-blur-md border border-gray-200 flex items-center gap-2 shadow-sm'>
-        {/* Desktop Navigation */}
+      <div className='pointer-events-auto mx-auto flex max-w-6xl items-center justify-between border-b border-line/70 bg-canvas/80 px-1 pb-3 backdrop-blur-md'>
+        <Link
+          to='/'
+          className='flex items-center gap-2.5 text-[15px] tracking-tight'
+        >
+          <span className='size-1.5 rounded-full bg-signal' />
+          Bernardo
+        </Link>
         <nav className='hidden sm:block'>
-          <ol className='flex gap-1'>
+          <ol className='flex items-center'>
             {mainNavLinks.map((el) => (
               <li key={el.to}>
                 <Link
                   to={el.to}
                   activeOptions={{ exact: el.exact }}
                   className={DESKTOP_LINK_CLASS}
-                  activeProps={{ className: 'bg-black text-white shadow-sm' }}
-                  inactiveProps={{
+                  activeProps={{
                     className:
-                      'text-gray-500 hover:text-black hover:bg-gray-100',
+                      'text-ink after:absolute after:left-3 after:right-3 after:-bottom-px after:h-px after:bg-signal',
+                  }}
+                  inactiveProps={{
+                    className: 'text-muted hover:text-ink',
                   }}
                 >
-                  {el.icon}
                   {el.label}
                 </Link>
               </li>
@@ -74,38 +81,34 @@ export const Navbar = () => {
           </ol>
         </nav>
 
-        {/* Mobile Menu Trigger */}
         <div className='flex sm:hidden'>
           <MenuTrigger>
             <Button
               type='button'
-              className='p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-500 hover:text-black'
+              className='p-2 text-muted transition-colors hover:text-ink'
               aria-label='Open menu'
             >
               <span className='sr-only'>Open Menu</span>
-              <div className='flex flex-col gap-1 w-5 h-5 items-center justify-center'>
-                <div className='w-4 h-[1.5px] bg-current' />
-                <div className='w-4 h-[1.5px] bg-current' />
+              <div className='flex h-5 w-5 flex-col items-center justify-center gap-1'>
+                <div className='h-px w-4 bg-current' />
+                <div className='h-px w-4 bg-current' />
               </div>
             </Button>
-            <Popover className='w-48 mt-4 rounded-xl bg-white/95 backdrop-blur-xl border border-gray-200 shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top'>
-              <Menu className='flex flex-col p-1 outline-none'>
+            <Popover className='mt-3 w-52 origin-top overflow-hidden border border-line bg-canvas/95 backdrop-blur-xl'>
+              <Menu className='flex flex-col outline-none'>
                 {mainNavLinks.map((el) => (
                   <MenuItem key={el.to} className='outline-none'>
                     <Link
                       to={el.to}
                       activeOptions={{ exact: el.exact }}
                       className={MOBILE_LINK_CLASS}
-                      activeProps={{ className: 'bg-black text-white' }}
+                      activeProps={{ className: 'text-ink' }}
                       inactiveProps={{
-                        className:
-                          'text-gray-600 hover:bg-gray-100 hover:text-black',
+                        className: 'text-muted hover:text-ink',
                       }}
                     >
                       {el.icon}
-                      <span className='uppercase tracking-wide'>
-                        {el.label}
-                      </span>
+                      {el.label}
                     </Link>
                   </MenuItem>
                 ))}

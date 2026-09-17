@@ -14,6 +14,13 @@
   --color-azure-radiance-800: oklch(0.47 0.18 259.93 / 1);
   --color-azure-radiance-900: oklch(0.42 0.14 257.87 / 1);
   --color-azure-radiance-950: oklch(0.31 0.09 258.73 / 1);
+
+  --color-canvas: oklch(0.978 0.006 95);
+  --color-ink: oklch(0.22 0.012 250);
+  --color-muted: oklch(0.48 0.012 250);
+  --color-faint: oklch(0.66 0.01 250);
+  --color-line: oklch(0.9 0.008 95);
+  --color-signal: var(--color-azure-radiance-500);
 }
 
 @layer base {
@@ -22,6 +29,6 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-line, currentColor);
   }
 }

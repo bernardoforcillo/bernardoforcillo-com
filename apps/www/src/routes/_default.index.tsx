@@ -7,7 +7,6 @@ import {
 import { createFileRoute } from '@tanstack/react-router';
 import { BentoGridSection } from '~/features/home/organisms/bento-grid-section';
 import { HeroSection } from '~/features/home/organisms/hero-section';
-import { StatsBar } from '~/features/home/organisms/stats-bar';
 
 export const Route = createFileRoute('/_default/')({
   head: () =>
@@ -22,9 +21,8 @@ export const Route = createFileRoute('/_default/')({
 
 function HomePage() {
   return (
-    <div className='min-h-screen max-w-[1400px] mx-auto px-4 md:px-8 py-24 md:py-32 flex flex-col gap-12'>
+    <div className='mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-24 pt-28 md:gap-16 md:px-8 md:pb-32 md:pt-32'>
       <HeroSection />
-      <StatsBar />
       <BentoGridSection />
     </div>
   );

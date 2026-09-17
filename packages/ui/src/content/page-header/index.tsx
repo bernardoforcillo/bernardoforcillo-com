@@ -11,7 +11,7 @@ type Props = {
 } & HTMLProps<HTMLDivElement>;
 
 export const PageHeader: FC<Props> = ({
-  icon,
+  icon: _icon,
   title,
   description,
   actions,
@@ -27,25 +27,18 @@ export const PageHeader: FC<Props> = ({
       {...rest}
     >
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='w-full flex flex-col items-start gap-8 border-b border-gray-200 pb-12'
+        className='flex w-full flex-col items-start gap-5 border-b border-line/80 pb-10'
       >
-        {icon && (
-          <div className='flex items-center gap-2 font-mono text-xs text-gray-400'>
-            <span className='p-2 border border-gray-200 text-gray-400'>
-              {icon}
-            </span>
-          </div>
-        )}
         <div className='space-y-4'>
           {title && (
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className='text-5xl md:text-8xl font-bold tracking-tighter text-black leading-none'
+              className='text-5xl font-medium leading-[0.9] tracking-[-0.045em] text-ink md:text-7xl'
             >
               {title}.
             </motion.h1>
@@ -55,15 +48,15 @@ export const PageHeader: FC<Props> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className='text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed'
+              className='max-w-xl text-[15px] leading-7 text-muted md:text-base'
             >
               {description}
             </motion.p>
           )}
         </div>
 
-        {actions && <div className='flex flex-wrap gap-4 pt-4'>{actions}</div>}
-        {children && <div className='w-full mt-12'>{children}</div>}
+        {actions && <div className='flex flex-wrap gap-4 pt-2'>{actions}</div>}
+        {children && <div className='w-full mt-8'>{children}</div>}
       </motion.div>
     </section>
   );
