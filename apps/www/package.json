@@ -27,7 +27,7 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@content-collections/core": "^0.15.2",
+    "@content-collections/core": "^0.15.3",
     "@content-collections/markdown": "^0.1.4",
     "@content-collections/vite": "^0.3.0",
     "@inlang/paraglide-js": "^2.25.2",
