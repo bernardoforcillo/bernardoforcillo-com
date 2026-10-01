@@ -37,7 +37,7 @@
     "@biomejs/biome": "^1.9.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@commitlint/format": "^19.8.1",
+    "@commitlint/format": "^21.2.3",
     "@commitlint/types": "^19.8.1",
     "@types/node": "^22.20.2",
     "husky": "^9.1.7",
