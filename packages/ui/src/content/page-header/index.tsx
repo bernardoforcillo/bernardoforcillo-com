@@ -33,8 +33,8 @@ export const PageHeader: FC<Props> = ({
         className='w-full flex flex-col items-start gap-8 border-b border-gray-200 pb-12'
       >
         {icon && (
-          <div className='flex items-center gap-2 font-mono text-xs text-gray-400'>
-            <span className='p-2 border border-gray-200 text-gray-400'>
+          <div className='flex items-center gap-2 font-mono text-xs text-gray-500'>
+            <span className='p-2 border border-gray-200 text-gray-500'>
               {icon}
             </span>
           </div>

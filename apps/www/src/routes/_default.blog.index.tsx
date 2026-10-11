@@ -40,9 +40,9 @@ function BlogIndexPage() {
                 categorySlug: post.categorySlug,
                 postSlug: post.postSlug,
               }}
-              className='border border-gray-200 bg-white p-6 hover:border-black transition-colors'
+              className='border border-gray-200 bg-white p-6 hover:border-black hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 transition-all duration-300'
             >
-              <div className='text-xs text-gray-400 uppercase tracking-wider font-mono'>
+              <div className='text-xs text-gray-500 uppercase tracking-wider font-mono'>
                 {post.categorySlug} • {formatDate(post.date)}
               </div>
               <h2 className='text-2xl mt-2 font-semibold tracking-tight text-black'>

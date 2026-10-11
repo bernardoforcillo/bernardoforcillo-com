@@ -34,12 +34,12 @@ function BlogCategoriesPage() {
               key={category.categorySlug}
               to='/blog/$categorySlug'
               params={{ categorySlug: category.categorySlug }}
-              className='border border-gray-200 bg-white p-6 hover:border-black transition-colors flex justify-between items-center'
+              className='border border-gray-200 bg-white p-6 hover:border-black hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 transition-all duration-300 flex justify-between items-center'
             >
               <span className='text-xl font-semibold tracking-tight'>
                 {category.categorySlug}
               </span>
-              <span className='text-xs font-mono text-gray-400 uppercase tracking-wider'>
+              <span className='text-xs font-mono text-gray-500 uppercase tracking-wider'>
                 {category.count} posts
               </span>
             </Link>

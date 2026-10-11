@@ -21,7 +21,7 @@ const legalLinks = [
 ] as const;
 
 const LINK_CLASS =
-  'text-sm text-gray-600 hover:text-black transition-colors font-medium';
+  'inline-block py-1 text-sm text-gray-600 hover:text-black transition-colors font-medium';
 
 export const Footer: FC = () => {
   return (
@@ -33,24 +33,24 @@ export const Footer: FC = () => {
       className='border-t border-gray-200 pt-16 pb-8 bg-white'
     >
       <div className='mx-auto max-w-7xl px-6'>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-gray-100'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-gray-200'>
           {/* Brand */}
           <div className='flex flex-col gap-4'>
             <span className='font-bold tracking-tighter text-xl'>
               BERNARDO FORCILLO.
             </span>
-            <p className='text-xs font-mono text-gray-400 leading-relaxed max-w-xs'>
+            <p className='text-xs font-mono text-gray-500 leading-relaxed max-w-xs'>
               Software Engineer building technologies for innovators,
               professionals and enthusiasts.
             </p>
-            <span className='font-mono text-xs text-gray-300 uppercase tracking-wider'>
+            <span className='font-mono text-xs text-gray-500 uppercase tracking-wider'>
               Pisa, Italy — EU · CET/CEST
             </span>
           </div>
 
           {/* Navigation */}
           <div className='flex flex-col gap-4'>
-            <span className='font-mono text-xs text-gray-400 uppercase tracking-wider'>
+            <span className='font-mono text-xs text-gray-500 uppercase tracking-wider'>
               Navigation
             </span>
             <ul className='space-y-2'>
@@ -66,7 +66,7 @@ export const Footer: FC = () => {
 
           {/* Legal */}
           <div className='flex flex-col gap-4'>
-            <span className='font-mono text-xs text-gray-400 uppercase tracking-wider'>
+            <span className='font-mono text-xs text-gray-500 uppercase tracking-wider'>
               Legal
             </span>
             <ul className='space-y-2'>
@@ -82,7 +82,7 @@ export const Footer: FC = () => {
 
           {/* Social */}
           <div className='flex flex-col gap-4'>
-            <span className='font-mono text-xs text-gray-400 uppercase tracking-wider'>
+            <span className='font-mono text-xs text-gray-500 uppercase tracking-wider'>
               Connect
             </span>
             <ul className='space-y-3'>
@@ -91,7 +91,7 @@ export const Footer: FC = () => {
                   href='https://github.com/bernardoforcillo'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors'
+                  className='flex items-center gap-2 py-1 text-sm text-gray-600 hover:text-black transition-colors'
                 >
                   <GithubIcon className='w-4 h-4' />
                   GitHub
@@ -102,7 +102,7 @@ export const Footer: FC = () => {
                   href='https://linkedin.com/in/bernardoforcillo'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors'
+                  className='flex items-center gap-2 py-1 text-sm text-gray-600 hover:text-black transition-colors'
                 >
                   <LinkedinMark className='w-4 h-4' />
                   LinkedIn
@@ -111,9 +111,9 @@ export const Footer: FC = () => {
               <li>
                 <a
                   href='mailto:hello@bernardoforcillo.com'
-                  className='flex items-center gap-2 text-sm text-gray-600 hover:text-black transition-colors'
+                  className='flex items-center gap-2 py-1 text-sm text-gray-600 hover:text-black transition-colors'
                 >
-                  <span className='w-4 h-4 flex items-center justify-center font-mono text-xs border rounded-full border-gray-400'>
+                  <span className='w-4 h-4 flex items-center justify-center font-mono text-xs border rounded-full border-current'>
                     @
                   </span>
                   Email
@@ -124,7 +124,7 @@ export const Footer: FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className='pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs font-mono text-gray-400 uppercase tracking-wide'>
+        <div className='pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs font-mono text-gray-500 uppercase tracking-wide'>
           <span>Built with TanStack Start, Tailwind, &amp; Love.</span>
           <span>{m.footer_rights({ year: BUILD_YEAR })}</span>
         </div>

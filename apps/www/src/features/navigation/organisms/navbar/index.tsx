@@ -37,10 +37,10 @@ const mainNavLinks: NavLink[] = [
 ];
 
 const DESKTOP_LINK_CLASS =
-  'py-2 px-4 rounded-full text-xs font-mono font-medium transition-all duration-200 ease-out flex items-center gap-2 uppercase tracking-wide';
+  'py-2 px-4 rounded-full text-xs font-mono font-medium transition-colors duration-200 ease-out flex items-center gap-2 uppercase tracking-wide focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black';
 
 const MOBILE_LINK_CLASS =
-  'flex items-center gap-3 px-3 py-3 text-xs font-mono rounded-lg transition-colors';
+  'flex items-center gap-3 px-3 py-3 text-xs font-mono rounded-lg transition-colors group-data-[focused]:ring-2 group-data-[focused]:ring-black';
 
 export const Navbar = () => {
   return (
@@ -50,7 +50,7 @@ export const Navbar = () => {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className='fixed flex top-0 z-50 w-full px-6 pt-6 pointer-events-none'
     >
-      <div className='pointer-events-auto ml-auto sm:mx-auto rounded-full px-2 py-2 bg-white/80 backdrop-blur-md border border-gray-200 flex items-center gap-2 shadow-sm'>
+      <div className='pointer-events-auto ml-auto sm:mx-auto rounded-full px-2 py-2 bg-white/75 backdrop-blur-xl border border-gray-200 flex items-center gap-2 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.15)]'>
         {/* Desktop Navigation */}
         <nav className='hidden sm:block'>
           <ol className='flex gap-1'>
@@ -60,10 +60,10 @@ export const Navbar = () => {
                   to={el.to}
                   activeOptions={{ exact: el.exact }}
                   className={DESKTOP_LINK_CLASS}
-                  activeProps={{ className: 'bg-black text-white shadow-sm' }}
+                  activeProps={{ className: 'bg-black text-white' }}
                   inactiveProps={{
                     className:
-                      'text-gray-500 hover:text-black hover:bg-gray-100',
+                      'text-gray-600 hover:text-black hover:bg-gray-100',
                   }}
                 >
                   {el.icon}
@@ -79,7 +79,7 @@ export const Navbar = () => {
           <MenuTrigger>
             <Button
               type='button'
-              className='p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-500 hover:text-black'
+              className='p-3 rounded-full hover:bg-gray-100 transition-colors text-gray-600 hover:text-black outline-none focus-visible:ring-2 focus-visible:ring-black'
               aria-label='Open menu'
             >
               <span className='sr-only'>Open Menu</span>
@@ -88,10 +88,10 @@ export const Navbar = () => {
                 <div className='w-4 h-[1.5px] bg-current' />
               </div>
             </Button>
-            <Popover className='w-48 mt-4 rounded-xl bg-white/95 backdrop-blur-xl border border-gray-200 shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top'>
+            <Popover className='w-48 mt-4 rounded-xl bg-white/95 backdrop-blur-xl border border-gray-200 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.2)] overflow-hidden animate-in fade-in zoom-in-95 duration-200 origin-top'>
               <Menu className='flex flex-col p-1 outline-none'>
                 {mainNavLinks.map((el) => (
-                  <MenuItem key={el.to} className='outline-none'>
+                  <MenuItem key={el.to} className='outline-none group'>
                     <Link
                       to={el.to}
                       activeOptions={{ exact: el.exact }}
