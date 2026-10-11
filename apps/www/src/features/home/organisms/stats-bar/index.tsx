@@ -33,12 +33,12 @@ export const StatsBar = () => {
         <motion.div
           key={stat.label}
           variants={itemVariants}
-          className='px-6 py-5 flex flex-col gap-1 rounded-xl bg-gray-50/80 hover:bg-white transition-colors'
+          className='px-6 py-5 flex flex-col gap-1 rounded-xl border border-gray-200 bg-gray-50/80 hover:bg-white hover:border-black hover:-translate-y-0.5 transition-all duration-300'
         >
-          <span className='text-2xl md:text-3xl font-bold tracking-tighter'>
+          <span className='text-2xl md:text-3xl font-bold tracking-tighter tabular-nums'>
             {stat.value}
           </span>
-          <span className='font-mono text-xs text-gray-400 uppercase tracking-wider'>
+          <span className='font-mono text-xs text-gray-500 uppercase tracking-wider'>
             {stat.label}
           </span>
         </motion.div>

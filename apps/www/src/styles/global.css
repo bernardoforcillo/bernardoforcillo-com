@@ -27,6 +27,34 @@
     @apply bg-white text-black antialiased selection:bg-black selection:text-white;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 2px solid black;
+    outline-offset: 2px;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   /* Custom Scrollbar for a technical feel */
   ::-webkit-scrollbar {
     width: 6px;

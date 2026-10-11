@@ -49,7 +49,7 @@ export const HeroSection = () => {
         className='flex flex-col gap-4 max-w-md'
       >
         <p className='font-mono text-sm md:text-base text-gray-500 leading-relaxed'>
-          <span className='text-gray-300'>
+          <span className='text-gray-400'>
             {'// Software Engineer & Polymath'}
           </span>
           <br />
@@ -81,15 +81,21 @@ export const HeroSection = () => {
           <div className='flex flex-wrap gap-3 pt-2'>
             <Link
               to='/projects'
-              className='inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-gray-800 transition-colors'
+              className='inline-flex items-center gap-2 px-5 py-2.5 bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-gray-800 active:scale-[0.97] transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black'
             >
-              View Projects <ArrowRight size={14} />
+              View Projects <ArrowRight
+                size={14}
+                className='transition-transform duration-200 group-hover:translate-x-1'
+              />
             </Link>
             <Link
               to='/blog'
-              className='inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-black text-xs font-mono uppercase tracking-wider hover:border-black transition-colors'
+              className='inline-flex items-center gap-2 px-5 py-2.5 border border-gray-300 text-black text-xs font-mono uppercase tracking-wider hover:border-black hover:bg-gray-50 active:scale-[0.97] transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black'
             >
-              Read Blog <ArrowRight size={14} />
+              Read Blog <ArrowRight
+                size={14}
+                className='transition-transform duration-200 group-hover:translate-x-1'
+              />
             </Link>
           </div>
         </motion.div>

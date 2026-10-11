@@ -28,7 +28,7 @@ export const BentoGridSection = () => {
         className='md:col-span-8 p-8 md:p-12 border border-gray-200 bg-white transition-colors duration-300 overflow-hidden min-h-[380px]'
       >
         <div className='h-full flex flex-col justify-between gap-8'>
-          <span className='font-mono text-xs text-gray-400'>
+          <span className='font-mono text-xs text-gray-500'>
             01 — INTRODUCTION
           </span>
           <div className='space-y-6'>
@@ -53,7 +53,7 @@ export const BentoGridSection = () => {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className='px-2.5 py-1 font-mono text-xs border border-gray-200 text-gray-400 hover:border-black hover:text-black transition-colors cursor-default'
+                  className='px-2.5 py-1 font-mono text-xs border border-gray-200 text-gray-500 hover:border-black hover:text-black transition-colors cursor-default select-none'
                 >
                   {tag}
                 </span>
@@ -66,14 +66,14 @@ export const BentoGridSection = () => {
       {/* Connect/Socials Card */}
       <motion.div
         variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
-        className='md:col-span-4 p-8 border border-gray-200 bg-white hover:border-black transition-colors duration-300 flex flex-col justify-between group'
+        className='md:col-span-4 p-8 border border-gray-200 bg-white hover:border-black hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] transition-all duration-300 flex flex-col justify-between group'
       >
         <div className='flex justify-between items-start'>
-          <span className='font-mono text-xs text-gray-400'>02 — NETWORK</span>
+          <span className='font-mono text-xs text-gray-500'>02 — NETWORK</span>
         </div>
 
         <div className='space-y-6'>
-          <p className='font-mono text-xs text-gray-400 leading-relaxed'>
+          <p className='font-mono text-xs text-gray-500 leading-relaxed'>
             Based in Pisa, Italy (EU). Available CET/CEST. Open to
             collaboration, consulting, and interesting problems.
           </p>
@@ -83,7 +83,7 @@ export const BentoGridSection = () => {
                 href='https://github.com/bernardoforcillo'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 hover:text-gray-600 transition-colors'
+                className='flex items-center gap-3 py-1 hover:text-gray-600 transition-colors'
               >
                 <GithubIcon className='w-6 h-6' />
                 <span>GitHub</span>
@@ -94,7 +94,7 @@ export const BentoGridSection = () => {
                 href='https://linkedin.com/in/bernardoforcillo'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 hover:text-blue-600 transition-colors'
+                className='flex items-center gap-3 py-1 hover:text-blue-600 transition-colors'
               >
                 <LinkedinMark className='w-6 h-6' />
                 <span>LinkedIn</span>
@@ -103,7 +103,7 @@ export const BentoGridSection = () => {
             <li>
               <a
                 href='mailto:hello@bernardoforcillo.com'
-                className='flex items-center gap-3 hover:text-gray-600 transition-colors'
+                className='flex items-center gap-3 py-1 hover:text-gray-600 transition-colors'
               >
                 <span className='w-6 h-6 flex items-center justify-center font-mono text-sm border rounded-full border-black'>
                   @
@@ -122,7 +122,7 @@ export const BentoGridSection = () => {
       >
         <Link
           to='/projects'
-          className='h-full w-full p-8 border border-gray-200 bg-black text-white hover:bg-white hover:text-black hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[300px]'
+          className='h-full w-full p-8 border border-gray-200 bg-black text-white hover:bg-white hover:text-black hover:border-black transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black min-h-[300px]'
         >
           <div className='flex justify-between items-start'>
             <span className='font-mono text-xs opacity-60'>
@@ -146,10 +146,10 @@ export const BentoGridSection = () => {
       >
         <Link
           to='/about'
-          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[300px]'
+          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black min-h-[300px]'
         >
           <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs text-gray-400'>
+            <span className='font-mono text-xs text-gray-500'>
               04 — BIO & EXPERIENCE
             </span>
             <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
@@ -174,10 +174,10 @@ export const BentoGridSection = () => {
       >
         <Link
           to='/blog'
-          className='h-full w-full p-8 border border-gray-200 bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[240px]'
+          className='h-full w-full p-8 border border-gray-200 bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black min-h-[240px]'
         >
           <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs text-gray-400'>
+            <span className='font-mono text-xs text-gray-500'>
               05 — WRITING
             </span>
             <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
@@ -201,10 +201,10 @@ export const BentoGridSection = () => {
       >
         <Link
           to='/notes'
-          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between min-h-[240px]'
+          className='h-full w-full p-8 border border-gray-200 bg-gray-50 hover:bg-white hover:border-black transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black min-h-[240px]'
         >
           <div className='flex justify-between items-start'>
-            <span className='font-mono text-xs text-gray-400'>06 — NOTES</span>
+            <span className='font-mono text-xs text-gray-500'>06 — NOTES</span>
             <div className='w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:text-white group-hover:border-black transition-colors'>
               <ArrowRight className='w-4 h-4' />
             </div>
