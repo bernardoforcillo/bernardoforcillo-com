@@ -72,7 +72,7 @@ export const HeroSection = () => {
           className='pt-6 space-y-6'
         >
           <blockquote className='border-l-2 border-black pl-4'>
-            <span className='font-serif italic text-2xl md:text-3xl text-black/80 block leading-tight'>
+            <span className='font-serif italic text-2xl md:text-3xl text-gray-800 block leading-tight'>
               Be Relentless. <br className='hidden md:inline' />
               Act Different. <br className='hidden md:inline' />
               Ship Fast.

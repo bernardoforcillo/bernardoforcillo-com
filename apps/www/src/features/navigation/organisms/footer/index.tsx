@@ -33,7 +33,7 @@ export const Footer: FC = () => {
       className='border-t border-gray-200 pt-16 pb-8 bg-white'
     >
       <div className='mx-auto max-w-7xl px-6'>
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-gray-100'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-gray-200'>
           {/* Brand */}
           <div className='flex flex-col gap-4'>
             <span className='font-bold tracking-tighter text-xl'>
@@ -113,7 +113,7 @@ export const Footer: FC = () => {
                   href='mailto:hello@bernardoforcillo.com'
                   className='flex items-center gap-2 py-1 text-sm text-gray-600 hover:text-black transition-colors'
                 >
-                  <span className='w-4 h-4 flex items-center justify-center font-mono text-xs border rounded-full border-gray-400'>
+                  <span className='w-4 h-4 flex items-center justify-center font-mono text-xs border rounded-full border-current'>
                     @
                   </span>
                   Email

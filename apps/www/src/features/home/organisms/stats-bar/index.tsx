@@ -33,7 +33,7 @@ export const StatsBar = () => {
         <motion.div
           key={stat.label}
           variants={itemVariants}
-          className='px-6 py-5 flex flex-col gap-1 rounded-xl border border-gray-200 bg-gray-50/80 hover:bg-white hover:border-black hover:-translate-y-0.5 transition-all duration-300'
+          className='px-6 py-5 flex flex-col gap-1 rounded-xl border border-gray-200 bg-gray-50 hover:bg-white hover:border-black hover:-translate-y-0.5 transition-all duration-300'
         >
           <span className='text-2xl md:text-3xl font-bold tracking-tighter tabular-nums'>
             {stat.value}
