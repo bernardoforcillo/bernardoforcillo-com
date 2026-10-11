@@ -6,7 +6,7 @@ import { findProject } from '~/content';
 import { formatDate } from '~/lib/format-date';
 
 const EXTERNAL_LINK_CLASS =
-  'text-sm font-mono uppercase tracking-wide border border-gray-200 px-3 py-2 hover:border-black transition-colors';
+  'text-sm font-mono uppercase tracking-wide border border-gray-200 px-3 py-2 hover:border-black hover:bg-gray-50 active:scale-[0.97] transition-all duration-200';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -53,7 +53,7 @@ function ProjectPage() {
       />
 
       <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-sm text-gray-400 uppercase tracking-wider font-mono'>
+        <p className='text-sm text-gray-500 uppercase tracking-wider font-mono'>
           {formatDate(project.date)}
         </p>
 
