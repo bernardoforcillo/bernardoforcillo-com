@@ -168,8 +168,18 @@ resource "google_cloudbuild_trigger" "deploy" {
     }
   }
 
-  # Skip builds for changes that cannot affect the image.
-  ignored_files = ["docs/**", "**/*.md", "kubernetes/**", "infrastructure/terraform/**"]
+  # Only changes that can affect the image start a build. Note that markdown under
+  # apps/www/content is site content, so it must not be excluded.
+  included_files = [
+    "apps/www/**",
+    "packages/**",
+    "go.work*",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "turbo.json",
+    "infrastructure/cloudbuild.yaml",
+  ]
 
   substitutions = {
     _REGION  = var.region
