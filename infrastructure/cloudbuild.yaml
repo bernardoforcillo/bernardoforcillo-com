@@ -1,0 +1,35 @@
+# Build the www image, push it to Artifact Registry and roll it out to Cloud Run.
+# Substitutions are provided by the trigger in infrastructure/terraform/main.tf.
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - apps/www/Dockerfile
+      - -t
+      - ${_IMAGE}:${SHORT_SHA}
+      - .
+
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args: [push, "${_IMAGE}:${SHORT_SHA}"]
+
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_IMAGE}:${SHORT_SHA}
+      - --region=${_REGION}
+      - --service-account=${_RUN_SA}
+
+images:
+  - ${_IMAGE}:${SHORT_SHA}
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 1200s
