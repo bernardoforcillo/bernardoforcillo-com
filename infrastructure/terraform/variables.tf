@@ -12,13 +12,13 @@ variable "region" {
 variable "service_name" {
   description = "Cloud Run service name, also used as the image name."
   type        = string
-  default     = "www"
+  default     = "website"
 }
 
 variable "repository_name" {
   description = "Artifact Registry repository id."
   type        = string
-  default     = "www"
+  default     = "bernardoforcillo-com"
 }
 
 variable "github_owner" {

@@ -1,6 +1,6 @@
 output "service_url" {
   description = "Cloud Run URL."
-  value       = google_cloud_run_v2_service.www.uri
+  value       = google_cloud_run_v2_service.website.uri
 }
 
 output "image_base" {

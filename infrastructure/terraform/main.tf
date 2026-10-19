@@ -76,8 +76,8 @@ resource "google_project_iam_member" "build_logs" {
 }
 
 resource "google_cloud_run_v2_service_iam_member" "build_deployer" {
-  location = google_cloud_run_v2_service.www.location
-  name     = google_cloud_run_v2_service.www.name
+  location = google_cloud_run_v2_service.website.location
+  name     = google_cloud_run_v2_service.website.name
   role     = "roles/run.developer"
   member   = "serviceAccount:${google_service_account.build.email}"
 }
@@ -91,7 +91,7 @@ resource "google_service_account_iam_member" "build_acts_as_run" {
 # ---------------------------------------------------------------------------
 # Cloud Run: static Go server, so it scales to zero and runs small.
 # ---------------------------------------------------------------------------
-resource "google_cloud_run_v2_service" "www" {
+resource "google_cloud_run_v2_service" "website" {
   name                = var.service_name
   location            = var.region
   ingress             = "INGRESS_TRAFFIC_ALL"
@@ -143,8 +143,8 @@ resource "google_cloud_run_v2_service" "www" {
 resource "google_cloud_run_v2_service_iam_member" "public" {
   count = var.allow_unauthenticated ? 1 : 0
 
-  location = google_cloud_run_v2_service.www.location
-  name     = google_cloud_run_v2_service.www.name
+  location = google_cloud_run_v2_service.website.location
+  name     = google_cloud_run_v2_service.website.name
   role     = "roles/run.invoker"
   member   = "allUsers"
 }
