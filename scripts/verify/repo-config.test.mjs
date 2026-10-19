@@ -203,36 +203,6 @@ test('only the deployment manifest changed under kubernetes/', () => {
   assert.match(service, /targetPort: 3000/);
 });
 
-test('the docker workflow is manual-only now that Cloudflare serves production', () => {
-  const workflow = readText('.github/workflows/docker-push.yaml');
-  // The image is still buildable and still described by this workflow; it just
-  // must not run on its own: production is deployed by Cloudflare Workers
-  // Builds, not by anything in .github/workflows.
-  assert.match(workflow, /^ {2}workflow_dispatch:$/m);
-  assert.ok(
-    !/^ {2}pull_request:$/m.test(workflow),
-    'an automatic trigger would publish an image nothing deploys',
-  );
-  assert.ok(
-    !/^ {2}push:$/m.test(workflow),
-    'an automatic trigger would publish an image nothing deploys',
-  );
-  assert.match(workflow, /^concurrency:$/m);
-  assert.match(workflow, /cancel-in-progress: true/);
-  assert.match(workflow, /^permissions:$/m);
-  assert.match(workflow, /cache-from: type=gha/);
-  assert.match(workflow, /cache-to: type=gha,mode=max/);
-  assert.ok(
-    !workflow.includes('setup-qemu-action'),
-    'QEMU is dead weight for a single linux/amd64 platform',
-  );
-  // CI keeps the official docker actions; only local commands go through the
-  // container-engine shim.
-  assert.match(workflow, /docker\/build-push-action@v6/);
-  assert.match(workflow, /file: \.\/apps\/www\/Dockerfile/);
-  assert.match(workflow, /platforms: linux\/amd64/);
-});
-
 test('the Worker and _headers stamp the identical security header set', () => {
   // worker/index.ts and public/_headers each carry half of the same policy:
   // _headers cannot reach Worker-generated responses (/config.js, /healthz, the

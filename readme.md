@@ -84,9 +84,9 @@ Certificates).
 
 `apps/www/Dockerfile`, `packages/static-server` (a Go static file server) and
 `kubernetes/` are how the site used to be served, and are all still here and
-still covered by `verify.yaml`. They are no longer what production runs, so
-`.github/workflows/docker-push.yaml` no longer builds on push or pull request -
-start it from the Actions tab when an image is actually wanted.
+still covered by `verify.yaml`. They are no longer what production runs, and
+no GitHub workflow builds or pushes the image; Cloud Build does that, see
+`infrastructure/`.
 
 ```bash
 podman build -t bernardoforcillo/bernardoforcillo-com:dev -f=apps/www/Dockerfile .
