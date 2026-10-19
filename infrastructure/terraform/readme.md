@@ -14,7 +14,6 @@ survive even when older than 6 months, and older versions beyond them are remove
 ## Use
 
 ```sh
-cp terraform.tfvars.example terraform.tfvars   # set project_id
 gcloud auth application-default login
 terraform init && terraform apply
 ```

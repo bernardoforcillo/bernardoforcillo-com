@@ -170,5 +170,4 @@ blob-report/
 
 # Terraform
 **/.terraform/
-terraform.tfvars
 crash.log
