@@ -10,7 +10,13 @@ variable "region" {
 }
 
 variable "service_name" {
-  description = "Cloud Run service name, also used as the image name."
+  description = "Cloud Run service name; also prefixes the service accounts and the trigger."
+  type        = string
+  default     = "personal-website"
+}
+
+variable "image_name" {
+  description = "Image name inside the Artifact Registry repository."
   type        = string
   default     = "website"
 }

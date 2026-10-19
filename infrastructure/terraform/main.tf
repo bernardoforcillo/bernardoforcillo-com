@@ -7,7 +7,7 @@ locals {
   ]
 
   # <region>-docker.pkg.dev/<project>/<repo>/<image>
-  image_base = "${var.region}-docker.pkg.dev/${var.project_id}/${var.repository_name}/${var.service_name}"
+  image_base = "${var.region}-docker.pkg.dev/${var.project_id}/${var.repository_name}/${var.image_name}"
 }
 
 resource "google_project_service" "enabled" {
