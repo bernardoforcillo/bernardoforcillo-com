@@ -3,6 +3,7 @@ import { PageHeader } from '@monorepo/ui';
 import { Link, createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { postsByCategory } from '~/content';
+import { ContentRow } from '~/features/content/molecules/content-row';
 import { formatDate } from '~/lib/format-date';
 
 export const Route = createFileRoute('/_default/blog/$categorySlug/')({
@@ -40,8 +41,8 @@ function BlogCategoryPage() {
         description={`Posts inside ${categorySlug}.`}
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-20'>
-        <div className='grid grid-cols-1 gap-4'>
+      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
+        <div>
           {posts.map((post) => (
             <Link
               key={`${post.categorySlug}-${post.postSlug}`}
@@ -50,17 +51,13 @@ function BlogCategoryPage() {
                 categorySlug: post.categorySlug,
                 postSlug: post.postSlug,
               }}
-              className='border border-gray-200 bg-white p-6 hover:border-black hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)] active:translate-y-0 transition-all duration-300'
+              className='content-row'
             >
-              <div className='text-xs text-gray-500 uppercase tracking-wider font-mono'>
-                {formatDate(post.date)}
-              </div>
-              <h2 className='text-2xl mt-2 font-semibold tracking-tight text-black'>
-                {post.title}
-              </h2>
-              {post.description ? (
-                <p className='mt-3 text-gray-600'>{post.description}</p>
-              ) : null}
+              <ContentRow
+                title={post.title}
+                description={post.description}
+                meta={formatDate(post.date)}
+              />
             </Link>
           ))}
         </div>
