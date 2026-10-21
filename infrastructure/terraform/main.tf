@@ -4,6 +4,7 @@ locals {
     "cloudbuild.googleapis.com",
     "run.googleapis.com",
     "logging.googleapis.com",
+    "dns.googleapis.com",
   ]
 
   # <region>-docker.pkg.dev/<project>/<repo>/<image>
@@ -93,7 +94,7 @@ resource "google_service_account_iam_member" "build_acts_as_run" {
 # ---------------------------------------------------------------------------
 resource "google_cloud_run_v2_service" "website" {
   name                = var.service_name
-  location            = var.region
+  location            = var.run_region
   ingress             = "INGRESS_TRAFFIC_ALL"
   deletion_protection = false
 
@@ -182,8 +183,9 @@ resource "google_cloudbuild_trigger" "deploy" {
   ]
 
   substitutions = {
-    _REGION  = var.region
-    _SERVICE = var.service_name
+    _REGION     = var.region
+    _RUN_REGION = var.run_region
+    _SERVICE    = var.service_name
     _IMAGE   = local.image_base
     _RUN_SA  = google_service_account.run.email
   }

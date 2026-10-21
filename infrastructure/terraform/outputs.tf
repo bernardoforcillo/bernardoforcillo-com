@@ -3,6 +3,11 @@ output "service_url" {
   value       = google_cloud_run_v2_service.website.uri
 }
 
+output "name_servers" {
+  description = "Set these as the nameservers at the registrar."
+  value       = google_dns_managed_zone.apex.name_servers
+}
+
 output "image_base" {
   description = "Image path used by Cloud Build."
   value       = local.image_base

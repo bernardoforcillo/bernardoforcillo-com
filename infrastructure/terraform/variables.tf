@@ -9,6 +9,18 @@ variable "region" {
   default     = "europe-west8"
 }
 
+variable "run_region" {
+  description = "Region for Cloud Run. Separate from region because Cloud Run domain mappings are not available in europe-west8."
+  type        = string
+  default     = "europe-west1"
+}
+
+variable "domain" {
+  description = "Apex domain served by Cloud Run; its DNS zone is hosted in Cloud DNS."
+  type        = string
+  default     = "bernardoforcillo.com"
+}
+
 variable "service_name" {
   description = "Cloud Run service name; also prefixes the service accounts and the trigger."
   type        = string

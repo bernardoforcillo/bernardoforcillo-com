@@ -23,7 +23,7 @@ steps:
       - deploy
       - ${_SERVICE}
       - --image=${_IMAGE}:${SHORT_SHA}
-      - --region=${_REGION}
+      - --region=${_RUN_REGION}
       - --service-account=${_RUN_SA}
 
 images:
