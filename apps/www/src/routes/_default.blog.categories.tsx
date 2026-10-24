@@ -27,7 +27,7 @@ function BlogCategoriesPage() {
         description='Browse posts by topic.'
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
+      <section className='w-full max-w-6xl mx-auto px-6 md:px-8 pb-24'>
         <div>
           {blogCategories.map((category) => (
             <Link

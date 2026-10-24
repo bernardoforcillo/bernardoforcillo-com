@@ -48,9 +48,9 @@ export const Navbar = () => {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className='pointer-events-none fixed top-0 z-50 w-full px-4 pt-5 md:px-8'
+      className='pointer-events-none fixed top-0 z-50 w-full pt-5'
     >
-      <div className='pointer-events-auto mx-auto flex max-w-6xl items-center justify-between border-b border-line/70 bg-canvas/80 px-1 pb-3 backdrop-blur-md'>
+      <div className='pointer-events-auto mx-auto flex max-w-6xl items-center justify-between border-b border-line/70 bg-canvas/80 px-6 pb-3 md:px-8 backdrop-blur-md'>
         <Link
           to='/'
           className='flex items-center gap-2.5 text-[15px] tracking-tight'

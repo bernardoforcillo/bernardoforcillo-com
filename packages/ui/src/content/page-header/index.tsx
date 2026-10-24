@@ -21,7 +21,7 @@ export const PageHeader: FC<Props> = ({
 }) => {
   return (
     <section
-      className={`w-full max-w-7xl mx-auto px-6 pt-32 pb-12 md:pt-40 md:pb-16 ${
+      className={`w-full max-w-6xl mx-auto px-6 md:px-8 pt-32 pb-12 md:pt-40 md:pb-16 ${
         className
       }`.trim()}
       {...rest}

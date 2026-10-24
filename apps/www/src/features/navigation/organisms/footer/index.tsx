@@ -29,7 +29,7 @@ export const Footer: FC = () => {
       transition={{ duration: 0.5 }}
       className='border-t border-line/80 py-12'
     >
-      <div className='mx-auto max-w-6xl px-6'>
+      <div className='mx-auto max-w-6xl px-6 md:px-8'>
         <div className='flex flex-col gap-12 md:flex-row md:items-start md:justify-between'>
           <div className='flex max-w-xs flex-col gap-4'>
             <span className='text-sm font-medium tracking-tight'>

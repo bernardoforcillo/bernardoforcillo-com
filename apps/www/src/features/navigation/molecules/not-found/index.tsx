@@ -11,7 +11,7 @@ export const NotFound: FC = () => (
       description='This page does not exist. It may have moved, or it may never have existed at all.'
     />
 
-    <section className='w-full max-w-7xl mx-auto px-6 pb-20'>
+    <section className='w-full max-w-6xl mx-auto px-6 md:px-8 pb-20'>
       <Link
         to='/'
         className='inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[15px] text-canvas transition-opacity hover:opacity-90'

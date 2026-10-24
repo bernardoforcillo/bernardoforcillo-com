@@ -41,7 +41,7 @@ function BlogCategoryPage() {
         description={`Posts inside ${categorySlug}.`}
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
+      <section className='w-full max-w-6xl mx-auto px-6 md:px-8 pb-24'>
         <div>
           {posts.map((post) => (
             <Link

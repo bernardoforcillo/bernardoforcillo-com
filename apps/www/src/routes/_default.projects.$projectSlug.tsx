@@ -52,7 +52,7 @@ function ProjectPage() {
         description={project.description}
       />
 
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
+      <article className='w-full max-w-3xl mx-auto px-6 md:px-8 pb-24'>
         <p className='text-sm text-muted'>{formatDate(project.date)}</p>
 
         {project.stack.length > 0 ? (

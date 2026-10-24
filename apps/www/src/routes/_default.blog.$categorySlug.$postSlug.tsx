@@ -53,7 +53,7 @@ function BlogPostPage() {
         description={post.description}
       />
 
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
+      <article className='w-full max-w-3xl mx-auto px-6 md:px-8 pb-24'>
         <p className='text-sm text-muted'>
           {post.categorySlug} · {formatDate(post.date)}
         </p>

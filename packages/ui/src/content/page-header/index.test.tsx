@@ -19,6 +19,6 @@ describe('PageHeader', () => {
 
   it('keeps the original section spacing classes', () => {
     const html = renderToStaticMarkup(<PageHeader title='Blog' />);
-    expect(html).toContain('max-w-7xl mx-auto px-6 pt-32 pb-12');
+    expect(html).toContain('max-w-6xl mx-auto px-6 md:px-8 pt-32 pb-12');
   });
 });
