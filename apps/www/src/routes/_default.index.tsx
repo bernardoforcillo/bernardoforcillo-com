@@ -1,12 +1,12 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { BentoGridSection } from '~/features/home/organisms/bento-grid-section';
+import { HeroSection } from '~/features/home/organisms/hero-section';
 import {
   SITE_DESCRIPTION,
   TITLE_ABSOLUTE,
   buildHomeJsonLdGraph,
   pageHead,
-} from '@monorepo/seo';
-import { createFileRoute } from '@tanstack/react-router';
-import { BentoGridSection } from '~/features/home/organisms/bento-grid-section';
-import { HeroSection } from '~/features/home/organisms/hero-section';
+} from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/')({
   head: () =>

@@ -1,9 +1,9 @@
 import { PageHeader, Prose } from '@monorepo/components';
-import { buildCreativeWorkJsonLd, pageHead } from '@monorepo/seo';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { findNote } from '~/content';
 import { formatDate } from '~/lib/format-date';
+import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/notes/$noteSlug')({
   loader: ({ params }) => {

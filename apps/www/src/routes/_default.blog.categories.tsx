@@ -1,8 +1,8 @@
 import { PageHeader } from '@monorepo/components';
-import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '@monorepo/seo';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { FolderTree } from 'lucide-react';
 import { blogCategories } from '~/content';
+import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/categories')({
   // This page declared no metadata title under Next, so it inherited the

@@ -126,5 +126,11 @@
       "attributePosition": "auto",
       "bracketSpacing": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["packages/vite-seo/**"],
+      "linter": { "enabled": false }
+    }
+  ]
 }

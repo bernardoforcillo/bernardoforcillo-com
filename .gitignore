@@ -165,6 +165,8 @@ playwright-report/
 test-results/
 blob-report/
 
+# Wrangler local state (miniflare caches, dev persistence)
+.wrangler/
 
 # Terraform
 **/.terraform/

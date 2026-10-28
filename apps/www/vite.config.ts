@@ -1,3 +1,4 @@
+import { viteSeo } from '@bernardoforcillo/vite-seo/vite';
 import contentCollections from '@content-collections/vite';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { createAppConfig } from '@monorepo/vite-config';
@@ -16,6 +17,10 @@ export default createAppConfig({
     { path: '/wp-admin', sitemap: { exclude: true } },
   ],
   plugins: [
+    viteSeo({
+      siteUrl: 'https://bernardoforcillo.com',
+      content: { dir: 'content' },
+    }),
     contentCollections(),
     paraglideVitePlugin({
       project: './project.inlang',

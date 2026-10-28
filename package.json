@@ -19,6 +19,9 @@
   "scripts": {
     "dev:web": "pnpm turbo dev --filter=@bernardoforcillo-com/www...",
     "build:web": "pnpm turbo build --filter=@bernardoforcillo-com/www...",
+    "cf:deploy": "pnpm --filter @bernardoforcillo-com/www exec wrangler deploy",
+    "cf:preview": "pnpm --filter @bernardoforcillo-com/www exec wrangler versions upload",
+    "deploy:web": "pnpm build:web && pnpm cf:deploy",
     "container": "node scripts/container-engine.mjs",
     "test": "pnpm turbo test && pnpm test:go",
     "lint": "biome lint --fix .",

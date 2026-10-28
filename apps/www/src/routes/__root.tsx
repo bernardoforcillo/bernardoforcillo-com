@@ -1,16 +1,16 @@
-import {
-  SITE_DESCRIPTION,
-  SITE_KEYWORDS,
-  SITE_NAME,
-  SITE_URL,
-  TITLE_DEFAULT,
-} from '@monorepo/seo';
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
 import interRegular from '~/assets/fonts/inter/variable-regular.woff2?url';
 import { NotFound } from '~/features/navigation/molecules/not-found';
 import { SiteShell } from '~/features/navigation/organisms/site-shell';
 import { GTM_BOOTSTRAP } from '~/lib/gtm';
+import {
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_URL,
+  TITLE_DEFAULT,
+} from '~/lib/seo';
 import appCss from '~/styles/global.css?url';
 
 export const Route = createRootRoute({

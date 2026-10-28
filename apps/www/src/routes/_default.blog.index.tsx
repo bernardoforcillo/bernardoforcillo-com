@@ -1,10 +1,10 @@
 import { PageHeader } from '@monorepo/components';
-import { pageHead } from '@monorepo/seo';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { blogPosts } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { formatDate } from '~/lib/format-date';
+import { pageHead } from '~/lib/seo';
 
 const DESCRIPTION =
   'Thoughts, ideas, and insights about technology and development.';

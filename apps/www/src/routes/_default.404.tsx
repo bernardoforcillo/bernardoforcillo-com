@@ -1,6 +1,6 @@
-import { pageHead } from '@monorepo/seo';
 import { createFileRoute } from '@tanstack/react-router';
 import { NotFound } from '~/features/navigation/molecules/not-found';
+import { pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/404')({
   head: () =>

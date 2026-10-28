@@ -1,3 +1,6 @@
+---
+draft: true
+---
 # Markdown CMS
 
 This folder is the content source for your website CMS.

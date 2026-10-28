@@ -1,7 +1,7 @@
 import { PageHeader } from '@monorepo/components';
-import { pageHead } from '@monorepo/seo';
 import { createFileRoute } from '@tanstack/react-router';
 import { UserCircle2 } from 'lucide-react';
+import { pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'About Bernardo';
 

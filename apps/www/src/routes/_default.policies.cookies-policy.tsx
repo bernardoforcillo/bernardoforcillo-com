@@ -1,5 +1,5 @@
-import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '@monorepo/seo';
 import { createFileRoute } from '@tanstack/react-router';
+import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/policies/cookies-policy')({
   // This page declared no metadata title under Next, so it inherited the

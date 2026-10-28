@@ -11,7 +11,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@monorepo/seo": "workspace:*",
+    "@bernardoforcillo/vite-seo": "workspace:*",
     "@monorepo/components": "workspace:*",
     "@tanstack/react-router": "^1.170.45",
     "@tanstack/react-start": "^1.169.3",

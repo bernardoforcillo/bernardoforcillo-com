@@ -87,14 +87,18 @@ describe('pageHead', () => {
     });
   });
 
-  it('renders JSON-LD through the script:ld+json meta key', () => {
+  it('renders JSON-LD as a single ld+json script', () => {
     const withGraph = pageHead({
       description: 'Home.',
       path: '/',
       jsonLd: [{ '@type': 'Person' }],
     });
-    expect(metaOf(withGraph)).toContainEqual({
-      'script:ld+json': { '@type': 'Person' },
-    });
+    expect(withGraph.scripts).toEqual([
+      {
+        type: 'application/ld+json',
+        children:
+          '{"@context":"https://schema.org","@graph":[{"@type":"Person"}]}',
+      },
+    ]);
   });
 });

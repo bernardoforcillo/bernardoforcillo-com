@@ -1,10 +1,10 @@
 import { PageHeader } from '@monorepo/components';
-import { pageHead } from '@monorepo/seo';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { FolderCode } from 'lucide-react';
 import { projects } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { formatDate } from '~/lib/format-date';
+import { pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'A showcase of my work, experiments, and contributions.';
 

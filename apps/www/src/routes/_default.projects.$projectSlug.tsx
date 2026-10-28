@@ -1,9 +1,9 @@
 import { PageHeader, Prose } from '@monorepo/components';
-import { buildCreativeWorkJsonLd, pageHead } from '@monorepo/seo';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { FolderCode } from 'lucide-react';
 import { findProject } from '~/content';
 import { formatDate } from '~/lib/format-date';
+import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
 
 const EXTERNAL_LINK_CLASS =
   'text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors';

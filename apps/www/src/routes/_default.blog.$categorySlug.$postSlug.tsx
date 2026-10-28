@@ -1,9 +1,9 @@
 import { PageHeader, Prose } from '@monorepo/components';
-import { buildBlogPostingJsonLd, pageHead } from '@monorepo/seo';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { findPost } from '~/content';
 import { formatDate } from '~/lib/format-date';
+import { buildBlogPostingJsonLd, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/$categorySlug/$postSlug')({
   loader: ({ params }) => {

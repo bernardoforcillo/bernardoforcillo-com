@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "path": "/",
+      "dynamic": false,
+      "head": {
+        "meta": [
+          { "title": "Home | Site" },
+          { "name": "description", "content": "D" }
+        ],
+        "links": [{ "rel": "canonical", "href": "https://x.it/" }],
+        "scripts": []
+      }
+    },
+    {
+      "path": "/about",
+      "dynamic": false,
+      "head": {
+        "meta": [
+          { "title": "About | Site" },
+          { "name": "description", "content": "D" }
+        ],
+        "links": [{ "rel": "canonical", "href": "https://x.it/about" }],
+        "scripts": [
+          {
+            "type": "application/ld+json",
+            "children": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\"}]}"
+          }
+        ],
+        "cache": { "revalidate": 60 }
+      }
+    },
+    { "path": "/posts/$postId", "dynamic": true }
+  ]
+}

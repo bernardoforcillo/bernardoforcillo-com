@@ -1,10 +1,10 @@
 import { PageHeader } from '@monorepo/components';
-import { pageHead } from '@monorepo/seo';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { notes } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { formatDate } from '~/lib/format-date';
+import { pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'Quick thoughts, snippets, and personal observations';
 

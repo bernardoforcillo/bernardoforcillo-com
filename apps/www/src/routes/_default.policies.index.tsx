@@ -1,7 +1,7 @@
 import { PageHeader } from '@monorepo/components';
-import { pageHead } from '@monorepo/seo';
 import { createFileRoute } from '@tanstack/react-router';
 import { Shield } from 'lucide-react';
+import { pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'Privacy policy, terms of use, and other legal information';
 

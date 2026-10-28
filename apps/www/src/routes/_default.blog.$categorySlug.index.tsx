@@ -1,10 +1,10 @@
 import { PageHeader } from '@monorepo/components';
-import { pageHead } from '@monorepo/seo';
 import { Link, createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { postsByCategory } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { formatDate } from '~/lib/format-date';
+import { pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/$categorySlug/')({
   loader: ({ params }) => {
