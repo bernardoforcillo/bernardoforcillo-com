@@ -1,4 +1,4 @@
-import { PageHeader } from '@monorepo/ui';
+import { PageHeader } from '@monorepo/components';
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, Compass } from 'lucide-react';
 import type { FC } from 'react';

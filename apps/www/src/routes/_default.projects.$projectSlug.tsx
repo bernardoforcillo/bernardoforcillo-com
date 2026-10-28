@@ -1,5 +1,5 @@
+import { PageHeader, Prose } from '@monorepo/components';
 import { buildCreativeWorkJsonLd, pageHead } from '@monorepo/seo';
-import { PageHeader, Prose } from '@monorepo/ui';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { FolderCode } from 'lucide-react';
 import { findProject } from '~/content';

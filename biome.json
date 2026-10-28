@@ -19,8 +19,6 @@
       "**/package-lock.json",
       "**/yarn.lock",
       "**/routeTree.gen.ts",
-      "**/worker-configuration.d.ts",
-      "**/.wrangler/**",
       "**/test-results/**",
       "**/playwright-report/**",
       "**/blob-report/**",
@@ -29,7 +27,7 @@
   },
   "formatter": {
     "enabled": true,
-    "ignore": ["**/routeTree.gen.ts", "**/worker-configuration.d.ts"],
+    "ignore": ["**/routeTree.gen.ts"],
     "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
@@ -112,12 +110,11 @@
       ".next/**",
       "**/.eslintrc.js",
       "**/*.config.*js",
-      "**/routeTree.gen.ts",
-      "**/worker-configuration.d.ts"
+      "**/routeTree.gen.ts"
     ]
   },
   "javascript": {
-    "globals": ["__BUILD_YEAR__", "Env", "ExportedHandler"],
+    "globals": ["__BUILD_YEAR__"],
     "formatter": {
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",

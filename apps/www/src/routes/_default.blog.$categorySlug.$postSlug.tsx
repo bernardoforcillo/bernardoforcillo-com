@@ -1,5 +1,5 @@
+import { PageHeader, Prose } from '@monorepo/components';
 import { buildBlogPostingJsonLd, pageHead } from '@monorepo/seo';
-import { PageHeader, Prose } from '@monorepo/ui';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { findPost } from '~/content';

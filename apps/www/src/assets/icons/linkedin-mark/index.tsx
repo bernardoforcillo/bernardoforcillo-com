@@ -1,5 +1,5 @@
+import { cn } from '@monorepo/components';
 import type { SVGProps } from 'react';
-import { cn } from '~/lib/cn';
 
 type Props = {} & SVGProps<SVGSVGElement>;
 

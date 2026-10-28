@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package",
-  "name": "@monorepo/ui",
+  "name": "@monorepo/components",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -14,6 +14,7 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "motion": "^12.43.0",
+    "react-aria-components": "^1.22.1",
     "tailwind-merge": "^3.7.0"
   },
   "peerDependencies": {

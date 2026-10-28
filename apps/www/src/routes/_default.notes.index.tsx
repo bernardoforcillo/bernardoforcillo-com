@@ -1,5 +1,5 @@
+import { PageHeader } from '@monorepo/components';
 import { pageHead } from '@monorepo/seo';
-import { PageHeader } from '@monorepo/ui';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { notes } from '~/content';

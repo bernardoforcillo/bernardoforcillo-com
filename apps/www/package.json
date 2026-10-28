@@ -8,14 +8,11 @@
     "preview": "vite preview",
     "test": "vitest run",
     "parity": "node scripts/parity-diff.mjs",
-    "test:e2e": "playwright test",
-    "dev:worker": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@monorepo/seo": "workspace:*",
-    "@monorepo/ui": "workspace:*",
+    "@monorepo/components": "workspace:*",
     "@tanstack/react-router": "^1.170.45",
     "@tanstack/react-start": "^1.169.3",
     "clsx": "^2.1.1",
@@ -45,7 +42,6 @@
     "typescript": "^7.0.2",
     "vite": "^8.3.4",
     "vitest": "^5.0.5",
-    "wrangler": "^4.151.2",
     "zod": "^4.6.7"
   },
   "browserslist": [

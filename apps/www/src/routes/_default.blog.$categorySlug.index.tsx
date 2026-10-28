@@ -1,5 +1,5 @@
+import { PageHeader } from '@monorepo/components';
 import { pageHead } from '@monorepo/seo';
-import { PageHeader } from '@monorepo/ui';
 import { Link, createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { postsByCategory } from '~/content';

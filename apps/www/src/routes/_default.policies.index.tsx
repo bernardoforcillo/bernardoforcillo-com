@@ -1,5 +1,5 @@
+import { PageHeader } from '@monorepo/components';
 import { pageHead } from '@monorepo/seo';
-import { PageHeader } from '@monorepo/ui';
 import { createFileRoute } from '@tanstack/react-router';
 import { Shield } from 'lucide-react';
 

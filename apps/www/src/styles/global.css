@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "@monorepo/tailwindcss/style.css";
-@source "../../../../packages/ui/src";
+@source "../../../../packages/components/src";
 
 @font-face {
   font-family: "Inter";

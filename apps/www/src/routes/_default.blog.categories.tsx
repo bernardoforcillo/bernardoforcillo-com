@@ -1,5 +1,5 @@
+import { PageHeader } from '@monorepo/components';
 import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '@monorepo/seo';
-import { PageHeader } from '@monorepo/ui';
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { FolderTree } from 'lucide-react';
 import { blogCategories } from '~/content';
