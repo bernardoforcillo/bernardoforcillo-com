@@ -52,7 +52,8 @@ export const SiteShell: FC<Props> = ({ children }) => (
         Link={RouterLink}
         name='Bernardo Forcillo'
         tagline='Independent thinking and deep engineering for systems that move from research to reality.'
-        location='Pisa, EU'
+        site='bernardoforcillo.com'
+        wordmark='Bernardo Forcillo'
         rights={m.footer_rights({ year: BUILD_YEAR })}
         index={mainNavLinks}
         legal={legalLinks}
