@@ -38,13 +38,6 @@
   --color-bubble-gum-pink-800: oklch(0.473 0.088 347.05);
   --color-bubble-gum-pink-900: oklch(0.355 0.066 347.05);
   --color-bubble-gum-pink-950: oklch(0.236 0.044 347.05);
-
-  --color-canvas: oklch(0.978 0.006 95);
-  --color-ink: oklch(0.22 0.012 250);
-  --color-muted: oklch(0.48 0.012 250);
-  --color-faint: oklch(0.66 0.01 250);
-  --color-line: oklch(0.9 0.008 95);
-  --color-signal: var(--color-azure-radiance-500);
 }
 
 @layer base {
@@ -53,6 +46,6 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-line, currentColor);
+    border-color: var(--color-deep-blue-200, currentColor);
   }
 }

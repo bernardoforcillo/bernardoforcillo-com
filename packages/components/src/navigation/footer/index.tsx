@@ -16,7 +16,8 @@ type Props = {
   elsewhere: ExternalLink[];
 };
 
-const LINK_CLASS = 'text-sm text-muted transition-colors hover:text-ink';
+const LINK_CLASS =
+  'text-sm text-deep-blue-600 transition-colors hover:text-deep-blue-900';
 
 export const Footer: FC<Props> = ({
   Link,
@@ -33,18 +34,20 @@ export const Footer: FC<Props> = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-60px' }}
     transition={{ duration: 0.5 }}
-    className='border-t border-line/80 py-12'
+    className='border-t border-deep-blue-200/80 py-12'
   >
     <div className='mx-auto max-w-6xl px-6'>
       <div className='flex flex-col gap-12 md:flex-row md:items-start md:justify-between'>
         <div className='flex max-w-xs flex-col gap-4'>
           <span className='text-sm font-medium tracking-tight'>{name}</span>
-          <p className='text-sm leading-relaxed text-muted'>{tagline}</p>
+          <p className='text-sm leading-relaxed text-deep-blue-600'>
+            {tagline}
+          </p>
         </div>
 
         <div className='flex flex-wrap gap-x-14 gap-y-8'>
           <div className='flex flex-col gap-3'>
-            <span className='text-sm text-muted'>Index</span>
+            <span className='text-sm text-deep-blue-600'>Index</span>
             <ul className='space-y-2'>
               {index.map((link) => (
                 <li key={link.to}>
@@ -57,7 +60,7 @@ export const Footer: FC<Props> = ({
           </div>
 
           <div className='flex flex-col gap-3'>
-            <span className='text-sm text-muted'>Legal</span>
+            <span className='text-sm text-deep-blue-600'>Legal</span>
             <ul className='space-y-2'>
               {legal.map((link) => (
                 <li key={link.to}>
@@ -70,7 +73,7 @@ export const Footer: FC<Props> = ({
           </div>
 
           <div className='flex flex-col gap-3'>
-            <span className='text-sm text-muted'>Elsewhere</span>
+            <span className='text-sm text-deep-blue-600'>Elsewhere</span>
             <ul className='space-y-2'>
               {elsewhere.map((link) => (
                 <li key={link.href}>
@@ -90,7 +93,7 @@ export const Footer: FC<Props> = ({
         </div>
       </div>
 
-      <div className='mt-12 flex flex-col items-start justify-between gap-2 border-t border-line/80 pt-6 text-sm text-muted md:flex-row md:items-center'>
+      <div className='mt-12 flex flex-col items-start justify-between gap-2 border-t border-deep-blue-200/80 pt-6 text-sm text-deep-blue-600 md:flex-row md:items-center'>
         <span>{location}</span>
         <span>{rights}</span>
       </div>

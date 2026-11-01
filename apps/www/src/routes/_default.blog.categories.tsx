@@ -39,7 +39,7 @@ function BlogCategoriesPage() {
               <span className='text-xl md:text-2xl font-medium tracking-tight'>
                 {category.categorySlug}
               </span>
-              <span className='shrink-0 text-sm text-muted'>
+              <span className='shrink-0 text-sm text-deep-blue-600'>
                 {category.count} posts
               </span>
             </Link>

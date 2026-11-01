@@ -50,7 +50,7 @@ function NotePage() {
       />
 
       <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-sm text-muted'>{formatDate(note.date)}</p>
+        <p className='text-sm text-deep-blue-600'>{formatDate(note.date)}</p>
 
         <Prose html={note.html} />
       </article>

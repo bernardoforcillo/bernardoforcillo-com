@@ -33,7 +33,7 @@
   }
 
   body {
-    @apply bg-canvas text-ink antialiased selection:bg-signal/20 selection:text-ink;
+    @apply bg-deep-blue-50 text-deep-blue-900 antialiased selection:bg-azure-radiance-200 selection:text-deep-blue-900;
   }
 
   ::-webkit-scrollbar {
@@ -46,14 +46,25 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-line hover:bg-muted transition-colors;
+    @apply bg-deep-blue-200 hover:bg-deep-blue-400 transition-colors;
   }
 }
 
 @utility tech-border {
-  @apply border border-line;
+  @apply border border-deep-blue-200;
 }
 
 @utility content-row {
-  @apply relative block py-8 md:py-9 border-b border-line/80 transition-colors duration-300 hover:border-ink/25;
+  @apply relative block py-8 md:py-9 border-b border-deep-blue-200 transition-colors duration-300 hover:bg-deep-blue-50;
+}
+
+@utility bg-hatch {
+  background-color: #fff;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-deep-blue-50) 0,
+    var(--color-deep-blue-50) 1px,
+    transparent 1px,
+    transparent 8px
+  );
 }

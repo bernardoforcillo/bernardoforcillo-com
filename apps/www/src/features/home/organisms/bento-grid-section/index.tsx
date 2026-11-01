@@ -25,10 +25,10 @@ export const BentoGridSection = () => {
       className='flex flex-col gap-16 md:gap-20'
     >
       <motion.div variants={fadeUp} className='max-w-xl'>
-        <p className='font-serif text-2xl italic leading-[1.3] text-ink/80 md:text-[1.65rem]'>
+        <p className='font-serif text-2xl italic leading-[1.3] text-deep-blue-900/80 md:text-[1.65rem]'>
           Engineering ideas into systems that survive reality.
         </p>
-        <p className='mt-5 text-[15px] leading-7 text-muted'>
+        <p className='mt-5 text-[15px] leading-7 text-deep-blue-600'>
           Research, product thinking, and deep engineering in one practice —
           from infrastructure to the interface people touch. Open to ambitious
           deep-tech systems and difficult technical problems.
@@ -77,7 +77,7 @@ const Room = ({ to, title, description, className = '' }: RoomProps) => (
       <h2 className='text-2xl font-medium tracking-tight md:text-3xl'>
         {title}
       </h2>
-      <p className='mt-2 text-[15px] leading-7 text-muted group-hover:text-ink'>
+      <p className='mt-2 text-[15px] leading-7 text-deep-blue-600 group-hover:text-deep-blue-900'>
         {description}
       </p>
     </Link>

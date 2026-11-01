@@ -28,12 +28,12 @@ export const Navbar: FC<Props> = ({ Link, brand, items }) => (
     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     className='pointer-events-none fixed top-0 z-50 w-full px-4 pt-5 md:px-8'
   >
-    <div className='pointer-events-auto mx-auto flex max-w-6xl items-center justify-between border-b border-line/70 bg-canvas/80 px-1 pb-3 backdrop-blur-md'>
+    <div className='pointer-events-auto mx-auto flex max-w-6xl items-center justify-between border-b border-deep-blue-200/70 bg-white/80 px-1 pb-3 backdrop-blur-md'>
       <Link
         to='/'
         className='flex items-center gap-2.5 text-[15px] tracking-tight'
       >
-        <span className='size-1.5 rounded-full bg-signal' />
+        <span className='size-1.5 rounded-full bg-azure-radiance-500' />
         {brand}
       </Link>
       <nav className='hidden sm:block'>
@@ -46,9 +46,11 @@ export const Navbar: FC<Props> = ({ Link, brand, items }) => (
                 className={DESKTOP_LINK_CLASS}
                 activeProps={{
                   className:
-                    'text-ink after:absolute after:left-3 after:right-3 after:-bottom-px after:h-px after:bg-signal',
+                    'text-deep-blue-900 after:absolute after:left-3 after:right-3 after:-bottom-px after:h-px after:bg-azure-radiance-500',
                 }}
-                inactiveProps={{ className: 'text-muted hover:text-ink' }}
+                inactiveProps={{
+                  className: 'text-deep-blue-600 hover:text-deep-blue-900',
+                }}
               >
                 {el.label}
               </Link>
@@ -61,7 +63,7 @@ export const Navbar: FC<Props> = ({ Link, brand, items }) => (
         <MenuTrigger>
           <Button
             type='button'
-            className='p-2 text-muted transition-colors hover:text-ink'
+            className='p-2 text-deep-blue-600 transition-colors hover:text-deep-blue-900'
             aria-label='Open menu'
           >
             <span className='sr-only'>Open Menu</span>
@@ -70,7 +72,7 @@ export const Navbar: FC<Props> = ({ Link, brand, items }) => (
               <div className='h-px w-4 bg-current' />
             </div>
           </Button>
-          <Popover className='mt-3 w-52 origin-top overflow-hidden border border-line bg-canvas/95 backdrop-blur-xl'>
+          <Popover className='mt-3 w-52 origin-top overflow-hidden border border-deep-blue-200 bg-white/95 backdrop-blur-xl'>
             <Menu className='flex flex-col outline-none'>
               {items.map((el) => (
                 <MenuItem key={el.to} className='outline-none'>
@@ -78,8 +80,10 @@ export const Navbar: FC<Props> = ({ Link, brand, items }) => (
                     to={el.to}
                     activeOptions={{ exact: el.exact ?? false }}
                     className={MOBILE_LINK_CLASS}
-                    activeProps={{ className: 'text-ink' }}
-                    inactiveProps={{ className: 'text-muted hover:text-ink' }}
+                    activeProps={{ className: 'text-deep-blue-900' }}
+                    inactiveProps={{
+                      className: 'text-deep-blue-600 hover:text-deep-blue-900',
+                    }}
                   >
                     {el.icon}
                     {el.label}

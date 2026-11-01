@@ -11,7 +11,7 @@ export const HeroSection = () => {
       className='flex flex-col gap-14 pb-8 md:gap-20 md:pb-12'
     >
       <div className='grid gap-12 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.9fr)] md:items-end md:gap-16'>
-        <h1 className='text-[clamp(3.25rem,10vw,8rem)] font-medium tracking-[-0.06em] leading-[0.86] text-ink'>
+        <h1 className='text-[clamp(3.25rem,10vw,8rem)] font-medium tracking-[-0.06em] leading-[0.86] text-deep-blue-900'>
           Bernardo
           <br />
           Forcillo
@@ -23,21 +23,21 @@ export const HeroSection = () => {
           transition={{ delay: 0.25, duration: 0.8 }}
           className='flex max-w-md flex-col gap-8'
         >
-          <p className='font-serif text-2xl italic leading-[1.25] text-ink/80 md:text-[1.65rem]'>
+          <p className='font-serif text-2xl italic leading-[1.25] text-deep-blue-900/80 md:text-[1.65rem]'>
             Be relentless.
             <br />
             Act different.
             <br />
             Ship fast.
           </p>
-          <p className='text-[15px] leading-7 text-muted'>
+          <p className='text-[15px] leading-7 text-deep-blue-600'>
             Polymath software engineer. Distributed systems, high-performance
             products, and AI infrastructure — currently at{' '}
             <a
               href='https://ganiga.ai'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-ink underline decoration-line underline-offset-4 hover:decoration-ink'
+              className='text-deep-blue-900 underline decoration-deep-blue-200 underline-offset-4 hover:decoration-deep-blue-900'
             >
               Ganiga Innovation
             </a>
@@ -46,13 +46,13 @@ export const HeroSection = () => {
           <div className='flex flex-wrap items-center gap-x-7 gap-y-3'>
             <Link
               to='/projects'
-              className='inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[15px] text-canvas transition-opacity hover:opacity-90'
+              className='inline-flex items-center gap-2 bg-deep-blue-900 px-4 py-2.5 text-[15px] text-white transition-opacity hover:opacity-90'
             >
               Selected work <ArrowRight size={13} />
             </Link>
             <Link
               to='/blog'
-              className='inline-flex items-center gap-1.5 text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink'
+              className='inline-flex items-center gap-1.5 text-[15px] text-deep-blue-900 underline decoration-deep-blue-200 underline-offset-4 hover:decoration-deep-blue-900'
             >
               Writing <ArrowRight size={13} />
             </Link>

@@ -6,7 +6,7 @@ import { formatDate } from '~/lib/format-date';
 import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
 
 const EXTERNAL_LINK_CLASS =
-  'text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors';
+  'text-[15px] text-deep-blue-900 underline decoration-deep-blue-200 underline-offset-4 hover:decoration-deep-blue-900 transition-colors';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -53,14 +53,14 @@ function ProjectPage() {
       />
 
       <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-sm text-muted'>{formatDate(project.date)}</p>
+        <p className='text-sm text-deep-blue-600'>{formatDate(project.date)}</p>
 
         {project.stack.length > 0 ? (
           <div className='mt-4 flex flex-wrap gap-x-3 gap-y-1'>
             {project.stack.map((item) => (
               <span
                 key={`${project.projectSlug}-${item}`}
-                className='text-sm text-muted'
+                className='text-sm text-deep-blue-600'
               >
                 {item}
               </span>

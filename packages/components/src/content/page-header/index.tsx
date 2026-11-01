@@ -30,7 +30,7 @@ export const PageHeader: FC<Props> = ({
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='flex w-full flex-col items-start gap-5 border-b border-line/80 pb-10'
+        className='flex w-full flex-col items-start gap-5 border-b border-deep-blue-200/80 pb-10'
       >
         <div className='space-y-4'>
           {title && (
@@ -38,7 +38,7 @@ export const PageHeader: FC<Props> = ({
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className='text-5xl font-medium leading-[0.9] tracking-[-0.045em] text-ink md:text-7xl'
+              className='text-5xl font-medium leading-[0.9] tracking-[-0.045em] text-deep-blue-900 md:text-7xl'
             >
               {title}.
             </motion.h1>
@@ -48,7 +48,7 @@ export const PageHeader: FC<Props> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className='max-w-xl text-[15px] leading-7 text-muted md:text-base'
+              className='max-w-xl text-[15px] leading-7 text-deep-blue-600 md:text-base'
             >
               {description}
             </motion.p>

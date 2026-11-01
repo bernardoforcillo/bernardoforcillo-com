@@ -5,7 +5,7 @@ import { Separator } from './index';
 describe('Separator', () => {
   it('uses a real background colour, not the unresolved bg-border', () => {
     const html = renderToStaticMarkup(<Separator />);
-    expect(html).toContain('bg-line');
+    expect(html).toContain('bg-deep-blue-200');
     expect(html).not.toContain('bg-border');
   });
 
