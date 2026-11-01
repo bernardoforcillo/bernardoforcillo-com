@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { latestWriting, projects } from '~/content';
+import { featuredProjects } from '~/features/home/featured';
 import { ClosingCtaSection } from '~/features/home/organisms/closing-cta-section';
 import { ExploreSection } from '~/features/home/organisms/explore-section';
 import { FeaturedWorkSection } from '~/features/home/organisms/featured-work-section';
@@ -33,7 +34,7 @@ function HomePage() {
       <StackStrip />
       <PracticeSection />
       <NowSection />
-      <FeaturedWorkSection projects={projects} />
+      <FeaturedWorkSection projects={featuredProjects(projects)} />
       <ExploreSection />
       <LatestWritingSection items={latestWriting} />
       <ClosingCtaSection />
