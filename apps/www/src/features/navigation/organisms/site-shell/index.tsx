@@ -41,7 +41,12 @@ const elsewhereLinks = [
 export const SiteShell: FC<Props> = ({ children }) => (
   <MotionConfig reducedMotion='user'>
     <div className='flex flex-col min-h-screen'>
-      <Navbar Link={RouterLink} brand='Bernardo' items={mainNavLinks} />
+      <Navbar
+        Link={RouterLink}
+        brand='Bernardo'
+        items={mainNavLinks}
+        cta={{ label: 'Get in touch', href: 'mailto:me@bernardoforcillo.com' }}
+      />
       <main className='flex-1'>{children}</main>
       <Footer
         Link={RouterLink}
