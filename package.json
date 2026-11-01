@@ -36,17 +36,19 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/format": "^19.8.1",
     "@commitlint/types": "^19.8.1",
-    "@types/node": "^22.20.2",
+    "@types/node": "^22.20.5",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "turbo": "^2.10.12",
+    "turbo": "^2.11.10",
     "typescript": "^7.0.2"
   },
   "engines": {
     "node": ">=24"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,json}": ["biome check --write"]
+    "*.{ts,tsx,js,jsx,json}": [
+      "biome check --write"
+    ]
   },
   "packageManager": "pnpm@10.6.2"
 }
