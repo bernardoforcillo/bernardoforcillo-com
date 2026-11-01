@@ -48,8 +48,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/components
       '@tanstack/react-router':
-        specifier: ^1.170.45
-        version: 1.170.45(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^1.170.46
+        version: 1.170.46(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@tanstack/react-start':
         specifier: ^1.169.3
         version: 1.169.3(esbuild@0.28.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rolldown@1.2.14)(rollup@4.65.1)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
@@ -3512,9 +3512,9 @@ packages:
     resolution: {integrity: sha512-GL2BWwVa6JydKO6l/ljVgjAZF4QJ3S7dWDWi53s5GZT8PJzD2fNxi67HANQGKAqPrwEpL5ba7gUBGi0Ls/sEoQ==}
     engines: {node: '>=20.0.0'}
 
-  seroval-plugins@1.6.11:
-    resolution: {integrity: sha512-LmB3nd8pL39jKHKvnpTUjcjBtNwR8MLty/ydAR8qbfXt5j6/6KqR1atuw8cVmD2/lDxAkvAwq5tI/HsisD9Fqg==}
-    engines: {node: '>=10'}
+  seroval-plugins@1.7.6:
+    resolution: {integrity: sha512-/TPCAd6q5stAZnugD2fsvNKtM2UpgwrS8/fO1cXTgPC0EqCsGB+UfkEEsToFCfg35CDTMlWkppfr/zWnLJGpBA==}
+    engines: {node: '>=20'}
     peerDependencies:
       seroval: ^1.0
 
@@ -3525,6 +3525,10 @@ packages:
   seroval@1.6.7:
     resolution: {integrity: sha512-AeDcLh0yO2SFm9W71essgnSzLV9DI8ZH0x0knXn2DMnUZj728mpLbxjlbB6IqKCmqh8JA3cEqRyGoNkt584JcQ==}
     engines: {node: '>=10'}
+
+  seroval@1.7.6:
+    resolution: {integrity: sha512-oKNe6A8I3lSA5J0xg9xsrWCWDpET6CFhCMVuIsCmqrjNpBXzQXDAAQI5UfuC4Ner4DIR+VAtSw7TC0AmRMqFFQ==}
+    engines: {node: '>=20'}
 
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
@@ -5450,22 +5454,22 @@ snapshots:
     dependencies:
       '@tanstack/history': 1.162.4
       cookie-es: 3.1.1
-      seroval: 1.6.11
-      seroval-plugins: 1.6.11(seroval@1.6.11)
+      seroval: 1.7.6
+      seroval-plugins: 1.7.6(seroval@1.7.6)
 
   '@tanstack/router-core@1.171.38':
     dependencies:
       '@tanstack/history': 1.162.5
       cookie-es: 3.1.1
-      seroval: 1.6.11
-      seroval-plugins: 1.6.11(seroval@1.6.11)
+      seroval: 1.7.6
+      seroval-plugins: 1.7.6(seroval@1.7.6)
 
   '@tanstack/router-core@1.171.39':
     dependencies:
       '@tanstack/history': 1.162.5
       cookie-es: 3.1.1
-      seroval: 1.6.11
-      seroval-plugins: 1.6.11(seroval@1.6.11)
+      seroval: 1.7.6
+      seroval-plugins: 1.7.6(seroval@1.7.6)
 
   '@tanstack/router-generator@1.167.36':
     dependencies:
@@ -7334,13 +7338,15 @@ snapshots:
 
   serialize-javascript@7.1.2: {}
 
-  seroval-plugins@1.6.11(seroval@1.6.11):
+  seroval-plugins@1.7.6(seroval@1.7.6):
     dependencies:
-      seroval: 1.6.11
+      seroval: 1.7.6
 
   seroval@1.6.11: {}
 
   seroval@1.6.7: {}
+
+  seroval@1.7.6: {}
 
   shebang-command@2.0.0:
     dependencies:
