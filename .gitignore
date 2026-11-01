@@ -169,3 +169,6 @@ blob-report/
 # Terraform
 **/.terraform/
 crash.log
+
+# Playwright MCP artifacts
+.playwright-mcp/
