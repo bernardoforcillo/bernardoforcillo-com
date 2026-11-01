@@ -2,6 +2,7 @@ import { PageHeader, Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { findNote } from '~/content';
+import { ARTICLE_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
 import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
 
@@ -49,7 +50,7 @@ function NotePage() {
         description={note.description}
       />
 
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
+      <article className={ARTICLE_CLASS}>
         <p className='text-sm text-deep-blue-600'>{formatDate(note.date)}</p>
 
         <Prose html={note.html} />

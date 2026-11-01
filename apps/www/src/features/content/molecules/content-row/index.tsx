@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { TAG_CLASS } from '~/features/content/styles';
 
 type Props = {
   title: string;
@@ -21,13 +22,13 @@ export const ContentRow: FC<Props> = ({ title, description, meta, tags }) => (
       </p>
     ) : null}
     {tags && tags.length > 0 ? (
-      <div className='mt-3 flex flex-wrap gap-x-3 gap-y-1'>
+      <ul className='mt-3 flex flex-wrap gap-2'>
         {tags.map((tag) => (
-          <span key={tag} className='text-sm text-deep-blue-600'>
+          <li key={tag} className={TAG_CLASS}>
             {tag}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
     ) : null}
   </>
 );

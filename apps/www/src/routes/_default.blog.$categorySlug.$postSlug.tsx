@@ -2,6 +2,7 @@ import { PageHeader, Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { findPost } from '~/content';
+import { ARTICLE_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
 import { buildBlogPostingJsonLd, pageHead } from '~/lib/seo';
 
@@ -53,7 +54,7 @@ function BlogPostPage() {
         description={post.description}
       />
 
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
+      <article className={ARTICLE_CLASS}>
         <p className='text-sm text-deep-blue-600'>
           {post.categorySlug} · {formatDate(post.date)}
         </p>

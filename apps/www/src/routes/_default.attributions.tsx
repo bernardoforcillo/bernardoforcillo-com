@@ -1,4 +1,6 @@
+import { PageHeader } from '@monorepo/components';
 import { createFileRoute } from '@tanstack/react-router';
+import { Award } from 'lucide-react';
 import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/attributions')({
@@ -16,5 +18,9 @@ export const Route = createFileRoute('/_default/attributions')({
 });
 
 function AttributionsPage() {
-  return <div>Hello</div>;
+  return (
+    <div className='relative'>
+      <PageHeader icon={<Award className='size-7' />} title='Attributions' />
+    </div>
+  );
 }

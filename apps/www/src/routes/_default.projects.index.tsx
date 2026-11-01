@@ -3,6 +3,7 @@ import { Link, createFileRoute } from '@tanstack/react-router';
 import { FolderCode } from 'lucide-react';
 import { projects } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
+import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
 import { pageHead } from '~/lib/seo';
 
@@ -27,24 +28,22 @@ function ProjectsIndexPage() {
         description={DESCRIPTION}
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div>
-          {projects.map((project) => (
-            <Link
-              key={project.projectSlug}
-              to='/projects/$projectSlug'
-              params={{ projectSlug: project.projectSlug }}
-              className='content-row'
-            >
-              <ContentRow
-                title={project.title}
-                description={project.description}
-                meta={formatDate(project.date)}
-                tags={project.stack}
-              />
-            </Link>
-          ))}
-        </div>
+      <section>
+        {projects.map((project) => (
+          <Link
+            key={project.projectSlug}
+            to='/projects/$projectSlug'
+            params={{ projectSlug: project.projectSlug }}
+            className={ROW_CLASS}
+          >
+            <ContentRow
+              title={project.title}
+              description={project.description}
+              meta={formatDate(project.date)}
+              tags={project.stack}
+            />
+          </Link>
+        ))}
       </section>
     </div>
   );

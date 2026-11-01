@@ -1,12 +1,11 @@
 import { PageHeader, Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { FolderCode } from 'lucide-react';
+import { ArrowUpRight, FolderCode } from 'lucide-react';
 import { findProject } from '~/content';
+import { ARTICLE_CLASS, TAG_CLASS } from '~/features/content/styles';
+import { BUTTON_SECONDARY } from '~/features/home/styles';
 import { formatDate } from '~/lib/format-date';
 import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
-
-const EXTERNAL_LINK_CLASS =
-  'text-[15px] text-deep-blue-900 underline decoration-deep-blue-200 underline-offset-4 hover:decoration-deep-blue-900 transition-colors';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -52,32 +51,29 @@ function ProjectPage() {
         description={project.description}
       />
 
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
+      <article className={ARTICLE_CLASS}>
         <p className='text-sm text-deep-blue-600'>{formatDate(project.date)}</p>
 
         {project.stack.length > 0 ? (
-          <div className='mt-4 flex flex-wrap gap-x-3 gap-y-1'>
+          <ul className='mt-4 flex flex-wrap gap-2'>
             {project.stack.map((item) => (
-              <span
-                key={`${project.projectSlug}-${item}`}
-                className='text-sm text-deep-blue-600'
-              >
+              <li key={`${project.projectSlug}-${item}`} className={TAG_CLASS}>
                 {item}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         ) : null}
 
         {project.repoUrl || project.demoUrl ? (
-          <div className='mt-6 flex flex-wrap gap-5'>
+          <div className='mt-6 flex flex-wrap gap-3'>
             {project.repoUrl ? (
               <a
                 href={project.repoUrl}
                 target='_blank'
                 rel='noreferrer'
-                className={EXTERNAL_LINK_CLASS}
+                className={BUTTON_SECONDARY}
               >
-                Repository
+                Repository <ArrowUpRight size={14} aria-hidden='true' />
               </a>
             ) : null}
 
@@ -86,9 +82,9 @@ function ProjectPage() {
                 href={project.demoUrl}
                 target='_blank'
                 rel='noreferrer'
-                className={EXTERNAL_LINK_CLASS}
+                className={BUTTON_SECONDARY}
               >
-                Live Demo
+                Live Demo <ArrowUpRight size={14} aria-hidden='true' />
               </a>
             ) : null}
           </div>
