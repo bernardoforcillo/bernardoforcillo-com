@@ -21,7 +21,7 @@ export const PageHeader: FC<Props> = ({
 }) => {
   return (
     <section
-      className={`w-full max-w-7xl mx-auto px-6 pt-32 pb-12 md:pt-40 md:pb-16 ${
+      className={`w-full px-6 pt-16 pb-12 md:px-10 md:pt-20 border-b border-deep-blue-200 ${
         className
       }`.trim()}
       {...rest}
@@ -30,7 +30,7 @@ export const PageHeader: FC<Props> = ({
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className='flex w-full flex-col items-start gap-5 border-b border-deep-blue-200/80 pb-10'
+        className='flex w-full flex-col items-start gap-5'
       >
         <div className='space-y-4'>
           {title && (
@@ -38,7 +38,7 @@ export const PageHeader: FC<Props> = ({
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className='text-5xl font-medium leading-[0.9] tracking-[-0.045em] text-deep-blue-900 md:text-7xl'
+              className='text-5xl md:text-7xl font-semibold tracking-[-0.045em] leading-[0.92] text-deep-blue-900'
             >
               {title}.
             </motion.h1>

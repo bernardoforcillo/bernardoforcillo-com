@@ -15,6 +15,7 @@ describe('Prose', () => {
     const html = renderToStaticMarkup(<Prose html='<p>a</p>' />);
     expect(html).toContain('[&amp;_pre]:overflow-x-auto');
     expect(PROSE_CLASS_NAME).toContain('leading-8');
+    expect(PROSE_CLASS_NAME).toContain('text-azure-radiance-700');
   });
 
   it('merges an extra className', () => {
