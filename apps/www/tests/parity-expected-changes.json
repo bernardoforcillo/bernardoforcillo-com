@@ -1,1 +1,6 @@
-{}
+{
+  "/": { "fields": ["h1", "textLength"] },
+  "/attributions": { "fields": ["h1"] },
+  "/policies/privacy-policy": { "fields": ["h1"] },
+  "/policies/cookies-policy": { "fields": ["h1"] }
+}
