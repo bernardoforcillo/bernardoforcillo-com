@@ -1,6 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { BentoGridSection } from '~/features/home/organisms/bento-grid-section';
+import { latestWriting, projects } from '~/content';
+import { ClosingCtaSection } from '~/features/home/organisms/closing-cta-section';
+import { ExploreSection } from '~/features/home/organisms/explore-section';
+import { FeaturedWorkSection } from '~/features/home/organisms/featured-work-section';
 import { HeroSection } from '~/features/home/organisms/hero-section';
+import { LatestWritingSection } from '~/features/home/organisms/latest-writing-section';
+import { NowSection } from '~/features/home/organisms/now-section';
+import { PracticeSection } from '~/features/home/organisms/practice-section';
+import { StackStrip } from '~/features/home/organisms/stack-strip';
 import {
   SITE_DESCRIPTION,
   TITLE_ABSOLUTE,
@@ -21,9 +28,15 @@ export const Route = createFileRoute('/_default/')({
 
 function HomePage() {
   return (
-    <div className='mx-auto flex min-h-screen max-w-6xl flex-col gap-12 px-6 pb-24 pt-28 md:gap-16 md:px-8 md:pb-32 md:pt-32'>
+    <>
       <HeroSection />
-      <BentoGridSection />
-    </div>
+      <StackStrip />
+      <PracticeSection />
+      <NowSection />
+      <FeaturedWorkSection projects={projects} />
+      <ExploreSection />
+      <LatestWritingSection items={latestWriting} />
+      <ClosingCtaSection />
+    </>
   );
 }

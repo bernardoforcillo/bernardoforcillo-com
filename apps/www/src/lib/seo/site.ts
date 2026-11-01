@@ -5,6 +5,7 @@ export const SITE_DESCRIPTION =
 export const AUTHOR_NAME = 'Bernardo Forcillo';
 export const AUTHOR_URL = `${SITE_URL}/`;
 export const TWITTER_CREATOR = '@bernardoforcillo';
+export const CONTACT_EMAIL = 'me@bernardoforcillo.com';
 
 export const SITE_KEYWORDS = [
   'React',
