@@ -1,5 +1,10 @@
 import { allNotes, allPosts, allProjects } from 'content-collections';
-import { byDateDesc, countByCategory } from './lib';
+import {
+  type WritingItem,
+  byDateDesc,
+  countByCategory,
+  mergeLatest,
+} from './lib';
 
 export type Post = (typeof allPosts)[number];
 export type Note = (typeof allNotes)[number];
@@ -11,6 +16,12 @@ export type Project = (typeof allProjects)[number];
 export const blogPosts: readonly Post[] = [...allPosts].sort(byDateDesc);
 export const notes: readonly Note[] = [...allNotes].sort(byDateDesc);
 export const projects: readonly Project[] = [...allProjects].sort(byDateDesc);
+
+export const latestWriting: readonly WritingItem[] = mergeLatest(
+  blogPosts,
+  notes,
+  3,
+);
 
 export const blogCategories = countByCategory(blogPosts);
 

@@ -35,3 +35,53 @@ export const splitBlogPath = (metaPath: string) => {
     .split('/');
   return { categorySlug, postSlug };
 };
+
+export type WritingItem = {
+  kind: 'post' | 'note';
+  title: string;
+  description: string;
+  date: string;
+  to: string;
+  params: Record<string, string>;
+};
+
+export const mergeLatest = (
+  posts: readonly {
+    title: string;
+    description: string;
+    date: string;
+    categorySlug: string;
+    postSlug: string;
+  }[],
+  notes: readonly {
+    title: string;
+    description: string;
+    date: string;
+    noteSlug: string;
+  }[],
+  limit: number,
+): WritingItem[] =>
+  [
+    ...posts.map(
+      (p): WritingItem => ({
+        kind: 'post',
+        title: p.title,
+        description: p.description,
+        date: p.date,
+        to: '/blog/$categorySlug/$postSlug',
+        params: { categorySlug: p.categorySlug, postSlug: p.postSlug },
+      }),
+    ),
+    ...notes.map(
+      (n): WritingItem => ({
+        kind: 'note',
+        title: n.title,
+        description: n.description,
+        date: n.date,
+        to: '/notes/$noteSlug',
+        params: { noteSlug: n.noteSlug },
+      }),
+    ),
+  ]
+    .sort(byDateDesc)
+    .slice(0, limit);
