@@ -9,14 +9,6 @@ export const STACK = [
   'IoT',
 ] as const;
 
-export const HERO_CHIPS: { label: string; tone: 'blue' | 'pink' }[] = [
-  { label: 'distributed-systems', tone: 'blue' },
-  { label: 'hardware', tone: 'pink' },
-  { label: 'ai-infra', tone: 'blue' },
-  { label: 'design', tone: 'blue' },
-  { label: 'open-source', tone: 'pink' },
-];
-
 export const PRACTICE: { n: string; title: string; text: string }[] = [
   {
     n: '01',
@@ -49,18 +41,7 @@ export const NOW: {
   {
     when: 'Now',
     title: 'Ganiga Innovation',
-    text: 'AI infrastructure and products.',
+    text: 'Building infrastructure and products.',
     current: true,
-  },
-  { when: '—', title: 'Amaro', text: 'Shipped project.' },
-  {
-    when: '—',
-    title: 'Open source',
-    text: 'Libraries and tools, public by default.',
-  },
-  {
-    when: '5 yrs',
-    title: 'Ten products shipped',
-    text: 'Five years building.',
   },
 ];
