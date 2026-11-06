@@ -3,7 +3,12 @@ import { Link, createFileRoute } from '@tanstack/react-router';
 import { FolderTree } from 'lucide-react';
 import { blogCategories } from '~/content';
 import { ROW_CLASS } from '~/features/content/styles';
-import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '~/lib/seo';
+import {
+  SITE_DESCRIPTION,
+  TITLE_ABSOLUTE,
+  buildBreadcrumbJsonLd,
+  pageHead,
+} from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/categories')({
   // This page declared no metadata title under Next, so it inherited the
@@ -15,6 +20,12 @@ export const Route = createFileRoute('/_default/blog/categories')({
       absoluteTitle: TITLE_ABSOLUTE,
       description: SITE_DESCRIPTION,
       path: '/blog/categories',
+      jsonLd: [
+        buildBreadcrumbJsonLd([
+          { name: 'Blog', path: '/blog' },
+          { name: 'Categories', path: '/blog/categories' },
+        ]),
+      ],
     }),
   component: BlogCategoriesPage,
 });

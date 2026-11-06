@@ -5,7 +5,7 @@ import { notes } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { pageHead } from '~/lib/seo';
+import { buildBreadcrumbJsonLd, pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'Quick thoughts, snippets, and personal observations';
 
@@ -15,6 +15,7 @@ export const Route = createFileRoute('/_default/notes/')({
       title: 'Notes',
       description: DESCRIPTION,
       path: '/notes',
+      jsonLd: [buildBreadcrumbJsonLd([{ name: 'Notes', path: '/notes' }])],
     }),
   component: NotesIndexPage,
 });

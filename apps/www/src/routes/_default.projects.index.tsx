@@ -5,7 +5,7 @@ import { projects } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { pageHead } from '~/lib/seo';
+import { buildBreadcrumbJsonLd, pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'A showcase of my work, experiments, and contributions.';
 
@@ -15,6 +15,9 @@ export const Route = createFileRoute('/_default/projects/')({
       title: 'Projects',
       description: DESCRIPTION,
       path: '/projects',
+      jsonLd: [
+        buildBreadcrumbJsonLd([{ name: 'Projects', path: '/projects' }]),
+      ],
     }),
   component: ProjectsIndexPage,
 });

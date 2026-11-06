@@ -5,7 +5,7 @@ import { postsByCategory } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { pageHead } from '~/lib/seo';
+import { buildBreadcrumbJsonLd, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/$categorySlug/')({
   loader: ({ params }) => {
@@ -26,6 +26,12 @@ export const Route = createFileRoute('/_default/blog/$categorySlug/')({
       title: `${categorySlug} blog posts`,
       description: `Articles in the ${categorySlug} category.`,
       path: `/blog/${categorySlug}`,
+      jsonLd: [
+        buildBreadcrumbJsonLd([
+          { name: 'Blog', path: '/blog' },
+          { name: categorySlug, path: `/blog/${categorySlug}` },
+        ]),
+      ],
     });
   },
   component: BlogCategoryPage,

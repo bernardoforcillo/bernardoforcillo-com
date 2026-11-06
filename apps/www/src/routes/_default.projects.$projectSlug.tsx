@@ -2,10 +2,15 @@ import { PageHeader, Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { ArrowUpRight, FolderCode } from 'lucide-react';
 import { findProject } from '~/content';
+import { Breadcrumbs } from '~/features/content/molecules/breadcrumbs';
 import { ARTICLE_CLASS, TAG_CLASS } from '~/features/content/styles';
 import { BUTTON_SECONDARY } from '~/features/home/styles';
 import { formatDate } from '~/lib/format-date';
-import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
+import {
+  buildBreadcrumbJsonLd,
+  buildCreativeWorkJsonLd,
+  pageHead,
+} from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -34,6 +39,10 @@ export const Route = createFileRoute('/_default/projects/$projectSlug')({
           datePublished: project.date,
           keywords: project.stack,
         }),
+        buildBreadcrumbJsonLd([
+          { name: 'Projects', path: '/projects' },
+          { name: project.title, path },
+        ]),
       ],
     });
   },
@@ -49,10 +58,19 @@ function ProjectPage() {
         icon={<FolderCode className='size-7' />}
         title={project.title}
         description={project.description}
-      />
+      >
+        <Breadcrumbs
+          trail={[
+            { name: 'Projects', path: '/projects' },
+            { name: project.title, path: `/projects/${project.projectSlug}` },
+          ]}
+        />
+      </PageHeader>
 
       <article className={ARTICLE_CLASS}>
-        <p className='text-sm text-deep-blue-600'>{formatDate(project.date)}</p>
+        <p className='text-sm text-deep-blue-600'>
+          <time dateTime={project.date}>{formatDate(project.date)}</time>
+        </p>
 
         {project.stack.length > 0 ? (
           <ul className='mt-4 flex flex-wrap gap-2'>

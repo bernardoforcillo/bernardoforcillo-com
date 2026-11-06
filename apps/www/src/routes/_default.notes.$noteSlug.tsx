@@ -2,9 +2,14 @@ import { PageHeader, Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { findNote } from '~/content';
+import { Breadcrumbs } from '~/features/content/molecules/breadcrumbs';
 import { ARTICLE_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
+import {
+  buildBreadcrumbJsonLd,
+  buildCreativeWorkJsonLd,
+  pageHead,
+} from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/notes/$noteSlug')({
   loader: ({ params }) => {
@@ -33,6 +38,10 @@ export const Route = createFileRoute('/_default/notes/$noteSlug')({
           path,
           datePublished: note.date,
         }),
+        buildBreadcrumbJsonLd([
+          { name: 'Notes', path: '/notes' },
+          { name: note.title, path },
+        ]),
       ],
     });
   },
@@ -48,10 +57,19 @@ function NotePage() {
         icon={<StickyNote className='size-7' />}
         title={note.title}
         description={note.description}
-      />
+      >
+        <Breadcrumbs
+          trail={[
+            { name: 'Notes', path: '/notes' },
+            { name: note.title, path: `/notes/${note.noteSlug}` },
+          ]}
+        />
+      </PageHeader>
 
       <article className={ARTICLE_CLASS}>
-        <p className='text-sm text-deep-blue-600'>{formatDate(note.date)}</p>
+        <p className='text-sm text-deep-blue-600'>
+          <time dateTime={note.date}>{formatDate(note.date)}</time>
+        </p>
 
         <Prose html={note.html} />
       </article>

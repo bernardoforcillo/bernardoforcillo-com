@@ -5,7 +5,7 @@ import { blogPosts } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
 import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { pageHead } from '~/lib/seo';
+import { buildBreadcrumbJsonLd, pageHead } from '~/lib/seo';
 
 const DESCRIPTION =
   'Thoughts, ideas, and insights about technology and development.';
@@ -19,6 +19,7 @@ export const Route = createFileRoute('/_default/blog/')({
       ogTitle: 'Blog - Bernardo Forcillo',
       description: DESCRIPTION,
       path: '/blog',
+      jsonLd: [buildBreadcrumbJsonLd([{ name: 'Blog', path: '/blog' }])],
     }),
   component: BlogIndexPage,
 });

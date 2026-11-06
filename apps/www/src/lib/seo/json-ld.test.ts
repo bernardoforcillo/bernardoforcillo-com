@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   buildBlogPostingJsonLd,
+  buildBreadcrumbJsonLd,
   buildCreativeWorkJsonLd,
   buildHomeJsonLdGraph,
 } from './json-ld';
@@ -61,5 +62,29 @@ describe('buildCreativeWorkJsonLd', () => {
       name: 'Bernardo Forcillo',
       url: 'https://bernardoforcillo.com/',
     });
+  });
+});
+
+describe('buildBreadcrumbJsonLd', () => {
+  const node = buildBreadcrumbJsonLd([
+    { name: 'Blog', path: '/blog' },
+    { name: 'Hello World', path: '/blog/engineering/hello-world' },
+  ]);
+
+  it('prepends Home and numbers items from 1', () => {
+    expect(node['@type']).toBe('BreadcrumbList');
+    expect(node.itemListElement.map((el) => [el.position, el.name])).toEqual([
+      [1, 'Home'],
+      [2, 'Blog'],
+      [3, 'Hello World'],
+    ]);
+  });
+
+  it('absolutises every item url', () => {
+    expect(node.itemListElement.map((el) => el.item)).toEqual([
+      'https://bernardoforcillo.com/',
+      'https://bernardoforcillo.com/blog',
+      'https://bernardoforcillo.com/blog/engineering/hello-world',
+    ]);
   });
 });

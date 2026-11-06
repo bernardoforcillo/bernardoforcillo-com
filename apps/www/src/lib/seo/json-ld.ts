@@ -194,3 +194,23 @@ export const buildCreativeWorkJsonLd = ({
   author: AUTHOR_NODE,
   keywords: keywords?.join(','),
 });
+
+export type BreadcrumbItem = {
+  name: string;
+  /** Root-relative path; the last item is the current page. */
+  path: string;
+};
+
+/** Home is prepended, so callers list only the trail below it. */
+export const buildBreadcrumbJsonLd = (trail: BreadcrumbItem[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Home', path: '/' }, ...trail].map(
+    (item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    }),
+  ),
+});
