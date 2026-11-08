@@ -1,16 +1,13 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { STACK } from '../../data';
 import { BUTTON_PRIMARY, BUTTON_SECONDARY, FOCUS_RING } from '../../styles';
+import { FlowLines } from './flow-lines';
 
 export const HeroSection = () => (
-  <section className='border-b border-deep-blue-200'>
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className='px-4 pb-14 pt-14 sm:px-10 md:pt-18'
-    >
+  <section className='relative overflow-hidden'>
+    <FlowLines />
+    <div className='animate-rise relative px-4 pb-14 pt-14 sm:px-10 md:pt-18'>
       <a
         href='https://ganiga.ai'
         target='_blank'
@@ -35,7 +32,7 @@ export const HeroSection = () => (
         Be relentless. Act different. Ship fast.
       </p>
 
-      <p className='mt-3.5 max-w-[440px] text-[15px] leading-[1.7] text-deep-blue-600'>
+      <p className='mt-3.5 max-w-[480px] text-base leading-[1.7] text-deep-blue-600'>
         Polymath software engineer. Distributed systems, high-performance
         products, and AI infrastructure — currently at{' '}
         <a
@@ -57,6 +54,11 @@ export const HeroSection = () => (
           Writing
         </Link>
       </div>
-    </motion.div>
+
+      <p className='mt-12 font-mono text-[13px] text-deep-blue-600'>
+        <span className='text-azure-radiance-600'>stack</span>{' '}
+        {STACK.join(' / ').toLowerCase()}
+      </p>
+    </div>
   </section>
 );

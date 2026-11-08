@@ -17,9 +17,9 @@ describe('PageHeader', () => {
     expect(html).toContain('Thoughts.');
   });
 
-  it('uses the rail-owned width with a bottom rule', () => {
+  it('uses the rail-owned width with a fading bottom rule', () => {
     const html = renderToStaticMarkup(<PageHeader title='Blog' />);
-    expect(html).toContain('border-b border-deep-blue-200');
+    expect(html).toContain('rule-fade');
     expect(html).not.toContain('max-w-7xl');
   });
 });

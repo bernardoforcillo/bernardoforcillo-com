@@ -9,24 +9,29 @@ export const STACK = [
   'IoT',
 ] as const;
 
-export const PRACTICE: { n: string; title: string; text: string }[] = [
+// Not a sequence: four sides of one practice, so no numbering.
+export const PRACTICE: {
+  key: 'research' | 'infrastructure' | 'products' | 'problems';
+  title: string;
+  text: string;
+}[] = [
   {
-    n: '01',
+    key: 'research',
     title: 'Research',
     text: 'Turning open questions into working prototypes.',
   },
   {
-    n: '02',
+    key: 'infrastructure',
     title: 'Infrastructure',
     text: 'Distributed systems and AI infrastructure.',
   },
   {
-    n: '03',
+    key: 'products',
     title: 'Products & hardware',
     text: 'The interface people touch, and the board under it.',
   },
   {
-    n: '04',
+    key: 'problems',
     title: 'Hard problems',
     text: 'Open to ambitious deep-tech systems.',
   },

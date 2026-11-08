@@ -93,6 +93,7 @@ export const buildHomeJsonLdGraph = (): {
         'https://www.facebook.com/bernardo.forcillo',
         'https://www.instagram.com/bernardoforcillo',
         'https://www.linkedin.com/in/bernardoforcillo/',
+        'https://x.com/bernforcillo',
         'https://www.youtube.com/channel/UClKcECSWHukazKYnN5tTjSQ',
       ],
     },

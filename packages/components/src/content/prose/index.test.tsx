@@ -14,7 +14,8 @@ describe('Prose', () => {
   it('keeps the article typography classes', () => {
     const html = renderToStaticMarkup(<Prose html='<p>a</p>' />);
     expect(html).toContain('[&amp;_pre]:overflow-x-auto');
-    expect(PROSE_CLASS_NAME).toContain('leading-8');
+    expect(PROSE_CLASS_NAME).toContain('leading-[1.75]');
+    expect(PROSE_CLASS_NAME).toContain('[&_ol]:list-decimal');
     expect(PROSE_CLASS_NAME).toContain('text-azure-radiance-700');
   });
 

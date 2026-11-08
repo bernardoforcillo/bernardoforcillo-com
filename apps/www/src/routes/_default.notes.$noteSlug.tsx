@@ -1,8 +1,8 @@
-import { PageHeader, Prose } from '@monorepo/components';
+import { Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { StickyNote } from 'lucide-react';
 import { findNote } from '~/content';
-import { Breadcrumbs } from '~/features/content/molecules/breadcrumbs';
+import { ArticleFooter } from '~/features/content/molecules/article-footer';
+import { ArticleHeader } from '~/features/content/molecules/article-header';
 import { ARTICLE_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
 import {
@@ -52,27 +52,24 @@ function NotePage() {
   const { note } = Route.useLoaderData();
 
   return (
-    <div className='relative'>
-      <PageHeader
-        icon={<StickyNote className='size-7' />}
+    <>
+      <ArticleHeader
+        trail={[
+          { name: 'Notes', path: '/notes' },
+          { name: note.title, path: `/notes/${note.noteSlug}` },
+        ]}
         title={note.title}
         description={note.description}
-      >
-        <Breadcrumbs
-          trail={[
-            { name: 'Notes', path: '/notes' },
-            { name: note.title, path: `/notes/${note.noteSlug}` },
-          ]}
-        />
-      </PageHeader>
-
+        date={note.date}
+        dateLabel={formatDate(note.date)}
+      />
       <article className={ARTICLE_CLASS}>
-        <p className='text-sm text-deep-blue-600'>
-          <time dateTime={note.date}>{formatDate(note.date)}</time>
-        </p>
-
         <Prose html={note.html} />
       </article>
-    </div>
+      <ArticleFooter
+        title={note.title}
+        back={{ to: '/notes', label: 'All notes' }}
+      />
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { MotionConfig, motion } from 'motion/react';
 import { type FC, useEffect, useState } from 'react';
 import {
   Button,
@@ -19,7 +19,7 @@ type Props = {
 const FOCUS_RING =
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azure-radiance-700';
 
-const PILL_CLASS = `block rounded-full border px-3.5 py-1.5 text-sm transition-colors duration-200 ${FOCUS_RING}`;
+const PILL_CLASS = `relative block rounded-full border px-3.5 py-1.5 text-sm transition-colors duration-200 ${FOCUS_RING}`;
 
 const ACTIVE_PILL_CLASS =
   'border-deep-blue-200 bg-white text-deep-blue-900 shadow-sm';
@@ -45,15 +45,11 @@ const useScrolled = () => {
 
 export const Navbar: FC<Props> = ({ Link, brand, items, cta }) => {
   const scrolled = useScrolled();
+  // The link under the pointer; a single highlight glides between them.
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    // Opacity only: a translate on a sticky header shifts layout as it settles.
-    <motion.header
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className='sticky top-4 z-50 mx-4 sm:mx-7'
-    >
+    <header className='sticky top-4 z-50 mx-4 sm:mx-7'>
       <div
         className={`mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-3 rounded-2xl border px-4 py-2.5 transition-all duration-300 ${
           scrolled
@@ -69,21 +65,42 @@ export const Navbar: FC<Props> = ({ Link, brand, items, cta }) => {
         </Link>
 
         <nav aria-label='Main' className='hidden sm:block'>
-          <ol className='flex items-center gap-1'>
-            {items.map((el) => (
-              <li key={el.to}>
-                <Link
-                  to={el.to}
-                  activeOptions={{ exact: el.exact ?? false }}
-                  className={PILL_CLASS}
-                  activeProps={{ className: ACTIVE_PILL_CLASS }}
-                  inactiveProps={{ className: INACTIVE_PILL_CLASS }}
+          <MotionConfig reducedMotion='user'>
+            <ol
+              className='flex items-center gap-1'
+              onMouseLeave={() => setHovered(null)}
+            >
+              {items.map((el) => (
+                <li
+                  key={el.to}
+                  className='relative'
+                  onMouseEnter={() => setHovered(el.to)}
                 >
-                  {el.label}
-                </Link>
-              </li>
-            ))}
-          </ol>
+                  {hovered === el.to ? (
+                    <motion.span
+                      layoutId='nav-hover'
+                      aria-hidden='true'
+                      transition={{
+                        type: 'spring',
+                        stiffness: 500,
+                        damping: 40,
+                      }}
+                      className='absolute inset-0 rounded-full bg-deep-blue-100/70'
+                    />
+                  ) : null}
+                  <Link
+                    to={el.to}
+                    activeOptions={{ exact: el.exact ?? false }}
+                    className={PILL_CLASS}
+                    activeProps={{ className: ACTIVE_PILL_CLASS }}
+                    inactiveProps={{ className: INACTIVE_PILL_CLASS }}
+                  >
+                    {el.label}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </MotionConfig>
         </nav>
 
         <div className='col-start-3 flex shrink-0 items-center gap-1.5 justify-self-end'>
@@ -136,6 +153,6 @@ export const Navbar: FC<Props> = ({ Link, brand, items, cta }) => {
           </div>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 };

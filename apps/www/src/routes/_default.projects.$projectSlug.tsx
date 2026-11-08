@@ -1,9 +1,10 @@
-import { PageHeader, Prose } from '@monorepo/components';
+import { Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { ArrowUpRight, FolderCode } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { findProject } from '~/content';
-import { Breadcrumbs } from '~/features/content/molecules/breadcrumbs';
-import { ARTICLE_CLASS, TAG_CLASS } from '~/features/content/styles';
+import { ArticleFooter } from '~/features/content/molecules/article-footer';
+import { ArticleHeader } from '~/features/content/molecules/article-header';
+import { ARTICLE_CLASS } from '~/features/content/styles';
 import { BUTTON_SECONDARY } from '~/features/home/styles';
 import { formatDate } from '~/lib/format-date';
 import {
@@ -53,63 +54,51 @@ function ProjectPage() {
   const { project } = Route.useLoaderData();
 
   return (
-    <div className='relative'>
-      <PageHeader
-        icon={<FolderCode className='size-7' />}
+    <>
+      <ArticleHeader
+        trail={[
+          { name: 'Projects', path: '/projects' },
+          { name: project.title, path: `/projects/${project.projectSlug}` },
+        ]}
         title={project.title}
         description={project.description}
-      >
-        <Breadcrumbs
-          trail={[
-            { name: 'Projects', path: '/projects' },
-            { name: project.title, path: `/projects/${project.projectSlug}` },
-          ]}
-        />
-      </PageHeader>
-
+        date={project.date}
+        dateLabel={formatDate(project.date)}
+        tags={project.stack}
+        actions={
+          project.repoUrl || project.demoUrl ? (
+            <>
+              {project.repoUrl ? (
+                <a
+                  href={project.repoUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                  className={BUTTON_SECONDARY}
+                >
+                  Repository <ArrowUpRight size={14} aria-hidden='true' />
+                </a>
+              ) : null}
+              {project.demoUrl ? (
+                <a
+                  href={project.demoUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                  className={BUTTON_SECONDARY}
+                >
+                  Live demo <ArrowUpRight size={14} aria-hidden='true' />
+                </a>
+              ) : null}
+            </>
+          ) : undefined
+        }
+      />
       <article className={ARTICLE_CLASS}>
-        <p className='text-sm text-deep-blue-600'>
-          <time dateTime={project.date}>{formatDate(project.date)}</time>
-        </p>
-
-        {project.stack.length > 0 ? (
-          <ul className='mt-4 flex flex-wrap gap-2'>
-            {project.stack.map((item) => (
-              <li key={`${project.projectSlug}-${item}`} className={TAG_CLASS}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        ) : null}
-
-        {project.repoUrl || project.demoUrl ? (
-          <div className='mt-6 flex flex-wrap gap-3'>
-            {project.repoUrl ? (
-              <a
-                href={project.repoUrl}
-                target='_blank'
-                rel='noreferrer'
-                className={BUTTON_SECONDARY}
-              >
-                Repository <ArrowUpRight size={14} aria-hidden='true' />
-              </a>
-            ) : null}
-
-            {project.demoUrl ? (
-              <a
-                href={project.demoUrl}
-                target='_blank'
-                rel='noreferrer'
-                className={BUTTON_SECONDARY}
-              >
-                Live Demo <ArrowUpRight size={14} aria-hidden='true' />
-              </a>
-            ) : null}
-          </div>
-        ) : null}
-
         <Prose html={project.html} />
       </article>
-    </div>
+      <ArticleFooter
+        title={project.title}
+        back={{ to: '/projects', label: 'All projects' }}
+      />
+    </>
   );
 }

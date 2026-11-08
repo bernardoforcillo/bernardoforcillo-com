@@ -1,10 +1,11 @@
-import { PageHeader, Prose } from '@monorepo/components';
+import { Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { BookOpen } from 'lucide-react';
 import { findPost } from '~/content';
-import { Breadcrumbs } from '~/features/content/molecules/breadcrumbs';
+import { ArticleFooter } from '~/features/content/molecules/article-footer';
+import { ArticleHeader } from '~/features/content/molecules/article-header';
 import { ARTICLE_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
+import { readingMinutes } from '~/lib/reading-time';
 import {
   buildBlogPostingJsonLd,
   buildBreadcrumbJsonLd,
@@ -57,35 +58,30 @@ function BlogPostPage() {
   const { post } = Route.useLoaderData();
 
   return (
-    <div className='relative'>
-      <PageHeader
-        icon={<BookOpen className='size-7' />}
+    <>
+      <ArticleHeader
+        trail={[
+          { name: 'Blog', path: '/blog' },
+          { name: post.categorySlug, path: `/blog/${post.categorySlug}` },
+          {
+            name: post.title,
+            path: `/blog/${post.categorySlug}/${post.postSlug}`,
+          },
+        ]}
         title={post.title}
         description={post.description}
-      >
-        <Breadcrumbs
-          trail={[
-            { name: 'Blog', path: '/blog' },
-            {
-              name: post.categorySlug,
-              path: `/blog/${post.categorySlug}`,
-            },
-            {
-              name: post.title,
-              path: `/blog/${post.categorySlug}/${post.postSlug}`,
-            },
-          ]}
-        />
-      </PageHeader>
-
+        date={post.date}
+        dateLabel={formatDate(post.date)}
+        minutes={readingMinutes(post.content)}
+        tags={post.tags}
+      />
       <article className={ARTICLE_CLASS}>
-        <p className='text-sm text-deep-blue-600'>
-          {post.categorySlug} ·{' '}
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-        </p>
-
         <Prose html={post.html} />
       </article>
-    </div>
+      <ArticleFooter
+        title={post.title}
+        back={{ to: '/blog', label: 'All posts' }}
+      />
+    </>
   );
 }

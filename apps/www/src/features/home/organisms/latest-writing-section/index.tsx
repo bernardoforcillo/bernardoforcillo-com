@@ -13,12 +13,6 @@ const KIND_LABEL: Record<WritingItem['kind'], string> = {
   note: 'Note',
 };
 
-// Alternate thumbnail tints, as in the mockup: the second card leans pink.
-const THUMB_TINTS = [
-  'from-azure-radiance-50 to-deep-blue-100',
-  'from-bubble-gum-pink-100 to-azure-radiance-50',
-];
-
 export const LatestWritingSection = ({ items }: Props) => {
   if (items.length === 0) return null;
 
@@ -30,33 +24,37 @@ export const LatestWritingSection = ({ items }: Props) => {
           Latest writing
         </span>
       </SectionLabel>
-      <ul className='grid border-b border-deep-blue-200 md:grid-cols-3'>
-        {items.map((item, i) => (
+      {/* Rows rather than cards: any number of items fills the rail, and
+          there is no empty thumbnail to stand in for missing imagery. */}
+      <ul className='px-2 sm:px-6'>
+        {items.map((item) => (
           <li
             key={`${item.kind}:${item.to}:${Object.values(item.params).join('/')}`}
-            className='border-b border-deep-blue-200 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0'
           >
             {/* WritingItem carries its route as a string; the router's typed
                 `to` cannot narrow it, so it is passed through as-is. */}
             <Link
               to={item.to as '/'}
               params={item.params as never}
-              className={`block h-full p-4 transition-colors hover:bg-deep-blue-50 sm:p-5.5 ${FOCUS_RING}`}
+              className={`group surface-hover grid gap-x-8 gap-y-1 rounded-[18px] px-4 py-6 sm:grid-cols-[8.5rem_1fr_auto] sm:items-baseline sm:px-5 ${FOCUS_RING}`}
             >
-              <div
-                aria-hidden='true'
-                className={`aspect-[16/10] rounded-[10px] border border-deep-blue-200 bg-linear-to-br ${THUMB_TINTS[i % 2]}`}
-              />
-              <p className='mt-3.5 text-xs text-deep-blue-600'>
-                <time dateTime={item.date}>{formatDate(item.date)}</time> ·{' '}
+              <time
+                dateTime={item.date}
+                className='font-mono text-[13px] tabular-nums text-deep-blue-600'
+              >
+                {formatDate(item.date)}
+              </time>
+              <span>
+                <span className='block text-lg font-semibold tracking-[-0.015em] text-deep-blue-900 transition-colors group-hover:text-azure-radiance-700'>
+                  {item.title}
+                </span>
+                <span className='mt-1 block text-sm leading-[1.55] text-deep-blue-600'>
+                  {item.description}
+                </span>
+              </span>
+              <span className='font-mono text-[13px] lowercase text-deep-blue-600'>
                 {KIND_LABEL[item.kind]}
-              </p>
-              <h3 className='mt-1 text-base font-semibold text-deep-blue-900'>
-                {item.title}
-              </h3>
-              <p className='mt-1 text-[13px] leading-[1.55] text-deep-blue-600'>
-                {item.description}
-              </p>
+              </span>
             </Link>
           </li>
         ))}

@@ -30,6 +30,8 @@ export const Route = createRootRoute({
       { name: 'author', content: SITE_NAME },
       { name: 'creator', content: SITE_NAME },
       { name: 'publisher', content: SITE_NAME },
+      // Matches the dark canvas, so mobile browser chrome blends with the page.
+      { name: 'theme-color', content: '#0b1120' },
     ],
     // No rel="canonical" here. Links are not deduplicated across matched
     // routes, so a root canonical plus a leaf canonical emits two of them.
@@ -64,7 +66,7 @@ function NotFoundScreen() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang='en' className='antialiased h-full'>
+    <html lang='en' className='dark antialiased h-full'>
       <head>
         <HeadContent />
       </head>

@@ -9,7 +9,8 @@ type Props = {
 export const Rail: FC<Props> = ({ children, className }) => (
   <div
     className={cn(
-      'mx-auto min-h-screen w-full max-w-[1100px] border-deep-blue-200 bg-white sm:border-x',
+      // No side rules: the column is held by its measure and whitespace alone.
+      'mx-auto min-h-screen w-full max-w-[1100px]',
       className,
     )}
   >

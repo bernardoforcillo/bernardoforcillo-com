@@ -11,7 +11,7 @@ import { splitBlogPath } from './src/content/lib';
 type MarkdownOptions = NonNullable<Parameters<typeof compileMarkdown>[2]>;
 
 const markdownOptions: MarkdownOptions = {
-  rehypePlugins: [[rehypeShiki, { theme: 'github-light-high-contrast' }]],
+  rehypePlugins: [[rehypeShiki, { theme: 'github-dark-high-contrast' }]],
 };
 
 const isoDate = z

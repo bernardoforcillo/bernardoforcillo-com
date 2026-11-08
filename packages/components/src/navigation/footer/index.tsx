@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import type { FC, ReactNode } from 'react';
 import type { LinkComponent, NavItem } from '../types';
 
@@ -12,8 +11,6 @@ type Props = {
   site: string;
   /** Pre-formatted rights line, so the app keeps ownership of i18n. */
   rights: string;
-  /** Decorative dot-matrix text under the columns; hidden from assistive tech. */
-  wordmark: string;
   index: NavItem[];
   legal: NavItem[];
   /** Items with an `icon` also render as round buttons under the tagline. */
@@ -60,7 +57,6 @@ export const Footer: FC<Props> = ({
   tagline,
   site,
   rights,
-  wordmark,
   index,
   legal,
   elsewhere,
@@ -68,14 +64,13 @@ export const Footer: FC<Props> = ({
   const social = elsewhere.filter((link) => link.icon);
 
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.5 }}
-      className='border-t border-deep-blue-200'
-    >
-      <div className='grid grid-cols-2 gap-x-5 gap-y-10 px-5 pt-11 sm:grid-cols-3 sm:px-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]'>
+    <footer>
+      {/* Opens on a hairline that fades into the rail, like the section breaks. */}
+      <div
+        aria-hidden='true'
+        className='mx-4 h-px bg-[linear-gradient(90deg,transparent,var(--color-deep-blue-200)_20%,var(--color-deep-blue-200)_80%,transparent)] sm:mx-6'
+      />
+      <div className='grid grid-cols-2 gap-x-5 gap-y-10 px-5 pb-10 pt-11 sm:grid-cols-3 sm:px-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]'>
         <div className='col-span-2 sm:col-span-3 md:col-span-1'>
           <span className='font-semibold tracking-tight text-deep-blue-900'>
             {name}
@@ -122,20 +117,10 @@ export const Footer: FC<Props> = ({
         </div>
       </div>
 
-      {/* Dotted field fading in from the top; letters filled with a finer azure dot grid. */}
-      <div
-        aria-hidden='true'
-        className='mt-14 grid h-32 place-items-center overflow-hidden bg-[radial-gradient(var(--color-deep-blue-200)_1.1px,transparent_1.3px)] bg-size-[8px_8px] [mask-image:linear-gradient(transparent,#000_35%)] select-none sm:h-[200px]'
-      >
-        <span className='whitespace-nowrap bg-[radial-gradient(var(--color-azure-radiance-500)_1.6px,transparent_1.8px)] bg-size-[6px_6px] bg-clip-text text-[clamp(2.5rem,8.6vw,5.875rem)] font-extrabold tracking-[-0.04em] text-transparent'>
-          {wordmark}
-        </span>
-      </div>
-
       <div className='flex flex-col gap-1 border-t border-deep-blue-200 px-5 py-4.5 text-[13px] text-deep-blue-600 sm:flex-row sm:justify-between sm:px-10'>
         <span>{site}</span>
         <span>{rights}</span>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
