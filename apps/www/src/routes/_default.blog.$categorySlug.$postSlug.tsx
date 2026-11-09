@@ -1,9 +1,16 @@
-import { PageHeader, Prose } from '@monorepo/components';
+import { Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { BookOpen } from 'lucide-react';
 import { findPost } from '~/content';
+import { ArticleFooter } from '~/features/content/molecules/article-footer';
+import { ArticleHeader } from '~/features/content/molecules/article-header';
+import { ARTICLE_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { buildBlogPostingJsonLd, pageHead } from '~/lib/seo';
+import { readingMinutes } from '~/lib/reading-time';
+import {
+  buildBlogPostingJsonLd,
+  buildBreadcrumbJsonLd,
+  pageHead,
+} from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/$categorySlug/$postSlug')({
   loader: ({ params }) => {
@@ -36,6 +43,11 @@ export const Route = createFileRoute('/_default/blog/$categorySlug/$postSlug')({
           keywords: post.tags,
           articleSection: post.categorySlug,
         }),
+        buildBreadcrumbJsonLd([
+          { name: 'Blog', path: '/blog' },
+          { name: post.categorySlug, path: `/blog/${post.categorySlug}` },
+          { name: post.title, path },
+        ]),
       ],
     });
   },
@@ -46,20 +58,30 @@ function BlogPostPage() {
   const { post } = Route.useLoaderData();
 
   return (
-    <div className='relative'>
-      <PageHeader
-        icon={<BookOpen className='size-7' />}
+    <>
+      <ArticleHeader
+        trail={[
+          { name: 'Blog', path: '/blog' },
+          { name: post.categorySlug, path: `/blog/${post.categorySlug}` },
+          {
+            name: post.title,
+            path: `/blog/${post.categorySlug}/${post.postSlug}`,
+          },
+        ]}
         title={post.title}
         description={post.description}
+        date={post.date}
+        dateLabel={formatDate(post.date)}
+        minutes={readingMinutes(post.content)}
+        tags={post.tags}
       />
-
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-sm text-muted'>
-          {post.categorySlug} · {formatDate(post.date)}
-        </p>
-
+      <article className={ARTICLE_CLASS}>
         <Prose html={post.html} />
       </article>
-    </div>
+      <ArticleFooter
+        title={post.title}
+        back={{ to: '/blog', label: 'All posts' }}
+      />
+    </>
   );
 }

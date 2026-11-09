@@ -16,7 +16,7 @@ export const Separator: FC<Props> = ({
     role='separator'
     aria-orientation={orientation}
     className={cn(
-      'shrink-0 bg-line',
+      'shrink-0 bg-deep-blue-200',
       orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
       className,
     )}

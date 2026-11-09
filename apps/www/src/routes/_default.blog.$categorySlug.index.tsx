@@ -3,8 +3,9 @@ import { Link, createFileRoute, notFound } from '@tanstack/react-router';
 import { BookOpen } from 'lucide-react';
 import { postsByCategory } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
+import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { pageHead } from '~/lib/seo';
+import { buildBreadcrumbJsonLd, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/blog/$categorySlug/')({
   loader: ({ params }) => {
@@ -25,6 +26,12 @@ export const Route = createFileRoute('/_default/blog/$categorySlug/')({
       title: `${categorySlug} blog posts`,
       description: `Articles in the ${categorySlug} category.`,
       path: `/blog/${categorySlug}`,
+      jsonLd: [
+        buildBreadcrumbJsonLd([
+          { name: 'Blog', path: '/blog' },
+          { name: categorySlug, path: `/blog/${categorySlug}` },
+        ]),
+      ],
     });
   },
   component: BlogCategoryPage,
@@ -41,26 +48,24 @@ function BlogCategoryPage() {
         description={`Posts inside ${categorySlug}.`}
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div>
-          {posts.map((post) => (
-            <Link
-              key={`${post.categorySlug}-${post.postSlug}`}
-              to='/blog/$categorySlug/$postSlug'
-              params={{
-                categorySlug: post.categorySlug,
-                postSlug: post.postSlug,
-              }}
-              className='content-row'
-            >
-              <ContentRow
-                title={post.title}
-                description={post.description}
-                meta={formatDate(post.date)}
-              />
-            </Link>
-          ))}
-        </div>
+      <section>
+        {posts.map((post) => (
+          <Link
+            key={`${post.categorySlug}-${post.postSlug}`}
+            to='/blog/$categorySlug/$postSlug'
+            params={{
+              categorySlug: post.categorySlug,
+              postSlug: post.postSlug,
+            }}
+            className={ROW_CLASS}
+          >
+            <ContentRow
+              title={post.title}
+              description={post.description}
+              meta={formatDate(post.date)}
+            />
+          </Link>
+        ))}
       </section>
     </div>
   );

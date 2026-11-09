@@ -1,12 +1,17 @@
-import { PageHeader, Prose } from '@monorepo/components';
+import { Prose } from '@monorepo/components';
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { FolderCode } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { findProject } from '~/content';
+import { ArticleFooter } from '~/features/content/molecules/article-footer';
+import { ArticleHeader } from '~/features/content/molecules/article-header';
+import { ARTICLE_CLASS } from '~/features/content/styles';
+import { BUTTON_SECONDARY } from '~/features/home/styles';
 import { formatDate } from '~/lib/format-date';
-import { buildCreativeWorkJsonLd, pageHead } from '~/lib/seo';
-
-const EXTERNAL_LINK_CLASS =
-  'text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink transition-colors';
+import {
+  buildBreadcrumbJsonLd,
+  buildCreativeWorkJsonLd,
+  pageHead,
+} from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/projects/$projectSlug')({
   loader: ({ params }) => {
@@ -35,6 +40,10 @@ export const Route = createFileRoute('/_default/projects/$projectSlug')({
           datePublished: project.date,
           keywords: project.stack,
         }),
+        buildBreadcrumbJsonLd([
+          { name: 'Projects', path: '/projects' },
+          { name: project.title, path },
+        ]),
       ],
     });
   },
@@ -45,57 +54,51 @@ function ProjectPage() {
   const { project } = Route.useLoaderData();
 
   return (
-    <div className='relative'>
-      <PageHeader
-        icon={<FolderCode className='size-7' />}
+    <>
+      <ArticleHeader
+        trail={[
+          { name: 'Projects', path: '/projects' },
+          { name: project.title, path: `/projects/${project.projectSlug}` },
+        ]}
         title={project.title}
         description={project.description}
+        date={project.date}
+        dateLabel={formatDate(project.date)}
+        tags={project.stack}
+        actions={
+          project.repoUrl || project.demoUrl ? (
+            <>
+              {project.repoUrl ? (
+                <a
+                  href={project.repoUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                  className={BUTTON_SECONDARY}
+                >
+                  Repository <ArrowUpRight size={14} aria-hidden='true' />
+                </a>
+              ) : null}
+              {project.demoUrl ? (
+                <a
+                  href={project.demoUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                  className={BUTTON_SECONDARY}
+                >
+                  Live demo <ArrowUpRight size={14} aria-hidden='true' />
+                </a>
+              ) : null}
+            </>
+          ) : undefined
+        }
       />
-
-      <article className='w-full max-w-3xl mx-auto px-6 pb-24'>
-        <p className='text-sm text-muted'>{formatDate(project.date)}</p>
-
-        {project.stack.length > 0 ? (
-          <div className='mt-4 flex flex-wrap gap-x-3 gap-y-1'>
-            {project.stack.map((item) => (
-              <span
-                key={`${project.projectSlug}-${item}`}
-                className='text-sm text-muted'
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        ) : null}
-
-        {project.repoUrl || project.demoUrl ? (
-          <div className='mt-6 flex flex-wrap gap-5'>
-            {project.repoUrl ? (
-              <a
-                href={project.repoUrl}
-                target='_blank'
-                rel='noreferrer'
-                className={EXTERNAL_LINK_CLASS}
-              >
-                Repository
-              </a>
-            ) : null}
-
-            {project.demoUrl ? (
-              <a
-                href={project.demoUrl}
-                target='_blank'
-                rel='noreferrer'
-                className={EXTERNAL_LINK_CLASS}
-              >
-                Live Demo
-              </a>
-            ) : null}
-          </div>
-        ) : null}
-
+      <article className={ARTICLE_CLASS}>
         <Prose html={project.html} />
       </article>
-    </div>
+      <ArticleFooter
+        title={project.title}
+        back={{ to: '/projects', label: 'All projects' }}
+      />
+    </>
   );
 }

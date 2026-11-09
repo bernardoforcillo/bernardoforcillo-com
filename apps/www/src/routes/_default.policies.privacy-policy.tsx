@@ -1,4 +1,6 @@
+import { PageHeader } from '@monorepo/components';
 import { createFileRoute } from '@tanstack/react-router';
+import { Shield } from 'lucide-react';
 import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/policies/privacy-policy')({
@@ -16,5 +18,9 @@ export const Route = createFileRoute('/_default/policies/privacy-policy')({
 });
 
 function PrivacyPolicyPage() {
-  return <div>Hello</div>;
+  return (
+    <div className='relative'>
+      <PageHeader icon={<Shield className='size-7' />} title='Privacy policy' />
+    </div>
+  );
 }

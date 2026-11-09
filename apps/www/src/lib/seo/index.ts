@@ -1,6 +1,7 @@
 export {
   AUTHOR_NAME,
   AUTHOR_URL,
+  CONTACT_EMAIL,
   SITE_DESCRIPTION,
   SITE_KEYWORDS,
   SITE_NAME,
@@ -14,10 +15,12 @@ export { pageHead } from './page-head';
 export type { PageHead, PageHeadInput } from './page-head';
 export {
   buildBlogPostingJsonLd,
+  buildBreadcrumbJsonLd,
   buildCreativeWorkJsonLd,
   buildHomeJsonLdGraph,
 } from './json-ld';
 export type {
   ArticleJsonLdInput,
+  BreadcrumbItem,
   CreativeWorkJsonLdInput,
 } from './json-ld';

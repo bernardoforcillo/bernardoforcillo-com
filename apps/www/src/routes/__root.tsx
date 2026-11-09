@@ -1,3 +1,4 @@
+import { THEME_BOOTSTRAP } from '@monorepo/components';
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
 import type { ReactNode } from 'react';
 import interRegular from '~/assets/fonts/inter/variable-regular.woff2?url';
@@ -30,6 +31,8 @@ export const Route = createRootRoute({
       { name: 'author', content: SITE_NAME },
       { name: 'creator', content: SITE_NAME },
       { name: 'publisher', content: SITE_NAME },
+      // Matches the dark canvas, so mobile browser chrome blends with the page.
+      { name: 'theme-color', content: '#0b1120' },
     ],
     // No rel="canonical" here. Links are not deduplicated across matched
     // routes, so a root canonical plus a leaf canonical emits two of them.
@@ -46,7 +49,12 @@ export const Route = createRootRoute({
     ],
     // Order matters: /config.js defines globalThis.__APP_CONFIG__, which the
     // inline bootstrap immediately below reads.
-    scripts: [{ src: '/config.js' }, { children: GTM_BOOTSTRAP }],
+    scripts: [
+      // First, so the theme class is set before anything paints.
+      { children: THEME_BOOTSTRAP },
+      { src: '/config.js' },
+      { children: GTM_BOOTSTRAP },
+    ],
   }),
   // A notFound() thrown from a `_default` child bubbles all the way to the
   // root, which sits outside that layout — so the screen brings its own shell.
@@ -64,11 +72,16 @@ function NotFoundScreen() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang='en' className='antialiased h-full'>
+    <html
+      lang='en'
+      className='antialiased h-full'
+      // The bootstrap script adds `dark` before hydration.
+      suppressHydrationWarning
+    >
       <head>
         <HeadContent />
       </head>
-      <body className='relative min-h-full overflow-x-hidden bg-canvas text-ink selection:bg-signal/20 selection:text-ink'>
+      <body className='relative min-h-full overflow-x-hidden bg-deep-blue-50 text-deep-blue-900 selection:bg-azure-radiance-200 selection:text-deep-blue-900'>
         {children}
         <Scripts />
       </body>

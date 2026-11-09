@@ -38,13 +38,6 @@
   --color-bubble-gum-pink-800: oklch(0.473 0.088 347.05);
   --color-bubble-gum-pink-900: oklch(0.355 0.066 347.05);
   --color-bubble-gum-pink-950: oklch(0.236 0.044 347.05);
-
-  --color-canvas: oklch(0.978 0.006 95);
-  --color-ink: oklch(0.22 0.012 250);
-  --color-muted: oklch(0.48 0.012 250);
-  --color-faint: oklch(0.66 0.01 250);
-  --color-line: oklch(0.9 0.008 95);
-  --color-signal: var(--color-azure-radiance-500);
 }
 
 @layer base {
@@ -53,6 +46,68 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-line, currentColor);
+    border-color: var(--color-deep-blue-200, currentColor);
   }
+}
+
+/*
+ * Dark theme, switched on by `class="dark"` on <html>.
+ *
+ * Components are written against the light palette by role: `bg-white` is
+ * the surface, `deep-blue-50` a tint just off it, `deep-blue-200` a rule,
+ * `deep-blue-600` secondary text, `deep-blue-900` primary text. Rather than
+ * doubling every class with a `dark:` twin, the dark theme re-points each
+ * step of the scales so the same role keeps the same meaning: low steps
+ * become tints just above a navy surface, high steps become near-white ink.
+ * Accent steps are lifted so links and badges keep AA contrast on navy.
+ */
+.dark {
+  color-scheme: dark;
+
+  /* The surface. Also what `text-white` paints on a primary button, which in
+     the dark theme is a light pill, so its label goes navy. */
+  --color-white: oklch(0.175 0.035 263.09);
+  /* Outside the rail: a step darker than the surface. */
+  --color-canvas-outside: oklch(0.135 0.03 263.09);
+
+  --color-deep-blue-50: oklch(0.215 0.04 263.09);
+  --color-deep-blue-100: oklch(0.245 0.045 263.09);
+  --color-deep-blue-200: oklch(0.3 0.05 263.09);
+  --color-deep-blue-300: oklch(0.41 0.06 263.09);
+  --color-deep-blue-400: oklch(0.56 0.065 263.09);
+  /* Primary button fill: a light pill on navy. */
+  --color-deep-blue-500: oklch(0.94 0.02 263.09);
+  --color-deep-blue-600: oklch(0.77 0.04 263.09);
+  --color-deep-blue-700: oklch(0.84 0.035 263.09);
+  --color-deep-blue-800: oklch(0.9 0.025 263.09);
+  --color-deep-blue-900: oklch(0.965 0.012 263.09);
+  --color-deep-blue-950: oklch(0.985 0.005 263.09);
+
+  --color-azure-radiance-50: oklch(0.25 0.06 255);
+  --color-azure-radiance-100: oklch(0.3 0.08 255);
+  --color-azure-radiance-200: oklch(0.38 0.1 255);
+  --color-azure-radiance-300: oklch(0.5 0.13 252);
+  --color-azure-radiance-400: oklch(0.63 0.15 250);
+  --color-azure-radiance-500: oklch(0.72 0.16 248.71);
+  --color-azure-radiance-600: oklch(0.78 0.13 242);
+  --color-azure-radiance-700: oklch(0.82 0.11 237);
+  --color-azure-radiance-800: oklch(0.88 0.075 234);
+  --color-azure-radiance-900: oklch(0.93 0.04 232);
+
+  --color-bubble-gum-pink-50: oklch(0.22 0.03 347.05);
+  --color-bubble-gum-pink-100: oklch(0.26 0.045 347.05);
+  --color-bubble-gum-pink-200: oklch(0.33 0.07 347.05);
+  --color-bubble-gum-pink-300: oklch(0.42 0.09 347.05);
+  --color-bubble-gum-pink-400: oklch(0.56 0.11 347.05);
+  --color-bubble-gum-pink-600: oklch(0.8 0.1 347.05);
+  --color-bubble-gum-pink-700: oklch(0.86 0.08 347.05);
+  --color-bubble-gum-pink-800: oklch(0.91 0.05 347.05);
+  --color-bubble-gum-pink-900: oklch(0.95 0.03 347.05);
+}
+
+/* Unlayered, so it wins over the `bg-deep-blue-50` utility on <body>. The
+   page is one continuous canvas; raised surfaces (`bg-white`) sit a step
+   above it. */
+.dark body {
+  background-color: var(--color-canvas-outside);
 }

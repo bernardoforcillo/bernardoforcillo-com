@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { byDateDesc, countByCategory, splitBlogPath } from './lib';
+import { byDateDesc, countByCategory, mergeLatest, splitBlogPath } from './lib';
 
 describe('byDateDesc', () => {
   it('sorts newest first', () => {
@@ -48,5 +48,36 @@ describe('splitBlogPath', () => {
       categorySlug: 'orphan',
       postSlug: '',
     });
+  });
+});
+
+describe('mergeLatest', () => {
+  it('merges posts and notes newest first and caps the count', () => {
+    const r = mergeLatest(
+      [
+        {
+          title: 'P',
+          description: 'd',
+          date: '2026-01-02',
+          categorySlug: 'eng',
+          postSlug: 'p',
+        },
+      ],
+      [
+        { title: 'N1', description: 'd', date: '2026-03-01', noteSlug: 'n1' },
+        { title: 'N2', description: 'd', date: '2025-01-01', noteSlug: 'n2' },
+      ],
+      2,
+    );
+    expect(r.map((i) => i.title)).toEqual(['N1', 'P']);
+    expect(r[1]).toMatchObject({
+      kind: 'post',
+      to: '/blog/$categorySlug/$postSlug',
+      params: { categorySlug: 'eng', postSlug: 'p' },
+    });
+  });
+
+  it('returns an empty list when there is nothing', () => {
+    expect(mergeLatest([], [], 3)).toEqual([]);
   });
 });

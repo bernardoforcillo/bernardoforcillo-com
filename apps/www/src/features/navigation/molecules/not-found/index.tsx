@@ -2,6 +2,7 @@ import { PageHeader } from '@monorepo/components';
 import { Link } from '@tanstack/react-router';
 import { ArrowRight, Compass } from 'lucide-react';
 import type { FC } from 'react';
+import { BUTTON_PRIMARY } from '~/features/home/styles';
 
 export const NotFound: FC = () => (
   <div className='relative'>
@@ -9,15 +10,11 @@ export const NotFound: FC = () => (
       icon={<Compass className='size-7' />}
       title='404'
       description='This page does not exist. It may have moved, or it may never have existed at all.'
+      actions={
+        <Link to='/' className={BUTTON_PRIMARY}>
+          Back home <ArrowRight size={14} aria-hidden='true' />
+        </Link>
+      }
     />
-
-    <section className='w-full max-w-7xl mx-auto px-6 pb-20'>
-      <Link
-        to='/'
-        className='inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[15px] text-canvas transition-opacity hover:opacity-90'
-      >
-        Back home <ArrowRight size={14} />
-      </Link>
-    </section>
   </div>
 );

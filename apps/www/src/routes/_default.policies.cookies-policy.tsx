@@ -1,4 +1,6 @@
+import { PageHeader } from '@monorepo/components';
 import { createFileRoute } from '@tanstack/react-router';
+import { Cookie } from 'lucide-react';
 import { SITE_DESCRIPTION, TITLE_ABSOLUTE, pageHead } from '~/lib/seo';
 
 export const Route = createFileRoute('/_default/policies/cookies-policy')({
@@ -16,5 +18,9 @@ export const Route = createFileRoute('/_default/policies/cookies-policy')({
 });
 
 function CookiesPolicyPage() {
-  return <div>Hello</div>;
+  return (
+    <div className='relative'>
+      <PageHeader icon={<Cookie className='size-7' />} title='Cookies policy' />
+    </div>
+  );
 }

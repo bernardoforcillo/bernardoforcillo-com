@@ -1,64 +1,63 @@
 import { Link } from '@tanstack/react-router';
 import { ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { STACK } from '../../data';
+import { BUTTON_PRIMARY, BUTTON_SECONDARY, FOCUS_RING } from '../../styles';
+import { FlowLines } from './flow-lines';
 
-export const HeroSection = () => {
-  return (
-    <motion.header
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className='flex flex-col gap-14 pb-8 md:gap-20 md:pb-12'
-    >
-      <div className='grid gap-12 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.9fr)] md:items-end md:gap-16'>
-        <h1 className='text-[clamp(3.25rem,10vw,8rem)] font-medium tracking-[-0.06em] leading-[0.86] text-ink'>
-          Bernardo
-          <br />
-          Forcillo
-        </h1>
+export const HeroSection = () => (
+  <section className='relative overflow-hidden'>
+    <FlowLines />
+    <div className='animate-rise relative px-4 pb-14 pt-14 sm:px-10 md:pt-18'>
+      <a
+        href='https://ganiga.ai'
+        target='_blank'
+        rel='noopener noreferrer'
+        className={`inline-flex max-w-full items-center gap-2 rounded-full border border-deep-blue-200 py-1.5 pl-3 pr-3.5 text-[12.5px] text-deep-blue-700 transition-colors hover:bg-deep-blue-50 ${FOCUS_RING}`}
+      >
+        <span
+          aria-hidden='true'
+          className='size-1.5 shrink-0 rounded-full bg-azure-radiance-500'
+        />
+        Building at Ganiga
+      </a>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.25, duration: 0.8 }}
-          className='flex max-w-md flex-col gap-8'
+      <h1 className='mt-6 bg-linear-to-br from-deep-blue-900 from-30% to-azure-radiance-600 bg-clip-text text-[clamp(3.25rem,9vw,4.75rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-transparent'>
+        Bernardo
+        <br />
+        Forcillo
+      </h1>
+
+      <p className='mt-6 font-serif text-lg italic text-deep-blue-700 sm:text-[22px]'>
+        Be relentless. Act different. Ship fast.
+      </p>
+
+      <p className='mt-3.5 max-w-[480px] text-base leading-[1.7] text-deep-blue-600'>
+        Polymath software engineer. Distributed systems, high-performance
+        products, and AI infrastructure — currently at{' '}
+        <a
+          href='https://ganiga.ai'
+          target='_blank'
+          rel='noopener noreferrer'
+          className={`rounded-sm text-azure-radiance-700 underline decoration-azure-radiance-300 underline-offset-3 hover:decoration-azure-radiance-700 ${FOCUS_RING}`}
         >
-          <p className='font-serif text-2xl italic leading-[1.25] text-ink/80 md:text-[1.65rem]'>
-            Be relentless.
-            <br />
-            Act different.
-            <br />
-            Ship fast.
-          </p>
-          <p className='text-[15px] leading-7 text-muted'>
-            Polymath software engineer. Distributed systems, high-performance
-            products, and AI infrastructure — currently at{' '}
-            <a
-              href='https://ganiga.ai'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-ink underline decoration-line underline-offset-4 hover:decoration-ink'
-            >
-              Ganiga Innovation
-            </a>
-            . Pisa, EU. Five years building, ten products shipped, open source.
-          </p>
-          <div className='flex flex-wrap items-center gap-x-7 gap-y-3'>
-            <Link
-              to='/projects'
-              className='inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[15px] text-canvas transition-opacity hover:opacity-90'
-            >
-              Selected work <ArrowRight size={13} />
-            </Link>
-            <Link
-              to='/blog'
-              className='inline-flex items-center gap-1.5 text-[15px] text-ink underline decoration-line underline-offset-4 hover:decoration-ink'
-            >
-              Writing <ArrowRight size={13} />
-            </Link>
-          </div>
-        </motion.div>
+          Ganiga Innovation
+        </a>
+        .
+      </p>
+
+      <div className='mt-7 flex flex-wrap gap-2.5'>
+        <Link to='/projects' className={BUTTON_PRIMARY}>
+          Selected work <ArrowRight size={14} aria-hidden='true' />
+        </Link>
+        <Link to='/blog' className={BUTTON_SECONDARY}>
+          Writing
+        </Link>
       </div>
-    </motion.header>
-  );
-};
+
+      <p className='mt-12 font-mono text-[13px] text-deep-blue-600'>
+        <span className='text-azure-radiance-600'>stack</span>{' '}
+        {STACK.join(' / ').toLowerCase()}
+      </p>
+    </div>
+  </section>
+);

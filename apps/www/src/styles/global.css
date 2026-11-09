@@ -23,6 +23,9 @@
     sans-serif;
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
     "Times New Roman", serif;
+  /* System monospace, no download: metadata only — dates, stack, labels. */
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo,
+    Consolas, monospace;
 }
 
 @layer base {
@@ -33,7 +36,20 @@
   }
 
   body {
-    @apply bg-canvas text-ink antialiased selection:bg-signal/20 selection:text-ink;
+    @apply bg-deep-blue-50 text-deep-blue-900 antialiased selection:bg-azure-radiance-200 selection:text-deep-blue-900;
+  }
+
+  /* A fixed film of fine grain over the whole canvas: it takes the flat,
+     screen-perfect edge off the navy so the page reads as a material. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   ::-webkit-scrollbar {
@@ -46,14 +62,84 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-line hover:bg-muted transition-colors;
+    @apply bg-deep-blue-200 hover:bg-deep-blue-400 transition-colors;
   }
 }
 
 @utility tech-border {
-  @apply border border-line;
+  @apply border border-deep-blue-200;
 }
 
 @utility content-row {
-  @apply relative block py-8 md:py-9 border-b border-line/80 transition-colors duration-300 hover:border-ink/25;
+  @apply surface-hover block py-8 md:py-9 border-b border-deep-blue-100;
+}
+
+/*
+ * Hover as a soft rounded surface inset from the rules, rather than a hard
+ * full-bleed block: the grid lines stay crisp while the highlight floats.
+ */
+@utility surface-hover {
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    z-index: -1;
+    border-radius: 14px;
+    background-color: transparent;
+    transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), inset
+      0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover::before {
+    inset: 4px;
+    background-color: var(--color-deep-blue-50);
+  }
+}
+
+/* A hairline that fades out at both ends instead of stopping dead. */
+@utility rule-fade {
+  height: 1px;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-deep-blue-200) 20%,
+    var(--color-deep-blue-200) 80%,
+    transparent
+  );
+}
+
+/* Strokes drawn in once; `pathLength="1"` on each path normalises the dash. */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@utility animate-draw {
+  @media (prefers-reduced-motion: no-preference) {
+    stroke-dasharray: 1;
+    animation: draw 2.2s cubic-bezier(0.65, 0, 0.35, 1) both;
+  }
+}
+
+/*
+ * The site's one entrance: content rises into place on first paint. Pure CSS,
+ * so prerendered HTML is never shipped invisible waiting for JavaScript, and
+ * it is skipped entirely for anyone who asked for reduced motion.
+ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@utility animate-rise {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
 }

@@ -3,8 +3,9 @@ import { Link, createFileRoute } from '@tanstack/react-router';
 import { StickyNote } from 'lucide-react';
 import { notes } from '~/content';
 import { ContentRow } from '~/features/content/molecules/content-row';
+import { ROW_CLASS } from '~/features/content/styles';
 import { formatDate } from '~/lib/format-date';
-import { pageHead } from '~/lib/seo';
+import { buildBreadcrumbJsonLd, pageHead } from '~/lib/seo';
 
 const DESCRIPTION = 'Quick thoughts, snippets, and personal observations';
 
@@ -14,6 +15,7 @@ export const Route = createFileRoute('/_default/notes/')({
       title: 'Notes',
       description: DESCRIPTION,
       path: '/notes',
+      jsonLd: [buildBreadcrumbJsonLd([{ name: 'Notes', path: '/notes' }])],
     }),
   component: NotesIndexPage,
 });
@@ -27,23 +29,21 @@ function NotesIndexPage() {
         description={DESCRIPTION}
       />
 
-      <section className='w-full max-w-7xl mx-auto px-6 pb-24'>
-        <div>
-          {notes.map((note) => (
-            <Link
-              key={note.noteSlug}
-              to='/notes/$noteSlug'
-              params={{ noteSlug: note.noteSlug }}
-              className='content-row'
-            >
-              <ContentRow
-                title={note.title}
-                description={note.description}
-                meta={formatDate(note.date)}
-              />
-            </Link>
-          ))}
-        </div>
+      <section>
+        {notes.map((note) => (
+          <Link
+            key={note.noteSlug}
+            to='/notes/$noteSlug'
+            params={{ noteSlug: note.noteSlug }}
+            className={ROW_CLASS}
+          >
+            <ContentRow
+              title={note.title}
+              description={note.description}
+              meta={formatDate(note.date)}
+            />
+          </Link>
+        ))}
       </section>
     </div>
   );
