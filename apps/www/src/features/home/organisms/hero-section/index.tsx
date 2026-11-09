@@ -12,20 +12,19 @@ export const HeroSection = () => (
         href='https://ganiga.ai'
         target='_blank'
         rel='noopener noreferrer'
-        className={`inline-flex max-w-full items-center gap-2 rounded-full border border-deep-blue-200 py-1 pl-1 pr-3 text-[12.5px] text-deep-blue-700 transition-colors hover:bg-deep-blue-50 ${FOCUS_RING}`}
+        className={`inline-flex max-w-full items-center gap-2 rounded-full border border-deep-blue-200 py-1.5 pl-3 pr-3.5 text-[12.5px] text-deep-blue-700 transition-colors hover:bg-deep-blue-50 ${FOCUS_RING}`}
       >
-        <span className='shrink-0 rounded-full bg-bubble-gum-pink-200 px-2.5 py-0.5 font-semibold text-bubble-gum-pink-800'>
-          Now
-        </span>
-        Building at Ganiga →
+        <span
+          aria-hidden='true'
+          className='size-1.5 shrink-0 rounded-full bg-azure-radiance-500'
+        />
+        Building at Ganiga
       </a>
 
-      <h1 className='mt-6 text-[clamp(3.25rem,9vw,4.75rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-deep-blue-900'>
+      <h1 className='mt-6 bg-linear-to-br from-deep-blue-900 from-30% to-azure-radiance-600 bg-clip-text text-[clamp(3.25rem,9vw,4.75rem)] font-semibold leading-[0.92] tracking-[-0.055em] text-transparent'>
         Bernardo
         <br />
-        <span className='bg-linear-to-r from-deep-blue-500 to-azure-radiance-700 bg-clip-text text-transparent'>
-          Forcillo
-        </span>
+        Forcillo
       </h1>
 
       <p className='mt-6 font-serif text-lg italic text-deep-blue-700 sm:text-[22px]'>

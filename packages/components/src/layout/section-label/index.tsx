@@ -13,7 +13,7 @@ export const SectionLabel: FC<Props> = ({ children, id }) => (
       aria-hidden='true'
       className='h-px flex-1 bg-linear-to-r from-transparent to-deep-blue-200'
     />
-    <span className='inline-block rounded-full border border-deep-blue-200 bg-white px-4 py-1.5 text-xs uppercase tracking-[0.14em] text-deep-blue-600 shadow-[0_1px_2px_rgb(9_49_141/0.04)]'>
+    <span className='inline-block rounded-full border border-deep-blue-200 bg-white px-4 py-1.5 text-[13px] font-medium tracking-[-0.005em] text-deep-blue-600 shadow-[0_1px_2px_rgb(9_49_141/0.04)]'>
       {children}
     </span>
     <span

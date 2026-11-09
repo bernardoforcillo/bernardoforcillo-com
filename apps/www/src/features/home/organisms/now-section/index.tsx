@@ -17,7 +17,7 @@ const Dot = ({ current }: { current?: boolean }) => (
 
 const When = ({ step }: { step: Step }) => (
   <span
-    className={`block font-mono text-[13px] lowercase ${step.current ? 'text-bubble-gum-pink-800' : 'text-deep-blue-600'}`}
+    className={`block font-mono text-[13px] lowercase ${step.current ? 'text-azure-radiance-700' : 'text-deep-blue-600'}`}
   >
     {step.when}
   </span>

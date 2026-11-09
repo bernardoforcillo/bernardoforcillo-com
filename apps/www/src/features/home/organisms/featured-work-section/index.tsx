@@ -29,7 +29,7 @@ export const FeaturedWorkSection = ({ projects }: Props) => {
           Selected work
         </span>
       </SectionLabel>
-      <ul className='px-2 sm:px-6'>
+      <ul className='mx-4 border-y border-deep-blue-100 py-2 sm:mx-10'>
         {featuredProjects(projects).map((project) => (
           <li key={project.projectSlug}>
             <Link

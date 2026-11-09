@@ -7,6 +7,7 @@ import {
   MenuTrigger,
   Popover,
 } from 'react-aria-components';
+import { ThemeToggle } from '../theme-toggle';
 import type { LinkComponent, NavItem } from '../types';
 
 type Props = {
@@ -104,6 +105,7 @@ export const Navbar: FC<Props> = ({ Link, brand, items, cta }) => {
         </nav>
 
         <div className='col-start-3 flex shrink-0 items-center gap-1.5 justify-self-end'>
+          <ThemeToggle />
           <a
             href={cta.href}
             className={`inline-flex items-center whitespace-nowrap rounded-full bg-deep-blue-500 px-3.5 py-2 text-sm font-medium text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.15)] transition-colors hover:bg-deep-blue-600 sm:px-4.5 ${FOCUS_RING}`}
