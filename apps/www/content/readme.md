@@ -43,4 +43,17 @@ description: Short summary
 date: 2026-04-16
 ```
 
+## Math (LaTeX)
+
+Write LaTeX inline as `$E = mc^2$` or as a block between `$$` lines. KaTeX
+typesets it at build time, so the page ships finished HTML and no script:
+
+```md
+$$
+t_{\text{early warning}} \le t_a + 24\,\text{h}
+$$
+```
+
+A literal dollar sign is written `\$`.
+
 After adding or editing files, run the build: the content is compiled to HTML and prerendered, so a new post ships with the next deploy.
