@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @import "@monorepo/tailwindcss/style.css";
+/* Stylesheet for the math KaTeX typesets at build time; fonts load only when used. */
+@import "katex/dist/katex.min.css";
+/* Computer Modern for the text inside TikZ figures; a font loads only when used. */
+@import "node-tikzjax/css/fonts.css";
 @source "../../../../packages/components/src";
 
 @font-face {
@@ -142,4 +146,38 @@
   @media (prefers-reduced-motion: no-preference) {
     animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
+}
+
+/*
+ * TikZ figures, rendered to SVG at build time by `remarkTikz`. Strokes and
+ * fills are `currentColor`, so this colour is the diagram's ink in both
+ * themes. The SVG keeps its natural size and shrinks to fit narrow screens.
+ */
+.tikz {
+  /* What TikZ draws as `accent`; the dark theme lifts this step. */
+  --tikz-accent: var(--color-azure-radiance-600);
+  margin-block: 2.5rem;
+  text-align: center;
+  color: var(--color-deep-blue-900);
+}
+.tikz svg {
+  display: block;
+  margin-inline: auto;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.tikz figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--color-deep-blue-600);
+}
+
+/* A wide equation scrolls inside the column instead of widening the page. */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25rem;
 }

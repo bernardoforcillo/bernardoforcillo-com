@@ -1,8 +1,12 @@
 import { defineCollection, defineConfig } from '@content-collections/core';
 import { compileMarkdown } from '@content-collections/markdown';
 import rehypeShiki from '@shikijs/rehype';
+import rehypeKatex from 'rehype-katex';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 import { z } from 'zod';
 import { splitBlogPath } from './src/content/lib';
+import { remarkTikz } from './src/content/remark-tikz';
 
 // `@content-collections/markdown` does not export its `Options` type, so it is
 // recovered from `compileMarkdown`'s signature. The annotation is load-bearing:
@@ -11,7 +15,18 @@ import { splitBlogPath } from './src/content/lib';
 type MarkdownOptions = NonNullable<Parameters<typeof compileMarkdown>[2]>;
 
 const markdownOptions: MarkdownOptions = {
-  rehypePlugins: [[rehypeShiki, { theme: 'github-dark-high-contrast' }]],
+  // `$…$` and `$$…$$` are LaTeX, typeset by KaTeX; ```tikz blocks are TikZ,
+  // rendered to SVG. Both happen at build time: the page ships finished
+  // markup and needs only stylesheets, no script.
+  remarkPlugins: [remarkGfm, remarkMath, remarkTikz],
+  // Needed for the SVG figures `remarkTikz` emits as HTML. Every file here is
+  // authored in this repo and compiled at build time, so raw HTML is trusted
+  // input, not user content.
+  allowDangerousHtml: true,
+  rehypePlugins: [
+    rehypeKatex,
+    [rehypeShiki, { theme: 'github-dark-high-contrast' }],
+  ],
 };
 
 const isoDate = z
@@ -32,6 +47,14 @@ const posts = defineCollection({
   schema: z.object({
     ...baseSchema,
     tags: z.array(z.string()).default([]),
+    /** The <title> and social title, when the headline is too long for one. */
+    seoTitle: z.string().min(1).max(70).optional(),
+    /** Last substantive revision; becomes dateModified and the feed's updated. */
+    updated: isoDate.optional(),
+    /** The entities the post is about, linked to an authoritative page. */
+    about: z
+      .array(z.object({ name: z.string().min(1), url: z.string().url() }))
+      .default([]),
   }),
   transform: async (document, context) => {
     const html = await compileMarkdown(context, document, markdownOptions);

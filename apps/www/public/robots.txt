@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 
+# Every crawler, AI assistants included, may read everything. For agents: each
+# article has a markdown twin at <url>.md, and the whole site is summarised in
+# /llms.txt (index) and /llms-full.txt (full text).
+
 Host: https://bernardoforcillo.com
 Sitemap: https://bernardoforcillo.com/sitemap.xml
