@@ -17,8 +17,11 @@ export {
   buildBlogPostingJsonLd,
   buildBreadcrumbJsonLd,
   buildCreativeWorkJsonLd,
+  buildFaqJsonLd,
   buildHomeJsonLdGraph,
 } from './json-ld';
+export { extractCitations } from './citations';
+export { extractFaq } from './faq';
 export type {
   ArticleJsonLdInput,
   BreadcrumbItem,

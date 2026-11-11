@@ -47,6 +47,14 @@ const posts = defineCollection({
   schema: z.object({
     ...baseSchema,
     tags: z.array(z.string()).default([]),
+    /** The <title> and social title, when the headline is too long for one. */
+    seoTitle: z.string().min(1).max(70).optional(),
+    /** Last substantive revision; becomes dateModified and the feed's updated. */
+    updated: isoDate.optional(),
+    /** The entities the post is about, linked to an authoritative page. */
+    about: z
+      .array(z.object({ name: z.string().min(1), url: z.string().url() }))
+      .default([]),
   }),
   transform: async (document, context) => {
     const html = await compileMarkdown(context, document, markdownOptions);

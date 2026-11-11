@@ -133,6 +133,14 @@ const AUTHOR_NODE = {
   url: AUTHOR_URL,
 };
 
+/** The author as the same entity the home page graph declares, by `@id`. */
+const PERSON_NODE = {
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#person`,
+  name: AUTHOR_NAME,
+  url: AUTHOR_URL,
+};
+
 export type ArticleJsonLdInput = {
   title: string;
   description: string;
@@ -141,6 +149,12 @@ export type ArticleJsonLdInput = {
   dateModified?: string;
   keywords?: string[];
   articleSection?: string;
+  wordCount?: number;
+  /** Whole minutes; emitted as an ISO 8601 duration. */
+  readingMinutes?: number;
+  citations?: { name: string; url: string }[];
+  /** Entities the post is about; `url` is an authoritative page for each. */
+  about?: { name: string; url: string }[];
 };
 
 export const buildBlogPostingJsonLd = ({
@@ -151,20 +165,56 @@ export const buildBlogPostingJsonLd = ({
   dateModified,
   keywords,
   articleSection,
+  wordCount,
+  readingMinutes,
+  citations,
+  about,
 }: ArticleJsonLdInput) => ({
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
+  '@id': `${absoluteUrl(path)}#article`,
   headline: title,
   description,
   datePublished,
   dateModified: dateModified ?? datePublished,
-  mainEntityOfPage: absoluteUrl(path),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(path) },
   url: absoluteUrl(path),
   inLanguage: 'en',
-  author: AUTHOR_NODE,
-  publisher: AUTHOR_NODE,
+  isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website` },
+  author: PERSON_NODE,
+  publisher: PERSON_NODE,
   keywords: keywords?.join(','),
   articleSection,
+  wordCount,
+  timeRequired: readingMinutes ? `PT${readingMinutes}M` : undefined,
+  citation: citations?.length
+    ? citations.map(({ name, url }) => ({
+        '@type': 'CreativeWork',
+        name,
+        url,
+      }))
+    : undefined,
+  about: about?.length
+    ? about.map(({ name, url }) => ({ '@type': 'Thing', name, sameAs: url }))
+    : undefined,
+});
+
+/**
+ * Question-and-answer pairs the page shows as its FAQ section. Only emit it
+ * for answers visible on the page: the markup must match the content.
+ */
+export const buildFaqJsonLd = (
+  path: string,
+  items: { question: string; answer: string }[],
+) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${absoluteUrl(path)}#faq`,
+  mainEntity: items.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
 });
 
 export type CreativeWorkJsonLdInput = {

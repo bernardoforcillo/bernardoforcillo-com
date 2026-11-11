@@ -8,7 +8,7 @@ import {
   TITLE_TEMPLATE,
   TWITTER_CREATOR,
 } from './site';
-import { formatSocialTitle } from './title';
+import { absoluteUrl, formatSocialTitle } from './title';
 
 const site = defineSeo({
   metadataBase: SITE_URL,
@@ -36,13 +36,20 @@ export type PageHeadInput = {
   tags?: string[];
   noIndex?: boolean;
   jsonLd?: Array<Record<string, unknown>>;
+  /**
+   * Advertises the page's markdown twin (`<path>.md`, emitted by vite-seo for
+   * content entries) so agents can read the source instead of parsing HTML.
+   */
+  markdownAlternate?: boolean;
+  /** The share image (og:image and twitter:image), with its pixel size. */
+  image?: { path: string; width: number; height: number; alt: string };
 };
 
 export const pageHead = (input: PageHeadInput): PageHead => {
   const socialTitle =
     input.ogTitle ?? input.absoluteTitle ?? formatSocialTitle(input.title);
   const type = input.type ?? 'website';
-  return site.seo({
+  const head = site.seo({
     title: input.absoluteTitle
       ? { absolute: input.absoluteTitle }
       : input.title,
@@ -54,6 +61,18 @@ export const pageHead = (input: PageHeadInput): PageHead => {
       type,
       title: socialTitle,
       url: input.path,
+      ...(input.image
+        ? {
+            images: [
+              {
+                url: input.image.path,
+                width: input.image.width,
+                height: input.image.height,
+                alt: input.image.alt,
+              },
+            ],
+          }
+        : {}),
       ...(type === 'article'
         ? {
             publishedTime: input.publishedTime ?? '',
@@ -63,7 +82,19 @@ export const pageHead = (input: PageHeadInput): PageHead => {
           }
         : {}),
     },
-    twitter: { title: socialTitle },
+    twitter: {
+      title: socialTitle,
+      ...(input.image ? { images: [input.image.path] } : {}),
+    },
     jsonLd: input.jsonLd as never,
   })({});
+  if (input.markdownAlternate) {
+    // vite-seo's link type has no `type`; TanStack renders every attribute.
+    head.links.push({
+      rel: 'alternate',
+      type: 'text/markdown',
+      href: absoluteUrl(`${input.path}.md`),
+    } as PageHead['links'][number]);
+  }
+  return head;
 };

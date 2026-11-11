@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && node scripts/clean-dist.mjs",
+    "build": "vite build && node scripts/clean-dist.mjs && node scripts/og-images.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "parity": "node scripts/parity-diff.mjs",

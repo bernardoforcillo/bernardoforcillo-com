@@ -3,8 +3,43 @@ import {
   buildBlogPostingJsonLd,
   buildBreadcrumbJsonLd,
   buildCreativeWorkJsonLd,
+  buildFaqJsonLd,
   buildHomeJsonLdGraph,
 } from './json-ld';
+
+describe('buildFaqJsonLd', () => {
+  it('turns each pair into a Question with an accepted Answer', () => {
+    const node = buildFaqJsonLd('/blog/security/t', [
+      { question: 'When?', answer: 'Now.' },
+    ]);
+    expect(node['@type']).toBe('FAQPage');
+    expect(node['@id']).toBe(
+      'https://bernardoforcillo.com/blog/security/t#faq',
+    );
+    expect(node.mainEntity).toEqual([
+      {
+        '@type': 'Question',
+        name: 'When?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Now.' },
+      },
+    ]);
+  });
+});
+
+describe('buildBlogPostingJsonLd about', () => {
+  it('links each entity to its authoritative page', () => {
+    const node = buildBlogPostingJsonLd({
+      title: 'T',
+      description: 'D',
+      path: '/blog/security/t',
+      datePublished: '2026-11-11',
+      about: [{ name: 'CRA', url: 'https://eur-lex.europa.eu/x' }],
+    });
+    expect(node.about).toEqual([
+      { '@type': 'Thing', name: 'CRA', sameAs: 'https://eur-lex.europa.eu/x' },
+    ]);
+  });
+});
 
 describe('buildHomeJsonLdGraph', () => {
   const graph = buildHomeJsonLdGraph();
@@ -44,6 +79,29 @@ describe('buildBlogPostingJsonLd', () => {
       'https://bernardoforcillo.com/blog/engineering/hello-world',
     );
     expect(node.articleSection).toBe('engineering');
+    expect(node.citation).toBeUndefined();
+    expect(node.timeRequired).toBeUndefined();
+  });
+
+  it('links the author to the site person and lists citations', () => {
+    const node = buildBlogPostingJsonLd({
+      title: 'T',
+      description: 'D',
+      path: '/blog/security/t',
+      datePublished: '2026-11-11',
+      wordCount: 1200,
+      readingMinutes: 6,
+      citations: [{ name: 'A', url: 'https://a.example' }],
+    });
+    expect(node['@id']).toBe(
+      'https://bernardoforcillo.com/blog/security/t#article',
+    );
+    expect(node.author['@id']).toBe('https://bernardoforcillo.com/#person');
+    expect(node.isPartOf['@id']).toBe('https://bernardoforcillo.com/#website');
+    expect(node.timeRequired).toBe('PT6M');
+    expect(node.citation).toEqual([
+      { '@type': 'CreativeWork', name: 'A', url: 'https://a.example' },
+    ]);
   });
 });
 
