@@ -82,7 +82,7 @@ including their secure development procedures. That last phrase is the bridge to
 the Cyber Resilience Act: secure development procedures are exactly what the
 CRA requires manufacturers to have and to document.
 
-For digital infrastructure and digital service providers, Implementing
+For certain digital infrastructure and digital service providers, such as cloud, data centre, managed service and managed security service providers, Implementing
 Regulation (EU) 2024/2690 spells this out: a supply chain security policy
 (section 5.1), a directory of suppliers (5.2), security in the acquisition of
 ICT services or products (6.1) and a secure development life cycle (6.2).
@@ -131,7 +131,7 @@ ones; the right-hand column is where a product supplier can find the answer.
 | Within what time will you tell us about an incident affecting us?         | Your CRA Article 14 process, which requires informing affected users of an exploited vulnerability or severe incident, without a fixed deadline (Article 14(8)); incidents in your own IT are not covered, so agree those by contract. If you process personal data for the customer, GDPR Article 33(2) already applies |
 | How does your staff access our systems?                                   | For the product: CRA access control and logging; for remote maintenance: your operational procedures  |
 | What are your RTO and RPO, and when did you last test recovery?           | Mostly operational, not a CRA artefact. The CRA asks only that essential functions stay available and resist denial of service (Annex I, Part I, point 2(h)), and covers a cloud back end only if it is the product's remote data processing |
-| Do you use subcontractors, and under what security requirements?          | Your CRA due diligence on third-party components and services (Article 13(5))                          |
+| Do you use subcontractors, and under what security requirements?          | Your CRA due diligence on third-party components (Article 13(5)); for services and subcontractors, your own contracts                          |
 | How is data returned and deleted at the end of the contract?              | CRA secure erasure; Data Act export where it applies                                                    |
 | Can we have an SBOM?                                                      | The SBOM you keep per version under CRA Annex I, Part II, shared under NDA                              |
 | How do you develop securely?                                              | Your CRA risk assessment and secure development process; standards you follow                          |

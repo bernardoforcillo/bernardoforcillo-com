@@ -21,7 +21,7 @@ about:
 
 **Key takeaways**
 
-- The Commission's 2022 impact assessment puts CRA compliance at about **€61,000–68,000 per product**: about €42,700 for secure development plus €18,400–25,000 for conformity assessment. A consultancy puts a first product at about **€100,000**, internal and external cost together. A cost
+- The Commission's 2022 impact assessment puts CRA compliance at about **€61,000–68,000 per product**: about €42,700 for secure development plus €18,400–25,000 for conformity assessment, before documentation, which the same study puts at a further 9% of development cost. A consultancy puts a first product at about **€100,000**, internal and external cost together. A cost
   calculator gives **€78,300 one-off and €13,500 a year** for three products.
 - The largest line is not paperwork. In both the Commission's model and the
   calculator, secure development is the biggest share: €13.13 billion of €29
@@ -53,7 +53,7 @@ notified body, and a stream of free security updates for years after each sale.
 In the companies I talk to, the CRA tends to reach the board as a compliance
 item and leave it as a cost to minimise. That matches what two people told us
 in interviews this month: compliance is seen as a cost, and decisions go to the
-board looking for the cheapest option. ENISA's survey of 194 SMEs points the
+board looking for the cheapest option. ENISA's survey of 194 organisations, mostly SMEs, points the
 same way, with implementation cost cited as a difficulty by 56.2% of
 respondents and financial support requested by 73.2%.
 
@@ -71,7 +71,7 @@ different things.
 
 | Source                                                                 | What it measures                                                    | Figure                                                                                                                                                                                  |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| European Commission, impact assessment SWD(2022) 282                   | Average cost per product, by type of cost                           | Secure development about €42,700 (30.5% of an average €140,000 development cost); conformity assessment about €18,400 with self-assessment or about €25,000 with a third party; so about €61,000–68,000 in all. Recurrent operating cost of €3,000–5,000 per product from a targeted survey                                |
+| European Commission, impact assessment SWD(2022) 282                   | Average cost per product, by type of cost                           | Secure development about €42,700 (30.5% of an average €140,000 development cost); conformity assessment about €18,400 with self-assessment or about €25,000 with a third party; so about €61,000–68,000 before documentation, which the study puts at a further 9% of development cost. Recurrent operating cost of €3,000–5,000 per product from a targeted survey                                |
 | Same document, option 4(b)(ii)                                         | Total for the economy, all software and hardware                    | About €29 billion: €13.13 billion secure development, €8.1 billion conformity testing, €7.8 billion documentation, declaration, CE marking and reporting                                 |
 | cetome, consultancy price list (September 2026)                        | External fees for one company                                       | Scoping €1,000 per product type; gap analysis €5,000 per product or €20,000 per portfolio; risk assessment €8,000–10,000; technical documentation from €15,000 (simple) or €30,000 (complex); about €100,000 for a first product, internal and external cost together |
 | cyberresilienceact.eu calculator, calibrated on i46's model at €45/h (a low rate) | One company, three products, security foundations already in place  | €78,300 one-off; €13,500 a year                                                                                                                                                         |
@@ -158,7 +158,7 @@ microenterprises and small enterprises cannot be fined for missing the 24-hour
 early-warning deadlines in Article 14; the duty to report remains. And the
 maximum is a ceiling, not a tariff: authorities set fines case by case, weighing among other things the size of the company. And for a manufacturer, a missing declaration of conformity, CE marking or technical file is not only an Article 64(3) breach: the same duties sit in Article 13, so expect them to be argued under the top tier.
 
-In Italy, the draft decree approved in preliminary form on 2 October 2026 and sent to Parliament on 9 October (Atto del Governo 447) gives market surveillance to the national cybersecurity agency, ACN, with sanctions applying from 11
+In Italy, the draft decree approved in preliminary form on 2 October 2026 and sent to Parliament on 9 October (Atto del Governo 447) gives market surveillance to the national cybersecurity agency, ACN, with CRA fines, which under Article 71(2) apply from 11
 December 2027. Whether a missed report can be fined before that date is
 disputed; the [CRA field guide](/blog/security/cra-field-guide) sets out
 both readings.
@@ -183,7 +183,7 @@ by product:
 1. **Make it compliant** before the first unit ships on or after 11 December
    2027.
 2. **Place the remaining stock before the date**, by supplying it to
-   distributors or customers, and stop production of the old version. Under the Blue Guide, a unit is placed on the market only when it is finished and an offer or agreement transfers it to a distributor or customer; moving stock into your own subsidiary's warehouse does not count, and an authority can treat a paper transfer as circumvention. Those units stay subject to vulnerability reporting under Article 69(3), and to product liability. Check with your auditor how a bulk sale before the date is booked: a bill-and-hold arrangement may not let you recognise the revenue.
+   distributors or customers, and stop production of the old version. Under the Blue Guide, a unit is placed on the market only when its manufacture is complete and an offer or agreement transfers ownership, possession or another right in it; physical handover is not required, but stock still held by the manufacturer has not been placed. In my reading, a transfer inside your own group, or a sale with no commercial substance, is likely to be challenged as circumvention. Those units stay subject to vulnerability reporting under Article 69(3), and to product liability. Check with your auditor how a bulk sale before the date is booked: a bill-and-hold arrangement may not let you recognise the revenue.
 3. **Discontinue** the product in the EU.
 
 Each option has a cost: engineering, working capital and margin respectively.
@@ -221,7 +221,7 @@ T = S + P, \qquad P \ge 5 \text{ years}
 $$
 
 A model sold for four years would then need security updates for up to nine.
-I could not find the point settled in the parts of the Commission's guidance I
+The guidance does not settle it: its Example 52 counts the period from placing "the model" on the market, without addressing units, and I could not find more in the parts of the guidance I
 read, so confirm it with counsel for your own products, because it changes the
 answer by years. Either way, $C_{\text{support}}$ divided by the units you
 expect to sell is a cost per unit that the price has to carry.
@@ -242,14 +242,13 @@ Directive (EU) 2024/2853) is enforced by the people who are harmed, in civil
 courts, and it applies to products placed on the market after 8 December 2026.
 For a CFO, five changes matter:
 
-- software, including firmware, apps and related digital services, is a
-  product, and liability is strict: the claimant does not have to prove fault;
+- software, including firmware and apps, is a product, related digital services count as components of the product, and liability is strict: the claimant does not have to prove fault;
 - the €500 threshold for property damage is gone and Member States cannot cap
   total liability;
 - destruction or corruption of data not used for professional purposes counts as damage;
 - the defence that a defect did not exist when the product was sold does not
   apply when the defect comes from a missing software update that was within the manufacturer's control and necessary to keep the product safe;
-- a court shall presume a product defective when it breaches mandatory safety requirements, and can order the manufacturer to disclose evidence.
+- a court shall presume a product defective when it breaches mandatory safety requirements meant to protect against the damage suffered, and can order the manufacturer to disclose evidence.
 
 Put together with the CRA, that means the support period is not only a
 regulatory duty but a liability horizon. The
@@ -258,7 +257,7 @@ covers it in detail, including Italy's transposing decree.
 
 This is also the moment to call your broker, before 9 December. Three questions
 I would ask: does our product liability policy cover damage caused by software,
-including updates we ship after the sale? Does it cover loss or corruption of
+including updates we ship after the sale? Does it cover destruction or corruption of
 consumers' data? And does any of our policies cover the cost of a product
 security incident, such as investigation, customer notification and an
 emergency update, or only incidents in our own systems?
@@ -294,7 +293,7 @@ quotes and your own estimates.
 | Risk assessment and technical file      | Product  | Complexity                     | CTO, quality | €8,000–10,000 plus €15,000–30,000                  |
 | Conformity assessment                   | Product  | Class of product               | COO          | Self-assessment, or a notified body if required    |
 | Reporting readiness and rehearsals      | Platform | People and hours covered       | CISO, COO    | Mostly internal time                               |
-| Security testing per release            | Release  | Release cadence                | CTO          | Part of €13,500 a year for three products          |
+| Security testing per release            | Release  | Release cadence                | CTO          | Within the €13,500 a year for three products (updates, monitoring, audits)          |
 | Support period                          | Release  | Product lines and years        | CFO          | $C_{\text{support}}$ above                         |
 | Insurance                               | Platform | Exposure under the PLD         | CFO          | Broker quote                                       |
 | Funding                                 | Offset   | Eligibility                    | CFO          | Up to €30,000 at 50% from SECURE                   |
@@ -334,7 +333,7 @@ _Disclosure: I work on connected products at Ganiga. Nothing is for sale yet._
 
 ### How much does CRA compliance cost per product?
 
-The Commission's 2022 impact assessment puts it at about €61,000–68,000 per product: about €42,700 for secure development plus €18,400 (self-assessment) to €25,000 (third party) for conformity assessment. A consultancy estimate from September 2026 gives about €100,000 for a first product, internal and external cost together. A public calculator gives €78,300 one-off and
+The Commission's 2022 impact assessment puts it at about €61,000–68,000 per product: about €42,700 for secure development plus €18,400 (self-assessment) to €25,000 (third party) for conformity assessment, before documentation, which the same study puts at a further 9% of development cost. A consultancy estimate from September 2026 gives about €100,000 for a first product, internal and external cost together. A public calculator gives €78,300 one-off and
 €13,500 a year for three products in a company with security foundations in
 place. Secure development is the largest share in every model.
 
@@ -374,7 +373,7 @@ guidance, for software with substantially modified versions the duty to fix vuln
 
 The SECURE project's second call, open from 1 October to 11 December 2026,
 offers €11.5 million in total, up to €30,000 per project at 50% co-financing,
-to SMEs that make, import or distribute products with digital elements. The CRA
+to SMEs established in the EU or EEA; check the call text for the rules on products with digital elements. The CRA
 also asks Member States to offer SMEs training, help channels and support for
 testing, and lets micro and small enterprises use simplified technical
 documentation.
@@ -412,7 +411,7 @@ calculator figures are estimates, not market prices.
   EUR-Lex. Articles 13, 33, 64, 69; Annex I.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 126, 129–130, 158, 163, 175–177.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 126, 129–130, 158, 163, 175–177.
 - European Commission,
   [_Impact assessment accompanying the Cyber Resilience Act proposal, SWD(2022) 282, part 1_](https://data.consilium.europa.eu/doc/document/ST-12429-2022-ADD-2/en/pdf).
   Per-product costs and option 4(b)(ii) totals.
@@ -434,7 +433,7 @@ calculator figures are estimates, not market prices.
   [_Cyber Resilience Act and legacy products_](https://bitsea.us/blog/2026/03/cyber-resilience-act-and-legacy-products/).
   When the support period starts.
 - [_Directive (EU) 2024/2853 on liability for defective products_](https://eur-lex.europa.eu/eli/dir/2024/2853/oj),
-  EUR-Lex. Articles 6, 10 and 11.
+  EUR-Lex. Articles 4, 6, 9, 10 and 11.
 - European Commission,
   [_The "Blue Guide" on the implementation of EU product rules 2022_](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52022XC0629(04)),
   section 2.3. Placing on the market.

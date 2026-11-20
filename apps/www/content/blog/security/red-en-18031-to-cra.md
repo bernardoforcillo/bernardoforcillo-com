@@ -130,8 +130,7 @@ regulated the product at the moment it was sold, not over its life:
 - **Vulnerability handling, Annex I Part II**: an SBOM per version, prompt fixes,
   regular testing, public disclosure of fixed vulnerabilities, a coordinated
   disclosure policy and contact, and free security updates.
-- **A support period** of at least five years, with an end date stated at
-  purchase.
+- **A support period** of at least five years, unless the product is expected to be in use for less, with an end date (month and year) stated at purchase.
 - **Reporting** of actively exploited vulnerabilities and severe incidents
   within 24 hours, already in force.
 - **A cybersecurity risk assessment** for the whole product, kept current, with
@@ -142,7 +141,7 @@ regulated the product at the moment it was sold, not over its life:
 Nemko's summary is a fair one: RED work is a good start towards the CRA but not
 sufficient on its own. In my experience the gap is mostly process, not product:
 the device may already be well secured, while the organisation around it has
-never had to run vulnerability handling for a support period of five years or more.
+never had to run vulnerability handling for a support period that is normally five years or more.
 
 ## Old certificates under the new law
 
@@ -167,8 +166,7 @@ the gaps (points 247 to 250). Products placed on the market under the RED act st
 
 ## The standards bridge
 
-The CRA's horizontal standards, the EN 40000 series, were developed in the same
-CEN-CENELEC committee and build on the EN 18031 work, according to
+The CRA's horizontal standards, the EN 40000 series, are being developed in CEN-CENELEC's JTC 13 and build on the EN 18031 work, according to
 cyberresilienceact.eu. As of 17 November 2026 none of them is cited under the
 CRA: EN 40000-1-1 and EN 40000-1-2 were ratified on 2 November but are not
 expected to be cited, and EN 40000-1-3, on vulnerability handling, is the part
@@ -275,7 +273,7 @@ primary sources; the rest are secondary.
   EUR-Lex. Articles 14, 69 and 71; Annex I.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 247–254.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 247–254.
 - UK Government,
   [_Regulation (EU) 2022/30 factsheet_](https://www.gov.uk/government/publications/radio-equipment-regulations-2017/regulation-eu-202230-factsheet).
   The application date moved to 1 August 2025.

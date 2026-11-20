@@ -36,8 +36,7 @@ about:
 - Your cloud back end is part of the product when the product cannot perform one of its functions without it and you designed it or had it developed under your responsibility. Third-party SaaS is not, but is handled like a
   component.
 - Updates become a product feature: automatic by default where applicable, with an opt-out,
-  security fixes separate where feasible, free, and each kept available for ten
-  years.
+  security fixes separate where feasible, free, and each kept available for ten years or the rest of the support period if longer.
 - Make evidence a build output. Every release should produce its SBOM, triage
   decisions, test results and an updated risk assessment without anyone
   assembling them by hand.
@@ -113,7 +112,7 @@ A harmonised standard cited in the Official Journal gives a presumption of
 conformity. As of 17 November 2026 none is cited for the CRA. EN 40000-1-1, the
 vocabulary, and EN 40000-1-2, on principles, risk management and lifecycle, were
 ratified on 2 November and published by CEN on 18 November 2026, but are not
-expected to be cited. EN 40000-1-3, on vulnerability handling, went to formal vote on 19 November and is the part expected to give a presumption first. On 10 November the Commission amended the standardisation request M/606 (C(2026) 7861), with new deadlines of 30 November 2026 for horizontal standards and 31 January 2027 for vertical ones. Vertical
+expected to be cited. EN 40000-1-3, on vulnerability handling, is still under approval, due by 30 November 2026, and is the only EN 40000-1 part for which CEN expects a citation in the Official Journal. On 10 November the Commission amended the standardisation request M/606 (C(2026) 7861), with new deadlines of 30 November 2026 for the two horizontal standards due this year (risk-based design and vulnerability handling) and 31 January 2027 for vertical ones; the other horizontal standards remain due by 30 October 2027. Vertical
 standards for important and critical product categories are being written in
 parallel.
 
@@ -129,7 +128,7 @@ For engineering, that means three things:
   over. EN 18031 does not cover Part II, so the SBOM and vulnerability handling
   are new work.
 - **Check the class.** The [classification guide](/blog/compliance/cra-product-classification)
-  covers the test in detail. Important class I products can self-assess only by applying in full harmonised standards, common specifications or an EU cybersecurity certification scheme at level "substantial" (Article 32(2)). None of the three is available yet, so for now they need a notified body, and as of 6 November 2026 none was designated under the CRA.
+  covers the test in detail. Important class I products can self-assess only by applying in full harmonised standards, common specifications or an EU cybersecurity certification scheme at level "substantial" or higher (Article 32(2)). None of the three is available yet, so for now they need a notified body, and as of 6 November 2026, according to secondary sources, NANDO listed none under the CRA.
   The technical descriptions of each category are in Implementing Regulation
   (EU) 2025/2392.
 
@@ -225,7 +224,7 @@ That last point is where VEX statements help. OpenVEX and CycloneDX both record 
 
 ## Updates are a product feature now
 
-Annex I asks, where applicable, for security updates to be installed automatically by default, with a clear way to opt out (Part I, point 2(c)); recital 56 notes this may not suit products used mainly in professional or industrial networks, where the operator controls the timing; delivered securely (Part II, point
+Annex I asks, where applicable, for security updates to be installed automatically by default, with a clear way to opt out (Part I, point 2(c)); recital 56 says this should not apply to products mainly integrated as components or used in professional ICT networks, especially critical and industrial ones, where the operator controls the timing; delivered securely (Part II, point
 7); free of charge and without delay, with advisory messages (Part II, point 8);
 and, where technically feasible, separately from feature updates (Part II, point
 2). Article 13(9) adds that each security update must stay available for at
@@ -240,7 +239,7 @@ Two rules reward a simple update strategy. For software products that come in su
 And a security update is generally not a substantial modification; new
 functionality that changes the product's intended purpose generally is, and the
 test is whether the change alters the cybersecurity risk in a way the risk
-assessment did not consider (points 104 to 107). Even a small "remember me"
+assessment did not consider (points 104 to 109). Even a small "remember me"
 login option can qualify if it adds risk the assessment never covered (example
 44). Put that question in your pull-request and release templates.
 
@@ -322,8 +321,7 @@ If the product includes a high-risk AI system, Article 12 of the CRA lets
 compliance with Annex I count as compliance with the AI Act's cybersecurity
 requirement. After the AI Omnibus, Regulation (EU) 2026/1744, the AI Act's
 rules for high-risk AI inside regulated products apply from 2 August 2028, and
-according to Reed Smith's reading AI embedded in machinery is now handled under
-the Machinery Regulation instead. The
+according to Reed Smith, AI embedded in products under the Machinery Regulation is now excluded from the AI Act's high-risk regime. The
 [deep dive on the AI Act in connected products](/blog/compliance/ai-act-connected-products)
 has the classification test; for most connected products in 2027, the CRA is the
 binding constraint.
@@ -401,7 +399,7 @@ substantial modification, and the size of the change does not decide it.
 Not with a presumption of conformity yet. As of 17 November 2026 no CRA
 harmonised standard is cited in the Official Journal. EN 40000-1-1 and EN
 40000-1-2 were published by CEN in November 2026 but are not expected to be
-cited; EN 40000-1-3, on vulnerability handling, went to formal vote on 19 November 2026 and is expected to be the first.
+cited; EN 40000-1-3, on vulnerability handling, is still under approval, due by 30 November 2026, and is the only part of the series for which CEN expects a citation.
 
 ### Must I report a vulnerability in an open-source component I use?
 
@@ -416,7 +414,7 @@ aware.
 For security updates, Annex I asks that they be installed automatically by
 default where applicable, with a clear and easy way for users to opt out. Where
 technically feasible, security updates must be provided separately from feature
-updates, free of charge, and each must stay available for at least ten years.
+updates, free of charge, and each must stay available for at least ten years after it is issued, or for the rest of the support period if longer.
 
 ## Read next
 
@@ -440,7 +438,7 @@ implementing acts are primary sources; the rest are secondary.
   EUR-Lex. Articles 12, 13, 14, 24; Annexes I, II and VII.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 21, 33–36, 104–109, 129–130,
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 21, 33–36, 104–109, 129–130,
   158–163, 175–208, 218, 222–228.
 - [_Commission Implementing Regulation (EU) 2025/2392_](https://eur-lex.europa.eu/eli/reg_impl/2025/2392/oj),
   EUR-Lex. Technical descriptions of important and critical products.

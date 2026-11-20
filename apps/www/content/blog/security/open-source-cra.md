@@ -68,7 +68,7 @@ commercial activity. For open source, the guidance gives the tests.
 | Situation                                                                                         | Commercial under the CRA?              | Guidance       |
 | ------------------------------------------------------------------------------------------------- | -------------------------------------- | -------------- |
 | Charging for the software itself, for example for pre-compiled binaries                           | Yes: the publisher is a manufacturer   | Points 51–54   |
-| Requiring personal data processing beyond what security, compatibility or interoperability need   | Can be                                 | Points 51–54   |
+| Requiring personal data processing beyond what security, compatibility or interoperability need   | Yes                                    | Points 51–54   |
 | Making access to the software or its updates conditional on payment                               | Yes                                    | Points 55–62   |
 | Selling paid professional services around freely available software                              | Not by itself                          | Points 55–62   |
 | Accepting donations                                                                               | Unlikely, unless they are in practice a condition for access or updates | Points 55–62 |
@@ -283,10 +283,10 @@ primary sources; the rest are secondary.
   EUR-Lex. Articles 13, 14, 24, 25, 32 and 64.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 42–90 (including 53–54, 76, 80–82), 216–228.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 42–90 (including 53–54, 76, 80–82), 216–228.
 - Lewis Silkin,
   [_EU Cyber Resilience Act guidance now out: here's what you need to know_](https://www.lewissilkin.com/insights/2026/07/31/eu-cyber-resilience-act-guidance-now-out-heres-what-you-need-to-know-102nfex),
-  31 July 2026. Draft guidance on open source.
+  31 July 2026. Summary of the guidance as adopted on 27 July 2026, including open source.
 - Linux Foundation,
   [_The CRA readiness reality: what changed and what didn't between 2025 and 2026_](https://www.linuxfoundation.org/blog/the-cra-readiness-reality-what-changed-and-what-didnt-between-2025-and-2026).
 

@@ -51,9 +51,9 @@ relies on to be safe. It applies from 20 January 2027, a date set by a
 corrigendum to the original 14 January, and from that day only machinery that
 meets the Regulation can be placed on the EU market.
 
-That is less than two months away. For makers of connected industrial
+That is two months away. For makers of connected industrial
 equipment, it lands before the CRA applies in full, so it is the first
-cybersecurity requirement many of them will meet in a conformity assessment. The exception is machines with radio modules: those have been under the RED's cybersecurity requirements since 1 August 2025.
+cybersecurity requirement many of them will meet in a conformity assessment. The exception is machines that are, or contain, radio equipment within the scope of the RED delegated act, such as internet-connected radio modules: those have been under the RED's cybersecurity requirements since 1 August 2025.
 
 I build connected products at Ganiga, and our industrial customers are working
 through this now. I am not a lawyer; the sources are at the end.
@@ -91,9 +91,7 @@ A connected machine with software, a network interface and often a cloud
 service is a product with digital elements, so the CRA applies to it as well.
 Both laws apply in full, with separate conformity assessment procedures,
 according to the Commission's CRA FAQ as summarised by ibf solutions. CRA
-recital 53 notes that the CRA's essential requirements can coexist with the
-Machinery Regulation's provisions on protection against corruption and control
-systems.
+recital 53 notes that meeting the CRA's essential requirements can help demonstrate compliance with the Machinery Regulation's provisions on protection against corruption and on control systems (Annex III, sections 1.1.9 and 1.2.1), a synergy the manufacturer has to demonstrate.
 
 ```tikz Where the Machinery Regulation and the CRA overlap.
 % Alt: Two overlapping areas. The Machinery Regulation alone covers cyber risks that create hazards: connections that must not cause hazardous situations, evidence of interventions, and a five-year tracing log of safety software. The CRA alone covers all cybersecurity risks across the lifecycle: confidentiality, vulnerability handling, an SBOM, a support period with free security updates, and reporting of exploited vulnerabilities. The overlap covers integrity of safety software and data, access control on interfaces, and secure updates.
@@ -130,8 +128,7 @@ Two mechanisms help with conformity.
 
 **Cybersecurity certification.** According to the guide, Article 20(9) of
 the Machinery Regulation presumes conformity with sections 1.1.9 and 1.2.1 for
-products covered by a cybersecurity certificate or statement of conformity under
-the Cybersecurity Act, Regulation (EU) 2019/881. On standards, EN 50742:2026 on protection against corruption was published on 20 November 2026. It gives a presumption of conformity only once it is cited in the Official Journal, which had not happened at the time of writing.
+products covered by a cybersecurity certificate or statement of conformity under a scheme adopted under the Cybersecurity Act, Regulation (EU) 2019/881, whose reference is published in the Official Journal, in so far as the certificate covers those requirements. On standards, EN 50742 on protection against corruption was ratified on 13 November 2026 and scheduled for release by CENELEC on 20 November 2026. It gives a presumption of conformity only once it is cited in the Official Journal, which had not happened at the time of writing.
 The IEC 62443 series is the reference most industrial teams already use.
 
 **Certificates under the CRA.** The Commission's CRA guidance of 17 November 2026
@@ -151,17 +148,15 @@ The AI Omnibus, Regulation (EU) 2026/1744, in force since 27 July 2026, went
 further. It moved the Machinery Regulation from Section A to Section B of the AI
 Act's Annex I. Instead of applying the AI Act's high-risk requirements directly,
 the Commission must adopt delegated acts that carry them into the Machinery
-Regulation's own essential requirements, making it the main framework for AI that performs a safety function in a machine. The empowerment sits in the amended Machinery Regulation, and the requirements are to apply from 2 August 2028; until then, AI safety functions follow the Machinery Regulation as it stands. The
+Regulation's own essential requirements, making it the main framework for AI that performs a safety function in a machine. The empowerment sits in the amended Machinery Regulation, and the delegated acts are to apply by 2 August 2028; until then, AI safety functions follow the Machinery Regulation as it stands. The
 [deep dive on the AI Act in connected products](/blog/compliance/ai-act-connected-products)
 covers the rest of the AI Act.
 
 ## The industry's request to postpone
 
-In January 2026, a group of industry associations, including CECIMO and
-CEMA, asked the Commission to postpone the application of the Machinery
+In January 2026, a group of industry associations, including CECE, CECIMO, EGMF and FEM, asked the Commission to postpone the application of the Machinery
 Regulation's cybersecurity provisions and align them with the CRA, citing the
-lack of state-of-the-art standards; an updated position followed in February
-2026. I have not found a decision to postpone, so plan for 20 January 2027 and
+lack of state-of-the-art standards; updated positions followed in February and March 2026, and the request was put on the Machinery Expert Group's agenda for 27 April 2026. I have not found a decision to postpone, so plan for 20 January 2027 and
 check the current position before relying on a delay.
 
 ## What I would do before 20 January 2027
@@ -259,12 +254,18 @@ primary sources; the rest are secondary.
   EUR-Lex. Articles 14, 28, 69; recital 53.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 247–257.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 247–257.
 - ibf solutions,
   [_Guide to application of the Machinery Regulation, Annex III 1.1.9 and 1.2.1: protection against corruption_](https://www.ibf-solutions.com/fileadmin/dateidownloads/draft-mr-protection-aginst-corruption.pdf),
     draft of 18 October 2026; approved by the Machinery Expert Group on 5 November 2026.
 - ibf solutions,
   [_FAQs on the CRA: implications for mechanical engineering companies_](https://www.ibf-solutions.com/en/news-and-knowledge/technical-papers-and-news-on-ce-marking/faqs-on-the-cra-implications-for-mechanical-engineering-companies).
+- ibf solutions,
+  [_New standard prEN 50742: protection against corruption_](https://www.ibf-solutions.com/en/seminars-and-news/news/new-standard-pren-50742-protection-against-corruption).
+  Ratification and release dates of EN 50742.
+- ibf solutions,
+  [_Postponement of Machinery Regulation requirements for cybersecurity and AI_](https://www.ibf-solutions.com/en/news-and-knowledge/technical-papers-and-news-on-ce-marking/postponement-of-mr-requirements-for-cybersecurity-and-ai).
+  Signatories and updated positions.
 - UL,
   [_Navigating the new EU Machinery Regulation (EU) 2023/1230_](https://www.ul.com/resources/navigating-new-eu-machinery-regulation-eu-20231230).
 - KAN,

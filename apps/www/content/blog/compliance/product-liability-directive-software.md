@@ -34,7 +34,7 @@ about:
 - A manufacturer loses the defence that a defect did not exist at sale when the
   defect comes from software updates, or from **missing updates needed for
   safety**, that were within its control.
-- When a product breaches mandatory safety requirements, a court **shall presume** it defective, and courts can order evidence to be disclosed. The CRA's technical
+- When a product breaches mandatory safety requirements meant to protect against the risk of the damage suffered, a court **shall presume** it defective, and courts can order evidence to be disclosed. The CRA's technical
   file becomes potential evidence.
 - **Italy** approved its transposing decree on 28 October 2026. It rewrites
   articles 114 to 127 of the Consumer Code and keeps the development-risk
@@ -93,8 +93,7 @@ and under the new one for units supplied after it.
 Two definitions do most of the work. A **related service** is a digital service
 integrated with or interconnected to a product so that its absence would prevent
 one or more of the product's functions (Article 4(3)), which is close to the
-CRA's idea of remote data processing. A **component** includes software modules
-and libraries integrated into a product (Article 4(4)), and its maker can be
+CRA's idea of remote data processing. A **component** is any item, tangible or intangible, including a related service, integrated into or inter-connected with a product (Article 4(4)); software modules and libraries qualify, and its maker can be
 liable alongside the product's manufacturer.
 
 ## Who is liable
@@ -114,7 +113,7 @@ between them (Articles 12 and 14). Two rules matter in contract negotiations.
 Liability towards the injured person cannot be limited or excluded by contract
 (Article 15). And liability is not reduced because a third party contributed to
 the damage, which includes an attacker who exploited a vulnerability (Article
-13); only the injured person's own fault can reduce it.
+13); only the fault of the injured person, or of someone they are responsible for, can reduce it (Article 13(2)).
 
 For a maker of connected products, the chain usually looks like this: you are
 the manufacturer of the device and of the software you wrote; the suppliers of
@@ -139,7 +138,7 @@ earlier one defective (Article 7(3)), so shipping improvements is not an
 admission.
 
 The damage still has to be of a recognised kind: death or personal injury,
-damage to property not used exclusively for professional purposes, or destruction or corruption of data not used for professional purposes (Article 6). Two exclusions matter for connected products. Damage to the defective product itself is not covered (Article 6(1)(b)), so a device bricked by a bad update is a contract question, not a PLD one. And a data leak, without destruction or corruption, is not PLD damage; the GDPR handles it. A smoke alarm silenced by a faulty update,
+damage to property not used exclusively for professional purposes, or destruction or corruption of data not used for professional purposes (Article 6). Two exclusions matter for connected products. Damage to the defective product itself is not covered (Article 6(1)(b)(i)), so a device bricked by a bad update is a contract question, not a PLD one. And a data leak, without destruction or corruption, is not PLD damage; the GDPR handles it. A smoke alarm silenced by a faulty update,
 a heater that overheats after a malicious command, a hub that wipes a family's
 photos: these are PLD cases. A lost day of production at a business customer is
 not; that stays in contract law.
@@ -157,9 +156,8 @@ manufacturer's control:
 - the **lack of software updates or upgrades necessary to maintain safety**;
 - a substantial modification of the product.
 
-Article 4(5) defines control: it includes software updates and upgrades that the manufacturer supplies itself or that a third party supplies with its authorisation (Article 4(5)(b)). The rule cuts both ways. Where an update needed for safety was supplied but the owner did not install it, recital 51 and Article 13(2) let the manufacturer's liability be reduced or excluded, so keep the proof of when each update was offered. The directive does not itself
-oblige anyone to provide updates. The CRA does: free security updates for a
-support period of at least five years.
+Article 4(5) defines control: the manufacturer performs, authorises or consents to the supply of a component, including software updates or upgrades (Article 4(5)(a)), or has the ability to supply software updates or upgrades itself or via a third party (Article 4(5)(b)). The rule cuts both ways. Where an update needed for safety was supplied but the owner did not install it, recital 51 treats that as beyond the manufacturer's control, so Article 11(2) does not take away the defence, and Article 13(2) lets liability be reduced or disallowed where the injured person's own fault contributed. Keep the proof of when each update was offered. The directive does not itself
+oblige anyone to provide updates. The CRA does: free security updates for a support period of at least five years, or the expected use time if the product is expected to be in use for less (Article 13(8)).
 
 ```tikz Two clocks on the same unit: CRA support and PLD liability.
 % Alt: A timeline for one unit, starting when it is placed on the market. The CRA support period runs for at least five years, during which security updates must be provided free of charge; a missing update in that period is both a CRA breach and, if it causes damage, removes the PLD defence that the defect did not exist at sale. The PLD's ten-year expiry runs from placing on the market, extended to twenty-five years for latent personal injury, and restarts after a substantial modification.

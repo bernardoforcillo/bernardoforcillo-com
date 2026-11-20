@@ -110,9 +110,8 @@ high-risk if it is a safety component of a product, or is itself a product,
 covered by the EU product laws listed in Annex I, and that product has to
 undergo a third-party conformity assessment under those laws. Annex I includes,
 among others, toys, radio equipment, lifts, pressure equipment and medical
-devices. Two conditions must both hold: a safety function, and a third-party
-assessment duty for the product. A vision model that sorts waste by type is
-usually not a safety component; an AI that decides when a machine guard can open is. When it is, you as the product's manufacturer count as the provider of that AI system (Article 25(3)).
+devices. Two conditions must both hold: a safety function, and a third-party assessment duty for the product. The Omnibus narrowed both: AI used only for non-safety aspects such as user assistance, performance optimisation, automation or quality control is not a safety component unless its failure would endanger health and safety (Article 6(1a) and (1b)), and a product that needs third-party assessment only for risks other than health and safety, such as radio spectrum or electromagnetic interference, does not meet the third-party condition (Article 6(1c)). A vision model that sorts waste by type is
+usually not a safety component; an AI that decides when a machine guard can open is. When it is, and the AI is placed on the market or put into service under your name or trademark, you as the product's manufacturer count as the provider of that AI system (Article 25(3)).
 
 **Route two: a listed use.** Annex III lists uses that are high-risk whatever the
 product, such as biometric identification and categorisation, safety components
@@ -128,8 +127,7 @@ May 2026. They are the place to check borderline cases. They read the third-part
 
 ## Machinery: the sectoral switch
 
-The Omnibus made one structural change that matters for industrial makers. The
-Machinery Regulation was listed in Section A of the AI Act's Annex I, which
+The Omnibus made one structural change that matters for industrial makers. The machinery legislation (Directive 2006/42/EC, which the Machinery Regulation replaces) was listed in Section A of the AI Act's Annex I, which
 would have applied the AI Act's high-risk requirements directly to AI-enabled
 machinery. The Omnibus moved it to Section B. As a result, the AI Act's
 requirements for high-risk AI in machinery will be carried into the Machinery
@@ -157,7 +155,7 @@ essential requirements in Annex I, is presumed to meet the AI Act's
 cybersecurity requirement, as demonstrated by the CRA declaration of conformity.
 The conformity assessment follows the AI Act's procedure, and the AI Act's
 notified bodies can also assess the CRA requirements. For such products the CRA
-also allows a single set of technical documentation covering both laws (Article 31(3)). One exception runs the other way (Article 12(3)): an important product under the CRA that is also a high-risk AI system under the AI Act's internal-control procedure goes through the CRA's own conformity assessment for its cybersecurity requirements. The [deep dive on one evidence base](/blog/compliance/one-evidence-base)
+also allows a single set of technical documentation covering both laws (Article 31(3)). One exception runs the other way (Article 12(3)): an important or critical product that would need third-party assessment under the CRA (Article 32(2)(a) or (b), or 32(3)) and that is also a high-risk AI system under the AI Act's internal-control procedure goes through the CRA's own conformity assessment for its cybersecurity requirements. The [deep dive on one evidence base](/blog/compliance/one-evidence-base)
 explains what can and cannot be merged.
 
 Two other parties have duties too. Deployers must use the system according to

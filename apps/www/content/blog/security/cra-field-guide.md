@@ -165,7 +165,7 @@ One point is not settled: whether a missed report can be fined before 11
 December 2027. The CRA Response Center guide argues that it cannot, because
 Article 71(2) applies Article 14 from September 2026 but Article 64, the
 penalties article, only from December 2027. The same guide notes that at least
-one law firm reads it differently. If you have had a formal answer from a
+one law firm reads it differently. The Commission's FAQ (entry 7.1) says the enforcement provisions apply from 11 December 2027. If you have had a formal answer from a
 national authority, I would like to hear it.
 
 ## What a manufacturer must be able to prove
@@ -253,7 +253,7 @@ evidence aligned with what actually shipped is where teams fall behind.
 retention are longer than most tool contracts and many careers in one company.
 Whoever answers the authority in 2034 will not be the person who wrote the file.
 
-The largest survey of small companies points the same way. ENISA surveyed 194 organisations in 31 countries, 174 of them in the CRA's scope, in February and March 2026: 66% had heard of the CRA, incident
+ENISA's survey of small companies points the same way. ENISA surveyed 194 organisations in 31 countries, 135 of them sure they are in the CRA's scope, in February and March 2026: 66% had heard of the CRA, incident
 response and product lifecycle management were the weakest capabilities, and
 more than 70% asked for templates for technical documentation and secure
 development. Company size was the most consistent predictor of maturity.
@@ -302,7 +302,7 @@ Five things are open as of 20 November 2026, and each one changes how much
 work a manufacturer has to do by hand.
 
 **No harmonised standard gives a presumption of conformity yet.** The Commission
-asked for 41 standards under request M/606. As of 17 November 2026 none is cited in the Official Journal. The first two horizontal standards, EN 40000-1-1 and EN 40000-1-2, were ratified on 2 November and published by CEN on 18 November, but are not expected to be cited. The formal vote on EN 40000-1-3, the vulnerability-handling standard, opened on 19 November. On 10 November the Commission amended the request (C(2026) 7861) and moved the delivery deadlines to 30 November 2026 for the horizontal standards and 31 January 2027 for the vertical ones. Until a citation appears, conformity has to be shown by documenting your
+asked for the CRA's harmonised standards under request M/606. As of 17 November 2026 none is cited in the Official Journal. The first two horizontal standards, EN 40000-1-1 and EN 40000-1-2, were ratified on 2 November and published by CEN on 18 November, but are not expected to be cited. EN 40000-1-3, the vulnerability-handling standard, is still under approval, due by 30 November 2026. On 10 November the Commission amended the request (C(2026) 7861) and moved the delivery deadlines to 30 November 2026 for the two horizontal standards due this year (risk-based design and vulnerability handling) and to 31 January 2027 for the vertical ones; the other horizontal standards remain due by 30 October 2027. Until a citation appears, conformity has to be shown by documenting your
 own solutions against Annex I.
 
 **Class I manufacturers may lose the self-assessment route.** Makers of the 19
@@ -347,13 +347,13 @@ IV are short. The technical descriptions are in Implementing Regulation (EU)
 test.
 
 **The laws overlap without merging.** The CRA has a written bridge to the AI Act: a high-risk AI product that
-meets Annex I is deemed to meet the AI Act's cybersecurity requirement. Its link to the GDPR is only procedural: market surveillance authorities cooperate with data protection authorities (Article 52(7)), but meeting Annex I gives no presumption of GDPR compliance. The Commission's CRA FAQ says the two laws do not overlap legally but can complement each other. Evidence can be reused across these files; conclusions
+meets Annex I, Parts I and II, and shows it in the declaration of conformity is deemed to meet the AI Act's cybersecurity requirement. Its link to the GDPR is only procedural: market surveillance authorities cooperate with data protection authorities (Article 52(7)), but meeting Annex I gives no presumption of GDPR compliance. The Commission's CRA FAQ says the two laws do not overlap legally but can complement each other. Evidence can be reused across these files; conclusions
 mostly cannot.
 
 National enforcement is also still being built. The same guide on fines reports
 that Germany's implementing act, which would give the role to the BSI, had not
-been promulgated by mid-October 2026, and that Austria had not yet named its
-market surveillance authority. In Italy, the draft decree implementing the CRA (Atto del Governo 447, sent to Parliament on 9 October 2026) makes ACN, the national cybersecurity agency, both the notifying authority and the market surveillance authority. It has not been published yet.
+been promulgated by early November 2026, although the Bundestag adopted it on 15 October, and that Austria had not yet named its
+market surveillance authority. In Italy, the draft decree implementing the CRA (Atto del Governo 447, sent to Parliament on 9 October 2026) would make ACN, the national cybersecurity agency, both the notifying authority and the market surveillance authority. It has not been published yet.
 
 ## What I would do in the next 90 days
 
@@ -443,7 +443,7 @@ the 72-hour notification and the final report keep their penalties. Medium-sized
 ### Can a manufacturer self-assess CRA conformity?
 
 For default products, yes. Makers of important class I products can self-assess
-only by applying in full harmonised standards, common specifications or an EU certification scheme at level "substantial". As of 20 November 2026 none of these is available, so the alternative is a notified body. Important
+only by applying in full harmonised standards, common specifications or an EU certification scheme at level "substantial" or higher. As of 20 November 2026 none of these is available, so the alternative is a notified body. Important
 class II and critical products need a third party.
 
 ## Read next
@@ -465,7 +465,7 @@ class II and critical products need a third party.
 
 ## References
 
-Checked on 11 November 2026. Apart from the regulation itself and the two ENISA
+Checked on 20 November 2026. Apart from the regulation, the Commission's guidance and FAQ, and the two ENISA
 pages, these are secondary sources; article and annex numbers should be
 confirmed against the official text before you rely on them.
 
@@ -489,8 +489,8 @@ confirmed against the official text before you rely on them.
   [_Cyber Resilience Act implementation: frequently asked questions_](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions),
   version 1.4, 4 September 2026. Risk assessment, relation to the GDPR.
 - CRA Evidence,
-  [_CRA harmonised standards status_](https://craevidence.com/cra-compliance/harmonised-standards-status), as of 6 November 2026.
+  [_CRA harmonised standards status_](https://craevidence.com/cra-compliance/harmonised-standards-status), as of 17 November 2026.
 
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 158, 163, 178–208, 213–214.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 158, 163, 178–208, 213–214.

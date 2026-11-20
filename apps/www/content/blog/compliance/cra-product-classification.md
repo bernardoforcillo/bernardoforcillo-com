@@ -68,7 +68,7 @@ this article.
 
 | Tier                         | Categories                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Important, class I (19)      | Identity and privileged access management systems, including access control readers; browsers; password managers; anti-malware software; VPN products; network management systems; SIEM systems; boot managers; PKI and certificate software; physical and virtual network interfaces; operating systems; routers, modems and switches for internet connection; microprocessors, microcontrollers, ASICs and FPGAs with security-related functionalities; smart home general-purpose virtual assistants; smart home products with security functionalities, such as door locks, security cameras, baby monitors and alarm systems; internet-connected toys with social interaction or location tracking; personal wearables for health monitoring outside the medical device rules, or intended for children |
+| Important, class I (19)      | Identity and privileged access management systems, including access control readers; browsers; password managers; anti-malware software; VPN products; network management systems; SIEM systems; boot managers; PKI and certificate software; physical and virtual network interfaces; operating systems; routers and modems intended for connection to the internet, and switches; microprocessors, microcontrollers, ASICs and FPGAs with security-related functionalities; smart home general-purpose virtual assistants; smart home products with security functionalities, such as door locks, security cameras, baby monitors and alarm systems; internet-connected toys with social interaction or location tracking; personal wearables for health monitoring outside the medical device rules, or intended for children |
 | Important, class II (4)      | Hypervisors and container runtime systems; firewalls and intrusion detection or prevention systems; tamper-resistant microprocessors; tamper-resistant microcontrollers                                                                                                                                                                                                                                                                                                                          |
 | Critical (3)                 | Hardware devices with security boxes; smart meter gateways within smart metering systems and other devices for advanced security purposes, including secure cryptoprocessing; smartcards and similar devices, including secure elements |
 | Default                      | Everything else in scope                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -100,7 +100,7 @@ security camera, or a gateway that is also a router, can match more than one
 description. Herbert Smith Freehills Kramer's advice is to use the technical
 descriptions as the matching exercise rather than the category labels, to
 expect grey areas, and to record what you considered so legal, engineering and
-marketing hold the same position. The Commission's guidance narrows the room for argument: a product has one core functionality (point 144), and describing it in a misleading way to avoid a category is not allowed (point 143). Its example of a router with a built-in firewall comes out as a router, class I, not a firewall.
+marketing hold the same position. The Commission's guidance narrows the room for argument: a product has one core functionality (point 144), and describing it in a misleading way to avoid a category is not allowed (point 143). Its example of a router with a built-in firewall comes out as a router, class I, not a firewall (point 152).
 
 Some illustrations of how the test works in practice. They are readings, not
 legal advice, and the descriptions in Regulation 2025/2392 are what count.
@@ -114,7 +114,7 @@ legal advice, and the descriptions in Regulation 2025/2392 are what count.
 | Smart meter gateway                        | Critical                     | Named in Annex IV                                                                         |
 | Connected thermostat, appliance or bin     | Default, unless a description fits | Its core functionality is heating, washing or collecting waste, not security        |
 | Smartphone                                 | Default                      | Contains an operating system, but is not one                                              |
-| Secure microcontroller sold to other makers | Important or critical        | Class I with security-related functionality; class II if tamper-resistant against moderate attack potential (AVA_VAN.2 or 3); a secure element built to resist high attack potential (AVA_VAN.4 or higher) is critical |
+| Secure microcontroller sold to other makers | Important or critical        | Class I with security-related functionality; class II if tamper-resistant and designed for protection at AVA_VAN level 2 or 3; a secure element designed for protection of at least AVA_VAN.4 is critical |
 
 ## The conformity route that follows
 
@@ -160,11 +160,11 @@ in the [deep dive on open source](/blog/security/open-source-cra).
 
 ## Why class I means a notified body today
 
-The class I shortcut depends on applying in full a harmonised standard, a common specification or a European cybersecurity certification scheme at level "substantial". No common specification exists, and EUCC can serve only once the delegated act under Article 27(9) is adopted, so in practice the question is standards. As of 17
+The class I shortcut depends on applying in full a harmonised standard, a common specification or a European cybersecurity certification scheme at level "substantial" or higher. No common specification exists, and EUCC can serve only once the delegated act under Article 27(9) is adopted, so in practice the question is standards. As of 17
 November 2026, according to the CRA Evidence tracker, none is cited in the
 Official Journal. EN 40000-1-1 and EN 40000-1-2 were ratified on 2 November 2026
 but are not expected to be cited; EN 40000-1-3, on vulnerability handling, is
-the horizontal part expected to give a presumption first; its formal vote opened on 19 November. On 10 November the Commission amended the standardisation request (C(2026) 7861), moving the deadline for vertical standards to 31 January 2027. Vertical standards for
+the horizontal part expected to give a presumption first; it is still under approval, with a delivery deadline of 30 November 2026. On 10 November the Commission amended the standardisation request (C(2026) 7861), moving the deadline for vertical standards to 31 January 2027. Vertical standards for
 specific categories are in progress, for example one for smart meter gateways in
 CEN-CENELEC's JTC 13, and Nemko notes drafts for virtual assistants, browsers and
 network management systems.
@@ -202,7 +202,7 @@ the CRA (points 247 to 257).
 
 ## Critical products and European certification
 
-Annex IV lists three critical categories: hardware devices with security boxes; smart meter gateways and other devices for advanced security purposes, including secure cryptoprocessing, which is where hardware security modules, payment terminals and tachographs can land; and smartcards and similar devices, including secure
+Annex IV lists three critical categories: hardware devices with security boxes, which is where physical payment terminals, hardware security modules and tachographs can land under Regulation 2025/2392; smart meter gateways and other devices for advanced security purposes, including secure cryptoprocessing; and smartcards and similar devices, including secure
 elements. Under Article 8, the Commission may require them to obtain a European
 cybersecurity certificate at assurance level at least "substantial", using a
 scheme under the Cybersecurity Act, such as EUCC, which is based on Common
@@ -223,7 +223,7 @@ descriptions_considered:
   - annex: III, class I, smart home products with security functionalities
     regulation_2025_2392: matches; locking is the core function
     decision: applies
-    - annex: III, class I, identity and access management systems, including access control readers
+  - annex: III, class I, identity and access management systems, including access control readers
     regulation_2025_2392: may also match; it covers readers and access management to physical locations
     decision: considered; same tier and route either way, core functionality recorded as locking (point 144)
 tier: important, class I
@@ -289,12 +289,12 @@ it, and third-party assessment until then.
 
 ### Can important class I products be self-assessed today?
 
-Only by applying a harmonised standard, common specification or European cybersecurity certification scheme in full. As of 20 November 2026 no CRA harmonised standard is cited in the Official Journal, no common specification exists and EUCC awaits its delegated act, so most class I products
+Only by applying a harmonised standard, common specification or European cybersecurity certification scheme in full. As of 17 November 2026 no CRA harmonised standard is cited in the Official Journal, no common specification exists and EUCC awaits its delegated act, so most class I products
 currently need a notified body.
 
 ### Are there notified bodies for the CRA yet?
 
-As of 6 November 2026, the Commission's NANDO database listed no notified body
+As of 6 November 2026, according to secondary sources, the Commission's NANDO database listed no notified body
 under the CRA and 16 notifying authorities. The CRA's rules on notified bodies
 have applied since 11 June 2026.
 
@@ -335,7 +335,7 @@ the Commission's guidance are primary sources; the rest are secondary.
   EUR-Lex, 1 December 2025.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 141–151, 247–257.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 141–152, 247–257.
 - European Commission,
   [_Cyber Resilience Act implementation_](https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation).
   Planned EUCC delegated act.

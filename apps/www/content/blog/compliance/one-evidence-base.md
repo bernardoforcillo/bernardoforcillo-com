@@ -167,12 +167,12 @@ data_flows:
     source: ultrasonic sensor on the device
     destination: manufacturer back end, EU region
     contents: fill percentage, timestamp, device identifier
-        personal_data: false   # true if linked to a named account, e.g. pay-as-you-throw billing
+    personal_data: false   # true if linked to a named account, e.g. pay-as-you-throw billing
     frequency: every 15 minutes
     retention: 24 months
     user_access: export API, JSON and CSV with a published schema
     used_by:
-      cra: Annex I (e) confidentiality, (f) integrity, (g) data minimisation
+      cra: Annex I, Part I, points 2(e) confidentiality, 2(f) integrity, 2(g) data minimisation
       data_act: Article 3 pre-contract information; access by design
       gdpr: input to the customer's records and impact assessment
 ```
@@ -289,7 +289,7 @@ primary sources; the rest are secondary.
   EUR-Lex. Article 3.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 175–177 and section 8.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 175–177 and section 8.
 - European Commission,
   [_Cyber Resilience Act implementation: frequently asked questions_](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions),
     version 1.4, 4 September 2026. Single risk assessment; relation to the GDPR.

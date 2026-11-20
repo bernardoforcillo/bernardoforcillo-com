@@ -162,7 +162,7 @@ release checklist:
 
 For operations, three things follow. **The release calendar needs a
 security-only lane** that can ship on short notice without waiting for the next
-feature release. **Updates have to reach the field**: where applicable, Annex I asks for automatic security updates by default with an easy opt-out (recital 56 says this may not fit products meant mainly for professional or industrial networks), which assumes devices are connected and
+feature release. **Updates have to reach the field**: where applicable, Annex I asks for automatic security updates by default with an easy opt-out (recital 56 says this should not apply to products mainly integrated as components or used in professional ICT networks, especially critical and industrial ones), which assumes devices are connected and
 that someone measures how many actually install. And **every supported software
 baseline multiplies the work**. For software products that come in substantially modified versions, the CRA lets manufacturers limit the duty to fix vulnerabilities to the latest version, provided users can move to it at no extra cost (Article 13(10); guidance points 129 and 130). Reporting and the other vulnerability-handling duties stay for every version in support. That makes a small number of baselines an
 operational goal, not only an engineering preference.
@@ -172,7 +172,7 @@ modification makes it a new product for CRA purposes. The guidance's test is
 whether a change alters the cybersecurity risk in a way the risk assessment did
 not consider (point 104); size alone does not decide it (point 107). Security
 updates are generally not substantial modifications; a new function that
-changes the product's intended purpose generally is (point 108). Put that
+changes the product's intended purpose generally is (points 105 and 108 to 109). Put that
 question in the release checklist, with engineering and product answering it.
 
 ## Clock three: ten-year records
@@ -230,7 +230,7 @@ from that date must comply, whatever the launch date of the model.
 That turns a regulatory date into a sales-and-operations planning decision,
 product by product: make the product compliant before the first unit ships on
 or after the date; supply the remaining stock of the old version to
-distributors and customers before it and stop production; or discontinue it in the EU. Under the Blue Guide, a unit is placed on the market only when it is finished and an offer or agreement transfers it to a distributor or customer. A transfer on paper while the goods stay in your warehouse, or a move into your own subsidiary, invites a finding that you circumvented the date. Units already with distributors can still be sold after the date, since
+distributors and customers before it and stop production; or discontinue it in the EU. Under the Blue Guide, a unit is placed on the market only when it is finished and an offer or agreement transfers it to a distributor or customer. The Blue Guide does not require physical handover, but in my reading a transfer inside your own group, or a sale with no commercial substance while the goods stay in your warehouse, invites a finding that you circumvented the date. Units already with distributors can still be sold after the date, since
 they were placed on the market before it. The [guide to CRA costs](/blog/compliance/cra-costs)
 covers the cost side of each option.
 
@@ -255,7 +255,7 @@ for different products.
 | ------------------------------------------------------------------------ | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Design or manufacture a product, or have it made, and sell it under your name | Manufacturer                 | Articles 13 and 14: requirements, conformity assessment, CE marking, support period, reporting                  |
 | Act in the EU on behalf of a manufacturer, under a written mandate       | Authorised representative    | The tasks in the mandate (Article 18)                                                                           |
-| Place a product from a non-EU manufacturer on the EU market              | Importer                     | Article 19: check conformity assessment, documentation, CE marking and instructions; add your contact details; keep the declaration ten years; pass on vulnerabilities; corrective action |
+| Place a product from a non-EU manufacturer on the EU market              | Importer                     | Article 19: check conformity assessment, documentation, CE marking and instructions; add your contact details; keep the declaration ten years or the support period if longer; pass on vulnerabilities; corrective action |
 | Make a product available further down the chain                          | Distributor                  | Article 20: due care; check the CE marking and that the manufacturer and importer did their part; act on non-conformity |
 | Sell a product under your own name or trademark, or substantially modify it | Manufacturer, by Articles 21 and 22 | All manufacturer duties, for the modified part or the whole product                                             |
 
@@ -298,7 +298,7 @@ What I would add to component and module contracts now:
 
 Most products follow self-assessment; the
 [classification guide](/blog/compliance/cra-product-classification) explains how
-to tell. Important class I products can self-assess only by applying in full harmonised standards, common specifications or an EU cybersecurity certification scheme at level "substantial"; class II and critical products need a third party. As of 20 November 2026 none of those three is available for the CRA, so class I in practice means a notified body too.
+to tell. Important class I products can self-assess only by applying in full harmonised standards, common specifications or an EU cybersecurity certification scheme at level "substantial" or higher; class II and critical products need a third party. As of 20 November 2026 none of those three is available for the CRA, so class I in practice means a notified body too.
 
 As of 6 November 2026, according to secondary sources, the Commission's NANDO database listed no notified body under the CRA and 16 notifying authorities; check NANDO directly before you plan. In Italy, the draft decree implementing the CRA (Atto del Governo 447, sent to Parliament on 9 October 2026) would make ACN both the notifying authority and the market surveillance authority. For any product that needs
 a third party, treat the assessment as a capacity booking with an uncertain
@@ -361,7 +361,7 @@ supplied them and whom they supplied for ten years.
 
 Importers must check that the conformity assessment was carried out, that the
 documentation, CE marking and instructions exist, add their own contact details,
-keep the declaration of conformity for ten years, pass vulnerabilities to the
+keep the declaration of conformity for ten years or the support period if longer, pass vulnerabilities to the
 manufacturer and take corrective action. Distributors must act with due care,
 check the CE marking and that the manufacturer and importer met their duties, and
 act on non-conformity.
@@ -420,7 +420,7 @@ primary sources; the rest are secondary.
   EUR-Lex. Articles 13, 14, 18–23, 33, 53, 69; Annex I.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 11, 14, 25, 96–109, 129–130,
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 11, 14, 25, 96–109, 129–130,
   200–208, 210–221.
 - ENISA,
   [_Single Reporting Platform: frequently asked questions_](https://www.enisa.europa.eu/topics/product-security/single-reporting-platform-srp/frequently-asked-questions).

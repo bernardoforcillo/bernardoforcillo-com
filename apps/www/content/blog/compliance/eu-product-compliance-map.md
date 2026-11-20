@@ -50,7 +50,7 @@ _This is the map for a series of deep dives on EU product compliance for
 connected-product makers, one per leadership role and one per law that meets
 the CRA. Every article links back here._
 
-## Why one map instead of seven checklists
+## Why one map instead of eight checklists
 
 A connected product is a piece of hardware, its firmware, a mobile app and a
 cloud back end. Until recently, the EU regulated it mostly as hardware: safety,
@@ -111,8 +111,7 @@ most of these laws, that happens unit by unit, not once per model.
 Two details in that table are easy to miss.
 
 **The PLD date moved by a day.** The directive originally said it applied to
-products placed on the market after 9 December 2026. Reed Smith reports that a
-corrigendum corrected this to after 8 December 2026; the transposition deadline
+products placed on the market after 9 December 2026. A corrigendum published in the Official Journal on 7 May 2026 changed this to after 8 December 2026; the transposition deadline
 is still 9 December 2026. In practice: anything you ship from 9 December is
 under the new regime.
 
@@ -198,7 +197,7 @@ These bridges decide where one piece of work can count twice.
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | AI Act                 | Article 12 CRA: a high-risk AI product that meets Annex I is presumed to meet the AI Act's cybersecurity requirement                                                                       |
 | RED delegated act      | Delegated Regulation (EU) 2026/339 repeals the RED cybersecurity act from 11 December 2027, when the CRA takes over; the EN 40000 standards build on the EN 18031 work                     |
-| Machinery Regulation   | CRA recital 53: the CRA's requirements can coexist with the Machinery Regulation's protection against corruption and reliability of control systems                                         |
+| Machinery Regulation   | CRA recital 53: both laws apply, but meeting the CRA can help demonstrate compliance with the Machinery Regulation's protection against corruption and safety and reliability of control systems (Annex III, sections 1.1.9 and 1.2.1); the manufacturer has to show the synergy                                         |
 | Product Liability      | Under the PLD, safety-relevant cybersecurity requirements are a factor in judging defectiveness, and breaching mandatory safety requirements lets a court presume a defect                 |
 | NIS2                   | The CRA's support period, vulnerability contact, SBOM and declaration of conformity are exactly what NIS2 customers ask suppliers for; one incident can trigger a report under both          |
 | Data Act               | The Data Act asks for data to be accessible "securely"; the access path is attack surface that the CRA's Annex I applies to                                                                |
@@ -254,7 +253,7 @@ Four things will still change the amount of work in the next twelve months.
 **CRA harmonised standards.** As of 17 November 2026, no CRA harmonised
 standard is cited in the Official Journal, according to the CRA Evidence
 tracker. EN 40000-1-1 and EN 40000-1-2 were ratified on 2 November 2026 but are
-not expected to be cited; EN 40000-1-3, on vulnerability handling, is the part expected to give a presumption of conformity first; its formal vote opened on 19 November. On 10 November the Commission amended the standardisation request (C(2026) 7861), moving the deadlines to 30 November 2026 for horizontal standards and 31 January 2027 for vertical ones.
+not expected to be cited; EN 40000-1-3, on vulnerability handling, is the part expected to give a presumption of conformity first; it was still under approval as of 17 November, with a delivery deadline of 30 November 2026. On 10 November the Commission amended the standardisation request (C(2026) 7861), moving the deadlines to 30 November 2026 for the two horizontal standards due this year (risk-based design and vulnerability handling) and to 31 January 2027 for the vertical ones; the other horizontal standards remain due by 30 October 2027.
 
 **CRA notified bodies.** The CRA's rules on notified bodies (Chapter IV) have applied since 11 June 2026, so bodies can be notified at any time. As of 6 November 2026, secondary sources reported that the Commission's NANDO database listed no notified body under the CRA, and 16 notifying authorities; check NANDO directly before you plan. For
 products that need third-party assessment, that is a capacity question for
@@ -336,8 +335,7 @@ day must comply.
 
 ### Does the new Product Liability Directive apply to software?
 
-Yes. Directive (EU) 2024/2853 treats software, digital manufacturing files and
-related digital services as products. It applies to products placed on the
+Yes. Directive (EU) 2024/2853 treats software and digital manufacturing files as products, and related digital services, such as a cloud back end, as components. It applies to products placed on the
 market or put into service after 8 December 2026. Free and open-source software
 developed or supplied outside a commercial activity is excluded.
 
@@ -356,7 +354,7 @@ clauses to contracts.
 
 ### Can one risk assessment cover the CRA, the AI Act and the GDPR?
 
-It can, according to the Commission's CRA FAQ, as long as compliance with each law can still be demonstrated. The laws have different triggers, owners and evidence standards, so in practice what is shared is the evidence: one system model and one evidence base, with a separate demonstration for each law. The same FAQ says the CRA and the GDPR do not overlap legally, though they may complement each other.
+For the product laws, yes, according to the Commission's CRA FAQ, as long as compliance with each law can still be demonstrated. The GDPR is different: the same FAQ says it does not overlap legally with the CRA, though the two may complement each other, and the impact assessment usually belongs to your customer as controller. In practice, share the evidence: one system model and one evidence base, with a separate demonstration for each law.
 
 ### Who enforces the Cyber Resilience Act in Italy?
 
@@ -374,9 +372,9 @@ secondary and are cited for dates and national status.
   EUR-Lex. Articles 12, 13, 14, 52(7), 69, 71; Annex I; recital 53.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  Adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026.
 - [_Directive (EU) 2024/2853 on liability for defective products_](https://eur-lex.europa.eu/eli/dir/2024/2853/oj),
-  EUR-Lex.
+  EUR-Lex. Article 2(1) as corrected by the [corrigendum of 7 May 2026](https://eur-lex.europa.eu/eli/dir/2024/2853/corrigendum/2026-05-07/oj).
 - [_Regulation (EU) 2023/2854, Data Act_](https://eur-lex.europa.eu/eli/reg/2023/2854/oj),
   EUR-Lex. Articles 3 and 50.
 - [_Commission Delegated Regulation (EU) 2026/339 repealing Delegated Regulation (EU) 2022/30_](https://eur-lex.europa.eu/eli/reg_del/2026/339/oj/eng),
