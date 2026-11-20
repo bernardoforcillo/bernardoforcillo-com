@@ -1,6 +1,6 @@
 ---
 title: 'What the Cyber Resilience Act costs: budget, fines and liability'
-seoTitle: 'Cyber Resilience Act costs: budget, fines and liability'
+seoTitle: 'CRA compliance cost: budget, fines, liability'
 description: 'What CRA compliance costs per product, the fines and withdrawal risk, five years of support as a priced promise, liability from December 2026 and EU funding.'
 date: 2026-11-20
 tags:

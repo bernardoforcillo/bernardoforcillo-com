@@ -1,6 +1,6 @@
 ---
 title: 'EU product compliance 2026–2028: the map for connected-product makers'
-seoTitle: 'EU product compliance 2026–2028: CRA, PLD, Data Act, AI Act'
+seoTitle: 'EU product compliance map 2026–2028'
 description: 'Eight EU laws now reach connected hardware and software. When each applies, who owns it and how the CRA links them, with dates checked on 20 November 2026.'
 date: 2026-11-20
 tags:

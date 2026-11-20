@@ -1,6 +1,6 @@
 ---
 title: 'Running the Cyber Resilience Act: an operating model'
-seoTitle: 'Cyber Resilience Act operations: reporting, records and suppliers'
+seoTitle: 'CRA compliance operations: reporting and records'
 description: 'The CRA as operations: a 24-hour reporting rota, releases, ten-year records, suppliers, distributors, spare parts and a unit-by-unit plan for December 2027.'
 date: 2026-11-20
 tags:

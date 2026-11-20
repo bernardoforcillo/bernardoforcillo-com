@@ -1,7 +1,7 @@
 ---
 title: 'Cybersecurity in the Machinery Regulation: protection against corruption from January 2027'
-seoTitle: 'Machinery Regulation cybersecurity: protection against corruption'
-description: 'From 20 January 2027 machinery must resist corruption and log interventions. What Annex III 1.1.9 and 1.2.1 require, how they meet the CRA, and the AI switch.'
+seoTitle: 'Machinery Regulation cybersecurity requirements'
+description: 'The Machinery Regulation applies from 20 January 2027: machines must resist corruption and log interventions. What 1.1.9 and 1.2.1 require, and the CRA overlap.'
 date: 2026-11-20
 tags:
   - machinery regulation

@@ -1,7 +1,7 @@
 ---
 title: 'Engineering for the Cyber Resilience Act: Annex I, SBOMs and an evidence pipeline'
-seoTitle: 'Cyber Resilience Act engineering: Annex I, SBOM and evidence'
-description: 'Annex I as engineering requirements, a CRA-grade SBOM, update architecture, what the cloud back end means for scope, and the technical file as a build output.'
+seoTitle: 'CRA engineering: Annex I requirements and SBOM'
+description: 'Cyber Resilience Act engineering: Annex I as requirements, a CRA-grade SBOM, updates, the cloud back end in scope and the technical file as a build output.'
 date: 2026-11-20
 tags:
   - cyber resilience act

@@ -1,6 +1,6 @@
 ---
 title: 'Software is now a product: the new EU Product Liability Directive and connected devices'
-seoTitle: 'New Product Liability Directive: software liability from Dec 2026'
+seoTitle: 'New Product Liability Directive and software'
 description: 'From 9 December 2026 software is a product under strict EU liability. What changes for makers of connected products, how it ties to the CRA, and Italy''s decree.'
 date: 2026-11-20
 tags:

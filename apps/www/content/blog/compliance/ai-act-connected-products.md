@@ -1,7 +1,7 @@
 ---
 title: 'The AI Act in connected products: what applies, and when, after the AI Omnibus'
-seoTitle: 'AI Act for connected products after the AI Omnibus'
-description: 'Most AI in connected devices is not high-risk, but some is. The dates after Regulation 2026/1744, the machinery switch, transparency duties and the CRA bridge.'
+seoTitle: 'AI Act for connected products: high-risk rules'
+description: 'Under the AI Act, most AI in connected devices is not high-risk, but some is. Dates after the AI Omnibus, the machinery switch, transparency and the CRA link.'
 date: 2026-11-20
 tags:
   - ai act

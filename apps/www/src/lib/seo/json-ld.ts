@@ -155,6 +155,8 @@ export type ArticleJsonLdInput = {
   citations?: { name: string; url: string }[];
   /** Entities the post is about; `url` is an authoritative page for each. */
   about?: { name: string; url: string }[];
+  /** The share image, root-relative; Google's Article rich results use it. */
+  image?: { path: string; width: number; height: number };
 };
 
 export const buildBlogPostingJsonLd = ({
@@ -169,6 +171,7 @@ export const buildBlogPostingJsonLd = ({
   readingMinutes,
   citations,
   about,
+  image,
 }: ArticleJsonLdInput) => ({
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -181,6 +184,14 @@ export const buildBlogPostingJsonLd = ({
   url: absoluteUrl(path),
   inLanguage: 'en',
   isPartOf: { '@type': 'WebSite', '@id': `${SITE_URL}/#website` },
+  image: image
+    ? {
+        '@type': 'ImageObject',
+        url: absoluteUrl(image.path),
+        width: image.width,
+        height: image.height,
+      }
+    : undefined,
   author: PERSON_NODE,
   publisher: PERSON_NODE,
   keywords: keywords?.join(','),

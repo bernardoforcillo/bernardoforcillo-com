@@ -1,6 +1,6 @@
 ---
 title: 'The CRA is already live: a field guide to product security evidence'
-seoTitle: 'Cyber Resilience Act (CRA) field guide: reporting and evidence'
+seoTitle: 'Cyber Resilience Act guide: reporting, evidence'
 description: "The CRA's 24-hour reporting duty has applied since 11 September 2026. What evidence EU manufacturers must keep, what is unsettled, and a 90-day plan."
 date: 2026-11-11
 updated: 2026-11-20

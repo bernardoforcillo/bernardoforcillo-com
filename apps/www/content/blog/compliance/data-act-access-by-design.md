@@ -1,6 +1,6 @@
 ---
 title: 'Data Act access by design meets the CRA: one data interface, two laws'
-seoTitle: 'Data Act access by design and the CRA: a guide for makers'
+seoTitle: 'Data Act access by design for connected products'
 description: 'New connected products must now give users their data by design. What Data Act Article 3 asks, who is exempt, and how to make the access path CRA-secure.'
 date: 2026-11-20
 tags:

@@ -1,6 +1,6 @@
 ---
 title: 'NIS2 from the supplier''s side: questionnaires, contract clauses and CRA evidence'
-seoTitle: 'NIS2 supplier requirements: answering customers with CRA evidence'
+seoTitle: 'NIS2 supplier requirements for product makers'
 description: 'NIS2 binds your customers, and often you too. What supplier questionnaires and clauses ask, Italy''s ACN rules, and how CRA evidence answers them.'
 date: 2026-11-20
 tags:

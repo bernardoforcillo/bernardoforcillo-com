@@ -1,6 +1,6 @@
 ---
 title: 'From RED and EN 18031 to the CRA: what carries over for radio products'
-seoTitle: 'From RED and EN 18031 to the CRA: what carries over'
+seoTitle: 'From RED and EN 18031 to the CRA'
 description: 'Radio products have met EN 18031 since August 2025; the CRA takes over on 11 December 2027. What carries over, what is new, and how old certificates count.'
 date: 2026-11-20
 tags:

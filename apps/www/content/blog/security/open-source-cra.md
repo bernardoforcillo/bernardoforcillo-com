@@ -1,6 +1,6 @@
 ---
 title: 'Open source under the CRA: maintainers, stewards and the companies that ship it'
-seoTitle: 'Open source and the Cyber Resilience Act: stewards and integrators'
+seoTitle: 'Open source and the Cyber Resilience Act'
 description: 'When open source counts as placed on the market, what stewards must do, and what manufacturers owe the components they ship, per the November 2026 guidance.'
 date: 2026-11-20
 tags:

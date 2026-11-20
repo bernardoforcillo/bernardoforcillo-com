@@ -1,6 +1,6 @@
 ---
 title: 'Important or critical? Classifying products under the CRA, and who has to check them'
-seoTitle: 'CRA product classification: important, critical and notified bodies'
+seoTitle: 'CRA product classification and notified bodies'
 description: 'How to classify a product under the CRA by core functionality, which conformity route follows, and why class I means a notified body until standards are cited.'
 date: 2026-11-20
 tags:

@@ -1,7 +1,7 @@
 ---
 title: 'One product, many laws: one evidence base for the CRA, AI Act, Data Act and GDPR'
-seoTitle: 'One evidence base for the CRA, AI Act, Data Act and GDPR'
-description: 'A connected product can need five compliance files with different owners. What the law lets you merge, what it does not, and how to build one foundation.'
+seoTitle: 'One evidence base for the CRA, AI Act and GDPR'
+description: 'CRA, AI Act, Data Act and GDPR files have different owners. What EU law lets you merge, what it does not, and how to build one evidence base for a product.'
 date: 2026-11-20
 tags:
   - cyber resilience act
