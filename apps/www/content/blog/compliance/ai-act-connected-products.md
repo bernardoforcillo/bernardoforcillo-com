@@ -184,7 +184,7 @@ software in the product. The model file belongs in the component inventory, the
 inference service in the cloud back end is part of the product if you designed it, or had it developed, and the device needs it for one of its functions, and model updates go through the same release and update process as
 firmware. CycloneDX includes a machine-learning bill of materials format that
 can record model provenance alongside the SBOM; the
-[engineering guide for CTOs](/blog/security/cra-for-ctos) covers the rest.
+[CRA engineering guide](/blog/security/cra-engineering) covers the rest.
 
 ## Italy
 
@@ -271,7 +271,7 @@ AgID as notifying authority, with financial supervisors responsible for high-ris
   for merging the AI Act and CRA files.
 - [Cybersecurity in the Machinery Regulation](/blog/compliance/machinery-regulation-cybersecurity),
   where AI in machinery is now regulated.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for models as
+- [Engineering for the CRA](/blog/security/cra-engineering), for models as
   components and the update pipeline.
 
 ## References

@@ -1,12 +1,12 @@
 ---
-title: 'Running the Cyber Resilience Act: an operating model for COOs'
-seoTitle: 'Cyber Resilience Act operating model: a guide for COOs'
+title: 'Running the Cyber Resilience Act: an operating model'
+seoTitle: 'Cyber Resilience Act operations: reporting, records and suppliers'
 description: 'The CRA as operations: a 24-hour reporting rota, releases, ten-year records, suppliers, distributors, spare parts and a unit-by-unit plan for December 2027.'
 date: 2026-11-20
 tags:
   - cyber resilience act
   - cra
-  - coo
+  - compliance operations
   - operations
   - supply chain
   - importers and distributors
@@ -57,7 +57,7 @@ checking what suppliers send: each of these sits between support, engineering,
 sales, purchasing and legal, which is where things fall through.
 
 That makes the CRA an operating-model question as much as a security one. The
-CISO owns the security decisions; the [field guide for CISOs](/blog/security/cra-field-guide)
+CISO owns the security decisions; the [CRA field guide](/blog/security/cra-field-guide)
 covers them. Someone still has to own the machinery that makes those decisions
 happen on time, every time, for years. In most companies of 20 to 250 people,
 that is the COO.
@@ -231,7 +231,7 @@ That turns a regulatory date into a sales-and-operations planning decision,
 product by product: make the product compliant before the first unit ships on
 or after the date; supply the remaining stock of the old version to
 distributors and customers before it and stop production; or discontinue it in the EU. Under the Blue Guide, a unit is placed on the market only when it is finished and an offer or agreement transfers it to a distributor or customer. A transfer on paper while the goods stay in your warehouse, or a move into your own subsidiary, invites a finding that you circumvented the date. Units already with distributors can still be sold after the date, since
-they were placed on the market before it. The [guide for CFOs](/blog/compliance/cra-for-cfos)
+they were placed on the market before it. The [guide to CRA costs](/blog/compliance/cra-costs)
 covers the cost side of each option.
 
 Software follows the same logic with one twist. According to the guidance, all
@@ -400,11 +400,11 @@ first limited to affected customers.
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [The CRA field guide for CISOs](/blog/security/cra-field-guide), on the
+- [The CRA field guide](/blog/security/cra-field-guide), on the
   reporting duty and the evidence behind it.
-- [What the CRA costs: a guide for CFOs](/blog/compliance/cra-for-cfos), for
+- [What the CRA costs](/blog/compliance/cra-costs), for
   the cost of each transition option.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for the SBOM and
+- [Engineering for the CRA](/blog/security/cra-engineering), for the SBOM and
   update architecture behind clock two.
 - [NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements),
   for what your own customers will ask you.

@@ -1,12 +1,12 @@
 ---
 title: 'Engineering for the Cyber Resilience Act: Annex I, SBOMs and an evidence pipeline'
-seoTitle: 'Cyber Resilience Act for CTOs: Annex I, SBOM and evidence'
+seoTitle: 'Cyber Resilience Act engineering: Annex I, SBOM and evidence'
 description: 'Annex I as engineering requirements, a CRA-grade SBOM, update architecture, what the cloud back end means for scope, and the technical file as a build output.'
 date: 2026-11-20
 tags:
   - cyber resilience act
   - cra
-  - cto
+  - security engineering
   - annex i
   - sbom
   - vex
@@ -55,7 +55,7 @@ release, and a documentation duty that lasts as long as the product is
 supported.
 
 The reporting duty has applied since 11 September 2026 and is covered in the
-[field guide for CISOs](/blog/security/cra-field-guide). Everything in this
+[CRA field guide](/blog/security/cra-field-guide). Everything in this
 article applies from 11 December 2027, to every unit placed on the market from
 that day. That leaves about one product cycle to change how products are built,
 which is why the work starts now.
@@ -422,13 +422,13 @@ updates, free of charge, and each must stay available for at least ten years.
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [The CRA field guide for CISOs](/blog/security/cra-field-guide), on reporting
+- [The CRA field guide](/blog/security/cra-field-guide), on reporting
   and the chain from threat to proof.
 - [Data Act access by design meets the CRA](/blog/compliance/data-act-access-by-design),
   for the data interface your product now needs.
-- [Running the CRA: an operating model for COOs](/blog/compliance/cra-for-coos),
+- [Running the CRA: an operating model](/blog/compliance/cra-operations),
   for the release and records clocks.
-- [What the CRA costs: a guide for CFOs](/blog/compliance/cra-for-cfos), for
+- [What the CRA costs](/blog/compliance/cra-costs), for
   why secure development is the largest budget line.
 
 ## References

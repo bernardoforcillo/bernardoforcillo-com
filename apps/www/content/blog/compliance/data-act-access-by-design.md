@@ -194,7 +194,7 @@ feature with one owner:
    ownership and resale, which is when a previous owner's access must end.
 4. **Third-party sharing through scoped, revocable grants**, logged.
 5. **The interface in the threat model, the SBOM and the release process**, like
-   any other part of the product. The [engineering guide for CTOs](/blog/security/cra-for-ctos)
+   any other part of the product. The [CRA engineering guide](/blog/security/cra-engineering)
    covers how to make that evidence a build output.
 6. **Tests for the qualifiers**: can a user get all their data, free, in the
    documented format, without contacting support?
@@ -280,7 +280,7 @@ face those countries' authorities.
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for the threat model,
+- [Engineering for the CRA](/blog/security/cra-engineering), for the threat model,
   SBOM and evidence pipeline the data path joins.
 - [NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements),
   for what business customers will ask about the same product.

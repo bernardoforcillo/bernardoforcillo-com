@@ -181,7 +181,7 @@ check the current position before relying on a delay.
 7. **Check self-evolving safety functions** for third-party assessment, and
    watch for the AI delegated acts.
 
-The [operating model for COOs](/blog/compliance/cra-for-coos) covers the CRA's
+The [CRA operating model](/blog/compliance/cra-operations) covers the CRA's
 unit-by-unit transition, which works the same way as the Machinery Regulation's.
 
 ## Why I am writing this

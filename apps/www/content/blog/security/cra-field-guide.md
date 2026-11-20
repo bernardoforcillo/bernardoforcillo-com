@@ -1,6 +1,6 @@
 ---
 title: 'The CRA is already live: a field guide to product security evidence'
-seoTitle: 'Cyber Resilience Act (CRA) field guide for CISOs'
+seoTitle: 'Cyber Resilience Act (CRA) field guide: reporting and evidence'
 description: "The CRA's 24-hour reporting duty has applied since 11 September 2026. What evidence EU manufacturers must keep, what is unsettled, and a 90-day plan."
 date: 2026-11-11
 updated: 2026-11-20
@@ -10,7 +10,7 @@ tags:
   - product security
   - vulnerability reporting
   - sbom
-  - ciso
+  - security evidence
   - compliance
 about:
   - name: Cyber Resilience Act, Regulation (EU) 2024/2847
@@ -343,7 +343,7 @@ IV are short. The technical descriptions are in Implementing Regulation (EU)
 2025/2392, and a wrong class means a wrong conformity route.
 
 **Cloud back ends sit on a boundary.** Remote data processing is part of the product only when two conditions hold: the manufacturer designs and develops it, or has that done under its responsibility, and without it the product could not perform one of its functions. Third-party SaaS, websites and downstream business systems generally stay outside. The Commission's guidance, adopted in July 2026 and published in the Official Journal on 17 November 2026 (C/2026/6013), spends a whole section on this line (points 178 to 208), which tells you how many products sit near it. The
-[engineering guide for CTOs](/blog/security/cra-for-ctos) walks through its
+[CRA engineering guide](/blog/security/cra-engineering) walks through its
 test.
 
 **The laws overlap without merging.** The CRA has a written bridge to the AI Act: a high-risk AI product that
@@ -450,11 +450,11 @@ class II and critical products need a third party.
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [Engineering for the CRA: a guide for CTOs](/blog/security/cra-for-ctos),
+- [Engineering for the CRA](/blog/security/cra-engineering),
   Annex I as requirements, the SBOM and the evidence pipeline.
-- [Running the CRA: an operating model for COOs](/blog/compliance/cra-for-coos),
+- [Running the CRA: an operating model](/blog/compliance/cra-operations),
   the reporting rota, records and the unit-by-unit transition.
-- [What the CRA costs: a guide for CFOs](/blog/compliance/cra-for-cfos),
+- [What the CRA costs](/blog/compliance/cra-costs),
   budgets, fines and the support period.
 - [NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements),
   what customers ask and how CRA evidence answers.

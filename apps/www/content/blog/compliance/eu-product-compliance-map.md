@@ -146,8 +146,8 @@ the Machinery Regulation, the AI Act and the GPSR decide whether a product may
 be placed on the EU market and, for most of them, whether it carries a CE
 marking. They are enforced by market surveillance authorities, which can fine,
 order corrective action, withdraw or recall. For the CRA, start with the
-[field guide for CISOs](/blog/security/cra-field-guide), the
-[engineering guide for CTOs](/blog/security/cra-for-ctos) and
+[CRA field guide](/blog/security/cra-field-guide), the
+[CRA engineering guide](/blog/security/cra-engineering) and
 [how to classify a product](/blog/compliance/cra-product-classification). Radio
 products have [their own transition from the RED](/blog/security/red-en-18031-to-cra),
 machinery [its own cybersecurity rules](/blog/compliance/machinery-regulation-cybersecurity),
@@ -175,10 +175,10 @@ deep dives explain each line.
 
 | Duty                                                             | Law                         | Natural owner                    | Deep dive                                                                    |
 | ---------------------------------------------------------------- | --------------------------- | -------------------------------- | ---------------------------------------------------------------------------- |
-| Deciding when you are "aware" of an exploited vulnerability     | CRA, Article 14             | CISO or product security lead    | [Field guide for CISOs](/blog/security/cra-field-guide)                      |
-| The reporting rota, supplier evidence, distributors, records    | CRA, Articles 13, 14, 19–23 | COO                              | [Operating model for COOs](/blog/compliance/cra-for-coos)                    |
-| Annex I design, SBOM, update architecture, technical file       | CRA, Annex I, Article 31    | CTO                              | [Engineering guide for CTOs](/blog/security/cra-for-ctos)                    |
-| Budget, support-period pricing, fines and liability exposure    | CRA, Article 64; PLD        | CFO                              | [What the CRA costs, for CFOs](/blog/compliance/cra-for-cfos)                |
+| Deciding when you are "aware" of an exploited vulnerability     | CRA, Article 14             | CISO or product security lead    | [CRA field guide](/blog/security/cra-field-guide)                      |
+| The reporting rota, supplier evidence, distributors, records    | CRA, Articles 13, 14, 19–23 | COO                              | [Running the CRA](/blog/compliance/cra-operations)                    |
+| Annex I design, SBOM, update architecture, technical file       | CRA, Annex I, Article 31    | CTO                              | [Engineering for the CRA](/blog/security/cra-engineering)                    |
+| Budget, support-period pricing, fines and liability exposure    | CRA, Article 64; PLD        | CFO                              | [What the CRA costs](/blog/compliance/cra-costs)                |
 | Liability for defective software and missing updates            | PLD                         | CFO with legal counsel           | [Software is now a product](/blog/compliance/product-liability-directive-software) |
 | User access to product data, by design                          | Data Act, Article 3         | CTO with legal or the DPO        | [Data Act meets the CRA](/blog/compliance/data-act-access-by-design)         |
 | Supplier questionnaires and security clauses from customers     | NIS2, Article 21            | CISO with sales operations       | [NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements) |
@@ -276,14 +276,14 @@ delay.
 Each article is a deep dive for one role or one law, written for a company that
 makes connected products and sells them in the EU.
 
-- [The CRA is already live: a field guide for CISOs](/blog/security/cra-field-guide):
+- [The CRA is already live: a field guide](/blog/security/cra-field-guide):
   the 24-hour reporting duty, the evidence the CRA asks for and a 90-day plan.
-- [What the CRA costs: a guide for CFOs](/blog/compliance/cra-for-cfos): cost
+- [What the CRA costs](/blog/compliance/cra-costs): cost
   benchmarks, fines, the support period as a priced promise and funding.
-- [Running the CRA: an operating model for COOs](/blog/compliance/cra-for-coos):
+- [Running the CRA: an operating model](/blog/compliance/cra-operations):
   the three clocks, the reporting rota, suppliers, distributors and the
   unit-by-unit transition.
-- [Engineering for the CRA: a guide for CTOs](/blog/security/cra-for-ctos):
+- [Engineering for the CRA](/blog/security/cra-engineering):
   Annex I as requirements, the SBOM, update architecture and the technical file
   as a build output.
 - [Software is now a product: the new Product Liability Directive](/blog/compliance/product-liability-directive-software):

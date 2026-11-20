@@ -60,8 +60,8 @@ therefore one of the few CRA decisions that changes a product roadmap.
 I build connected products at Ganiga, and classification was the first
 question we had to answer for our own devices. I am not a lawyer; the sources
 are at the end. For how classification fits the rest of the work, the
-[field guide for CISOs](/blog/security/cra-field-guide) and the
-[engineering guide for CTOs](/blog/security/cra-for-ctos) are the companions to
+[CRA field guide](/blog/security/cra-field-guide) and the
+[CRA engineering guide](/blog/security/cra-engineering) are the companions to
 this article.
 
 ## The three tiers
@@ -319,9 +319,9 @@ class II products.
   every law, date and owner on one page.
 - [From RED and EN 18031 to the CRA](/blog/security/red-en-18031-to-cra), for
   radio products that already went through one certification cycle.
-- [Running the CRA: an operating model for COOs](/blog/compliance/cra-for-coos),
+- [Running the CRA: an operating model](/blog/compliance/cra-operations),
   where notified-body capacity becomes a launch plan.
-- [What the CRA costs: a guide for CFOs](/blog/compliance/cra-for-cfos), for
+- [What the CRA costs](/blog/compliance/cra-costs), for
   the budget line a notified body adds.
 
 ## References

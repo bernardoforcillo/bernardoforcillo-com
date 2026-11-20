@@ -219,7 +219,7 @@ you to keep:
 A good file is a defence. A missing or inconsistent one is worse than nothing,
 because refusing disclosure itself triggers a presumption. That is one more
 reason to produce evidence per release as part of the build, as described in the
-[engineering guide for CTOs](/blog/security/cra-for-ctos).
+[CRA engineering guide](/blog/security/cra-engineering).
 
 ## How long liability lasts
 
@@ -270,7 +270,7 @@ market before the new rules apply stay under the current articles 114 to 127.
 8. **In Italy, watch for publication** of the decree in the Gazzetta Ufficiale,
    and check the final text of articles 114 to 127.
 
-The [guide for CFOs](/blog/compliance/cra-for-cfos) puts these exposures next to
+The [guide to CRA costs](/blog/compliance/cra-costs) puts these exposures next to
 the CRA budget.
 
 ## Why I am writing this
@@ -339,11 +339,11 @@ analysis, Italy kept the development-risk defence.
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [What the CRA costs: a guide for CFOs](/blog/compliance/cra-for-cfos), with
+- [What the CRA costs](/blog/compliance/cra-costs), with
   the support period as a priced promise.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for evidence produced
+- [Engineering for the CRA](/blog/security/cra-engineering), for evidence produced
   per release.
-- [The CRA field guide for CISOs](/blog/security/cra-field-guide), on the
+- [The CRA field guide](/blog/security/cra-field-guide), on the
   reporting trail that time-stamps awareness.
 - [Open source under the CRA](/blog/security/open-source-cra), for liability
   when you integrate components you did not write.

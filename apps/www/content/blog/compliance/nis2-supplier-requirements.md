@@ -231,8 +231,8 @@ is worse than none.
    customers' NIS2 clock.
 6. **Name one owner** for questionnaires, so answers stay consistent.
 
-The [field guide for CISOs](/blog/security/cra-field-guide) covers the CRA
-reporting process, and the [operating model for COOs](/blog/compliance/cra-for-coos)
+The [CRA field guide](/blog/security/cra-field-guide) covers the CRA
+reporting process, and the [CRA operating model](/blog/compliance/cra-operations)
 covers the supplier evidence you should be asking for in turn.
 
 ## Why I am writing this
@@ -303,9 +303,9 @@ November 2026. Entities listed for the first time in 2026 have until 31 July
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [The CRA field guide for CISOs](/blog/security/cra-field-guide), including
+- [The CRA field guide](/blog/security/cra-field-guide), including
   the buyer's view of CRA evidence.
-- [Running the CRA: an operating model for COOs](/blog/compliance/cra-for-coos),
+- [Running the CRA: an operating model](/blog/compliance/cra-operations),
   for the evidence you should ask your own suppliers for.
 - [Data Act access by design meets the CRA](/blog/compliance/data-act-access-by-design),
   for the data export and deletion questions.

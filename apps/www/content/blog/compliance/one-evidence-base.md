@@ -206,7 +206,7 @@ Merging fails in predictable places, and it helps to know them in advance.
 4. **Map each law's output** to the foundation entries it needs, and to the
    person who signs its conclusion.
 5. **Produce evidence per release** as part of the build, as described in the
-   [engineering guide for CTOs](/blog/security/cra-for-ctos).
+   [CRA engineering guide](/blog/security/cra-engineering).
 6. **Offer customers one pack** for their impact assessments and supplier checks,
    as described in [NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements).
 
@@ -271,7 +271,7 @@ mandate of 21 October 2026 prefers national entry points.
   for when AI Act documentation is needed at all.
 - [Data Act access by design meets the CRA](/blog/compliance/data-act-access-by-design),
   the clearest case of one design serving two laws.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for evidence produced
+- [Engineering for the CRA](/blog/security/cra-engineering), for evidence produced
   per release.
 
 ## References

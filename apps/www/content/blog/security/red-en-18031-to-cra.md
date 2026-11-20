@@ -192,8 +192,8 @@ the first CRA standard is also likely to land.
    app and cloud back end.
 6. **Plan the unit-by-unit switch** on 11 December 2027 with production and sales.
 
-The [engineering guide for CTOs](/blog/security/cra-for-ctos) covers Part II in
-depth, and the [operating model for COOs](/blog/compliance/cra-for-coos) the
+The [CRA engineering guide](/blog/security/cra-engineering) covers Part II in
+depth, and the [CRA operating model](/blog/compliance/cra-operations) the
 transition.
 
 ## Why I am writing this
@@ -255,9 +255,9 @@ transfer money or virtual currency, for fraud protection.
   every law, date and owner on one page.
 - [Important or critical? Classifying products under the CRA](/blog/compliance/cra-product-classification),
   for the conformity route after RED.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for the Part II work
+- [Engineering for the CRA](/blog/security/cra-engineering), for the Part II work
   EN 18031 never asked for.
-- [The CRA field guide for CISOs](/blog/security/cra-field-guide), on the
+- [The CRA field guide](/blog/security/cra-field-guide), on the
   reporting duty already in force.
 
 ## References

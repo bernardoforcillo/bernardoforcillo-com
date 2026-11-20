@@ -148,7 +148,7 @@ report is needed when a component has no maintainer (points 222 to 228).
 
 **Reporting to authorities (Article 14).** This duty has applied since 11 September 2026, to products already on the market too. A vulnerability in an open-source component is mandatory to report only if it is actively exploited in your own product. If it is not exploitable there, reporting is voluntary, but you still
 have to handle it (point 218). That is what the triage record in the
-[engineering guide for CTOs](/blog/security/cra-for-ctos) is for.
+[CRA engineering guide](/blog/security/cra-engineering) is for.
 
 Two further points change the economics. First, the Linux Foundation's 2026
 readiness report found the share of organisations relying passively on upstream
@@ -267,7 +267,7 @@ accessing the software or its updates.
 
 - [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
   every law, date and owner on one page.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), for SBOMs, triage and
+- [Engineering for the CRA](/blog/security/cra-engineering), for SBOMs, triage and
   the evidence pipeline.
 - [Important or critical? Classifying products under the CRA](/blog/compliance/cra-product-classification),
   including the self-assessment route for open-source important products.

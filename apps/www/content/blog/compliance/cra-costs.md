@@ -1,6 +1,6 @@
 ---
-title: 'What the Cyber Resilience Act costs: a CFO guide to budget, fines and liability'
-seoTitle: 'Cyber Resilience Act costs and fines: a guide for CFOs'
+title: 'What the Cyber Resilience Act costs: budget, fines and liability'
+seoTitle: 'Cyber Resilience Act costs: budget, fines and liability'
 description: 'What CRA compliance costs per product, the fines and withdrawal risk, five years of support as a priced promise, liability from December 2026 and EU funding.'
 date: 2026-11-20
 tags:
@@ -10,7 +10,7 @@ tags:
   - cra fines
   - compliance budget
   - product liability directive
-  - cfo
+  - compliance costs
   - connected products
 about:
   - name: Cyber Resilience Act, Regulation (EU) 2024/2847
@@ -160,7 +160,7 @@ maximum is a ceiling, not a tariff: authorities set fines case by case, weighing
 
 In Italy, the draft decree approved in preliminary form on 2 October 2026 and sent to Parliament on 9 October (Atto del Governo 447) gives market surveillance to the national cybersecurity agency, ACN, with sanctions applying from 11
 December 2027. Whether a missed report can be fined before that date is
-disputed; the [field guide for CISOs](/blog/security/cra-field-guide) sets out
+disputed; the [CRA field guide](/blog/security/cra-field-guide) sets out
 both readings.
 
 For a product company, though, the fine is rarely the worst outcome. Market
@@ -187,7 +187,7 @@ by product:
 3. **Discontinue** the product in the EU.
 
 Each option has a cost: engineering, working capital and margin respectively.
-The [operating model for COOs](/blog/compliance/cra-for-coos) covers the
+The [CRA operating model](/blog/compliance/cra-operations) covers the
 planning side.
 
 ## The support period is a promise you price
@@ -393,11 +393,11 @@ missing updates within its control.
   every law, date and owner on one page.
 - [Software is now a product](/blog/compliance/product-liability-directive-software),
   the Product Liability Directive in depth.
-- [Running the CRA: an operating model for COOs](/blog/compliance/cra-for-coos),
+- [Running the CRA: an operating model](/blog/compliance/cra-operations),
   including the unit-by-unit transition.
-- [Engineering for the CRA](/blog/security/cra-for-ctos), where the largest
+- [Engineering for the CRA](/blog/security/cra-engineering), where the largest
   budget line is spent.
-- [The CRA field guide for CISOs](/blog/security/cra-field-guide), on the
+- [The CRA field guide](/blog/security/cra-field-guide), on the
   reporting duty already in force.
 - [Important or critical? Classifying products under the CRA](/blog/compliance/cra-product-classification),
   which decides whether a notified body enters the budget.
