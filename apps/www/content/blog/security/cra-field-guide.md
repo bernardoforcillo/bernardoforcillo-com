@@ -350,10 +350,7 @@ test.
 meets Annex I, Parts I and II, and shows it in the declaration of conformity is deemed to meet the AI Act's cybersecurity requirement. Its link to the GDPR is only procedural: market surveillance authorities cooperate with data protection authorities (Article 52(7)), but meeting Annex I gives no presumption of GDPR compliance. The Commission's CRA FAQ says the two laws do not overlap legally but can complement each other. Evidence can be reused across these files; conclusions
 mostly cannot.
 
-National enforcement is also still being built. The same guide on fines reports
-that Germany's implementing act, which would give the role to the BSI, had not
-been promulgated by early November 2026, although the Bundestag adopted it on 15 October, and that Austria had not yet named its
-market surveillance authority. In Italy, the draft decree implementing the CRA (Atto del Governo 447, sent to Parliament on 9 October 2026) would make ACN, the national cybersecurity agency, both the notifying authority and the market surveillance authority. It has not been published yet.
+National enforcement is also still being built. Germany's implementing act, which gives the role to the BSI, was adopted by the Bundestag on 15 October 2026 and approved by the Bundesrat on 20 November 2026; it still has to be signed and published before it takes effect. The same guide on fines reports that Austria had not yet named its market surveillance authority. In Italy, the draft decree implementing the CRA (Atto del Governo 447, sent to Parliament on 9 October 2026) would make ACN, the national cybersecurity agency, both the notifying authority and the market surveillance authority. It has not been published yet.
 
 ## What I would do in the next 90 days
 
@@ -482,9 +479,10 @@ confirmed against the official text before you rely on them.
   [_CRA reporting: Article 14_](https://www.cyberresilienceact.eu/reporting.html). Independent guide to
   deadlines, triggers and the platform.
 - CRA Response Center,
-  [_Fines and market surveillance under the CRA_](https://cra-response-center.com/guides/fines/). Penalty
-  tiers, Article 64(10), the argument on fines before December 2027, national
-  authorities.
+  [_Fines and market surveillance under the CRA_](https://cra-response-center.com/guides/fines/). Penalty tiers, Article 64(10), the argument on fines before December 2027, national authorities.
+- Caschys Blog,
+  [_Cyber Resilience Act: Bundesrat beschließt Durchführungsgesetz_](https://stadt-bremerhaven.de/cyber-resilience-act-bundesrat-beschliesst-durchfuehrungsgesetz/),
+  20 November 2026. Bundesrat approval of Germany's implementing act.
 - European Commission,
   [_Cyber Resilience Act implementation: frequently asked questions_](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions),
   version 1.4, 4 September 2026. Risk assessment, relation to the GDPR.

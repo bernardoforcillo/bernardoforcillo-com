@@ -97,10 +97,7 @@ is not.
 
 **Multi-function products need a reasoned call.** A smart hub that is also a
 security camera, or a gateway that is also a router, can match more than one
-description. Herbert Smith Freehills Kramer's advice is to use the technical
-descriptions as the matching exercise rather than the category labels, to
-expect grey areas, and to record what you considered so legal, engineering and
-marketing hold the same position. The Commission's guidance narrows the room for argument: a product has one core functionality (point 144), and describing it in a misleading way to avoid a category is not allowed (point 143). Its example of a router with a built-in firewall comes out as a router, class I, not a firewall (point 152).
+description. Use the technical descriptions in Regulation 2025/2392 as the matching exercise rather than the category labels, expect grey areas, and record what you considered so legal, engineering and marketing hold the same position. The Commission's guidance narrows the room for argument: a product has one core functionality (point 144), and describing it in a misleading way to avoid a category is not allowed (point 143). Its example of a router with a built-in firewall comes out as a router, class I, not a firewall (point 152).
 
 Some illustrations of how the test works in practice. They are readings, not
 legal advice, and the descriptions in Regulation 2025/2392 are what count.
@@ -339,8 +336,7 @@ the Commission's guidance are primary sources; the rest are secondary.
 - European Commission,
   [_Cyber Resilience Act implementation_](https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation).
   Planned EUCC delegated act.
-- Herbert Smith Freehills Kramer,
-  [_Cyber Resilience Act: Commission clarifies important and critical product categories_](https://www.hsfkramer.com/notes/cybersecurity/2026-posts/cyber-resilience-act-commission-clarifies-important-and-critical-product-categories).
+
 - Nemko Digital,
   [_From RED to CRA: what manufacturers need to do next_](https://digital.nemko.com/hubfs/From%20RED%20to%20CRA%20What%20Manufacturers%20Need%20to%20Do%20Next.pdf),
   18 May 2026.
