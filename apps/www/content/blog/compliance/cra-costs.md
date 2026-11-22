@@ -21,7 +21,7 @@ about:
 
 **Key takeaways**
 
-- The Commission's 2022 impact assessment puts CRA compliance at about **€61,000–68,000 per product**: about €42,700 for secure development plus €18,400–25,000 for conformity assessment, before documentation, which the same study puts at a further 9% of development cost. A consultancy puts a first product at about **€100,000**, internal and external cost together. A cost
+- Adding up the cost lines in the Commission's 2022 impact assessment gives about **€61,000–68,000 per product** starting with no security measures in place: about €42,700 for secure development plus €18,400–25,000 for conformity assessment, before documentation, which the same study puts at a further 9% of development cost. A consultancy puts a first product at about **€100,000**, internal and external cost together. A cost
   calculator gives **€78,300 one-off and €13,500 a year** for three products.
 - The largest line is not paperwork. In both the Commission's model and the
   calculator, secure development is the biggest share: €13.13 billion of €29
@@ -71,7 +71,7 @@ different things.
 
 | Source                                                                 | What it measures                                                    | Figure                                                                                                                                                                                  |
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| European Commission, impact assessment SWD(2022) 282                   | Average cost per product, by type of cost                           | Secure development about €42,700 (30.5% of an average €140,000 development cost); conformity assessment about €18,400 with self-assessment or about €25,000 with a third party; so about €61,000–68,000 before documentation, which the study puts at a further 9% of development cost. Recurrent operating cost of €3,000–5,000 per product from a targeted survey                                |
+| European Commission, impact assessment SWD(2022) 282                   | Cost per product without security measures in place, by type of cost | Secure development about €42,700 (30.5% of an average €140,000 development cost); conformity assessment about €18,400 with self-assessment or about €25,000 with a third party; together about €61,000–68,000 (my sum) before documentation, which the study puts at a further 9% of development cost. Recurrent operating cost of €3,000–5,000 per product for self-assessment testing, from a targeted survey                                |
 | Same document, option 4(b)(ii)                                         | Total for the economy, all software and hardware                    | About €29 billion: €13.13 billion secure development, €8.1 billion conformity testing, €7.8 billion documentation, declaration, CE marking and reporting                                 |
 | cetome, consultancy price list (September 2026)                        | External fees for one company                                       | Scoping €1,000 per product type; gap analysis €5,000 per product or €20,000 per portfolio; risk assessment €8,000–10,000; technical documentation from €15,000 (simple) or €30,000 (complex); about €100,000 for a first product, internal and external cost together |
 | cyberresilienceact.eu calculator, calibrated on i46's model at €45/h (a low rate) | One company, three products, security foundations already in place  | €78,300 one-off; €13,500 a year                                                                                                                                                         |
@@ -133,7 +133,7 @@ difference, because the work is the same for every company.
 Commission's guidance on the CRA, published in the Official Journal on 17
 November 2026, confirms that variants whose cybersecurity properties match can
 share one risk assessment and one set of documents, as long as security-relevant
-differences are reflected (points 175 to 177). A portfolio of twelve variants on
+differences are reflected (points 174 to 177). A portfolio of twelve variants on
 two platforms therefore costs far less than twelve unrelated products, which is
 an argument for consolidating platforms before December 2027.
 
@@ -220,7 +220,7 @@ $$
 T = S + P, \qquad P \ge 5 \text{ years}
 $$
 
-A model sold for four years would then need security updates for up to nine.
+A model sold for four years would then need security updates for at least nine.
 The guidance does not settle it: its Example 52 counts the period from placing "the model" on the market, without addressing units, and I could not find more in the parts of the guidance I
 read, so confirm it with counsel for your own products, because it changes the
 answer by years. Either way, $C_{\text{support}}$ divided by the units you
@@ -272,8 +272,8 @@ Public support exists, but it is small next to the benchmarks above.
   half, and **closes on 11 December 2026**. It targets SMEs working on products with digital elements; check the eligibility rules in the call text before you count on it. The first call, with €5
   million, closed in March 2026.
 - **Article 33 support measures.** The CRA asks Member States, where
-  appropriate, to provide SMEs with training, a help channel and support for
-  testing and conformity assessment, and allows regulatory sandboxes.
+  appropriate, to provide microenterprises and small enterprises with training, a help channel
+  and support for testing and conformity assessment, and allows regulatory sandboxes.
   Microenterprises and small enterprises may submit technical documentation in
   a simplified form, which notified bodies must accept (Article 33(5)); the form itself still has to be set by a Commission implementing act.
 - **Italy.** The draft decree (Atto del Governo 447) provides for a sandbox and a
@@ -333,7 +333,7 @@ _Disclosure: I work on connected products at Ganiga. Nothing is for sale yet._
 
 ### How much does CRA compliance cost per product?
 
-The Commission's 2022 impact assessment puts it at about €61,000–68,000 per product: about €42,700 for secure development plus €18,400 (self-assessment) to €25,000 (third party) for conformity assessment, before documentation, which the same study puts at a further 9% of development cost. A consultancy estimate from September 2026 gives about €100,000 for a first product, internal and external cost together. A public calculator gives €78,300 one-off and
+Adding up the cost lines in the Commission's 2022 impact assessment gives about €61,000–68,000 per product starting with no security measures in place: about €42,700 for secure development plus €18,400 (self-assessment) to €25,000 (third party) for conformity assessment, before documentation, which the same study puts at a further 9% of development cost. A consultancy estimate from September 2026 gives about €100,000 for a first product, internal and external cost together. A public calculator gives €78,300 one-off and
 €13,500 a year for three products in a company with security foundations in
 place. Secure development is the largest share in every model.
 
@@ -411,7 +411,7 @@ calculator figures are estimates, not market prices.
   EUR-Lex. Articles 13, 33, 64, 69; Annex I.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 126, 129–130, 158, 163, 175–177.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 126, 129–130, 158, 163, 174–177.
 - European Commission,
   [_Impact assessment accompanying the Cyber Resilience Act proposal, SWD(2022) 282, part 1_](https://data.consilium.europa.eu/doc/document/ST-12429-2022-ADD-2/en/pdf).
   Per-product costs and option 4(b)(ii) totals.

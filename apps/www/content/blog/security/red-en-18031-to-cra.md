@@ -97,7 +97,7 @@ Radio Equipment Directive to defined categories of radio equipment:
 | Article 3(3)(f): protection from fraud              | Internet-connected radio equipment that can transfer money, monetary value or virtual currency                                   | EN 18031-3 |
 
 The EN 18031 series was published by CEN-CENELEC in August 2024 and cited in the
-Official Journal at the end of January 2025 by Implementing Decision (EU) 2025/138, **with three restrictions**. The best known concerns passwords: products relying on the options that let a user set no password, or not use one, get no presumption of conformity. The other two concern the access-control options for toys and childcare equipment in EN 18031-2, and an option in the secure update mechanism in EN 18031-3. A manufacturer can self-declare only if it applies the standards and the restrictions do not affect its product; otherwise the route is EU-type examination by a notified body (module B with C) or full quality assurance (module H).
+Official Journal at the end of January 2025 by Implementing Decision (EU) 2025/138, **with restrictions** on three subjects. The best known concerns passwords, repeated in all three standards: products relying on the options that let a user set no password, or not use one, get no presumption of conformity. The others concern the access-control options for toys and childcare equipment in EN 18031-2, and the whole assessment criteria for the secure update mechanism in EN 18031-3 (clause 6.3.2.4). In each standard, the rationale and guidance sections give no presumption either. A manufacturer can self-declare only if it applies the standards and the restrictions do not affect its product; otherwise the route is EU-type examination by a notified body (module B with C) or full quality assurance (module H).
 
 The delegated act also leaves out radio equipment already covered by other EU rules, such as medical devices, civil aviation products, vehicles and electronic road-toll equipment, for some or all of its requirements.
 
@@ -238,7 +238,7 @@ that are substantially modified.
 ### What were the EN 18031 restrictions?
 
 The EN 18031 standards were cited in the Official Journal in January 2025 with
-three restrictions, set by Implementing Decision (EU) 2025/138. The best known concerns password options that let users set no password or not use one; the others concern access-control options for toys and childcare equipment in EN 18031-2 and an option in the secure update mechanism in EN 18031-3. Products relying on restricted options get no presumption of conformity and need a notified body.
+restrictions on three subjects, set by Implementing Decision (EU) 2025/138. The best known concerns password options that let users set no password or not use one; the others concern access-control options for toys and childcare equipment in EN 18031-2 and the assessment criteria for the secure update mechanism in EN 18031-3 (clause 6.3.2.4). Products relying on restricted options get no presumption of conformity and need a notified body.
 
 ### Which radio products are covered by the RED delegated act?
 

@@ -180,7 +180,7 @@ an authority can ask to see any of them. The article and annex numbers below are
 | Vulnerability handling      | Annex I, Part II                     | Components and vulnerabilities documented, fixes without delay, regular testing, disclosure of fixed vulnerabilities, a coordinated disclosure policy, secure and free security updates               |
 | SBOM                        | Annex I, Part II, point 1            | Machine-readable, covering at least top-level dependencies; kept in the technical file. It need not be made public, but an authority can ask for it                                                                                               |
 | Third-party components      | Article 13(5)-(6)                    | Due diligence on integrated components, open source included; vulnerabilities found are reported to the maintainer                                                                                   |
-| Support period              | Article 13(8)-(9)                    | At least five years unless the product is expected to be used for less; each update stays available for ten years or the rest of the support period                                                 |
+| Support period              | Article 13(8)-(9)                    | At least five years unless the product is expected to be used for less; each update stays available for ten years or the rest of the support period, whichever is longer                                                |
 | User information            | Annex II                             | A contact point for vulnerability reports, the support end date, instructions for secure installation and decommissioning                                                                           |
 | Technical documentation     | Article 31, Annex VII, Article 13(13) | Product description, design, risk assessment, standards applied, test reports, vulnerability handling, SBOM; kept ten years or for the support period if longer                                     |
 | Conformity assessment       | Article 32, Annexes III and IV       | Self-assessment for default products; for the 19 important class I categories, self-assessment with harmonised standards, common specifications or a certification scheme, otherwise a notified body; a third party for the 4 class II and 3 critical categories                               |
@@ -253,7 +253,7 @@ evidence aligned with what actually shipped is where teams fall behind.
 retention are longer than most tool contracts and many careers in one company.
 Whoever answers the authority in 2034 will not be the person who wrote the file.
 
-ENISA's survey of small companies points the same way. ENISA surveyed 194 organisations in 31 countries, 135 of them sure they are in the CRA's scope, in February and March 2026: 66% had heard of the CRA, incident
+ENISA's survey of small companies points the same way. ENISA surveyed 194 organisations in 31 countries, 135 of which said they are in the CRA's scope, in February and March 2026: 66% had heard of the CRA, incident
 response and product lifecycle management were the weakest capabilities, and
 more than 70% asked for templates for technical documentation and secure
 development. Company size was the most consistent predictor of maturity.
@@ -360,9 +360,11 @@ December 2027.
 1. **List every product with digital elements you have on the EU market**,
    including the ones you no longer sell but customers still use. Article 14
    covers them.
-2. **Name who decides "aware" and who files.** Register the people on the Single
-   Reporting Platform now: each needs a personal EU Login with multi-factor
-   authentication, and the CSIRT validates the link to the company.
+2. **Name who decides "aware" and who files.** Make sure each of them has a
+   personal EU Login with multi-factor authentication. ENISA advises
+   registering on the Single Reporting Platform only when you need to submit a
+   notification: the CSIRT validates the link to the company in parallel with
+   the report, and up to 20 notifications can be sent before verification.
 3. **Run one rehearsal outside office hours.** Simulate an exploited
    vulnerability in a shipped product and time the path from first signal to a
    submitted early warning.
@@ -428,7 +430,7 @@ authority can ask to see it.
 
 The support period is at least five years, unless the product is expected to be
 used for less. Each security update stays available for ten years or for the
-rest of the support period, and the technical documentation is kept for ten
+rest of the support period, whichever is longer, and the technical documentation is kept for ten
 years or for the support period if that is longer.
 
 ### Do small companies get relief from CRA reporting?

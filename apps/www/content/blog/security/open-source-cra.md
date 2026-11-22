@@ -25,8 +25,9 @@ about:
   it is **made available in the course of a commercial activity**. The
   Commission's guidance of 17 November 2026 spells out when that happens:
   charging for the software itself, making access or updates conditional on
-  payment, or requiring personal data beyond what security, compatibility or
-  interoperability need.
+  payment, requiring personal data beyond what security, compatibility or
+  interoperability need, or using the software to monetise other products or
+  services.
 - Paid support services, voluntary donations and third-party funding do **not**
   by themselves make open source commercial.
 - A **steward** is a legal person that systematically supports open source
@@ -225,7 +226,7 @@ Only when it is made available in the course of a commercial activity.
 According to the Commission's guidance of 17 November 2026, that includes
 charging for the software, making access or updates conditional on payment, or
 requiring personal data beyond what security, compatibility or interoperability
-need. Paid support services, donations and funding do not by themselves make it
+need, or using the software to monetise other products or services. Paid support services, donations and funding do not by themselves make it
 commercial.
 
 ### What is an open-source software steward under the CRA?

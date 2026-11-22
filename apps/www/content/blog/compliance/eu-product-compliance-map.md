@@ -34,7 +34,7 @@ about:
   product: the General Product Safety Regulation, the RED cybersecurity
   delegated act, the Data Act, the Cyber Resilience Act (CRA), the new Product
   Liability Directive (PLD), the Machinery Regulation, the AI Act and NIS2, through your customers or directly if you are a medium-sized or larger manufacturer in its sectors.
-- Three already bite today: CRA vulnerability reporting (since **11 September
+- Among the obligations that already apply, three matter most for connected products: CRA vulnerability reporting (since **11 September
   2026**), Data Act access by design (for products placed on the market after
   **12 September 2026**) and the RED cybersecurity requirements (since **1
   August 2025**).
@@ -195,7 +195,7 @@ These bridges decide where one piece of work can count twice.
 
 | From the CRA to…       | The bridge                                                                                                                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| AI Act                 | Article 12 CRA: a high-risk AI product that meets Annex I is presumed to meet the AI Act's cybersecurity requirement                                                                       |
+| AI Act                 | Article 12 CRA: a high-risk AI product that meets Annex I, with processes meeting Part II, is deemed to meet the AI Act's cybersecurity requirement where its EU declaration of conformity demonstrates it                                                                       |
 | RED delegated act      | Delegated Regulation (EU) 2026/339 repeals the RED cybersecurity act from 11 December 2027, when the CRA takes over; the EN 40000 standards build on the EN 18031 work                     |
 | Machinery Regulation   | CRA recital 53: both laws apply, but meeting the CRA can help demonstrate compliance with the Machinery Regulation's protection against corruption and safety and reliability of control systems (Annex III, sections 1.1.9 and 1.2.1); the manufacturer has to show the synergy                                         |
 | Product Liability      | Under the PLD, safety-relevant cybersecurity requirements are a factor in judging defectiveness, and breaching mandatory safety requirements lets a court presume a defect                 |

@@ -54,7 +54,7 @@ administration, waste management, manufacturing of certain products and more.
 It does not regulate products, but it does regulate manufacturers. Annex II, point 5, covers the manufacture of computers, electronic and optical products, electrical equipment, machinery and vehicles (NACE C26 to C30). A maker in those sectors with at least 50 staff, or more than €10 million in both turnover and balance sheet, is an important entity. In Italy that means registering on ACN's platform, adopting the basic security measures and notifying significant incidents to CSIRT Italia. One exploited vulnerability can then produce three reports: yours under the CRA, yours under NIS2, and your customer's. Smaller makers, and makers outside those sectors, stay outside direct scope; the rest of this article applies to everyone.
 
 But NIS2 requires every entity in scope to manage the security of its supply
-chain. In Italy alone, the provisional 2026 list counted more than 21,000
+chain. In Italy alone, the provisional 2026 list counted more than 20,000
 entities, at least 5,000 of them essential, according to figures from ACN
 reported in April 2026. Each of them has suppliers, and from November 2026 those listed in 2025 can be checked on how they manage them. That is how NIS2 arrives at a
 supplier: not as a law, but as a customer's requirement.
@@ -96,7 +96,7 @@ measures and deadlines.
 
 | What                                                                   | Rule                                                                 | Date                                                                                   |
 | ---------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| Basic security measures: 37 measures and 87 requirements for important entities, 43 and 116 for essential ones | ACN Determination 379907/2025 | 18 months from notice of listing: by 31 October 2026 for entities listed in 2025; by 31 July 2027 for 2026 entrants |
+| Basic security measures: 37 measures and 87 requirements for important entities, 43 and 116 for essential ones | ACN Determination 164179/2025, with basic specifications in 379907/2025 | 18 months from notice of listing: by 31 October 2026 for entities listed in 2025; by 31 July 2027 for 2026 entrants |
 | Notification of significant incidents to CSIRT Italia                  | Legislative Decree 138/2024                                          | Since January 2026 for entities listed in 2025; from 1 January 2027 for 2026 entrants |
 | Annual list of relevant suppliers on the ACN platform                  | ACN Determination 127437 of 13 April 2026                            | Every year between 15 April and 31 May                                                 |
 | Verification and inspections                                           | ACN                                                                  | From November 2026 for entities listed in 2025                                         |

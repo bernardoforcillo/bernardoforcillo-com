@@ -95,7 +95,7 @@ around "unified compliance" suggests.
 | CRA, Article 12                                   | A high-risk AI product that meets Annex I is presumed to meet the AI Act's cybersecurity requirement, as shown by the CRA declaration of conformity    |
 | CRA, Article 28                                   | One EU declaration of conformity for all Union acts that require one, identifying each act; it can be a dossier of the individual declarations (recital 88) |
 | CRA, Article 31(3)                                | For high-risk AI products also subject to other acts, a single set of technical documentation containing what each act requires                       |
-| Commission CRA guidance, points 175 to 177        | Product variants with the same cybersecurity properties can share one risk assessment and one document set                                             |
+| Commission CRA guidance, points 174 to 177        | Product variants with the same cybersecurity properties can share one risk assessment and one document set                                             |
 | AI Act, Article 27(4)                             | A fundamental rights impact assessment can build on a data protection impact assessment, which it complements rather than replaces                    |
 
 Two statements in the Commission's CRA FAQ, last updated on 4 September 2026, set the frame. A **single risk assessment across product laws** is acceptable, as long as compliance with each law can still be demonstrated. And there is **no legal overlap between the CRA and the GDPR**, although the two may complement each other: meeting Annex I does not prove GDPR compliance, but the same controls can serve both.
@@ -289,7 +289,7 @@ primary sources; the rest are secondary.
   EUR-Lex. Article 3.
 - European Commission,
   [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
-  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 175–177 and section 8.
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 174–177 and section 8.
 - European Commission,
   [_Cyber Resilience Act implementation: frequently asked questions_](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions),
     version 1.4, 4 September 2026. Single risk assessment; relation to the GDPR.

@@ -30,7 +30,7 @@ about:
 - Default products are **self-assessed**. Class I products can be self-assessed
   only by applying a harmonised standard, common specification or certification
   scheme **in full**; otherwise, and always for class II, a **notified body** is
-  needed. Critical products will need European certification once the
+  needed, or for class II a European cybersecurity certificate. Critical products will need European certification once the
   Commission requires it.
 - As of 17 November 2026 no CRA harmonised standard is cited, and as of 6
   November 2026 no CRA notified body is listed. For class I products today, the

@@ -33,7 +33,7 @@ about:
 - The SBOM must be machine-readable and cover at least top-level dependencies.
   No format is mandated; Germany's **BSI TR-03183-2** accepts CycloneDX 1.6+ or
   SPDX 3.0.1+, and ENISA found CycloneDX used by **44%** of organisations.
-- Your cloud back end is part of the product when the product cannot perform one of its functions without it and you designed it or had it developed under your responsibility. Third-party SaaS is not, but is handled like a
+- Your cloud back end is part of the product when the product cannot perform one of its functions without it and you designed and developed it, or had it developed under your responsibility. Third-party SaaS is not, but is handled like a
   component.
 - Updates become a product feature: automatic by default where applicable, with an opt-out,
   security fixes separate where feasible, free, and each kept available for ten years or the rest of the support period if longer.
@@ -135,7 +135,8 @@ For engineering, that means three things:
 ## Where the product ends: devices, apps and clouds
 
 Under the CRA, remote data processing is part of a product when the
-manufacturer designed or developed the software and its absence would prevent
+manufacturer designed and developed the software, or had it developed under
+its responsibility, and its absence would prevent
 the product from performing one of its functions. The guidance turns that into
 a three-part test: processing at a distance, a product function that depends on
 it, and software the manufacturer designed or had developed under its
@@ -224,7 +225,7 @@ That last point is where VEX statements help. OpenVEX and CycloneDX both record 
 
 ## Updates are a product feature now
 
-Annex I asks, where applicable, for security updates to be installed automatically by default, with a clear way to opt out (Part I, point 2(c)); recital 56 says this should not apply to products mainly integrated as components or used in professional ICT networks, especially critical and industrial ones, where the operator controls the timing; delivered securely (Part II, point
+Annex I asks, where applicable, for security updates to be installed automatically by default, with a clear way to opt out (Part I, point 2(c)); recital 56 says this should not apply to products mainly integrated as components or used in professional ICT networks, or in critical and industrial environments where an automatic update could interfere with operations; delivered securely (Part II, point
 7); free of charge and without delay, with advisory messages (Part II, point 8);
 and, where technically feasible, separately from feature updates (Part II, point
 2). Article 13(9) adds that each security update must stay available for at
@@ -288,7 +289,7 @@ requirement to control to test to evidence:
 
 Variants can share one risk assessment and one document set when their
 cybersecurity properties match, as long as security-relevant differences are
-reflected (points 175 to 177), so one `compliance/` tree per platform rather
+reflected (points 174 to 177), so one `compliance/` tree per platform rather
 than per SKU is usually right.
 
 On AI assistants, since many teams now use them for this: they are good at
@@ -321,7 +322,7 @@ If the product includes a high-risk AI system, Article 12 of the CRA lets
 compliance with Annex I count as compliance with the AI Act's cybersecurity
 requirement. After the AI Omnibus, Regulation (EU) 2026/1744, the AI Act's
 rules for high-risk AI inside regulated products apply from 2 August 2028, and
-according to Reed Smith, AI embedded in products under the Machinery Regulation is now excluded from the AI Act's high-risk regime. The
+machinery moved from Section A to Section B of the AI Act's Annex I: AI embedded in products under the Machinery Regulation is no longer covered by the AI Act's high-risk rules directly, and its requirements are to be brought in through acts under the Machinery Regulation. The
 [deep dive on the AI Act in connected products](/blog/compliance/ai-act-connected-products)
 has the classification test; for most connected products in 2027, the CRA is the
 binding constraint.
@@ -382,7 +383,8 @@ later, and the Commission may set a format by implementing act.
 
 Yes, when it is remote data processing that the manufacturer designed or had
 developed and without which the product cannot perform one of its functions.
-According to the Commission's guidance of 17 November 2026, this holds even when
+According to the Commission's guidance, published in the Official Journal on
+17 November 2026, this holds even when
 the back end runs on a third-party cloud provider. Third-party SaaS is generally
 not part of the product but is treated like a component.
 

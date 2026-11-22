@@ -36,9 +36,10 @@ about:
   safety**, that were within its control.
 - When a product breaches mandatory safety requirements meant to protect against the risk of the damage suffered, a court **shall presume** it defective, and courts can order evidence to be disclosed. The CRA's technical
   file becomes potential evidence.
-- **Italy** approved its transposing decree on 28 October 2026. It rewrites
-  articles 114 to 127 of the Consumer Code and keeps the development-risk
-  defence.
+- **Italy** transposed it with Legislative Decree 6 November 2026, no. 211,
+  published in the Gazzetta Ufficiale on 21 November 2026 and in force from 6
+  December 2026. It rewrites articles 114 to 127 of the Consumer Code and keeps
+  the development-risk defence.
 
 _Part of a series on EU product compliance for connected-product makers. For
 the full calendar and who owns what, start with
@@ -76,7 +77,7 @@ regime keeps covering earlier ones.
 
 "Placed on the market" works unit by unit, as it does under the CRA. A model
 launched in 2025 is under the old regime for units supplied before 9 December
-and under the new one for units supplied after it.
+and under the new one for units supplied from that day.
 
 ## What counts as a product now
 
@@ -240,7 +241,7 @@ development-risk defence: a producer is not liable if the state of scientific
 and technical knowledge, at placing on the market or during the period of
 control, did not allow the defect to be discovered.
 
-At the time of writing I had not found the decree published in the Gazzetta Ufficiale; the published text is the one that counts. One detail to check in it: article 3 of the draft sent to Parliament still applies the new rules to products placed on the market "dopo il 9 dicembre 2026", the date before the EU corrigendum.
+The decree was published as Legislative Decree 6 November 2026, no. 211, in the Gazzetta Ufficiale (Serie Generale no. 272) of 21 November 2026, and enters into force on 6 December 2026. The draft sent to Parliament applied the new rules to products placed on the market "dopo il 9 dicembre 2026", the date before the EU corrigendum; the published text applies them "a decorrere dal 9 dicembre 2026", in line with the corrected directive.
 
 The directive reaches manufacturers through national law. Until a Member State transposes it, an injured person cannot rely on it directly against a private company, and in a cross-border case the Rome II Regulation (Article 5) decides which country's law applies. Reed Smith counted only three Member States that had transposed it by September 2026. Products placed on the
 market before the new rules apply stay under the current articles 114 to 127.
@@ -265,8 +266,8 @@ market before the new rules apply stay under the current articles 114 to 127.
    businesses.
 7. **Call your insurer** about software defects, updates shipped after the sale
    and destruction or corruption of consumers' data.
-8. **In Italy, watch for publication** of the decree in the Gazzetta Ufficiale,
-   and check the final text of articles 114 to 127.
+8. **In Italy, read the new articles 114 to 127** of the Consumer Code as
+   rewritten by Legislative Decree 211/2026.
 
 The [guide to CRA costs](/blog/compliance/cra-costs) puts these exposures next to
 the CRA budget.
@@ -329,8 +330,9 @@ exclusively for professional purposes is still excluded.
 ### How is the PLD transposed in Italy?
 
 Through a legislative decree that rewrites articles 114 to 127 of the Consumer
-Code and adds an article 126-bis on publication of judgments. The Council of
-Ministers approved it in final form on 28 October 2026. According to published
+Code and adds an article 126-bis on publication of judgments: Legislative
+Decree 6 November 2026, no. 211, published in the Gazzetta Ufficiale on 21
+November 2026 and in force from 6 December 2026. According to published
 analysis, Italy kept the development-risk defence.
 
 ## Read next
@@ -348,8 +350,12 @@ analysis, Italy kept the development-risk defence.
 
 ## References
 
-Checked on 20 November 2026. The directive is the primary source; national
+Checked on 22 November 2026. The directive is the primary source; national
 status and summaries are secondary.
+
+- Certifico,
+  [_Decreto legislativo 6 novembre 2026 n. 211_](https://www.certifico.com/news/decreto-legislativo-6-novembre-2026-n-211).
+  Publication in the Gazzetta Ufficiale (Serie Generale no. 272, 21 November 2026), entry into force and application date.
 
 - [_Directive (EU) 2024/2853 on liability for defective products_](https://eur-lex.europa.eu/eli/dir/2024/2853/oj),
   EUR-Lex. Articles 2, 4 (including 4(5)(b)), 6–17, 21, 22; recitals 20 and 51.

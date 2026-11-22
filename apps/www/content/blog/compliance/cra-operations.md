@@ -103,8 +103,8 @@ third.
 ## Clock one: the reporting rota
 
 Since 11 September 2026, a manufacturer that becomes aware of an actively
-exploited vulnerability or a severe incident in its product must send an early warning without undue delay and in any event within 24 hours, a notification within 72 hours and a final report later, through ENISA's Single Reporting Platform. The Commission's guidance of
-17 November 2026 says a manufacturer becomes aware once an initial assessment
+exploited vulnerability or a severe incident in its product must send an early warning without undue delay and in any event within 24 hours, a notification within 72 hours and a final report later, through ENISA's Single Reporting Platform. The Commission's guidance, published in
+the Official Journal on 17 November 2026, says a manufacturer becomes aware once an initial assessment
 gives it a reasonable degree of certainty, and that the assessment should start
 promptly (points 213 and 214).
 
@@ -129,7 +129,7 @@ set up.
 | ------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | Signal intake            | Support, sales and engineering forward any report of exploitation at once    | One channel everyone knows, and a rule that "maybe" is forwarded too       |
 | Decider                  | Runs the initial assessment and decides when the company is "aware"          | Authority, clear criteria, a deputy                                         |
-| Filers, at least two     | Submit the early warning and notification on the Single Reporting Platform   | A personal EU Login with multi-factor authentication, validated in advance; on the platform one primary user is verified first and then invites the others |
+| Filers, at least two     | Submit the early warning and notification on the Single Reporting Platform   | A personal EU Login with multi-factor authentication, set up in advance; ENISA advises registering on the platform only when a notification is due, since validation runs in parallel with the report |
 | Engineering on call      | Confirms exposure by version, prepares mitigation and fix                    | The SBOM per shipped version and the ability to build an emergency release  |
 | Customer communication   | Informs affected users with the mitigation they can apply                    | A list of who runs which version, and pre-agreed message templates         |
 | Executive                | Approves public statements and unusual decisions                             | To be reachable, not to be in the critical path                            |
@@ -311,7 +311,8 @@ simplified form, which notified bodies must accept (Article 33(5)); the form sti
 1. **Name the owner** of the CRA operating model, and write down who decides,
    who files, who engineers and who communicates.
 2. **Set up the reporting rota**: a decider with a deputy, at least two filers
-   registered on the Single Reporting Platform, a cover calendar that includes
+   with EU Login and multi-factor authentication ready for the Single Reporting
+   Platform, a cover calendar that includes
    holidays and August.
 3. **Rehearse once outside office hours** and record the two times.
 4. **Build the installed-base register**: which product and version runs where,
