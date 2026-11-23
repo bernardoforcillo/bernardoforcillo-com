@@ -3,6 +3,9 @@ import type { LinkComponent, NavItem } from '../types';
 
 type ExternalLink = { label: string; href: string; icon?: ReactNode };
 
+/** A control rather than a page, e.g. reopening the cookie preferences. */
+type FooterAction = { label: string; onClick: () => void };
+
 type Props = {
   Link: LinkComponent;
   name: string;
@@ -13,6 +16,8 @@ type Props = {
   rights: string;
   index: NavItem[];
   legal: NavItem[];
+  /** Rendered as buttons after the legal links. */
+  legalActions?: FooterAction[];
   /** Items with an `icon` also render as round buttons under the tagline. */
   elsewhere: ExternalLink[];
 };
@@ -36,7 +41,8 @@ const InternalColumn: FC<{
   Link: LinkComponent;
   title: string;
   items: NavItem[];
-}> = ({ Link, title, items }) => (
+  actions?: FooterAction[];
+}> = ({ Link, title, items, actions = [] }) => (
   <div>
     <p className={HEADING_CLASS}>{title}</p>
     <ul className='mt-3.5 grid gap-2.5'>
@@ -45,6 +51,17 @@ const InternalColumn: FC<{
           <Link to={link.to} className={LINK_CLASS}>
             {link.label}
           </Link>
+        </li>
+      ))}
+      {actions.map((action) => (
+        <li key={action.label}>
+          <button
+            type='button'
+            onClick={action.onClick}
+            className={`text-left ${LINK_CLASS}`}
+          >
+            {action.label}
+          </button>
         </li>
       ))}
     </ul>
@@ -59,6 +76,7 @@ export const Footer: FC<Props> = ({
   rights,
   index,
   legal,
+  legalActions,
   elsewhere,
 }) => {
   const social = elsewhere.filter((link) => link.icon);
@@ -97,7 +115,12 @@ export const Footer: FC<Props> = ({
         </div>
 
         <InternalColumn Link={Link} title='Index' items={index} />
-        <InternalColumn Link={Link} title='Legal' items={legal} />
+        <InternalColumn
+          Link={Link}
+          title='Legal'
+          items={legal}
+          actions={legalActions}
+        />
 
         <div>
           <p className={HEADING_CLASS}>Elsewhere</p>
