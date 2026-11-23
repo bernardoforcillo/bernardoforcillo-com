@@ -67,6 +67,11 @@ export const Route = createFileRoute('/_default/blog/$categorySlug/$postSlug')({
           readingMinutes: readingMinutes(post.content),
           citations: extractCitations(post.content),
           about: post.about,
+          image: {
+            path: blogOgImagePath(post.categorySlug, post.postSlug),
+            width: OG_IMAGE_WIDTH,
+            height: OG_IMAGE_HEIGHT,
+          },
         }),
         buildBreadcrumbJsonLd([
           { name: 'Blog', path: '/blog' },

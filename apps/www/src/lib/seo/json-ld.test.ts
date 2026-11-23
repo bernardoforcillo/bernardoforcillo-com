@@ -41,6 +41,24 @@ describe('buildBlogPostingJsonLd about', () => {
   });
 });
 
+describe('buildBlogPostingJsonLd image', () => {
+  it('points the article at its share image with an absolute URL', () => {
+    const node = buildBlogPostingJsonLd({
+      title: 'T',
+      description: 'D',
+      path: '/blog/security/t',
+      datePublished: '2026-11-11',
+      image: { path: '/og/blog/security/t.png', width: 1200, height: 630 },
+    });
+    expect(node.image).toEqual({
+      '@type': 'ImageObject',
+      url: 'https://bernardoforcillo.com/og/blog/security/t.png',
+      width: 1200,
+      height: 630,
+    });
+  });
+});
+
 describe('buildHomeJsonLdGraph', () => {
   const graph = buildHomeJsonLdGraph();
 

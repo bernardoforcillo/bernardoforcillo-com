@@ -1,15 +1,16 @@
 ---
 title: 'The CRA is already live: a field guide to product security evidence'
-seoTitle: 'Cyber Resilience Act (CRA) field guide for CISOs'
+seoTitle: 'Cyber Resilience Act guide: reporting, evidence'
 description: "The CRA's 24-hour reporting duty has applied since 11 September 2026. What evidence EU manufacturers must keep, what is unsettled, and a 90-day plan."
 date: 2026-11-11
+updated: 2026-11-20
 tags:
   - cyber resilience act
   - cra
   - product security
   - vulnerability reporting
   - sbom
-  - ciso
+  - security evidence
   - compliance
 about:
   - name: Cyber Resilience Act, Regulation (EU) 2024/2847
@@ -22,17 +23,19 @@ about:
 
 - Since **11 September 2026**, a manufacturer selling a product with digital
   elements in the EU must report actively exploited vulnerabilities and severe
-  incidents through ENISA's Single Reporting Platform: an early warning within
-  **24 hours**, a notification within **72 hours**, then a final report.
+  incidents through ENISA's Single Reporting Platform: an early warning without undue delay and in any event within **24 hours**, a notification within **72 hours**, then a final report.
 - The reporting duty already covers products on the market, including ones
   shipped years before the Cyber Resilience Act.
 - From **11 December 2027**, each product also needs a risk assessment against
   Annex I, an SBOM, a vulnerability-handling process, a support period of at
-  least five years and technical documentation kept for ten years.
-- No harmonised standard is cited yet, so makers of important class I products
-  may need a notified body instead of self-assessment.
+  least five years and technical documentation kept for ten years, or for the support period if longer.
+- Makers of important class I products can self-assess only with harmonised standards, common specifications or an EU certification scheme. None is available yet, so for now the route is a notified body.
 - The hard part is not the rules but the evidence: per release, kept for years,
   with a named owner for the moment of "awareness".
+
+_Part of a series on EU product compliance for connected-product makers. For
+the full calendar and who owns what, start with
+[the map](/blog/compliance/eu-product-compliance-map)._
 
 ## Why this lands on the CISO's desk
 
@@ -82,12 +85,11 @@ severe incidents.
 
 Four details matter more than the dates.
 
-**The clock has three stops.** An early warning within 24 hours of becoming
-aware, a notification within 72 hours, and a final report: 14 days after a
+**The clock has three stops.** An early warning without undue delay and in any event within 24 hours of becoming aware, a notification within 72 hours, and a final report: 14 days after a
 corrective or mitigating measure is available for a vulnerability, or one month
-after the notification for a severe incident. The independent CRA guide notes
-that Commission guidance ties "aware" to an initial assessment that gives
-reasonable certainty. That decision is where most of the 24 hours will go.
+after the notification for a severe incident. The coordinator CSIRT can also ask for intermediate status reports along the way. The Commission's guidance ties "aware" to an initial assessment that gives reasonable certainty (points 213 and 214). That decision is where most of the 24 hours will go.
+
+**"Actively exploited" has a definition.** It means there is reliable evidence that a malicious actor has exploited the vulnerability in a system without the owner's permission (Article 3(42)). A researcher's proof of concept, or a vulnerability found in good-faith testing, is not exploitation.
 
 ```tikz The Article 14 reporting clock.
 % Alt: A sequence of four steps: the manufacturer becomes aware of active exploitation; an early warning is due within 24 hours of awareness; a notification within 72 hours of awareness; a final report 14 days after a fix is available, or one month after the notification for a severe incident.
@@ -131,7 +133,7 @@ product can be outside Annex I and still be reportable.
 Platform to the CSIRT designated as coordinator in the manufacturer's main
 Member State, and to ENISA at the same time. At launch there is no API: it is a
 browser form behind an EU Login account. So the 24 hours is a people problem:
-who decides, who holds the login, who covers the weekend.
+who decides, who holds the login, who covers the weekend. ENISA's FAQ adds the practical details: one primary user is verified before secondary users can be invited, drafts are visible only to the person who wrote them, and there is a fallback procedure if the platform is down.
 
 ```tikz From first signal to a filed report.
 % Alt: A flow: signals arrive in different teams as support tickets, researcher emails and threat-intel feeds; one named owner decides the manufacturer is aware, which starts the 24-hour clock; the report is filed on the Single Reporting Platform with a personal EU Login and MFA, without an API; the platform sends it to the coordinator CSIRT and to ENISA at the same time.
@@ -157,41 +159,37 @@ who decides, who holds the login, who covers the weekend.
 **The relief for small companies is narrow.** Article 64(10) says
 microenterprises and small enterprises are not fined for missing the 24-hour
 early warning. The duty to report stays, and the 72-hour notification and the
-final report keep their penalties. Medium-sized companies get no relief at all.
+final report keep their penalties. Medium-sized companies get no specific relief, although size is one of the factors an authority weighs when it sets a fine (Article 64(5)).
 
 One point is not settled: whether a missed report can be fined before 11
 December 2027. The CRA Response Center guide argues that it cannot, because
 Article 71(2) applies Article 14 from September 2026 but Article 64, the
 penalties article, only from December 2027. The same guide notes that at least
-one law firm reads it differently. If you have had a formal answer from a
+one law firm reads it differently. The Commission's FAQ (entry 7.1) says the enforcement provisions apply from 11 December 2027. If you have had a formal answer from a
 national authority, I would like to hear it.
 
 ## What a manufacturer must be able to prove
 
 From 11 December 2027 the CRA asks for nine kinds of evidence per product, and
-an authority can ask to see any of them. The article and annex numbers below
-follow the regulation as summarised in the NHIMG guide and in Katharina
-Koerner's analysis.
+an authority can ask to see any of them. The article and annex numbers below are taken from the regulation's text on EUR-Lex.
 
 | Evidence                    | Where the CRA asks for it            | What it has to show                                                                                                                                                                                  |
 | --------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Cybersecurity risk assessment | Article 13(2)-(4)                  | Documented and kept current through the support period; for each product requirement, whether it applies and how it is met, with a justification where it does not apply                            |
 | Product security properties | Annex I, Part I                      | No known exploitable vulnerabilities at release, secure defaults, access control, confidentiality and integrity of data, data minimisation, availability, reduced attack surface, logging, secure deletion |
 | Vulnerability handling      | Annex I, Part II                     | Components and vulnerabilities documented, fixes without delay, regular testing, disclosure of fixed vulnerabilities, a coordinated disclosure policy, secure and free security updates               |
-| SBOM                        | Annex I, Part II, point 1            | Machine-readable, covering at least top-level dependencies; kept in the technical file, not published                                                                                               |
+| SBOM                        | Annex I, Part II, point 1            | Machine-readable, covering at least top-level dependencies; kept in the technical file. It need not be made public, but an authority can ask for it                                                                                               |
 | Third-party components      | Article 13(5)-(6)                    | Due diligence on integrated components, open source included; vulnerabilities found are reported to the maintainer                                                                                   |
-| Support period              | Article 13(8)-(9)                    | At least five years unless the product is expected to be used for less; each update stays available for ten years or the rest of the support period                                                 |
+| Support period              | Article 13(8)-(9)                    | At least five years unless the product is expected to be used for less; each update stays available for ten years or the rest of the support period, whichever is longer                                                |
 | User information            | Annex II                             | A contact point for vulnerability reports, the support end date, instructions for secure installation and decommissioning                                                                           |
 | Technical documentation     | Article 31, Annex VII, Article 13(13) | Product description, design, risk assessment, standards applied, test reports, vulnerability handling, SBOM; kept ten years or for the support period if longer                                     |
-| Conformity assessment       | Article 32, Annexes III and IV       | Self-assessment for default products; standards or a notified body for the 19 important class I categories; a third party for the 4 class II and 3 critical categories                               |
+| Conformity assessment       | Article 32, Annexes III and IV       | Self-assessment for default products; for the 19 important class I categories, self-assessment with harmonised standards, common specifications or a certification scheme, otherwise a notified body; a third party for the 4 class II and 3 critical categories                               |
 
 Three points in that table change how a security team has to work.
 
 **The benchmark is not your risk appetite.** A risk register records a decision
 to accept a finding. The CRA asks whether each Annex I requirement is
-implemented, not applicable with a reason, or met another way. Koerner puts it
-precisely: an acceptance entry is evidence of a decision, not evidence that a
-requirement has been met.
+implemented, not applicable with a reason, or met another way. An acceptance entry is evidence of a decision, not evidence that a requirement has been met. The Commission's guidance adds that cost alone does not justify leaving a risk untreated (point 163).
 
 **The method is free, the traceability is not.** The Commission's FAQ lets the
 manufacturer choose how it identifies and treats risk. What it must be able to
@@ -255,16 +253,14 @@ evidence aligned with what actually shipped is where teams fall behind.
 retention are longer than most tool contracts and many careers in one company.
 Whoever answers the authority in 2034 will not be the person who wrote the file.
 
-The one large survey available points the same way. ENISA surveyed 194 SMEs in
-31 countries in February and March 2026: 66% had heard of the CRA, incident
+ENISA's survey of small companies points the same way. ENISA surveyed 194 organisations in 31 countries, 135 of which said they are in the CRA's scope, in February and March 2026: 66% had heard of the CRA, incident
 response and product lifecycle management were the weakest capabilities, and
 more than 70% asked for templates for technical documentation and secure
 development. Company size was the most consistent predictor of maturity.
 
 A note on AI assistants, since many of us now use them for this work. They can
 read an architecture, propose risks and keep documents current, which matters
-when there are hundreds of products. Koerner's caution is the right one: they
-change the volume of work, not who is responsible, so every generated claim
+when there are hundreds of products. The caution that matters: they change the volume of work, not who is responsible, so every generated claim
 needs review and a link to the evidence behind it.
 
 ## If you buy products rather than make them
@@ -276,7 +272,8 @@ your NIS2 supply-chain duties halfway.
 The two laws regulate different things. The CRA covers products placed on the
 market; NIS2 covers how in-scope entities secure their own operations. A vendor
 can be under both, and one incident can trigger a CRA product report and a NIS2
-entity report.
+entity report. The same questions seen from the vendor's side are in
+[NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements).
 
 From December 2027, a CE-marked product with digital elements comes with a set
 of facts you can ask for:
@@ -301,25 +298,19 @@ manufacturer's obligations.
 
 ## What is still unsettled
 
-Five things are open as of early November 2026, and each one changes how much
+Five things are open as of 20 November 2026, and each one changes how much
 work a manufacturer has to do by hand.
 
 **No harmonised standard gives a presumption of conformity yet.** The Commission
-asked for 41 standards under request M/606. According to the CRA Evidence
-tracker, as of 6 November 2026 none is cited in the Official Journal. The first
-two horizontal standards, EN 40000-1-1 and EN 40000-1-2, were ratified on 2
-November 2026 but are not expected to be cited. The vulnerability-handling
-standard is still under approval, and the original 2026 delivery dates have
-passed. Until a citation appears, conformity has to be shown by documenting your
+asked for the CRA's harmonised standards under request M/606. As of 17 November 2026 none is cited in the Official Journal. The first two horizontal standards, EN 40000-1-1 and EN 40000-1-2, were ratified on 2 November and published by CEN on 18 November, but are not expected to be cited. EN 40000-1-3, the vulnerability-handling standard, is still under approval, due by 30 November 2026. On 10 November the Commission amended the request (C(2026) 7861) and moved the delivery deadlines to 30 November 2026 for the two horizontal standards due this year (risk-based design and vulnerability handling) and to 31 January 2027 for the vertical ones; the other horizontal standards remain due by 30 October 2027. Until a citation appears, conformity has to be shown by documenting your
 own solutions against Annex I.
 
 **Class I manufacturers may lose the self-assessment route.** Makers of the 19
-important class I categories can self-assess only by applying harmonised
-standards in full. Without cited standards, the alternative is a notified body,
+important class I categories can self-assess only by applying in full harmonised standards, common specifications or a European cybersecurity certification scheme at assurance level "substantial" or higher (Article 32(2)). None of the three is available today: no standard is cited, no common specification exists, and the EUCC scheme can serve only once the delegated act under Article 27(9) is adopted, which is expected at the end of 2026. Without them, the alternative is a notified body,
 and nobody knows how much capacity those bodies will have in 2027.
 
 ```tikz Who checks the product, by class.
-% Alt: Who checks the product, by class, from least to most outside scrutiny: default products are self-assessed by the manufacturer; important class I products, 19 categories, are self-assessed only with harmonised standards applied in full and otherwise go to a notified body; important class II products, 4 categories, go to a notified body; critical products, 3 categories, go to a third party.
+% Alt: Who checks the product, by class, from least to most outside scrutiny: default products are self-assessed by the manufacturer; important class I products, 19 categories, are self-assessed only with harmonised standards, common specifications or a certification scheme applied in full and otherwise go to a notified body; important class II products, 4 categories, go to a notified body; critical products, 3 categories, go to a third party.
 \begin{tikzpicture}[row/.style={box, align=left, text width=5.6cm, font=\footnotesize, minimum height=0.85cm}, node distance=0.18cm]
   % Four dots per row: filled up to the level of outside scrutiny.
   \newcommand{\meter}[2]{%
@@ -332,7 +323,7 @@ and nobody knows how much capacity those bodies will have in 2027.
     }%
   }
   \node[row] (r1) {\textbf{Default} {\scriptsize most products}\\[1pt]Self-assessment by the manufacturer};
-  \node[row, below=of r1] (r2) {\textbf{Important, class I} {\scriptsize 19 categories}\\[1pt]Self-assessment only with harmonised standards applied in full; otherwise a notified body};
+  \node[row, below=of r1] (r2) {\textbf{Important, class I} {\scriptsize 19 categories}\\[1pt]Self-assessment only with standards, common specs or certification; otherwise a notified body};
   \node[row, below=of r2] (r3) {\textbf{Important, class II} {\scriptsize 4 categories}\\[1pt]A notified body};
   \node[row, below=of r3] (r4) {\textbf{Critical} {\scriptsize 3 categories}\\[1pt]A third party};
   \meter{r1}{1}
@@ -343,28 +334,23 @@ and nobody knows how much capacity those bodies will have in 2027.
 \end{tikzpicture}
 ```
 
-With no harmonised standard cited yet, class I in practice means a notified
-body. The categories are defined in Implementing Regulation (EU) 2025/2392.
+With none of the three available yet, class I in practice means a notified body. The categories are defined in Implementing Regulation (EU) 2025/2392; the
+[classification guide](/blog/compliance/cra-product-classification) walks
+through the test.
 
 **Classification needs the fine print.** The category names in Annexes III and
 IV are short. The technical descriptions are in Implementing Regulation (EU)
 2025/2392, and a wrong class means a wrong conformity route.
 
-**Cloud back ends sit on a boundary.** Remote data processing that a product
-needs in order to work is in scope; stand-alone SaaS generally is not. The
-Commission's guidance of July 2026 spends its longest part on this line, which
-tells you how many products sit near it.
+**Cloud back ends sit on a boundary.** Remote data processing is part of the product only when two conditions hold: the manufacturer designs and develops it, or has that done under its responsibility, and without it the product could not perform one of its functions. Third-party SaaS, websites and downstream business systems generally stay outside. The Commission's guidance, adopted in July 2026 and published in the Official Journal on 17 November 2026 (C/2026/6013), spends a whole section on this line (points 178 to 208), which tells you how many products sit near it. The
+[CRA engineering guide](/blog/security/cra-engineering) walks through its
+test.
 
-**The laws overlap without merging.** Koerner's map is the clearest I have
-found. The CRA has a written bridge to the AI Act: a high-risk AI product that
-meets Annex I is deemed to meet the AI Act's cybersecurity requirement. It has
-no bridge to the GDPR. Evidence can be reused across these files; conclusions
+**The laws overlap without merging.** The CRA has a written bridge to the AI Act: a high-risk AI product that
+meets Annex I, Parts I and II, and shows it in the declaration of conformity is deemed to meet the AI Act's cybersecurity requirement. Its link to the GDPR is only procedural: market surveillance authorities cooperate with data protection authorities (Article 52(7)), but meeting Annex I gives no presumption of GDPR compliance. The Commission's CRA FAQ says the two laws do not overlap legally but can complement each other. Evidence can be reused across these files; conclusions
 mostly cannot.
 
-National enforcement is also still being built. The same guide on fines reports
-that Germany's implementing act, which would give the role to the BSI, had not
-been promulgated by mid-October 2026, and that Austria had not yet named its
-market surveillance authority.
+National enforcement is also still being built. Germany's implementing act, which gives the role to the BSI, was adopted by the Bundestag on 15 October 2026 and approved by the Bundesrat on 20 November 2026; it still has to be signed and published before it takes effect. The same guide on fines reports that Austria had not yet named its market surveillance authority. In Italy, the draft decree implementing the CRA (Atto del Governo 447, sent to Parliament on 9 October 2026) would make ACN, the national cybersecurity agency, both the notifying authority and the market surveillance authority. It has not been published yet.
 
 ## What I would do in the next 90 days
 
@@ -374,9 +360,11 @@ December 2027.
 1. **List every product with digital elements you have on the EU market**,
    including the ones you no longer sell but customers still use. Article 14
    covers them.
-2. **Name who decides "aware" and who files.** Register the people on the Single
-   Reporting Platform now: each needs a personal EU Login with multi-factor
-   authentication, and the CSIRT validates the link to the company.
+2. **Name who decides "aware" and who files.** Make sure each of them has a
+   personal EU Login with multi-factor authentication. ENISA advises
+   registering on the Single Reporting Platform only when you need to submit a
+   notification: the CSIRT validates the link to the company in parallel with
+   the report, and up to 20 notifications can be sent before verification.
 3. **Run one rehearsal outside office hours.** Simulate an exploited
    vulnerability in a shipped product and time the path from first signal to a
    submitted early warning.
@@ -396,40 +384,15 @@ December 2027.
 10. **Ask your main component suppliers for their SBOM, support period and
     vulnerability contact.** Their answers are your due-diligence evidence.
 
-## Questions for you
+## Why I am writing this
 
-To be clear about why I am asking: these questions are market research. We are
-exploring potential solutions that make CRA compliance plug and play, so that
-product teams can build it into a product instead of assembling it by hand for
-every release. Your answers decide what is worth building.
+I write these articles as research: to understand the sector and how companies
+actually run compliance day to day. They are also groundwork for a product I
+will probably build, to streamline how companies handle their compliance
+processes. If that interests you, **[write to me](mailto:me@bernardoforcillo.com?subject=CRA%20field%20guide)** at
+[me@bernardoforcillo.com](mailto:me@bernardoforcillo.com?subject=CRA%20field%20guide).
 
-I would rather learn from what you have already done than from what vendors say
-you should do. If you work on this, from either the making or the buying side,
-**[email me your answers](mailto:me@bernardoforcillo.com?subject=CRA%20field%20guide%3A%20my%20answers)**
-at [me@bernardoforcillo.com](mailto:me@bernardoforcillo.com?subject=CRA%20field%20guide%3A%20my%20answers).
-Two lines on any one of these questions is enough; you do not need to answer
-them all. Over the next few weeks we will use your answers to shape a first
-plug-and-play solution to the problems they describe.
-
-1. When did your team last have to decide whether a vulnerability in a shipped
-   product was being actively exploited? Who made the call, and how long did it
-   take?
-2. Where does your product security evidence live today, and what did you have
-   to rebuild by hand for the last release or the last audit?
-3. Who owns the CRA in your company: the CISO, product, quality or legal? How
-   was that decided?
-4. Have you filed, or rehearsed filing, on the Single Reporting Platform? What
-   surprised you?
-5. What have you spent on the CRA so far, in people, tools or consultants? What
-   would you not buy again?
-6. Which part of the work did tooling really take off your hands, and which part
-   stayed manual?
-7. If you are on the buying side: have you asked a supplier for an SBOM, a
-   support end date or a vulnerability contact? What came back?
-
-_Disclosure: I work on connected products at Ganiga. This post is part of
-market research into plug-and-play CRA solutions; nothing is for sale yet, and
-the questions above are not a sales pitch._
+_Disclosure: I work on connected products at Ganiga. Nothing is for sale yet._
 
 ## Frequently asked questions
 
@@ -444,7 +407,7 @@ applies from 11 December 2027.
 ### What are the CRA reporting deadlines?
 
 For an actively exploited vulnerability or a severe incident, the manufacturer
-sends an early warning within 24 hours of becoming aware, a notification within
+sends an early warning without undue delay and in any event within 24 hours of becoming aware, a notification within
 72 hours, and a final report 14 days after a corrective or mitigating measure is
 available (vulnerability) or one month after the notification (severe
 incident). Reports go through ENISA's Single Reporting Platform to the
@@ -467,26 +430,41 @@ authority can ask to see it.
 
 The support period is at least five years, unless the product is expected to be
 used for less. Each security update stays available for ten years or for the
-rest of the support period, and the technical documentation is kept for ten
+rest of the support period, whichever is longer, and the technical documentation is kept for ten
 years or for the support period if that is longer.
 
 ### Do small companies get relief from CRA reporting?
 
 Only a little. Under Article 64(10), microenterprises and small enterprises are
 not fined for missing the 24-hour early warning. The duty to report stays, and
-the 72-hour notification and the final report keep their penalties.
-Medium-sized companies get no relief.
+the 72-hour notification and the final report keep their penalties. Medium-sized companies get no specific relief, though size is weighed when a fine is set.
 
 ### Can a manufacturer self-assess CRA conformity?
 
 For default products, yes. Makers of important class I products can self-assess
-only by applying harmonised standards in full, and as of 6 November 2026 none is
-cited in the Official Journal, so the alternative is a notified body. Important
+only by applying in full harmonised standards, common specifications or an EU certification scheme at level "substantial" or higher. As of 20 November 2026 none of these is available, so the alternative is a notified body. Important
 class II and critical products need a third party.
+
+## Read next
+
+- [The map: EU product compliance 2026–2028](/blog/compliance/eu-product-compliance-map),
+  every law, date and owner on one page.
+- [Engineering for the CRA](/blog/security/cra-engineering),
+  Annex I as requirements, the SBOM and the evidence pipeline.
+- [Running the CRA: an operating model](/blog/compliance/cra-operations),
+  the reporting rota, records and the unit-by-unit transition.
+- [What the CRA costs](/blog/compliance/cra-costs),
+  budgets, fines and the support period.
+- [NIS2 from the supplier's side](/blog/compliance/nis2-supplier-requirements),
+  what customers ask and how CRA evidence answers.
+- [Software is now a product](/blog/compliance/product-liability-directive-software),
+  the new Product Liability Directive and why the evidence file matters in court.
+- [Important or critical? Classifying products under the CRA](/blog/compliance/cra-product-classification),
+  the conformity route and the notified-body gap.
 
 ## References
 
-Checked on 11 November 2026. Apart from the regulation itself and the two ENISA
+Checked on 20 November 2026. Apart from the regulation, the Commission's guidance and FAQ, and the two ENISA
 pages, these are secondary sources; article and annex numbers should be
 confirmed against the official text before you rely on them.
 
@@ -503,16 +481,16 @@ confirmed against the official text before you rely on them.
   [_CRA reporting: Article 14_](https://www.cyberresilienceact.eu/reporting.html). Independent guide to
   deadlines, triggers and the platform.
 - CRA Response Center,
-  [_Fines and market surveillance under the CRA_](https://cra-response-center.com/guides/fines/). Penalty
-  tiers, Article 64(10), the argument on fines before December 2027, national
-  authorities.
-- NHIMG,
-  [_EU Cyber Resilience Act Guide_](https://nhimg.org/eu-cyber-resilience-act-guide). Annex I, Article 13 duties, product
-  classes, CRA and NIS2.
+  [_Fines and market surveillance under the CRA_](https://cra-response-center.com/guides/fines/). Penalty tiers, Article 64(10), the argument on fines before December 2027, national authorities.
+- Caschys Blog,
+  [_Cyber Resilience Act: Bundesrat beschließt Durchführungsgesetz_](https://stadt-bremerhaven.de/cyber-resilience-act-bundesrat-beschliesst-durchfuehrungsgesetz/),
+  20 November 2026. Bundesrat approval of Germany's implementing act.
+- European Commission,
+  [_Cyber Resilience Act implementation: frequently asked questions_](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act-implementation-frequently-asked-questions),
+  version 1.4, 4 September 2026. Risk assessment, relation to the GDPR.
 - CRA Evidence,
-  [_CRA harmonised standards status_](https://craevidence.com/cra-compliance/harmonised-standards-status), as of 6 November 2026.
-- Katharina Koerner,
-  [_One Product, Four Risk Assessments?_](https://www.linkedin.com/pulse/one-product-four-risk-assessments-eu-cyber-resilience-koerner-dzypc/),
-  5 November 2026.
-  Risk assessment benchmark, Commission FAQ and guidance, bridges to the AI Act
-  and the GDPR.
+  [_CRA harmonised standards status_](https://craevidence.com/cra-compliance/harmonised-standards-status), as of 17 November 2026.
+
+- European Commission,
+  [_Commission guidance on the application of Regulation (EU) 2024/2847, C/2026/6013_](https://eur-lex.europa.eu/eli/C/2026/6013),
+  first adopted on 27 July 2026 as C(2026) 5252; published in the Official Journal on 17 November 2026. Points 158, 163, 178–208, 213–214.
