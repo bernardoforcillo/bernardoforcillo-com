@@ -25,6 +25,9 @@ steps:
       - --image=${_IMAGE}:${SHORT_SHA}
       - --region=${_RUN_REGION}
       - --service-account=${_RUN_SA}
+      # Read by the Go server and exposed to the browser through /config.js.
+      # The container ID is public: it appears in every page that loads it.
+      - --update-env-vars=GTM_ID=GTM-TCMCZB6B
 
 images:
   - ${_IMAGE}:${SHORT_SHA}

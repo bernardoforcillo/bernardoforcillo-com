@@ -11,8 +11,10 @@ import type { FC, ReactNode } from 'react';
 import GithubIcon from '~/assets/icons/github-mark';
 import LinkedinMark from '~/assets/icons/linkedin-mark';
 import XMark from '~/assets/icons/x-mark';
+import { CookieBanner } from '~/features/consent/cookie-banner';
 import { m } from '~/i18n';
 import { BUILD_YEAR } from '~/lib/build-info';
+import { openConsentPreferences } from '~/lib/consent';
 import { CONTACT_EMAIL } from '~/lib/seo';
 
 type Props = {
@@ -36,6 +38,10 @@ const legalLinks: NavItem[] = [
   { label: 'Privacy', to: '/policies/privacy-policy' },
   { label: 'Cookies', to: '/policies/cookies-policy' },
   { label: 'Attributions', to: '/attributions' },
+];
+
+const legalActions = [
+  { label: 'Cookie preferences', onClick: openConsentPreferences },
 ];
 
 const elsewhereLinks = [
@@ -87,8 +93,10 @@ export const SiteShell: FC<Props> = ({ children }) => (
         rights={m.footer_rights({ year: BUILD_YEAR })}
         index={mainNavLinks}
         legal={legalLinks}
+        legalActions={legalActions}
         elsewhere={elsewhereLinks}
       />
     </Rail>
+    <CookieBanner />
   </>
 );
